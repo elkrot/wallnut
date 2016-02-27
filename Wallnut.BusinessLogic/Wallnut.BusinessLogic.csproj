@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6E765271-B2E1-46CF-B8E6-9736810CAB63}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Wallnut.BusinessLogic</RootNamespace>
+    <AssemblyName>Wallnut.BusinessLogic</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.3.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.4.3.1\lib\net40\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Implementations\AddressRepository.cs" />
+    <Compile Include="Implementations\AddressTypeRepository.cs" />
+    <Compile Include="Implementations\BusinessEntityRepository.cs" />
+    <Compile Include="Implementations\ContactTypeRepository.cs" />
+    <Compile Include="Implementations\CountryRegionRepository.cs" />
+    <Compile Include="Implementations\CurrencyRateRepository.cs" />
+    <Compile Include="Implementations\CurrencyRepository.cs" />
+    <Compile Include="Implementations\CustomerRepository.cs" />
+    <Compile Include="Implementations\DepartmentRepository.cs" />
+    <Compile Include="Implementations\EFEmployeesRepository.cs" />
+    <Compile Include="Implementations\EmailAddressRepository.cs" />
+    <Compile Include="Implementations\EmployeeAttendanceHistoryRepository.cs" />
+    <Compile Include="Implementations\EmployeeDepartmentHistoryRepository.cs" />
+    <Compile Include="Implementations\EmployeePayHistoryRepository.cs" />
+    <Compile Include="Implementations\ExpenditureCostHistoryRepository.cs" />
+    <Compile Include="Implementations\ExpenditureRepository.cs" />
+    <Compile Include="Implementations\LocationRepository.cs" />
+    <Compile Include="Implementations\PasswordRepository.cs" />
+    <Compile Include="Implementations\PersonPhoneRepository.cs" />
+    <Compile Include="Implementations\PhoneNumberTypeRepository.cs" />
+    <Compile Include="Implementations\ProductCostHistoryRepository.cs" />
+    <Compile Include="Implementations\ProductInventoryRepository.cs" />
+    <Compile Include="Implementations\ProductListPriceHistoryRepository.cs" />
+    <Compile Include="Implementations\ProductsRepository.cs" />
+    <Compile Include="Implementations\ProductVendorRepository.cs" />
+    <Compile Include="Implementations\PurchaseOrderDetailRepository.cs" />
+    <Compile Include="Implementations\PurchaseOrderHeaderRepository.cs" />
+    <Compile Include="Implementations\Repository.cs" />
+    <Compile Include="Implementations\SalesOrderDetailRepository.cs" />
+    <Compile Include="Implementations\SalesOrderHeaderRepository.cs" />
+    <Compile Include="Implementations\SalesTerritoryRepository.cs" />
+    <Compile Include="Implementations\ShiftRepository.cs" />
+    <Compile Include="Implementations\ShipMethodRepository.cs" />
+    <Compile Include="Implementations\StateProvinceRepository.cs" />
+    <Compile Include="Implementations\StoreRepository.cs" />
+    <Compile Include="Implementations\UnitMeasureRepository.cs" />
+    <Compile Include="Implementations\UnitOfWork.cs" />
+    <Compile Include="Implementations\VendorRepository.cs" />
+    <Compile Include="Implementations\WorkOrderHistoryRepository.cs" />
+    <Compile Include="Implementations\WorkOrderRepository.cs" />
+    <Compile Include="Interfaces\IAddressRepository.cs" />
+    <Compile Include="Interfaces\IAddressTypeRepository.cs" />
+    <Compile Include="Interfaces\IBusinessEntityRepository.cs" />
+    <Compile Include="Interfaces\IContactTypeRepository.cs" />
+    <Compile Include="Interfaces\ICountryRegionRepository.cs" />
+    <Compile Include="Interfaces\ICurrencyRateRepository.cs" />
+    <Compile Include="Interfaces\ICurrencyRepository.cs" />
+    <Compile Include="Interfaces\ICustomerRepository.cs" />
+    <Compile Include="Interfaces\IDepartmentRepository.cs" />
+    <Compile Include="Interfaces\IEmailAddressRepository.cs" />
+    <Compile Include="Interfaces\IEmployeeAttendanceHistoryRepository.cs" />
+    <Compile Include="Interfaces\IEmployeeDepartmentHistoryRepository.cs" />
+    <Compile Include="Interfaces\IEmployeePayHistoryRepository.cs" />
+    <Compile Include="Interfaces\IEmployeeRepository.cs" />
+    <Compile Include="Interfaces\IExpenditureRepository.cs" />
+    <Compile Include="Interfaces\IExpenditureCostHistoryRepository.cs" />
+    <Compile Include="Interfaces\ILocationRepository.cs" />
+    <Compile Include="Interfaces\IPasswordRepository.cs" />
+    <Compile Include="Interfaces\IPersonPhoneRepository.cs" />
+    <Compile Include="Interfaces\IPhoneNumberTypeRepository.cs" />
+    <Compile Include="Interfaces\IProductCostHistoryRepository.cs" />
+    <Compile Include="Interfaces\IProductInventoryRepository.cs" />
+    <Compile Include="Interfaces\IProductListPriceHistoryRepository.cs" />
+    <Compile Include="Interfaces\IProductsRepository.cs" />
+    <Compile Include="Interfaces\IProductVendorRepository.cs" />
+    <Compile Include="Interfaces\IPurchaseOrderDetailRepository.cs" />
+    <Compile Include="Interfaces\IPurchaseOrderHeaderRepository.cs" />
+    <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Interfaces\ISalesOrderDetailRepository.cs" />
+    <Compile Include="Interfaces\ISalesOrderHeaderRepository.cs" />
+    <Compile Include="Interfaces\ISalesTerritoryRepository.cs" />
+    <Compile Include="Interfaces\IShiftRepository.cs" />
+    <Compile Include="Interfaces\IShipMethodRepository.cs" />
+    <Compile Include="Interfaces\IStateProvinceRepository.cs" />
+    <Compile Include="Interfaces\IStoreRepository.cs" />
+    <Compile Include="Interfaces\IUnitMeasureRepository.cs" />
+    <Compile Include="Interfaces\IUnitOfWork.cs" />
+    <Compile Include="Interfaces\IVendorRepository.cs" />
+    <Compile Include="Interfaces\IWorkOrderHistoryRepository.cs" />
+    <Compile Include="Interfaces\IWorkOrderRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Wallnut.Domain\Wallnut.Domain.csproj">
+      <Project>{29F47619-5053-4822-ADFE-F4B9FB289EAB}</Project>
+      <Name>Wallnut.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

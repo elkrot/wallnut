@@ -1,0 +1,835 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3B2C5274-43DC-4F7A-AA2C-CDFD6C6244B1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Wallnut.UI</RootNamespace>
+    <AssemblyName>Wallnut.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.3.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.4.3.1\lib\net40\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="fTemplates\fListTpl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fTemplates\fListTpl.Designer.cs">
+      <DependentUpon>fListTpl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HumanResources\Department\fAddDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HumanResources\Department\fAddDepartment.Designer.cs">
+      <DependentUpon>fAddDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HumanResources\EmployeeDepartmentHistory\fAddEmployeeDepartmentHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HumanResources\EmployeeDepartmentHistory\fAddEmployeeDepartmentHistory.Designer.cs">
+      <DependentUpon>fAddEmployeeDepartmentHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HumanResources\EmployeeDepartmentHistory\fEmployeeDepartmentHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HumanResources\EmployeeDepartmentHistory\fEmployeeDepartmentHistory.Designer.cs">
+      <DependentUpon>fEmployeeDepartmentHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HumanResources\EmployeePayHistory\fAddEmployeePayHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HumanResources\EmployeePayHistory\fAddEmployeePayHistory.Designer.cs">
+      <DependentUpon>fAddEmployeePayHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HumanResources\EmployeePayHistory\fEmployeePayHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HumanResources\EmployeePayHistory\fEmployeePayHistory.Designer.cs">
+      <DependentUpon>fEmployeePayHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HumanResources\Employee\fAddEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HumanResources\Employee\fAddEmployee.Designer.cs">
+      <DependentUpon>fAddEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HumanResources\frmEmployeeAttendanceHistory\fAddEmployeeAttendanceHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HumanResources\frmEmployeeAttendanceHistory\fAddEmployeeAttendanceHistory.Designer.cs">
+      <DependentUpon>fAddEmployeeAttendanceHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HumanResources\frmEmployeeAttendanceHistory\fEmployeeAttendanceHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HumanResources\frmEmployeeAttendanceHistory\fEmployeeAttendanceHistory.Designer.cs">
+      <DependentUpon>fEmployeeAttendanceHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Implementations\AddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Implementations\ListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Implementations\ListFormBehavior.cs" />
+    <Compile Include="Implementations\ListFormMdi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\IAddForm.cs" />
+    <Compile Include="Interfaces\IListForm.cs" />
+    <Compile Include="Interfaces\INewListForm.cs" />
+    <Compile Include="Persons\AddressTypes\fAddAddressType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Persons\AddressTypes\fAddAddressType.Designer.cs">
+      <DependentUpon>fAddAddressType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Persons\AddressTypes\fAddressType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Persons\AddressTypes\fAddressType.Designer.cs">
+      <DependentUpon>fAddressType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Persons\Address\fAddAddress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Persons\Address\fAddAddress.Designer.cs">
+      <DependentUpon>fAddAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Persons\Address\fAddress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Persons\Address\fAddress.Designer.cs">
+      <DependentUpon>fAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Persons\ContactType\fAddContactType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Persons\ContactType\fAddContactType.Designer.cs">
+      <DependentUpon>fAddContactType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Persons\ContactType\fContactType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Persons\ContactType\fContactType.Designer.cs">
+      <DependentUpon>fContactType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Persons\CountryRegion\fAddCountryRegion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Persons\CountryRegion\fAddCountryRegion.Designer.cs">
+      <DependentUpon>fAddCountryRegion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Persons\CountryRegion\fCountryRegion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Persons\CountryRegion\fCountryRegion.Designer.cs">
+      <DependentUpon>fCountryRegion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Persons\StateProvince\fAddStateProvince.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Persons\StateProvince\fAddStateProvince.Designer.cs">
+      <DependentUpon>fAddStateProvince.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Persons\StateProvince\fStateProvince.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Persons\StateProvince\fStateProvince.Designer.cs">
+      <DependentUpon>fStateProvince.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\ExpenditureCostHistory\fAddExpenditureCostHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\ExpenditureCostHistory\fAddExpenditureCostHistory.Designer.cs">
+      <DependentUpon>fAddExpenditureCostHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\ExpenditureCostHistory\fExpenditureCostHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\ExpenditureCostHistory\fExpenditureCostHistory.Designer.cs">
+      <DependentUpon>fExpenditureCostHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\Expentitude\fAddExpenditure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\Expentitude\fAddExpenditure.Designer.cs">
+      <DependentUpon>fAddExpenditure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\Expentitude\fExpenditure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\Expentitude\fExpenditure.Designer.cs">
+      <DependentUpon>fExpenditure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmProductInventory\fAddProductInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmProductInventory\fAddProductInventory.Designer.cs">
+      <DependentUpon>fAddProductInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmProductInventory\fProductInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmProductInventory\fProductInventory.Designer.cs">
+      <DependentUpon>fProductInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmWorkOrderHistory\fAddWorkOrderHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmWorkOrderHistory\fAddWorkOrderHistory.Designer.cs">
+      <DependentUpon>fAddWorkOrderHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\frmWorkOrderHistory\fWorkOrderHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\frmWorkOrderHistory\fWorkOrderHistory.Designer.cs">
+      <DependentUpon>fWorkOrderHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\ProductCostHistory\fAddProductCostHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\ProductCostHistory\fAddProductCostHistory.Designer.cs">
+      <DependentUpon>fAddProductCostHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\ProductCostHistory\fProductCostHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\ProductCostHistory\fProductCostHistory.Designer.cs">
+      <DependentUpon>fProductCostHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\ProductListPriceHistory\fAddProductListPriceHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\ProductListPriceHistory\fAddProductListPriceHistory.Designer.cs">
+      <DependentUpon>fAddProductListPriceHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\ProductListPriceHistory\fProductListPriceHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\ProductListPriceHistory\fProductListPriceHistory.Designer.cs">
+      <DependentUpon>fProductListPriceHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\Product\fAddProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\Product\fAddProduct.Designer.cs">
+      <DependentUpon>fAddProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HumanResources\Shift\fAddShift.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HumanResources\Shift\fAddShift.Designer.cs">
+      <DependentUpon>fAddShift.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fAuth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fAuth.Designer.cs">
+      <DependentUpon>fAuth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HumanResources\Department\fDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HumanResources\Department\fDepartment.Designer.cs">
+      <DependentUpon>fDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fMain.Designer.cs">
+      <DependentUpon>fMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HumanResources\Employee\fEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HumanResources\Employee\fEmployee.Designer.cs">
+      <DependentUpon>fEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\Product\fProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\Product\fProducts.Designer.cs">
+      <DependentUpon>fProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HumanResources\Shift\fShifts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HumanResources\Shift\fShifts.Designer.cs">
+      <DependentUpon>fShifts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fTemplates\fEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fTemplates\fEdit.Designer.cs">
+      <DependentUpon>fEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fTemplates\fList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fTemplates\fList.Designer.cs">
+      <DependentUpon>fList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\UnitMeasure\fAddUnitMesure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\UnitMeasure\fAddUnitMesure.Designer.cs">
+      <DependentUpon>fAddUnitMesure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\UnitMeasure\fUnitMeasure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\UnitMeasure\fUnitMeasure.Designer.cs">
+      <DependentUpon>fUnitMeasure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\WorkOrder\fAddWorkOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\WorkOrder\fAddWorkOrder.Designer.cs">
+      <DependentUpon>fAddWorkOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production\WorkOrder\fWorkOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\WorkOrder\fWorkOrder.Designer.cs">
+      <DependentUpon>fWorkOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Purchasing\ProductVendor\fAddProductVendor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchasing\ProductVendor\fAddProductVendor.Designer.cs">
+      <DependentUpon>fAddProductVendor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Purchasing\ProductVendor\fProductVendor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchasing\ProductVendor\fProductVendor.Designer.cs">
+      <DependentUpon>fProductVendor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Purchasing\PurchaseOrder\fAddPurchaseOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchasing\PurchaseOrder\fAddPurchaseOrder.Designer.cs">
+      <DependentUpon>fAddPurchaseOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Purchasing\PurchaseOrder\fAddPurchaseOrderDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchasing\PurchaseOrder\fAddPurchaseOrderDetail.Designer.cs">
+      <DependentUpon>fAddPurchaseOrderDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Purchasing\PurchaseOrder\fPurchaseOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchasing\PurchaseOrder\fPurchaseOrder.Designer.cs">
+      <DependentUpon>fPurchaseOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Purchasing\ShipMethod\fAddShipMethod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchasing\ShipMethod\fAddShipMethod.Designer.cs">
+      <DependentUpon>fAddShipMethod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Purchasing\ShipMethod\fShipMethod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchasing\ShipMethod\fShipMethod.Designer.cs">
+      <DependentUpon>fShipMethod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Purchasing\Vendor\fAddVendor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchasing\Vendor\fAddVendor.Designer.cs">
+      <DependentUpon>fAddVendor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Purchasing\Vendor\fVendor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchasing\Vendor\fVendor.Designer.cs">
+      <DependentUpon>fVendor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ViewForm.Designer.cs">
+      <DependentUpon>ViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\CurrencyRate\fAddCurrencyRate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\CurrencyRate\fAddCurrencyRate.Designer.cs">
+      <DependentUpon>fAddCurrencyRate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\CurrencyRate\fCurrencyRate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\CurrencyRate\fCurrencyRate.Designer.cs">
+      <DependentUpon>fCurrencyRate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\Currency\fCurrency.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\Currency\fCurrency.Designer.cs">
+      <DependentUpon>fCurrency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\Currency\fAddCurrency.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\Currency\fAddCurrency.Designer.cs">
+      <DependentUpon>fAddCurrency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\Customer\fAddCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\Customer\fAddCustomer.Designer.cs">
+      <DependentUpon>fAddCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\Customer\fCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\Customer\fCustomer.Designer.cs">
+      <DependentUpon>fCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\SalesOrderHeader\fAddSalesOrderDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\SalesOrderHeader\fAddSalesOrderDetail.Designer.cs">
+      <DependentUpon>fAddSalesOrderDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\SalesOrderHeader\fAddSalesOrderHeader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\SalesOrderHeader\fAddSalesOrderHeader.Designer.cs">
+      <DependentUpon>fAddSalesOrderHeader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\SalesOrderHeader\fSalesOrderHeader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\SalesOrderHeader\fSalesOrderHeader.Designer.cs">
+      <DependentUpon>fSalesOrderHeader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\SalesPerson\fAddSalesPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\SalesPerson\fAddSalesPerson.Designer.cs">
+      <DependentUpon>fAddSalesPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\SalesPerson\fSalesPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\SalesPerson\fSalesPerson.Designer.cs">
+      <DependentUpon>fSalesPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\SalesTerritory\fAddSalesTerritory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\SalesTerritory\fAddSalesTerritory.Designer.cs">
+      <DependentUpon>fAddSalesTerritory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\SalesTerritory\fSalesTerritory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\SalesTerritory\fSalesTerritory.Designer.cs">
+      <DependentUpon>fSalesTerritory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\StoreFrm\fAddStore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\StoreFrm\fAddStore.Designer.cs">
+      <DependentUpon>fAddStore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\StoreFrm\fStore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\StoreFrm\fStore.Designer.cs">
+      <DependentUpon>fStore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WallnutProductionDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WallnutProductionDataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="fTemplates\fListTpl.resx">
+      <DependentUpon>fListTpl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HumanResources\Department\fAddDepartment.resx">
+      <DependentUpon>fAddDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HumanResources\EmployeeDepartmentHistory\fAddEmployeeDepartmentHistory.resx">
+      <DependentUpon>fAddEmployeeDepartmentHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HumanResources\EmployeeDepartmentHistory\fEmployeeDepartmentHistory.resx">
+      <DependentUpon>fEmployeeDepartmentHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HumanResources\EmployeePayHistory\fAddEmployeePayHistory.resx">
+      <DependentUpon>fAddEmployeePayHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HumanResources\EmployeePayHistory\fEmployeePayHistory.resx">
+      <DependentUpon>fEmployeePayHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HumanResources\Employee\fAddEmployee.resx">
+      <DependentUpon>fAddEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HumanResources\frmEmployeeAttendanceHistory\fAddEmployeeAttendanceHistory.resx">
+      <DependentUpon>fAddEmployeeAttendanceHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HumanResources\frmEmployeeAttendanceHistory\fEmployeeAttendanceHistory.resx">
+      <DependentUpon>fEmployeeAttendanceHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Implementations\AddForm.resx">
+      <DependentUpon>AddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Implementations\ListForm.resx">
+      <DependentUpon>ListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Implementations\ListFormMdi.resx">
+      <DependentUpon>ListFormMdi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persons\AddressTypes\fAddAddressType.resx">
+      <DependentUpon>fAddAddressType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persons\AddressTypes\fAddressType.resx">
+      <DependentUpon>fAddressType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persons\Address\fAddAddress.resx">
+      <DependentUpon>fAddAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persons\Address\fAddress.resx">
+      <DependentUpon>fAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persons\ContactType\fAddContactType.resx">
+      <DependentUpon>fAddContactType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persons\ContactType\fContactType.resx">
+      <DependentUpon>fContactType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persons\CountryRegion\fAddCountryRegion.resx">
+      <DependentUpon>fAddCountryRegion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persons\CountryRegion\fCountryRegion.resx">
+      <DependentUpon>fCountryRegion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persons\StateProvince\fAddStateProvince.resx">
+      <DependentUpon>fAddStateProvince.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persons\StateProvince\fStateProvince.resx">
+      <DependentUpon>fStateProvince.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\ExpenditureCostHistory\fAddExpenditureCostHistory.resx">
+      <DependentUpon>fAddExpenditureCostHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\ExpenditureCostHistory\fExpenditureCostHistory.resx">
+      <DependentUpon>fExpenditureCostHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\Expentitude\fAddExpenditure.resx">
+      <DependentUpon>fAddExpenditure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\Expentitude\fExpenditure.resx">
+      <DependentUpon>fExpenditure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmProductInventory\fAddProductInventory.resx">
+      <DependentUpon>fAddProductInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmProductInventory\fProductInventory.resx">
+      <DependentUpon>fProductInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmWorkOrderHistory\fAddWorkOrderHistory.resx">
+      <DependentUpon>fAddWorkOrderHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\frmWorkOrderHistory\fWorkOrderHistory.resx">
+      <DependentUpon>fWorkOrderHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\ProductCostHistory\fAddProductCostHistory.resx">
+      <DependentUpon>fAddProductCostHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\ProductCostHistory\fProductCostHistory.resx">
+      <DependentUpon>fProductCostHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\ProductListPriceHistory\fAddProductListPriceHistory.resx">
+      <DependentUpon>fAddProductListPriceHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\ProductListPriceHistory\fProductListPriceHistory.resx">
+      <DependentUpon>fProductListPriceHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\Product\fAddProduct.resx">
+      <DependentUpon>fAddProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HumanResources\Shift\fAddShift.resx">
+      <DependentUpon>fAddShift.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fAuth.resx">
+      <DependentUpon>fAuth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HumanResources\Department\fDepartment.resx">
+      <DependentUpon>fDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fMain.resx">
+      <DependentUpon>fMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HumanResources\Employee\fEmployee.resx">
+      <DependentUpon>fEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\Product\fProducts.resx">
+      <DependentUpon>fProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HumanResources\Shift\fShifts.resx">
+      <DependentUpon>fShifts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fTemplates\fEdit.resx">
+      <DependentUpon>fEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fTemplates\fList.resx">
+      <DependentUpon>fList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\UnitMeasure\fAddUnitMesure.resx">
+      <DependentUpon>fAddUnitMesure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\UnitMeasure\fUnitMeasure.resx">
+      <DependentUpon>fUnitMeasure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\WorkOrder\fAddWorkOrder.resx">
+      <DependentUpon>fAddWorkOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\WorkOrder\fWorkOrder.resx">
+      <DependentUpon>fWorkOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Purchasing\ProductVendor\fAddProductVendor.resx">
+      <DependentUpon>fAddProductVendor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchasing\ProductVendor\fProductVendor.resx">
+      <DependentUpon>fProductVendor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchasing\PurchaseOrder\fAddPurchaseOrder.resx">
+      <DependentUpon>fAddPurchaseOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchasing\PurchaseOrder\fAddPurchaseOrderDetail.resx">
+      <DependentUpon>fAddPurchaseOrderDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchasing\PurchaseOrder\fPurchaseOrder.resx">
+      <DependentUpon>fPurchaseOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchasing\ShipMethod\fAddShipMethod.resx">
+      <DependentUpon>fAddShipMethod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchasing\ShipMethod\fShipMethod.resx">
+      <DependentUpon>fShipMethod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchasing\Vendor\fAddVendor.resx">
+      <DependentUpon>fAddVendor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchasing\Vendor\fVendor.resx">
+      <DependentUpon>fVendor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EmployeeReport.rdlc" />
+    <EmbeddedResource Include="Reports\ViewForm.resx">
+      <DependentUpon>ViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales\CurrencyRate\fAddCurrencyRate.resx">
+      <DependentUpon>fAddCurrencyRate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales\CurrencyRate\fCurrencyRate.resx">
+      <DependentUpon>fCurrencyRate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales\Currency\fCurrency.resx">
+      <DependentUpon>fCurrency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales\Currency\fAddCurrency.resx">
+      <DependentUpon>fAddCurrency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales\Customer\fAddCustomer.resx">
+      <DependentUpon>fAddCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales\Customer\fCustomer.resx">
+      <DependentUpon>fCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales\SalesOrderHeader\fAddSalesOrderDetail.resx">
+      <DependentUpon>fAddSalesOrderDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales\SalesOrderHeader\fAddSalesOrderHeader.resx">
+      <DependentUpon>fAddSalesOrderHeader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales\SalesOrderHeader\fSalesOrderHeader.resx">
+      <DependentUpon>fSalesOrderHeader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales\SalesPerson\fAddSalesPerson.resx">
+      <DependentUpon>fAddSalesPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales\SalesPerson\fSalesPerson.resx">
+      <DependentUpon>fSalesPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales\SalesTerritory\fAddSalesTerritory.resx">
+      <DependentUpon>fAddSalesTerritory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales\SalesTerritory\fSalesTerritory.resx">
+      <DependentUpon>fSalesTerritory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales\StoreFrm\fAddStore.resx">
+      <DependentUpon>fAddStore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales\StoreFrm\fStore.resx">
+      <DependentUpon>fStore.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Wallnut.Domain.Models.Address.datasource" />
+    <None Include="Properties\DataSources\Wallnut.Domain.Models.AddressType.datasource" />
+    <None Include="Properties\DataSources\Wallnut.Domain.Models.ContactType.datasource" />
+    <None Include="Properties\DataSources\Wallnut.Domain.Models.CountryRegion.datasource" />
+    <None Include="Properties\DataSources\Wallnut.Domain.Models.Currency.datasource" />
+    <None Include="Properties\DataSources\Wallnut.Domain.Models.Customer.datasource" />
+    <None Include="Properties\DataSources\Wallnut.Domain.Models.EmailAddress.datasource" />
+    <None Include="Properties\DataSources\Wallnut.Domain.Models.Employee.datasource" />
+    <None Include="Properties\DataSources\Wallnut.Domain.Models.EmployeeAttendanceHistory.datasource" />
+    <None Include="Properties\DataSources\Wallnut.Domain.Models.EmployeeDepartmentHistory.datasource" />
+    <None Include="Properties\DataSources\Wallnut.Domain.Models.Expenditure.datasource" />
+    <None Include="Properties\DataSources\Wallnut.Domain.Models.ExpenditureCostHistory.datasource" />
+    <None Include="Properties\DataSources\Wallnut.Domain.Models.PersonPhone.datasource" />
+    <None Include="Properties\DataSources\Wallnut.Domain.Models.Product.datasource" />
+    <None Include="Properties\DataSources\Wallnut.Domain.Models.ProductCostHistory.datasource" />
+    <None Include="Properties\DataSources\Wallnut.Domain.Models.ProductInventory.datasource" />
+    <None Include="Properties\DataSources\Wallnut.Domain.Models.ProductListPriceHistory.datasource" />
+    <None Include="Properties\DataSources\Wallnut.Domain.Models.ProductVendor.datasource" />
+    <None Include="Properties\DataSources\Wallnut.Domain.Models.PurchaseOrderDetail.datasource" />
+    <None Include="Properties\DataSources\Wallnut.Domain.Models.PurchaseOrderHeader.datasource" />
+    <None Include="Properties\DataSources\Wallnut.Domain.Models.SalesOrderDetail.datasource" />
+    <None Include="Properties\DataSources\Wallnut.Domain.Models.SalesOrderHeader.datasource" />
+    <None Include="Properties\DataSources\Wallnut.Domain.Models.SalesTerritory.datasource" />
+    <None Include="Properties\DataSources\Wallnut.Domain.Models.Shift.datasource" />
+    <None Include="Properties\DataSources\Wallnut.Domain.Models.ShipMethod.datasource" />
+    <None Include="Properties\DataSources\Wallnut.Domain.Models.Store.datasource" />
+    <None Include="Properties\DataSources\Wallnut.Domain.Models.UnitMeasure.datasource" />
+    <None Include="Properties\DataSources\Wallnut.Domain.Models.Vendor.datasource" />
+    <None Include="Properties\DataSources\Wallnut.Domain.Models.WorkOrder.datasource" />
+    <None Include="Properties\DataSources\Wallnut.Domain.Models.WorkOrderHistory.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="WallnutProductionDataSet.xsc">
+      <DependentUpon>WallnutProductionDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="WallnutProductionDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WallnutProductionDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WallnutProductionDataSet.xss">
+      <DependentUpon>WallnutProductionDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Wallnut.BusinessLogic\Wallnut.BusinessLogic.csproj">
+      <Project>{6E765271-B2E1-46CF-B8E6-9736810CAB63}</Project>
+      <Name>Wallnut.BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Wallnut.Domain\Wallnut.Domain.csproj">
+      <Project>{29F47619-5053-4822-ADFE-F4B9FB289EAB}</Project>
+      <Name>Wallnut.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Wallnut.Utils\Wallnut.Utils.csproj">
+      <Project>{6697F2E9-B67E-4C1C-B42F-20EB50406056}</Project>
+      <Name>Wallnut.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\edit_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\edit_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\add_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\users.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\purchase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\base_business_contacts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\vydat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\prinyat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\door_out.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
