@@ -15,6 +15,7 @@ namespace Wallnut.UI.Purchasing.PurchaseOrder
     {
         public List<Wallnut.Domain.Models.Product> ProductList;
         private int purchaseOrderID { get; set; }
+        public bool UpdateInForm = false;
         public fAddPurchaseOrderDetail()
         {
 
@@ -89,7 +90,9 @@ namespace Wallnut.UI.Purchasing.PurchaseOrder
                 (this.entity as Wallnut.Domain.Models.PurchaseOrderDetail).PurchaseOrderID = purchaseOrderID;
             }
             BindingData();
-        }         
+            InitUpdateInFormEvent();
+         }
+                
          #endregion 
 
 
@@ -128,9 +131,14 @@ namespace Wallnut.UI.Purchasing.PurchaseOrder
 
         private void tbReceivedQty_TextChanged(object sender, EventArgs e)
         {
-            double val = Convert.ToDouble(tbReceivedQty.Text == "" ? "0" : tbReceivedQty.Text) -
-                Convert.ToDouble(tbRejectedQty.Text == "" ? "0" : tbRejectedQty.Text);
-            lblLineTotal.Text = string.Format("{0}", val);
+            double ReceivedQty = Convert.ToDouble(tbReceivedQty.Text == "" ? "0" : tbReceivedQty.Text);
+            double RejectedQty = Convert.ToDouble(tbRejectedQty.Text == "" ? "0" : tbRejectedQty.Text);
+            double val=0;
+            if (RejectedQty > ReceivedQty)
+            { val = 0; }
+            else
+             val = ReceivedQty - RejectedQty;
+            lblSklad.Text = string.Format("{0}", val);
         }
 
         private void tbReceivedQty_Validating(object sender, CancelEventArgs e)
@@ -140,13 +148,82 @@ namespace Wallnut.UI.Purchasing.PurchaseOrder
 
         private void tbRejectedQty_Validating(object sender, CancelEventArgs e)
         {
-            Wallnut.Utils.Validation.FieldIsRequired<TextBox>(ref  sender, ref  e, "Брак", ref ep, Utils.ValType.Numeric);
+          //  Wallnut.Utils.Validation.FieldIsRequired<TextBox>(ref  sender, ref  e, "Брак", ref ep, Utils.ValType.Numeric);
         }
 
         private void tbOrderQty_TextChanged(object sender, EventArgs e)
         {
-            double val = Convert.ToDouble(tbOrderQty.Text == "" ? "0" : tbOrderQty.Text) * Convert.ToDouble(tbUnitPrice.Text == "" ? "0" : tbUnitPrice.Text);
+            double OrderQty = 0;
+            double UnitPrice =0;
+            if (double.TryParse(tbOrderQty.Text,out OrderQty) && (double.TryParse(tbUnitPrice.Text,out UnitPrice)))
+            {
+                double val = OrderQty * UnitPrice;
             lblLineTotal.Text = string.Format("{0}", val);
+            }
         }
+
+        private void fAddPurchaseOrderDetail_Activated(object sender, EventArgs e)
+        {
+            dtDueDate.Focus();
+        }
+
+        #region OnHotKeyDown
+        private void OnHotKeyDown(KeyEventArgs e)
+        {
+
+            if (e.Control && e.KeyCode == Keys.Enter)
+            {
+                btnOK_Click(this, EventArgs.Empty);
+            }
+            else if (e.KeyCode == Keys.Escape) this.Close();
+
+        }
+        #endregion
+
+        private void fAddPurchaseOrderDetail_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (UpdateInForm && ((sender as Form).DialogResult) != System.Windows.Forms.DialogResult.OK)
+            {
+                DialogResult result = MessageBox.Show("Сохранить изменения?", "Внимание", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    btnOK_Click(this, EventArgs.Empty);
+                }
+                else if (result == System.Windows.Forms.DialogResult.No)
+                {
+                    //Не сохраняем
+                }
+                else e.Cancel = true;//Отменяем действие
+            }
+        }
+
+        private void fAddPurchaseOrderDetail_KeyDown(object sender, KeyEventArgs e)
+        {
+            OnHotKeyDown(e);
+        }
+        #region InitUpdateInFormEvent
+        private void InitUpdateInFormEvent()
+        {
+            foreach (var item in this.tableLayoutPanel1.Controls)
+            {
+                if (item is TextBox)
+                {
+                    (item as TextBox).TextChanged += (o, e) =>
+                    {
+                        UpdateInForm = true;
+                    };
+                }
+                else if (item is ComboBox)
+                {
+                    (item as ComboBox).SelectedIndexChanged += (o, e) => { UpdateInForm = true; };
+                }
+                else if (item is CheckBox)
+                {
+                    (item as CheckBox).CheckedChanged += (o, e) => { UpdateInForm = true; };
+                }
+            }
+        }
+        #endregion 
+
     }
 }

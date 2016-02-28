@@ -16,13 +16,14 @@ namespace Wallnut.UI.Purchasing.PurchaseOrder
        public List<Wallnut.Domain.Models.Employee> EmployeeList;
        public List<Wallnut.Domain.Models.Vendor> VendorList;
        public List<Wallnut.Domain.Models.ShipMethod> ShipMethodList;
+       public bool UpdateInForm = false;
 
         public fAddPurchaseOrder()
         {
-
             InitializeComponent();
         }
 
+        #region BindingData
         private void BindingData()
         {
 
@@ -128,29 +129,45 @@ namespace Wallnut.UI.Purchasing.PurchaseOrder
             "Freight",
             false, DataSourceUpdateMode.OnPropertyChanged);
         }
+        #endregion
+        
 
         private void fEdit_Load(object sender, EventArgs e)
         {
             BindingData();
+            InitUpdateInFormEvent();
         }
-
-        private void tbName_Validating(object sender, CancelEventArgs e)
+        #region InitUpdateInFormEvent
+        private void InitUpdateInFormEvent()
         {
-            if (string.IsNullOrEmpty(tbRevisionNumber.Text))
+            foreach (var item in this.panel1.Controls[0].Controls)
             {
-                e.Cancel = true; tbRevisionNumber.Focus(); ep.SetError(tbRevisionNumber, "Поле наименование не может быть пустым");
-            }
-            else
-            {
-                e.Cancel = false; ep.SetError(tbRevisionNumber, "");
+                        if (item is TextBox)
+                        {
+                            (item as TextBox).TextChanged += (o, e) =>
+                            {
+                                UpdateInForm = true;
+                            };
+                        }
+                        else if (item is ComboBox)
+                        {
+                            (item as ComboBox).SelectedIndexChanged += (o, e) => { UpdateInForm = true; };
+                        }
+                        else if (item is CheckBox)
+                        {
+                            (item as CheckBox).CheckedChanged += (o, e) => { UpdateInForm = true; };
+                        }
             }
         }
+        #endregion
+
+
 
         private void btnOK_Click(object sender, EventArgs e)
         {
              (this.entity as Wallnut.Domain.Models.PurchaseOrderHeader).ModifiedDate = DateTime.Now;
              (this.entity as Wallnut.Domain.Models.PurchaseOrderHeader).OrderDate = this.dtOrderDate.Value;
-            // (this.entity as Wallnut.Domain.Models.PurchaseOrderHeader).ShipDate = this.dtShipDate.Value;
+           
              (this.entity as Wallnut.Domain.Models.PurchaseOrderHeader).ShipDate = this.dtShipDate.Value;
             if (!this.ValidateChildren())
             {
@@ -162,6 +179,83 @@ namespace Wallnut.UI.Purchasing.PurchaseOrder
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void tbRevisionNumber_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void tbRevisionNumber_Validating(object sender, CancelEventArgs e)
+        {
+            Wallnut.Utils.Validation.FieldIsRequired<TextBox>(ref  sender, ref  e, "Наименование", ref ep);
+        }
+
+        private bool ValidateForm()
+        {
+            if (!this.ValidateChildren())
+            {
+                this.DialogResult = System.Windows.Forms.DialogResult.None;
+                return false;
+            }
+            return true;
+        }
+
+        private void fAddPurchaseOrder_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (UpdateInForm && ((sender as Form).DialogResult) != System.Windows.Forms.DialogResult.OK)
+            {
+                DialogResult result = MessageBox.Show("Сохранить изменения?", "Внимание", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    btnOK_Click(this, EventArgs.Empty);
+                }
+                else if (result == System.Windows.Forms.DialogResult.No)
+                {
+                    //Не сохраняем
+                }
+                else e.Cancel = true;//Отменяем действие
+            }
+
+            
+        }
+
+        private void cbEmployeeID_Validating(object sender, CancelEventArgs e)
+        {
+            Wallnut.Utils.Validation.FieldIsRequired<ComboBox>(ref  sender, ref  e, "Ответственный", ref ep);
+        }
+
+        private void cbVendorID_Validating(object sender, CancelEventArgs e)
+        {
+            Wallnut.Utils.Validation.FieldIsRequired<ComboBox>(ref  sender, ref  e, "Поставщик", ref ep);
+        }
+
+        private void cbShipMethodID_Validating(object sender, CancelEventArgs e)
+        {
+            Wallnut.Utils.Validation.FieldIsRequired<ComboBox>(ref  sender, ref  e, "Метод доставки", ref ep);
+        }
+
+        #region OnHotKeyDown
+        private void OnHotKeyDown(KeyEventArgs e)
+        {
+
+            if (e.Control && e.KeyCode == Keys.Enter)
+            {
+                btnOK_Click(this, EventArgs.Empty);
+            }
+            else if (e.KeyCode == Keys.Escape) this.Close();
+
+        }
+        #endregion
+
+        private void fAddPurchaseOrder_KeyDown(object sender, KeyEventArgs e)
+        {
+            OnHotKeyDown( e);
+        }
+
+        private void fAddPurchaseOrder_Activated(object sender, EventArgs e)
+        {
+            tbRevisionNumber.Focus();
         }
     }
 }

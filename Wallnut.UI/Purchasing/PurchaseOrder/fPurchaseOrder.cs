@@ -89,14 +89,17 @@ namespace Wallnut.UI.Purchasing.PurchaseOrder
 
         public void DetailReread()
         {
-            var entity = dgv.SelectedRows[0].DataBoundItem as Wallnut.Domain.Models.PurchaseOrderHeader;
-            int PurchaseOrderId = entity.PurchaseOrderID;
-
-            detailBehavior.Predicate = (x => x.PurchaseOrderID == PurchaseOrderId);
-            if (detailBehavior.EntityList != null)
+            if (dgv.RowCount > 0)
             {
-                detailBehavior.Refresh();
-                bsDetail.DataSource = detailBehavior.EntityList.ToList();
+                var entity = dgv.SelectedRows[0].DataBoundItem as Wallnut.Domain.Models.PurchaseOrderHeader;
+                int PurchaseOrderId = entity.PurchaseOrderID;
+
+                detailBehavior.Predicate = (x => x.PurchaseOrderID == PurchaseOrderId);
+                if (detailBehavior.EntityList != null)
+                {
+                    detailBehavior.Refresh();
+                    bsDetail.DataSource = detailBehavior.EntityList.ToList();
+                }
             }
         }
         #endregion

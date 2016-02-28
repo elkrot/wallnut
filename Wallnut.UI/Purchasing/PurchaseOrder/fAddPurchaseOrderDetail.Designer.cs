@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnOK = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tbNamelbl = new System.Windows.Forms.Label();
             this.tbOrderQty = new System.Windows.Forms.TextBox();
@@ -45,15 +48,48 @@
             this.tbReceivedQty = new System.Windows.Forms.TextBox();
             this.tbRejectedQty = new System.Windows.Forms.TextBox();
             this.lblLineTotal = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnOK = new System.Windows.Forms.Button();
+            this.lblSklad = new System.Windows.Forms.Label();
             this.ep = new System.Windows.Forms.ErrorProvider(this.components);
-            this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ep)).BeginInit();
             this.SuspendLayout();
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.Controls.Add(this.btnCancel);
+            this.flowLayoutPanel1.Controls.Add(this.btnOK);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 297);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(672, 40);
+            this.flowLayoutPanel1.TabIndex = 1;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.Location = new System.Drawing.Point(556, 4);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(112, 32);
+            this.btnCancel.TabIndex = 1;
+            this.btnCancel.Text = "Отмена";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            // 
+            // btnOK
+            // 
+            this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnOK.Location = new System.Drawing.Point(436, 4);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(4);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(112, 32);
+            this.btnOK.TabIndex = 0;
+            this.btnOK.Text = "OK";
+            this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -77,7 +113,7 @@
             this.tableLayoutPanel1.Controls.Add(this.tbReceivedQty, 2, 6);
             this.tableLayoutPanel1.Controls.Add(this.tbRejectedQty, 2, 7);
             this.tableLayoutPanel1.Controls.Add(this.lblLineTotal, 2, 5);
-            this.tableLayoutPanel1.Controls.Add(this.label9, 2, 8);
+            this.tableLayoutPanel1.Controls.Add(this.lblSklad, 2, 8);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
@@ -127,7 +163,7 @@
             this.dtDueDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtDueDate.Name = "dtDueDate";
             this.dtDueDate.Size = new System.Drawing.Size(194, 24);
-            this.dtDueDate.TabIndex = 2;
+            this.dtDueDate.TabIndex = 0;
             // 
             // label1
             // 
@@ -161,7 +197,7 @@
             this.cbProduct.Margin = new System.Windows.Forms.Padding(4);
             this.cbProduct.Name = "cbProduct";
             this.cbProduct.Size = new System.Drawing.Size(196, 26);
-            this.cbProduct.TabIndex = 4;
+            this.cbProduct.TabIndex = 2;
             this.cbProduct.Validating += new System.ComponentModel.CancelEventHandler(this.cbProduct_Validating);
             // 
             // label3
@@ -231,7 +267,7 @@
             this.tbUnitPrice.Margin = new System.Windows.Forms.Padding(4);
             this.tbUnitPrice.Name = "tbUnitPrice";
             this.tbUnitPrice.Size = new System.Drawing.Size(196, 24);
-            this.tbUnitPrice.TabIndex = 5;
+            this.tbUnitPrice.TabIndex = 3;
             this.tbUnitPrice.TextChanged += new System.EventHandler(this.tbOrderQty_TextChanged);
             this.tbUnitPrice.Validating += new System.ComponentModel.CancelEventHandler(this.tbUnitPrice_Validating);
             // 
@@ -242,7 +278,7 @@
             this.tbReceivedQty.Margin = new System.Windows.Forms.Padding(4);
             this.tbReceivedQty.Name = "tbReceivedQty";
             this.tbReceivedQty.Size = new System.Drawing.Size(196, 24);
-            this.tbReceivedQty.TabIndex = 5;
+            this.tbReceivedQty.TabIndex = 4;
             this.tbReceivedQty.TextChanged += new System.EventHandler(this.tbReceivedQty_TextChanged);
             this.tbReceivedQty.Validating += new System.ComponentModel.CancelEventHandler(this.tbReceivedQty_Validating);
             // 
@@ -254,6 +290,7 @@
             this.tbRejectedQty.Name = "tbRejectedQty";
             this.tbRejectedQty.Size = new System.Drawing.Size(196, 24);
             this.tbRejectedQty.TabIndex = 5;
+            this.tbRejectedQty.TextChanged += new System.EventHandler(this.tbReceivedQty_TextChanged);
             this.tbRejectedQty.Validating += new System.ComponentModel.CancelEventHandler(this.tbRejectedQty_Validating);
             // 
             // lblLineTotal
@@ -262,57 +299,21 @@
             this.lblLineTotal.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblLineTotal.Location = new System.Drawing.Point(442, 164);
             this.lblLineTotal.Name = "lblLineTotal";
-            this.lblLineTotal.Size = new System.Drawing.Size(46, 31);
+            this.lblLineTotal.Size = new System.Drawing.Size(16, 31);
             this.lblLineTotal.TabIndex = 6;
-            this.lblLineTotal.Text = "label8";
+            this.lblLineTotal.Text = "0";
             this.lblLineTotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label9
+            // lblSklad
             // 
-            this.label9.AutoSize = true;
-            this.label9.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label9.Location = new System.Drawing.Point(442, 258);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(46, 31);
-            this.label9.TabIndex = 6;
-            this.label9.Text = "label8";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.AutoSize = true;
-            this.flowLayoutPanel1.Controls.Add(this.btnCancel);
-            this.flowLayoutPanel1.Controls.Add(this.btnOK);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 297);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(672, 40);
-            this.flowLayoutPanel1.TabIndex = 1;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(556, 4);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(112, 32);
-            this.btnCancel.TabIndex = 0;
-            this.btnCancel.Text = "Отмена";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            // 
-            // btnOK
-            // 
-            this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOK.Location = new System.Drawing.Point(436, 4);
-            this.btnOK.Margin = new System.Windows.Forms.Padding(4);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(112, 32);
-            this.btnOK.TabIndex = 1;
-            this.btnOK.Text = "OK";
-            this.btnOK.UseVisualStyleBackColor = true;
-            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
+            this.lblSklad.AutoSize = true;
+            this.lblSklad.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblSklad.Location = new System.Drawing.Point(442, 258);
+            this.lblSklad.Name = "lblSklad";
+            this.lblSklad.Size = new System.Drawing.Size(16, 31);
+            this.lblSklad.TabIndex = 6;
+            this.lblSklad.Text = "0";
+            this.lblSklad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ep
             // 
@@ -326,14 +327,21 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.MinimumSize = new System.Drawing.Size(36, 48);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(688, 375);
             this.Name = "fAddPurchaseOrderDetail";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Состав Заказа на закупку.";
+            this.Activated += new System.EventHandler(this.fAddPurchaseOrderDetail_Activated);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fAddPurchaseOrderDetail_FormClosing);
             this.Load += new System.EventHandler(this.fEdit_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fAddPurchaseOrderDetail_KeyDown);
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ep)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -362,6 +370,6 @@
         private System.Windows.Forms.TextBox tbReceivedQty;
         private System.Windows.Forms.TextBox tbRejectedQty;
         private System.Windows.Forms.Label lblLineTotal;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblSklad;
     }
 }
