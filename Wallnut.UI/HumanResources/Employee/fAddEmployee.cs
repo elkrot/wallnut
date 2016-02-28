@@ -60,6 +60,16 @@ namespace Wallnut.UI
         #region Load
         private void fAddEmployee_Load(object sender, EventArgs e)
         {
+            BindingData();
+
+            InitUpdateInFormEvent(); 
+
+        }
+        #endregion
+
+        #region BindingData
+         private void BindingData()
+        {
             this.bsEmployee.DataSource = employee;
             this.bsEmailAddresses.DataSource = employee.Person.EmailAddresses;
             this.bsPersonPhones.DataSource = employee.Person.PersonPhones;
@@ -72,23 +82,24 @@ namespace Wallnut.UI
             cbMaritalStatus.ValueMember = "Key";
             cbMaritalStatus.DisplayMember = "Value";
             employee.MaritalStatus = employee.MaritalStatus ?? "M";
-            cbMaritalStatus.SelectedValue = employee.MaritalStatus ;
+            cbMaritalStatus.SelectedValue = employee.MaritalStatus;
 
             cbMaritalStatus.SelectedIndexChanged += (x, y) =>
             { employee.MaritalStatus = cbMaritalStatus.SelectedValue.ToString(); };
 
-           /**/ 
-            
+            /**/
+
             cbSalariedFlag.DataSource = new BindingSource(
                 new Dictionary<bool, string>() { { true, "Почасовая" }, { false, "С окладом" } }, null);
             cbSalariedFlag.ValueMember = "Key";
             cbSalariedFlag.DisplayMember = "Value";
-            cbSalariedFlag.SelectedValue =(bool)employee.SalariedFlag;
+            cbSalariedFlag.SelectedValue = (bool)employee.SalariedFlag;
             //;
 
             cbSalariedFlag.SelectedIndexChanged += (x, y) =>
             { employee.SalariedFlag = (bool)cbSalariedFlag.SelectedValue; };/**/
-            if (employee.Gender ==null){
+            if (employee.Gender == null)
+            {
                 employee.Gender = "M";
             }
             rbGenderM.Checked = (employee.Gender == "M");
@@ -98,23 +109,17 @@ namespace Wallnut.UI
             PasswordTextBox.Text = EMPTY_PASS;
             PasswordTextBox2.Text = EMPTY_PASS;
 
-            if (employee.Person.PersonType == null) {
+            if (employee.Person.PersonType == null)
+            {
                 employee.Person.PersonType = "EM";
             }
-
-            InitUpdateInFormEvent(); 
-
         }
         #endregion
-        
-        private void OKP(object sender, EventArgs e)
-        {
-            MessageBox.Show(e.ToString(), "Pressed");
-        }
+
+
 
         private void fAddEmployee_Activated(object sender, EventArgs e)
         {
-           
             lastNameTextBox.Focus();
         }
 

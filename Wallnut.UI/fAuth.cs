@@ -51,8 +51,7 @@ namespace Wallnut.UI
                // ret = true;
                    if (ret)
                 {
-                    
-                             
+        
                     this.Hide();
                     fMain fm = new fMain();
                     fm.ShowDialog();

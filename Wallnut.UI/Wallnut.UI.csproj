@@ -364,6 +364,12 @@
     <Compile Include="Purchasing\PurchaseOrder\fAddPurchaseOrderDetail.Designer.cs">
       <DependentUpon>fAddPurchaseOrderDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="Purchasing\PurchaseOrder\fCondition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchasing\PurchaseOrder\fCondition.Designer.cs">
+      <DependentUpon>fCondition.cs</DependentUpon>
+    </Compile>
     <Compile Include="Purchasing\PurchaseOrder\fPurchaseOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -661,6 +667,9 @@
     <EmbeddedResource Include="Purchasing\PurchaseOrder\fAddPurchaseOrderDetail.resx">
       <DependentUpon>fAddPurchaseOrderDetail.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Purchasing\PurchaseOrder\fCondition.resx">
+      <DependentUpon>fCondition.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Purchasing\PurchaseOrder\fPurchaseOrder.resx">
       <DependentUpon>fPurchaseOrder.cs</DependentUpon>
     </EmbeddedResource>
@@ -729,6 +738,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Wallnut.Domain.Entities.PurchaseCondition.datasource" />
     <None Include="Properties\DataSources\Wallnut.Domain.Models.Address.datasource" />
     <None Include="Properties\DataSources\Wallnut.Domain.Models.AddressType.datasource" />
     <None Include="Properties\DataSources\Wallnut.Domain.Models.ContactType.datasource" />

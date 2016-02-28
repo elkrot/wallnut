@@ -74,6 +74,7 @@
     <Compile Include="Entities\ProductInventory.cs" />
     <Compile Include="Entities\ProductListPriceHistory.cs" />
     <Compile Include="Entities\ProductVendor.cs" />
+    <Compile Include="Entities\PurchaseCondition.cs" />
     <Compile Include="Entities\PurchaseOrderDetail.cs" />
     <Compile Include="Entities\PurchaseOrderHeader.cs" />
     <Compile Include="Entities\SalesOrderDetail.cs" />

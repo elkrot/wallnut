@@ -50,7 +50,7 @@ namespace Wallnut.BusinessLogic.Implementations
             (Context as DbContext).SaveChanges();
             return be.BusinessEntityID;
         }
-        public void SaveVendor(Vendor vendor)
+     /*   public void SaveVendor(Vendor vendor)
         {
             if (vendor.BusinessEntityID == 0)
             {
@@ -62,7 +62,8 @@ namespace Wallnut.BusinessLogic.Implementations
             {
                 (Context as DbContext).Entry(vendor).State = System.Data.EntityState.Modified;
             }
+            vendor.ModifiedDate = DateTime.Now;
             // (EFDbContext as DbContext).SaveChanges();
-        }
+        }/*/
     }
 }

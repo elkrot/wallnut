@@ -65,7 +65,7 @@
             // 
             nameLabel.AutoSize = true;
             nameLabel.Dock = System.Windows.Forms.DockStyle.Left;
-            nameLabel.Location = new System.Drawing.Point(3, 0);
+            nameLabel.Location = new System.Drawing.Point(23, 20);
             nameLabel.Name = "nameLabel";
             nameLabel.Size = new System.Drawing.Size(83, 26);
             nameLabel.TabIndex = 4;
@@ -76,7 +76,7 @@
             // 
             productNumberLabel.AutoSize = true;
             productNumberLabel.Dock = System.Windows.Forms.DockStyle.Left;
-            productNumberLabel.Location = new System.Drawing.Point(3, 26);
+            productNumberLabel.Location = new System.Drawing.Point(23, 46);
             productNumberLabel.Name = "productNumberLabel";
             productNumberLabel.Size = new System.Drawing.Size(26, 26);
             productNumberLabel.TabIndex = 5;
@@ -87,7 +87,7 @@
             // 
             weightUnitMeasureCodeLabel.AutoSize = true;
             weightUnitMeasureCodeLabel.Dock = System.Windows.Forms.DockStyle.Left;
-            weightUnitMeasureCodeLabel.Location = new System.Drawing.Point(3, 112);
+            weightUnitMeasureCodeLabel.Location = new System.Drawing.Point(23, 132);
             weightUnitMeasureCodeLabel.Name = "weightUnitMeasureCodeLabel";
             weightUnitMeasureCodeLabel.Size = new System.Drawing.Size(109, 34);
             weightUnitMeasureCodeLabel.TabIndex = 8;
@@ -98,7 +98,7 @@
             // 
             standardCostLabel.AutoSize = true;
             standardCostLabel.Dock = System.Windows.Forms.DockStyle.Left;
-            standardCostLabel.Location = new System.Drawing.Point(3, 146);
+            standardCostLabel.Location = new System.Drawing.Point(23, 166);
             standardCostLabel.Name = "standardCostLabel";
             standardCostLabel.Size = new System.Drawing.Size(62, 26);
             standardCostLabel.TabIndex = 9;
@@ -109,7 +109,7 @@
             // 
             listPriceLabel.AutoSize = true;
             listPriceLabel.Dock = System.Windows.Forms.DockStyle.Left;
-            listPriceLabel.Location = new System.Drawing.Point(3, 172);
+            listPriceLabel.Location = new System.Drawing.Point(23, 192);
             listPriceLabel.Name = "listPriceLabel";
             listPriceLabel.Size = new System.Drawing.Size(88, 26);
             listPriceLabel.TabIndex = 10;
@@ -125,13 +125,13 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 242);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(435, 29);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(471, 29);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(357, 3);
+            this.btnCancel.Location = new System.Drawing.Point(393, 3);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 1;
@@ -141,7 +141,7 @@
             // btnOK
             // 
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOK.Location = new System.Drawing.Point(276, 3);
+            this.btnOK.Location = new System.Drawing.Point(312, 3);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 0;
@@ -152,25 +152,28 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.AutoSize = true;
-            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(listPriceLabel, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.listPriceTextBox, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(standardCostLabel, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.standardCostTextBox, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.nameTextBox, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(nameLabel, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.productNumberTextBox, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(productNumberLabel, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.finishedGoodsFlagCheckBox, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.makeFlagCheckBox, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(weightUnitMeasureCodeLabel, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 4);
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(listPriceLabel, 1, 7);
+            this.tableLayoutPanel1.Controls.Add(this.listPriceTextBox, 2, 7);
+            this.tableLayoutPanel1.Controls.Add(standardCostLabel, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.standardCostTextBox, 2, 6);
+            this.tableLayoutPanel1.Controls.Add(this.nameTextBox, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(nameLabel, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.productNumberTextBox, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(productNumberLabel, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.finishedGoodsFlagCheckBox, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.makeFlagCheckBox, 2, 4);
+            this.tableLayoutPanel1.Controls.Add(weightUnitMeasureCodeLabel, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 2, 5);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 8;
+            this.tableLayoutPanel1.RowCount = 9;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -179,16 +182,16 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(435, 242);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(471, 242);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // listPriceTextBox
             // 
             this.listPriceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "ListPrice", true));
             this.listPriceTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listPriceTextBox.Location = new System.Drawing.Point(118, 175);
+            this.listPriceTextBox.Location = new System.Drawing.Point(138, 195);
             this.listPriceTextBox.Name = "listPriceTextBox";
-            this.listPriceTextBox.Size = new System.Drawing.Size(314, 20);
+            this.listPriceTextBox.Size = new System.Drawing.Size(310, 20);
             this.listPriceTextBox.TabIndex = 6;
             // 
             // productBindingSource
@@ -199,18 +202,18 @@
             // 
             this.standardCostTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "StandardCost", true));
             this.standardCostTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.standardCostTextBox.Location = new System.Drawing.Point(118, 149);
+            this.standardCostTextBox.Location = new System.Drawing.Point(138, 169);
             this.standardCostTextBox.Name = "standardCostTextBox";
-            this.standardCostTextBox.Size = new System.Drawing.Size(314, 20);
+            this.standardCostTextBox.Size = new System.Drawing.Size(310, 20);
             this.standardCostTextBox.TabIndex = 5;
             // 
             // nameTextBox
             // 
             this.nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "Name", true));
             this.nameTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.nameTextBox.Location = new System.Drawing.Point(118, 3);
+            this.nameTextBox.Location = new System.Drawing.Point(138, 23);
             this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(314, 20);
+            this.nameTextBox.Size = new System.Drawing.Size(310, 20);
             this.nameTextBox.TabIndex = 0;
             this.nameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.nameTextBox_Validating);
             // 
@@ -218,15 +221,15 @@
             // 
             this.productNumberTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "ProductNumber", true));
             this.productNumberTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.productNumberTextBox.Location = new System.Drawing.Point(118, 29);
+            this.productNumberTextBox.Location = new System.Drawing.Point(138, 49);
             this.productNumberTextBox.Name = "productNumberTextBox";
-            this.productNumberTextBox.Size = new System.Drawing.Size(314, 20);
+            this.productNumberTextBox.Size = new System.Drawing.Size(310, 20);
             this.productNumberTextBox.TabIndex = 1;
             // 
             // finishedGoodsFlagCheckBox
             // 
             this.finishedGoodsFlagCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.productBindingSource, "FinishedGoodsFlag", true));
-            this.finishedGoodsFlagCheckBox.Location = new System.Drawing.Point(118, 55);
+            this.finishedGoodsFlagCheckBox.Location = new System.Drawing.Point(138, 75);
             this.finishedGoodsFlagCheckBox.Name = "finishedGoodsFlagCheckBox";
             this.finishedGoodsFlagCheckBox.Size = new System.Drawing.Size(252, 24);
             this.finishedGoodsFlagCheckBox.TabIndex = 2;
@@ -236,7 +239,7 @@
             // makeFlagCheckBox
             // 
             this.makeFlagCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.productBindingSource, "MakeFlag", true));
-            this.makeFlagCheckBox.Location = new System.Drawing.Point(118, 85);
+            this.makeFlagCheckBox.Location = new System.Drawing.Point(138, 105);
             this.makeFlagCheckBox.Name = "makeFlagCheckBox";
             this.makeFlagCheckBox.Size = new System.Drawing.Size(226, 24);
             this.makeFlagCheckBox.TabIndex = 3;
@@ -248,9 +251,9 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.cbUnitMesure);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(118, 115);
+            this.panel1.Location = new System.Drawing.Point(138, 135);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(314, 28);
+            this.panel1.Size = new System.Drawing.Size(310, 28);
             this.panel1.TabIndex = 11;
             // 
             // button1
@@ -283,7 +286,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(435, 271);
+            this.ClientSize = new System.Drawing.Size(471, 271);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.MaximumSize = new System.Drawing.Size(551, 409);

@@ -17,19 +17,30 @@ namespace Wallnut.UI.Implementations
     { public Action RereadDataSource;
         public event EventHandler BeforeAddEntity;
         public event EventHandler BeforeUpdateEntity;
- 
+        public event EventHandler AfterAddEntity;
+        public event EventHandler AfterUpdateEntity;
+        public event EventHandler AfterRemoveEntity;
+
         public ListFormBehavior() : base() { 
        }
         public ListFormBehavior(Expression<Func<T, bool>> predicate, Action rereadDataSource)
             : base()
         {
-           
-            Predicate = predicate;
+
+            SetCondition(predicate);
             RereadDataSource += rereadDataSource;
+        }
+
+        public void SetCondition(Expression<Func<T, bool>> predicate)
+        {
+            Predicate = predicate;
         }
         
         public Expression<Func<T, bool>> Predicate = null;
         public List<T> EntityList { get; set; }
+
+
+
         #region Add
         public void AddEntity(params object[] addParams)
         {
@@ -49,13 +60,17 @@ namespace Wallnut.UI.Implementations
                     BusinessLogic.Interfaces.IRepository<T> repo =unitOfWork.GetRepository<T>();
                     if (repo == null)
                         throw new ArgumentNullException("Отсутствует репозиторий", "репо");
-                    //BeforeAddEntity(this, EventArgs.Empty);
+                    if (BeforeAddEntity!=null)
+                        BeforeAddEntity(this, EventArgs.Empty);
+
                     repo.Add(frm.entity as T);
                     unitOfWork.Complete();
                     var rep = unitOfWork.GetRepository<T>().Find(Predicate);
                     EntityList = rep.ToList();
                 }
             }
+            if (AfterAddEntity!=null)
+                AfterAddEntity (this, EventArgs.Empty);
             RereadDataSource();
         }
         #endregion
@@ -63,9 +78,7 @@ namespace Wallnut.UI.Implementations
         //var entity = dgv.SelectedRows[0].DataBoundItem as Entity;
         //int id=entity.%%%Id
         #region Update
-        public void UpdateEntity(params object[] KeyValues)
-           
-            
+        public void UpdateEntity(params object[] KeyValues)  
         {
             TAddForm frm = new TAddForm();
             frm.Text += "Изменение ";
@@ -83,12 +96,19 @@ namespace Wallnut.UI.Implementations
                 DialogResult result = frm.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                  //  BeforeUpdateEntity(this, EventArgs.Empty);
+                    if (BeforeUpdateEntity != null)
+                    BeforeUpdateEntity(this, EventArgs.Empty);
                     repo.Update(frm.entity as T);
                     unitOfWork.Complete();
+
+                    if (AfterRemoveEntity != null)
+                        AfterRemoveEntity(this, EventArgs.Empty);
+
                     var rep = repo.Find(Predicate);
                     EntityList = rep.ToList();
                 }
+                if (AfterUpdateEntity != null)
+                    AfterUpdateEntity(this, EventArgs.Empty);
                 RereadDataSource();
             }
         }
