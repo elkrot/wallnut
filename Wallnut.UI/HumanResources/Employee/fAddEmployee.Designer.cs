@@ -110,17 +110,6 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.dvgEmailAddress = new System.Windows.Forms.DataGridView();
-            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.City = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StateProvince = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PostalCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.businessEntityIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressTypeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modifiedDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.businessEntityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsAddresses = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigator3 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem2 = new System.Windows.Forms.ToolStripButton();
@@ -141,6 +130,13 @@
             this.ep = new System.Windows.Forms.ErrorProvider(this.components);
             this.bsPersonPhones = new System.Windows.Forms.BindingSource(this.components);
             this.bsPerson = new System.Windows.Forms.BindingSource(this.components);
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.City = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StateProvince = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PostalCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.businessEntityIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressTypeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             nationalIDNumberLabel = new System.Windows.Forms.Label();
             jobTitleLabel = new System.Windows.Forms.Label();
             birthDateLabel = new System.Windows.Forms.Label();
@@ -755,6 +751,9 @@
             // 
             // dgvEmailAddresses
             // 
+            this.dgvEmailAddresses.AllowUserToAddRows = false;
+            this.dgvEmailAddresses.AllowUserToDeleteRows = false;
+            this.dgvEmailAddresses.AllowUserToResizeRows = false;
             this.dgvEmailAddresses.AutoGenerateColumns = false;
             this.dgvEmailAddresses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmailAddresses.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -913,6 +912,8 @@
             // 
             // dvgPersonPhones
             // 
+            this.dvgPersonPhones.AllowUserToAddRows = false;
+            this.dvgPersonPhones.AllowUserToDeleteRows = false;
             this.dvgPersonPhones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvgPersonPhones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Phone,
@@ -1072,6 +1073,8 @@
             // 
             // dvgEmailAddress
             // 
+            this.dvgEmailAddress.AllowUserToAddRows = false;
+            this.dvgEmailAddress.AllowUserToDeleteRows = false;
             this.dvgEmailAddress.AutoGenerateColumns = false;
             this.dvgEmailAddress.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvgEmailAddress.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1081,11 +1084,7 @@
             this.PostalCode,
             this.businessEntityIDDataGridViewTextBoxColumn,
             this.addressIDDataGridViewTextBoxColumn,
-            this.addressTypeIDDataGridViewTextBoxColumn,
-            this.modifiedDateDataGridViewTextBoxColumn,
-            this.addressDataGridViewTextBoxColumn,
-            this.addressTypeDataGridViewTextBoxColumn,
-            this.businessEntityDataGridViewTextBoxColumn});
+            this.addressTypeIDDataGridViewTextBoxColumn});
             this.dvgEmailAddress.DataSource = this.bsAddresses;
             this.dvgEmailAddress.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dvgEmailAddress.Location = new System.Drawing.Point(0, 0);
@@ -1093,68 +1092,6 @@
             this.dvgEmailAddress.Name = "dvgEmailAddress";
             this.dvgEmailAddress.Size = new System.Drawing.Size(764, 146);
             this.dvgEmailAddress.TabIndex = 2;
-            // 
-            // Address
-            // 
-            this.Address.HeaderText = "Адрес";
-            this.Address.Name = "Address";
-            // 
-            // City
-            // 
-            this.City.HeaderText = "Город";
-            this.City.Name = "City";
-            // 
-            // StateProvince
-            // 
-            this.StateProvince.HeaderText = "Область";
-            this.StateProvince.Name = "StateProvince";
-            // 
-            // PostalCode
-            // 
-            this.PostalCode.HeaderText = "Индекс";
-            this.PostalCode.Name = "PostalCode";
-            // 
-            // businessEntityIDDataGridViewTextBoxColumn
-            // 
-            this.businessEntityIDDataGridViewTextBoxColumn.DataPropertyName = "BusinessEntityID";
-            this.businessEntityIDDataGridViewTextBoxColumn.HeaderText = "BusinessEntityID";
-            this.businessEntityIDDataGridViewTextBoxColumn.Name = "businessEntityIDDataGridViewTextBoxColumn";
-            // 
-            // addressIDDataGridViewTextBoxColumn
-            // 
-            this.addressIDDataGridViewTextBoxColumn.DataPropertyName = "AddressID";
-            this.addressIDDataGridViewTextBoxColumn.HeaderText = "AddressID";
-            this.addressIDDataGridViewTextBoxColumn.Name = "addressIDDataGridViewTextBoxColumn";
-            // 
-            // addressTypeIDDataGridViewTextBoxColumn
-            // 
-            this.addressTypeIDDataGridViewTextBoxColumn.DataPropertyName = "AddressTypeID";
-            this.addressTypeIDDataGridViewTextBoxColumn.HeaderText = "AddressTypeID";
-            this.addressTypeIDDataGridViewTextBoxColumn.Name = "addressTypeIDDataGridViewTextBoxColumn";
-            // 
-            // modifiedDateDataGridViewTextBoxColumn
-            // 
-            this.modifiedDateDataGridViewTextBoxColumn.DataPropertyName = "ModifiedDate";
-            this.modifiedDateDataGridViewTextBoxColumn.HeaderText = "ModifiedDate";
-            this.modifiedDateDataGridViewTextBoxColumn.Name = "modifiedDateDataGridViewTextBoxColumn";
-            // 
-            // addressDataGridViewTextBoxColumn
-            // 
-            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
-            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
-            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
-            // 
-            // addressTypeDataGridViewTextBoxColumn
-            // 
-            this.addressTypeDataGridViewTextBoxColumn.DataPropertyName = "AddressType";
-            this.addressTypeDataGridViewTextBoxColumn.HeaderText = "AddressType";
-            this.addressTypeDataGridViewTextBoxColumn.Name = "addressTypeDataGridViewTextBoxColumn";
-            // 
-            // businessEntityDataGridViewTextBoxColumn
-            // 
-            this.businessEntityDataGridViewTextBoxColumn.DataPropertyName = "BusinessEntity";
-            this.businessEntityDataGridViewTextBoxColumn.HeaderText = "BusinessEntity";
-            this.businessEntityDataGridViewTextBoxColumn.Name = "businessEntityDataGridViewTextBoxColumn";
             // 
             // bsAddresses
             // 
@@ -1331,6 +1268,44 @@
             // 
             this.bsPerson.DataSource = typeof(Wallnut.Domain.Models.Person);
             // 
+            // Address
+            // 
+            this.Address.HeaderText = "Адрес";
+            this.Address.Name = "Address";
+            // 
+            // City
+            // 
+            this.City.HeaderText = "Город";
+            this.City.Name = "City";
+            // 
+            // StateProvince
+            // 
+            this.StateProvince.HeaderText = "Область";
+            this.StateProvince.Name = "StateProvince";
+            // 
+            // PostalCode
+            // 
+            this.PostalCode.HeaderText = "Индекс";
+            this.PostalCode.Name = "PostalCode";
+            // 
+            // businessEntityIDDataGridViewTextBoxColumn
+            // 
+            this.businessEntityIDDataGridViewTextBoxColumn.DataPropertyName = "BusinessEntityID";
+            this.businessEntityIDDataGridViewTextBoxColumn.HeaderText = "BusinessEntityID";
+            this.businessEntityIDDataGridViewTextBoxColumn.Name = "businessEntityIDDataGridViewTextBoxColumn";
+            // 
+            // addressIDDataGridViewTextBoxColumn
+            // 
+            this.addressIDDataGridViewTextBoxColumn.DataPropertyName = "AddressID";
+            this.addressIDDataGridViewTextBoxColumn.HeaderText = "AddressID";
+            this.addressIDDataGridViewTextBoxColumn.Name = "addressIDDataGridViewTextBoxColumn";
+            // 
+            // addressTypeIDDataGridViewTextBoxColumn
+            // 
+            this.addressTypeIDDataGridViewTextBoxColumn.DataPropertyName = "AddressTypeID";
+            this.addressTypeIDDataGridViewTextBoxColumn.HeaderText = "AddressTypeID";
+            this.addressTypeIDDataGridViewTextBoxColumn.Name = "addressTypeIDDataGridViewTextBoxColumn";
+            // 
             // fAddEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -1486,6 +1461,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
         private System.Windows.Forms.DataGridViewTextBoxColumn PhoneNumberTypeID;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailAddress1DataGridViewTextBoxColumn;
+        private System.Windows.Forms.ErrorProvider ep;
         private System.Windows.Forms.DataGridViewTextBoxColumn Address;
         private System.Windows.Forms.DataGridViewTextBoxColumn City;
         private System.Windows.Forms.DataGridViewTextBoxColumn StateProvince;
@@ -1493,11 +1469,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn businessEntityIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn addressIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn addressTypeIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn modifiedDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn addressTypeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn businessEntityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.ErrorProvider ep;
 
     }
 }

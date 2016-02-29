@@ -70,6 +70,9 @@ namespace Wallnut.UI
         #region BindingData
          private void BindingData()
         {
+            if (employee.Person.EmailAddresses.Count == 0) {
+                employee.Person.EmailAddresses = new List<EmailAddress>();
+            }
             this.bsEmployee.DataSource = employee;
             this.bsEmailAddresses.DataSource = employee.Person.EmailAddresses;
             this.bsPersonPhones.DataSource = employee.Person.PersonPhones;
@@ -154,6 +157,7 @@ namespace Wallnut.UI
             }
         }
 
+        #region Validating
         private void firstNameTextBox_Validating(object sender, CancelEventArgs e)
         {
            Wallnut.Utils.Validation.FieldIsRequired<TextBox>(ref  sender, ref  e, "Имя",ref ep);
@@ -185,6 +189,8 @@ namespace Wallnut.UI
         {
             Wallnut.Utils.Validation.FieldIsRequired<TextBox>(ref  sender, ref  e, "ИНН", ref ep);
         }
+        #endregion
+        
 
 
     }
