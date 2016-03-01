@@ -123,7 +123,8 @@ namespace Wallnut.UI
 
         private void fAddEmployee_Activated(object sender, EventArgs e)
         {
-            lastNameTextBox.Focus();
+         // if( tabControl.TabPages[0].Focused)
+          //  lastNameTextBox.Focus();
         }
 
         #region FormClosing
@@ -165,7 +166,7 @@ namespace Wallnut.UI
 
         private void lastNameTextBox_Validating(object sender, CancelEventArgs e)
         {
-            Wallnut.Utils.Validation.FieldIsRequired<TextBox>(ref  sender, ref  e, "Фамлия", ref ep);
+          Wallnut.Utils.Validation.FieldIsRequired<TextBox>(ref  sender, ref  e, "Фамилия", ref ep);
         }
 
         private void middleNameTextBox_Validating(object sender, CancelEventArgs e)
@@ -190,7 +191,12 @@ namespace Wallnut.UI
             Wallnut.Utils.Validation.FieldIsRequired<TextBox>(ref  sender, ref  e, "ИНН", ref ep);
         }
         #endregion
-        
+
+        private void dgvEmailAddresses_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+      
 
 
     }
