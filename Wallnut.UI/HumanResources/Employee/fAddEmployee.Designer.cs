@@ -93,6 +93,9 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dvgPersonPhones = new System.Windows.Forms.DataGridView();
+            this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneNumberTypeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsPersonPhones = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
@@ -133,10 +136,7 @@
             this.btnOk = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.ep = new System.Windows.Forms.ErrorProvider(this.components);
-            this.bsPersonPhones = new System.Windows.Forms.BindingSource(this.components);
             this.bsPerson = new System.Windows.Forms.BindingSource(this.components);
-            this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneNumberTypeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             nationalIDNumberLabel = new System.Windows.Forms.Label();
             jobTitleLabel = new System.Windows.Forms.Label();
             birthDateLabel = new System.Windows.Forms.Label();
@@ -168,6 +168,7 @@
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgPersonPhones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsPersonPhones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).BeginInit();
             this.bindingNavigator2.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -179,7 +180,6 @@
             this.flowLayoutPanel1.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ep)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsPersonPhones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsPerson)).BeginInit();
             this.SuspendLayout();
             // 
@@ -929,6 +929,22 @@
             this.dvgPersonPhones.Size = new System.Drawing.Size(764, 150);
             this.dvgPersonPhones.TabIndex = 1;
             // 
+            // phoneNumberDataGridViewTextBoxColumn
+            // 
+            this.phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
+            this.phoneNumberDataGridViewTextBoxColumn.HeaderText = " № Телефона";
+            this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
+            // 
+            // phoneNumberTypeIDDataGridViewTextBoxColumn
+            // 
+            this.phoneNumberTypeIDDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumberTypeID";
+            this.phoneNumberTypeIDDataGridViewTextBoxColumn.HeaderText = "Тип номера";
+            this.phoneNumberTypeIDDataGridViewTextBoxColumn.Name = "phoneNumberTypeIDDataGridViewTextBoxColumn";
+            // 
+            // bsPersonPhones
+            // 
+            this.bsPersonPhones.DataSource = typeof(Wallnut.Domain.Models.PersonPhone);
+            // 
             // bindingNavigator2
             // 
             this.bindingNavigator2.AddNewItem = this.bindingNavigatorAddNewItem1;
@@ -1290,25 +1306,9 @@
             this.ep.ContainerControl = this;
             this.ep.RightToLeft = true;
             // 
-            // bsPersonPhones
-            // 
-            this.bsPersonPhones.DataSource = typeof(Wallnut.Domain.Models.PersonPhone);
-            // 
             // bsPerson
             // 
             this.bsPerson.DataSource = typeof(Wallnut.Domain.Models.Person);
-            // 
-            // phoneNumberDataGridViewTextBoxColumn
-            // 
-            this.phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
-            this.phoneNumberDataGridViewTextBoxColumn.HeaderText = " № Телефона";
-            this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
-            // 
-            // phoneNumberTypeIDDataGridViewTextBoxColumn
-            // 
-            this.phoneNumberTypeIDDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumberTypeID";
-            this.phoneNumberTypeIDDataGridViewTextBoxColumn.HeaderText = "Тип номера";
-            this.phoneNumberTypeIDDataGridViewTextBoxColumn.Name = "phoneNumberTypeIDDataGridViewTextBoxColumn";
             // 
             // fAddEmployee
             // 
@@ -1354,6 +1354,7 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dvgPersonPhones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsPersonPhones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).EndInit();
             this.bindingNavigator2.ResumeLayout(false);
             this.bindingNavigator2.PerformLayout();
@@ -1368,7 +1369,6 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ep)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsPersonPhones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsPerson)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -80,27 +80,29 @@ namespace Wallnut.UI
             {
                 this.bsAddresses.DataSource = employee.Person.BusinessEntity.BusinessEntityAddresses;
             }
+
+            #region MaritalStatus
             cbMaritalStatus.DataSource = new BindingSource(
                 new Dictionary<string, string>() { { "M", "Состоит в браке" }, { "S", "Не состоит в браке" } }, null);
             cbMaritalStatus.ValueMember = "Key";
             cbMaritalStatus.DisplayMember = "Value";
             employee.MaritalStatus = employee.MaritalStatus ?? "M";
             cbMaritalStatus.SelectedValue = employee.MaritalStatus;
-
             cbMaritalStatus.SelectedIndexChanged += (x, y) =>
             { employee.MaritalStatus = cbMaritalStatus.SelectedValue.ToString(); };
+            #endregion
 
-            /**/
-
+            #region SalariedFlag
             cbSalariedFlag.DataSource = new BindingSource(
-                new Dictionary<bool, string>() { { true, "Почасовая" }, { false, "С окладом" } }, null);
+                new Dictionary<bool, string>() { { true, "Сдельная" }, { false, "С окладом" } }, null);
             cbSalariedFlag.ValueMember = "Key";
             cbSalariedFlag.DisplayMember = "Value";
             cbSalariedFlag.SelectedValue = (bool)employee.SalariedFlag;
-            //;
-
             cbSalariedFlag.SelectedIndexChanged += (x, y) =>
-            { employee.SalariedFlag = (bool)cbSalariedFlag.SelectedValue; };/**/
+            { employee.SalariedFlag = (bool)cbSalariedFlag.SelectedValue; };            
+            #endregion
+
+            #region Gender
             if (employee.Gender == null)
             {
                 employee.Gender = "M";
@@ -109,13 +111,21 @@ namespace Wallnut.UI
             rbGenderF.Checked = employee.Gender == "F";
             rbGenderF.CheckedChanged += (x, y) => { employee.Gender = rbGenderF.Checked ? "F" : "M"; };
             rbGenderM.CheckedChanged += (x, y) => { employee.Gender = rbGenderM.Checked ? "M" : "F"; };
-            PasswordTextBox.Text = EMPTY_PASS;
-            PasswordTextBox2.Text = EMPTY_PASS;
+            #endregion
 
+            #region Password
+            PasswordTextBox.Text = EMPTY_PASS;
+            PasswordTextBox2.Text = EMPTY_PASS;            
+            #endregion
+
+            #region PersonType
             if (employee.Person.PersonType == null)
             {
                 employee.Person.PersonType = "EM";
-            }
+            }            
+            #endregion
+
+          
         }
         #endregion
 
