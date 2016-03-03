@@ -204,7 +204,8 @@ namespace Wallnut.UI
 
         private void dgvEmailAddresses_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            employee.ModifiedDate=DateTime.Now;
+            
         }
       
 
