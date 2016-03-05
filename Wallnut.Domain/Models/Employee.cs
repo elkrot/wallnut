@@ -13,7 +13,6 @@ namespace Wallnut.Domain.Models
             this.EmployeePayHistories = new List<EmployeePayHistory>();
             this.JobCandidates = new List<JobCandidate>();
             this.PurchaseOrderHeaders = new List<PurchaseOrderHeader>();
-            this.WorkOrderHistories = new List<WorkOrderHistory>();
         }
 
  
@@ -57,12 +56,12 @@ namespace Wallnut.Domain.Models
 	        public System.DateTime ModifiedDate { get; set; }
         public virtual BusinessEntity BusinessEntity { get; set; }
         public virtual Person Person { get; set; }
+        
         public virtual ICollection<EmployeeAttendanceHistory> EmployeeAttendanceHistories { get; set; }
         public virtual ICollection<EmployeeDepartmentHistory> EmployeeDepartmentHistories { get; set; }
         public virtual ICollection<EmployeePayHistory> EmployeePayHistories { get; set; }
         public virtual ICollection<JobCandidate> JobCandidates { get; set; }
         public virtual ICollection<PurchaseOrderHeader> PurchaseOrderHeaders { get; set; }
         public virtual SalesPerson SalesPerson { get; set; }
-        public virtual ICollection<WorkOrderHistory> WorkOrderHistories { get; set; }
     }
 }

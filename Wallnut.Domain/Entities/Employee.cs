@@ -23,9 +23,18 @@ namespace Wallnut.Domain.Models
             + (char.ToUpper(Person.FirstName[0]).ToString()) + ". "
             + (char.ToUpper(Person.MiddleName[0]).ToString())+".";
         }
+
+       }
+
+       /* [NotMapped]
+        public string CurrentDepartmentName
+        {
+            get
+            {
+                return vEmployeeCurrentJub.DepartmentName;
+            }
         }
-
-
+        */
         /// <summary>
         /// <see cref="NationalIDNumber"/> 
         /// ИНН

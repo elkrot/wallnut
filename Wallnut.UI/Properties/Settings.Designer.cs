@@ -33,5 +33,16 @@ namespace Wallnut.UI.Properties {
                 return ((string)(this["WallnutProductionCSReporting"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=IVC_KSV\\SQLEXPRESS;Initial Catalog=WallnutProduction;Integrated Secur" +
+            "ity=True")]
+        public string WallnutProductionConnectionString {
+            get {
+                return ((string)(this["WallnutProductionConnectionString"]));
+            }
+        }
     }
 }

@@ -69,6 +69,7 @@ namespace Wallnut.Domain.Models
         public DbSet<SpecialOfferProduct> SpecialOfferProducts { get; set; }
         public DbSet<Store> Stores { get; set; }
 
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new DatabaseLogMap());
@@ -122,6 +123,7 @@ namespace Wallnut.Domain.Models
             modelBuilder.Configurations.Add(new SpecialOfferMap());
             modelBuilder.Configurations.Add(new SpecialOfferProductMap());
             modelBuilder.Configurations.Add(new StoreMap());
+           
         }
     }
 }

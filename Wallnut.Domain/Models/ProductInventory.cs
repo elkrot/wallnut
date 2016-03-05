@@ -17,7 +17,7 @@ namespace Wallnut.Domain.Models
 	        public string Shelf { get; set; }
  
         [Column("Bin")] 
-	        public byte Bin { get; set; }
+	        public Nullable<byte> Bin { get; set; }
  
         [Column("Quantity")] 
 	        public short Quantity { get; set; }

@@ -496,6 +496,10 @@
     <Compile Include="Sales\StoreFrm\fStore.Designer.cs">
       <DependentUpon>fStore.cs</DependentUpon>
     </Compile>
+    <Compile Include="WallnutProductionDataSet.cs">
+      <DependentUpon>WallnutProductionDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="WallnutProductionDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -685,10 +689,11 @@
     <EmbeddedResource Include="Purchasing\Vendor\fVendor.resx">
       <DependentUpon>fVendor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\EmployeeReport.rdlc" />
     <EmbeddedResource Include="Reports\ViewForm.resx">
       <DependentUpon>ViewForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Report1.rdlc" />
+    <EmbeddedResource Include="Reports\Report2.rdlc" />
     <EmbeddedResource Include="Sales\CurrencyRate\fAddCurrencyRate.resx">
       <DependentUpon>fAddCurrencyRate.cs</DependentUpon>
     </EmbeddedResource>

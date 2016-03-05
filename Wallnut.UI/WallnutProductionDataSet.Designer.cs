@@ -20,17 +20,17 @@ namespace Wallnut.UI {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("WallnutProductionDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("WallnutProductionDataSet1")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class WallnutProductionDataSet : global::System.Data.DataSet {
+    public partial class WallnutProductionDataSet1 : global::System.Data.DataSet {
         
-        private LocationDataTable tableLocation;
+        private vEmployeeCurrentJubDataTable tablevEmployeeCurrentJub;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public WallnutProductionDataSet() {
+        public WallnutProductionDataSet1() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace Wallnut.UI {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected WallnutProductionDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected WallnutProductionDataSet1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace Wallnut.UI {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Location"] != null)) {
-                    base.Tables.Add(new LocationDataTable(ds.Tables["Location"]));
+                if ((ds.Tables["vEmployeeCurrentJub"] != null)) {
+                    base.Tables.Add(new vEmployeeCurrentJubDataTable(ds.Tables["vEmployeeCurrentJub"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace Wallnut.UI {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public LocationDataTable Location {
+        public vEmployeeCurrentJubDataTable vEmployeeCurrentJub {
             get {
-                return this.tableLocation;
+                return this.tablevEmployeeCurrentJub;
             }
         }
         
@@ -127,7 +127,7 @@ namespace Wallnut.UI {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            WallnutProductionDataSet cln = ((WallnutProductionDataSet)(base.Clone()));
+            WallnutProductionDataSet1 cln = ((WallnutProductionDataSet1)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace Wallnut.UI {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Location"] != null)) {
-                    base.Tables.Add(new LocationDataTable(ds.Tables["Location"]));
+                if ((ds.Tables["vEmployeeCurrentJub"] != null)) {
+                    base.Tables.Add(new vEmployeeCurrentJubDataTable(ds.Tables["vEmployeeCurrentJub"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace Wallnut.UI {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableLocation = ((LocationDataTable)(base.Tables["Location"]));
+            this.tablevEmployeeCurrentJub = ((vEmployeeCurrentJubDataTable)(base.Tables["vEmployeeCurrentJub"]));
             if ((initTable == true)) {
-                if ((this.tableLocation != null)) {
-                    this.tableLocation.InitVars();
+                if ((this.tablevEmployeeCurrentJub != null)) {
+                    this.tablevEmployeeCurrentJub.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace Wallnut.UI {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "WallnutProductionDataSet";
+            this.DataSetName = "WallnutProductionDataSet1";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/WallnutProductionDataSet.xsd";
+            this.Namespace = "http://tempuri.org/WallnutProductionDataSet1.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableLocation = new LocationDataTable();
-            base.Tables.Add(this.tableLocation);
+            this.tablevEmployeeCurrentJub = new vEmployeeCurrentJubDataTable();
+            base.Tables.Add(this.tablevEmployeeCurrentJub);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeLocation() {
+        private bool ShouldSerializevEmployeeCurrentJub() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace Wallnut.UI {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            WallnutProductionDataSet ds = new WallnutProductionDataSet();
+            WallnutProductionDataSet1 ds = new WallnutProductionDataSet1();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,23 +270,35 @@ namespace Wallnut.UI {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void LocationRowChangeEventHandler(object sender, LocationRowChangeEvent e);
+        public delegate void vEmployeeCurrentJubRowChangeEventHandler(object sender, vEmployeeCurrentJubRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class LocationDataTable : global::System.Data.TypedTableBase<LocationRow> {
+        public partial class vEmployeeCurrentJubDataTable : global::System.Data.TypedTableBase<vEmployeeCurrentJubRow> {
             
-            private global::System.Data.DataColumn columnLocationID;
+            private global::System.Data.DataColumn columnBusinessEntityID;
             
-            private global::System.Data.DataColumn columnName;
+            private global::System.Data.DataColumn columnDepartmentID;
+            
+            private global::System.Data.DataColumn columnShiftID;
+            
+            private global::System.Data.DataColumn columnStartDate;
+            
+            private global::System.Data.DataColumn columnEndDate;
+            
+            private global::System.Data.DataColumn columnShiftName;
+            
+            private global::System.Data.DataColumn columnDepartmentName;
+            
+            private global::System.Data.DataColumn columnGroupName;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public LocationDataTable() {
-                this.TableName = "Location";
+            public vEmployeeCurrentJubDataTable() {
+                this.TableName = "vEmployeeCurrentJub";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -294,7 +306,7 @@ namespace Wallnut.UI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal LocationDataTable(global::System.Data.DataTable table) {
+            internal vEmployeeCurrentJubDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -311,24 +323,72 @@ namespace Wallnut.UI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected LocationDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected vEmployeeCurrentJubDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn LocationIDColumn {
+            public global::System.Data.DataColumn BusinessEntityIDColumn {
                 get {
-                    return this.columnLocationID;
+                    return this.columnBusinessEntityID;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn NameColumn {
+            public global::System.Data.DataColumn DepartmentIDColumn {
                 get {
-                    return this.columnName;
+                    return this.columnDepartmentID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ShiftIDColumn {
+                get {
+                    return this.columnShiftID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StartDateColumn {
+                get {
+                    return this.columnStartDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EndDateColumn {
+                get {
+                    return this.columnEndDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ShiftNameColumn {
+                get {
+                    return this.columnShiftName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DepartmentNameColumn {
+                get {
+                    return this.columnDepartmentName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn GroupNameColumn {
+                get {
+                    return this.columnGroupName;
                 }
             }
             
@@ -343,53 +403,62 @@ namespace Wallnut.UI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public LocationRow this[int index] {
+            public vEmployeeCurrentJubRow this[int index] {
                 get {
-                    return ((LocationRow)(this.Rows[index]));
+                    return ((vEmployeeCurrentJubRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event LocationRowChangeEventHandler LocationRowChanging;
+            public event vEmployeeCurrentJubRowChangeEventHandler vEmployeeCurrentJubRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event LocationRowChangeEventHandler LocationRowChanged;
+            public event vEmployeeCurrentJubRowChangeEventHandler vEmployeeCurrentJubRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event LocationRowChangeEventHandler LocationRowDeleting;
+            public event vEmployeeCurrentJubRowChangeEventHandler vEmployeeCurrentJubRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event LocationRowChangeEventHandler LocationRowDeleted;
+            public event vEmployeeCurrentJubRowChangeEventHandler vEmployeeCurrentJubRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddLocationRow(LocationRow row) {
+            public void AddvEmployeeCurrentJubRow(vEmployeeCurrentJubRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public LocationRow AddLocationRow(string Name) {
-                LocationRow rowLocationRow = ((LocationRow)(this.NewRow()));
+            public vEmployeeCurrentJubRow AddvEmployeeCurrentJubRow(int BusinessEntityID, short DepartmentID, int ShiftID, System.DateTime StartDate, System.DateTime EndDate, string ShiftName, string DepartmentName, string GroupName) {
+                vEmployeeCurrentJubRow rowvEmployeeCurrentJubRow = ((vEmployeeCurrentJubRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
-                        Name};
-                rowLocationRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowLocationRow);
-                return rowLocationRow;
+                        BusinessEntityID,
+                        DepartmentID,
+                        ShiftID,
+                        StartDate,
+                        EndDate,
+                        ShiftName,
+                        DepartmentName,
+                        GroupName};
+                rowvEmployeeCurrentJubRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowvEmployeeCurrentJubRow);
+                return rowvEmployeeCurrentJubRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public LocationRow FindByLocationID(short LocationID) {
-                return ((LocationRow)(this.Rows.Find(new object[] {
-                            LocationID})));
+            public vEmployeeCurrentJubRow FindByBusinessEntityIDDepartmentIDShiftIDStartDate(int BusinessEntityID, short DepartmentID, int ShiftID, System.DateTime StartDate) {
+                return ((vEmployeeCurrentJubRow)(this.Rows.Find(new object[] {
+                            BusinessEntityID,
+                            DepartmentID,
+                            ShiftID,
+                            StartDate})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                LocationDataTable cln = ((LocationDataTable)(base.Clone()));
+                vEmployeeCurrentJubDataTable cln = ((vEmployeeCurrentJubDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -397,59 +466,79 @@ namespace Wallnut.UI {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new LocationDataTable();
+                return new vEmployeeCurrentJubDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnLocationID = base.Columns["LocationID"];
-                this.columnName = base.Columns["Name"];
+                this.columnBusinessEntityID = base.Columns["BusinessEntityID"];
+                this.columnDepartmentID = base.Columns["DepartmentID"];
+                this.columnShiftID = base.Columns["ShiftID"];
+                this.columnStartDate = base.Columns["StartDate"];
+                this.columnEndDate = base.Columns["EndDate"];
+                this.columnShiftName = base.Columns["ShiftName"];
+                this.columnDepartmentName = base.Columns["DepartmentName"];
+                this.columnGroupName = base.Columns["GroupName"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnLocationID = new global::System.Data.DataColumn("LocationID", typeof(short), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLocationID);
-                this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnName);
+                this.columnBusinessEntityID = new global::System.Data.DataColumn("BusinessEntityID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBusinessEntityID);
+                this.columnDepartmentID = new global::System.Data.DataColumn("DepartmentID", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDepartmentID);
+                this.columnShiftID = new global::System.Data.DataColumn("ShiftID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnShiftID);
+                this.columnStartDate = new global::System.Data.DataColumn("StartDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStartDate);
+                this.columnEndDate = new global::System.Data.DataColumn("EndDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEndDate);
+                this.columnShiftName = new global::System.Data.DataColumn("ShiftName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnShiftName);
+                this.columnDepartmentName = new global::System.Data.DataColumn("DepartmentName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDepartmentName);
+                this.columnGroupName = new global::System.Data.DataColumn("GroupName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGroupName);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnLocationID}, true));
-                this.columnLocationID.AutoIncrement = true;
-                this.columnLocationID.AutoIncrementSeed = -1;
-                this.columnLocationID.AutoIncrementStep = -1;
-                this.columnLocationID.AllowDBNull = false;
-                this.columnLocationID.ReadOnly = true;
-                this.columnLocationID.Unique = true;
-                this.columnName.AllowDBNull = false;
-                this.columnName.MaxLength = 50;
+                                this.columnBusinessEntityID,
+                                this.columnDepartmentID,
+                                this.columnShiftID,
+                                this.columnStartDate}, true));
+                this.columnBusinessEntityID.AllowDBNull = false;
+                this.columnDepartmentID.AllowDBNull = false;
+                this.columnShiftID.AllowDBNull = false;
+                this.columnStartDate.AllowDBNull = false;
+                this.columnShiftName.MaxLength = 50;
+                this.columnDepartmentName.MaxLength = 50;
+                this.columnGroupName.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public LocationRow NewLocationRow() {
-                return ((LocationRow)(this.NewRow()));
+            public vEmployeeCurrentJubRow NewvEmployeeCurrentJubRow() {
+                return ((vEmployeeCurrentJubRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new LocationRow(builder);
+                return new vEmployeeCurrentJubRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(LocationRow);
+                return typeof(vEmployeeCurrentJubRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.LocationRowChanged != null)) {
-                    this.LocationRowChanged(this, new LocationRowChangeEvent(((LocationRow)(e.Row)), e.Action));
+                if ((this.vEmployeeCurrentJubRowChanged != null)) {
+                    this.vEmployeeCurrentJubRowChanged(this, new vEmployeeCurrentJubRowChangeEvent(((vEmployeeCurrentJubRow)(e.Row)), e.Action));
                 }
             }
             
@@ -457,8 +546,8 @@ namespace Wallnut.UI {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.LocationRowChanging != null)) {
-                    this.LocationRowChanging(this, new LocationRowChangeEvent(((LocationRow)(e.Row)), e.Action));
+                if ((this.vEmployeeCurrentJubRowChanging != null)) {
+                    this.vEmployeeCurrentJubRowChanging(this, new vEmployeeCurrentJubRowChangeEvent(((vEmployeeCurrentJubRow)(e.Row)), e.Action));
                 }
             }
             
@@ -466,8 +555,8 @@ namespace Wallnut.UI {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.LocationRowDeleted != null)) {
-                    this.LocationRowDeleted(this, new LocationRowChangeEvent(((LocationRow)(e.Row)), e.Action));
+                if ((this.vEmployeeCurrentJubRowDeleted != null)) {
+                    this.vEmployeeCurrentJubRowDeleted(this, new vEmployeeCurrentJubRowChangeEvent(((vEmployeeCurrentJubRow)(e.Row)), e.Action));
                 }
             }
             
@@ -475,14 +564,14 @@ namespace Wallnut.UI {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.LocationRowDeleting != null)) {
-                    this.LocationRowDeleting(this, new LocationRowChangeEvent(((LocationRow)(e.Row)), e.Action));
+                if ((this.vEmployeeCurrentJubRowDeleting != null)) {
+                    this.vEmployeeCurrentJubRowDeleting(this, new vEmployeeCurrentJubRowChangeEvent(((vEmployeeCurrentJubRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveLocationRow(LocationRow row) {
+            public void RemovevEmployeeCurrentJubRow(vEmployeeCurrentJubRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -491,7 +580,7 @@ namespace Wallnut.UI {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                WallnutProductionDataSet ds = new WallnutProductionDataSet();
+                WallnutProductionDataSet1 ds = new WallnutProductionDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -509,7 +598,7 @@ namespace Wallnut.UI {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "LocationDataTable";
+                attribute2.FixedValue = "vEmployeeCurrentJubDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -553,37 +642,172 @@ namespace Wallnut.UI {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class LocationRow : global::System.Data.DataRow {
+        public partial class vEmployeeCurrentJubRow : global::System.Data.DataRow {
             
-            private LocationDataTable tableLocation;
+            private vEmployeeCurrentJubDataTable tablevEmployeeCurrentJub;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal LocationRow(global::System.Data.DataRowBuilder rb) : 
+            internal vEmployeeCurrentJubRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableLocation = ((LocationDataTable)(this.Table));
+                this.tablevEmployeeCurrentJub = ((vEmployeeCurrentJubDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public short LocationID {
+            public int BusinessEntityID {
                 get {
-                    return ((short)(this[this.tableLocation.LocationIDColumn]));
+                    return ((int)(this[this.tablevEmployeeCurrentJub.BusinessEntityIDColumn]));
                 }
                 set {
-                    this[this.tableLocation.LocationIDColumn] = value;
+                    this[this.tablevEmployeeCurrentJub.BusinessEntityIDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Name {
+            public short DepartmentID {
                 get {
-                    return ((string)(this[this.tableLocation.NameColumn]));
+                    return ((short)(this[this.tablevEmployeeCurrentJub.DepartmentIDColumn]));
                 }
                 set {
-                    this[this.tableLocation.NameColumn] = value;
+                    this[this.tablevEmployeeCurrentJub.DepartmentIDColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int ShiftID {
+                get {
+                    return ((int)(this[this.tablevEmployeeCurrentJub.ShiftIDColumn]));
+                }
+                set {
+                    this[this.tablevEmployeeCurrentJub.ShiftIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime StartDate {
+                get {
+                    return ((global::System.DateTime)(this[this.tablevEmployeeCurrentJub.StartDateColumn]));
+                }
+                set {
+                    this[this.tablevEmployeeCurrentJub.StartDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime EndDate {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablevEmployeeCurrentJub.EndDateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'EndDate\' в таблице \'vEmployeeCurrentJub\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevEmployeeCurrentJub.EndDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ShiftName {
+                get {
+                    try {
+                        return ((string)(this[this.tablevEmployeeCurrentJub.ShiftNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'ShiftName\' в таблице \'vEmployeeCurrentJub\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevEmployeeCurrentJub.ShiftNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DepartmentName {
+                get {
+                    try {
+                        return ((string)(this[this.tablevEmployeeCurrentJub.DepartmentNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'DepartmentName\' в таблице \'vEmployeeCurrentJub\' равно DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tablevEmployeeCurrentJub.DepartmentNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string GroupName {
+                get {
+                    try {
+                        return ((string)(this[this.tablevEmployeeCurrentJub.GroupNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'GroupName\' в таблице \'vEmployeeCurrentJub\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevEmployeeCurrentJub.GroupNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEndDateNull() {
+                return this.IsNull(this.tablevEmployeeCurrentJub.EndDateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEndDateNull() {
+                this[this.tablevEmployeeCurrentJub.EndDateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsShiftNameNull() {
+                return this.IsNull(this.tablevEmployeeCurrentJub.ShiftNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetShiftNameNull() {
+                this[this.tablevEmployeeCurrentJub.ShiftNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDepartmentNameNull() {
+                return this.IsNull(this.tablevEmployeeCurrentJub.DepartmentNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDepartmentNameNull() {
+                this[this.tablevEmployeeCurrentJub.DepartmentNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsGroupNameNull() {
+                return this.IsNull(this.tablevEmployeeCurrentJub.GroupNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetGroupNameNull() {
+                this[this.tablevEmployeeCurrentJub.GroupNameColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -591,22 +815,22 @@ namespace Wallnut.UI {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class LocationRowChangeEvent : global::System.EventArgs {
+        public class vEmployeeCurrentJubRowChangeEvent : global::System.EventArgs {
             
-            private LocationRow eventRow;
+            private vEmployeeCurrentJubRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public LocationRowChangeEvent(LocationRow row, global::System.Data.DataRowAction action) {
+            public vEmployeeCurrentJubRowChangeEvent(vEmployeeCurrentJubRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public LocationRow Row {
+            public vEmployeeCurrentJubRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -622,7 +846,7 @@ namespace Wallnut.UI {
         }
     }
 }
-namespace Wallnut.UI.WallnutProductionDataSetTableAdapters {
+namespace Wallnut.UI.WallnutProductionDataSet1TableAdapters {
     
     
     /// <summary>
@@ -634,7 +858,7 @@ namespace Wallnut.UI.WallnutProductionDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class LocationTableAdapter : global::System.ComponentModel.Component {
+    public partial class vEmployeeCurrentJubTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -648,7 +872,7 @@ namespace Wallnut.UI.WallnutProductionDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public LocationTableAdapter() {
+        public vEmployeeCurrentJubTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -745,40 +969,23 @@ namespace Wallnut.UI.WallnutProductionDataSetTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Location";
-            tableMapping.ColumnMappings.Add("LocationID", "LocationID");
-            tableMapping.ColumnMappings.Add("Name", "Name");
+            tableMapping.DataSetTable = "vEmployeeCurrentJub";
+            tableMapping.ColumnMappings.Add("BusinessEntityID", "BusinessEntityID");
+            tableMapping.ColumnMappings.Add("DepartmentID", "DepartmentID");
+            tableMapping.ColumnMappings.Add("ShiftID", "ShiftID");
+            tableMapping.ColumnMappings.Add("StartDate", "StartDate");
+            tableMapping.ColumnMappings.Add("EndDate", "EndDate");
+            tableMapping.ColumnMappings.Add("ShiftName", "ShiftName");
+            tableMapping.ColumnMappings.Add("DepartmentName", "DepartmentName");
+            tableMapping.ColumnMappings.Add("GroupName", "GroupName");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Production].[Location] WHERE (([LocationID] = @Original_LocationID) " +
-                "AND ([Name] = @Original_Name))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LocationID", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LocationID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [Production].[Location] ([Name]) VALUES (@Name);\r\nSELECT LocationID, " +
-                "Name FROM Production.Location WHERE (LocationID = SCOPE_IDENTITY())";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [Production].[Location] SET [Name] = @Name WHERE (([LocationID] = @Origina" +
-                "l_LocationID) AND ([Name] = @Original_Name));\r\nSELECT LocationID, Name FROM Prod" +
-                "uction.Location WHERE (LocationID = @LocationID)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LocationID", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LocationID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LocationID", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "LocationID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Wallnut.UI.Properties.Settings.Default.WallnutProductionCSReporting;
+            this._connection.ConnectionString = global::Wallnut.UI.Properties.Settings.Default.WallnutProductionConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -787,7 +994,8 @@ namespace Wallnut.UI.WallnutProductionDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT LocationID, Name FROM Production.Location";
+            this._commandCollection[0].CommandText = "SELECT BusinessEntityID, DepartmentID, ShiftID, StartDate, EndDate, ShiftName, De" +
+                "partmentName, GroupName FROM HumanResources.vEmployeeCurrentJub";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -795,7 +1003,7 @@ namespace Wallnut.UI.WallnutProductionDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(WallnutProductionDataSet.LocationDataTable dataTable) {
+        public virtual int Fill(WallnutProductionDataSet1.vEmployeeCurrentJubDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -808,138 +1016,11 @@ namespace Wallnut.UI.WallnutProductionDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual WallnutProductionDataSet.LocationDataTable GetData() {
+        public virtual WallnutProductionDataSet1.vEmployeeCurrentJubDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            WallnutProductionDataSet.LocationDataTable dataTable = new WallnutProductionDataSet.LocationDataTable();
+            WallnutProductionDataSet1.vEmployeeCurrentJubDataTable dataTable = new WallnutProductionDataSet1.vEmployeeCurrentJubDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(WallnutProductionDataSet.LocationDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(WallnutProductionDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "Location");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(short Original_LocationID, string Original_Name) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((short)(Original_LocationID));
-            if ((Original_Name == null)) {
-                throw new global::System.ArgumentNullException("Original_Name");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Name));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Name) {
-            if ((Name == null)) {
-                throw new global::System.ArgumentNullException("Name");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Name));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Name, short Original_LocationID, string Original_Name, short LocationID) {
-            if ((Name == null)) {
-                throw new global::System.ArgumentNullException("Name");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Name));
-            }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((short)(Original_LocationID));
-            if ((Original_Name == null)) {
-                throw new global::System.ArgumentNullException("Original_Name");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Original_Name));
-            }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((short)(LocationID));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Name, short Original_LocationID, string Original_Name) {
-            return this.Update(Name, Original_LocationID, Original_Name, Original_LocationID);
         }
     }
     
@@ -955,8 +1036,6 @@ namespace Wallnut.UI.WallnutProductionDataSetTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private LocationTableAdapter _locationTableAdapter;
-        
         private bool _backupDataSetBeforeUpdate;
         
         private global::System.Data.IDbConnection _connection;
@@ -969,20 +1048,6 @@ namespace Wallnut.UI.WallnutProductionDataSetTableAdapters {
             }
             set {
                 this._updateOrder = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public LocationTableAdapter LocationTableAdapter {
-            get {
-                return this._locationTableAdapter;
-            }
-            set {
-                this._locationTableAdapter = value;
             }
         }
         
@@ -1005,10 +1070,6 @@ namespace Wallnut.UI.WallnutProductionDataSetTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._locationTableAdapter != null) 
-                            && (this._locationTableAdapter.Connection != null))) {
-                    return this._locationTableAdapter.Connection;
-                }
                 return null;
             }
             set {
@@ -1022,9 +1083,6 @@ namespace Wallnut.UI.WallnutProductionDataSetTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._locationTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 return count;
             }
         }
@@ -1034,17 +1092,8 @@ namespace Wallnut.UI.WallnutProductionDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(WallnutProductionDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(WallnutProductionDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._locationTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Location.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._locationTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             return result;
         }
         
@@ -1053,16 +1102,8 @@ namespace Wallnut.UI.WallnutProductionDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(WallnutProductionDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(WallnutProductionDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._locationTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Location.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._locationTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             return result;
         }
         
@@ -1071,16 +1112,8 @@ namespace Wallnut.UI.WallnutProductionDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(WallnutProductionDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(WallnutProductionDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._locationTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Location.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._locationTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             return result;
         }
         
@@ -1113,17 +1146,12 @@ namespace Wallnut.UI.WallnutProductionDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(WallnutProductionDataSet dataSet) {
+        public virtual int UpdateAll(WallnutProductionDataSet1 dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
-            }
-            if (((this._locationTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._locationTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
-                        "r, должны использовать одинаковую строку подключения.");
             }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
@@ -1157,15 +1185,6 @@ namespace Wallnut.UI.WallnutProductionDataSetTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._locationTableAdapter != null)) {
-                    revertConnections.Add(this._locationTableAdapter, this._locationTableAdapter.Connection);
-                    this._locationTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._locationTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._locationTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._locationTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._locationTableAdapter.Adapter);
-                    }
-                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -1223,10 +1242,6 @@ namespace Wallnut.UI.WallnutProductionDataSetTableAdapters {
             finally {
                 if (workConnOpened) {
                     workConnection.Close();
-                }
-                if ((this._locationTableAdapter != null)) {
-                    this._locationTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._locationTableAdapter]));
-                    this._locationTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
