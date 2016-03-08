@@ -23,6 +23,21 @@ namespace Wallnut.Domain.Models.Mapping
             this.Property(t => t.OperationSequence)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
 
+
+            // Relationships
+            this.HasRequired(t => t.Employee)
+                .WithMany(t => t.WorkOrderHistories)
+                .HasForeignKey(d => d.BusinessEntityID);
+            this.HasRequired(t => t.Location)
+                .WithMany(t => t.WorkOrderHistories)
+                .HasForeignKey(d => d.LocationID);
+            this.HasRequired(t => t.Product)
+                .WithMany(t => t.WorkOrderHistories)
+                .HasForeignKey(d => d.ProductID);
+            this.HasRequired(t => t.WorkOrder)
+                .WithMany(t => t.WorkOrderHistories)
+                .HasForeignKey(d => d.WorkOrderID);
+
         }
     }
 }

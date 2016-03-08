@@ -68,7 +68,7 @@ namespace Wallnut.Domain.Models
         public DbSet<SpecialOffer> SpecialOffers { get; set; }
         public DbSet<SpecialOfferProduct> SpecialOfferProducts { get; set; }
         public DbSet<Store> Stores { get; set; }
-
+        public DbSet<vEmployeeCurrentJub> vEmployeeCurrentJubs { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -123,7 +123,7 @@ namespace Wallnut.Domain.Models
             modelBuilder.Configurations.Add(new SpecialOfferMap());
             modelBuilder.Configurations.Add(new SpecialOfferProductMap());
             modelBuilder.Configurations.Add(new StoreMap());
-           
+            modelBuilder.Configurations.Add(new vEmployeeCurrentJubMap());
         }
     }
 }

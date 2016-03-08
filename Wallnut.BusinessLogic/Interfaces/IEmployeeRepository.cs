@@ -13,6 +13,8 @@ namespace Wallnut.BusinessLogic.Interfaces
         Employee GetEmployeeById(int id);
         Employee GetEmployeeByName(string name);
         Password GetPasswordByLogin(string login);
+        IEnumerable<EmployeeWithAttr> GetEmployeeWithJobTitle
+            (Dictionary<string, System.Data.SqlClient.SqlParameter> prms=null);
         //MembershipUser
         //CreateEmployee
         //ValidateEmployee

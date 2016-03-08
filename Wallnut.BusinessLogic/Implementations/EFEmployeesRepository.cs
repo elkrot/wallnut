@@ -51,7 +51,8 @@ namespace Wallnut.BusinessLogic.Implementations
 
         public new IEnumerable<Employee> GetAll()
         {
-            return EFDbContext.Employees.Include("Person").Include("Person.Password").ToList();
+            return EFDbContext.Employees.Include("Person").Include("Person.Password")
+                    . ToList();
         }
 
 
@@ -87,7 +88,32 @@ namespace Wallnut.BusinessLogic.Implementations
             }
          // (EFDbContext as DbContext).SaveChanges();
         }
+        public IEnumerable<EmployeeWithAttr> GetEmployeeWithJobTitle
+            (Dictionary<string,System.Data.SqlClient.SqlParameter> prms=null)
+        {
+            var strwhere = new StringBuilder();
+            if (prms != null)
+            {
+                foreach (var item in prms)
+                {
+                    strwhere.Append(" and " + item.Key + "=" + item.Value.ParameterName);
+                }
+            }
+            var employees = (EFDbContext as DbContext).Database.SqlQuery<EmployeeWithAttr>
+(@"select e.[BusinessEntityID],e.[NationalIDNumber],e.[LoginID],e.[JobTitle]
+,e.[BirthDate],e.[MaritalStatus],e.[Gender],e.[HireDate],e.[SalariedFlag]
+,e.[VacationHours],e.[SickLeaveHours],e.[CurrentFlag],e.[ModifiedDate]
+,v.[DepartmentID],v.[ShiftID],v.[StartDate],v.[EndDate],v.[ShiftName],v.[DepartmentName]
+,v.[GroupName],p.[FirstName],p.[MiddleName],p.[LastName]  from [HumanResources].Employee e
+left join[HumanResources].[vEmployeeCurrentJub] v on v.BusinessEntityID = e.BusinessEntityID
+left join [Person].[Person] p on p.BusinessEntityID
+=e.BusinessEntityID where 1=1 "+strwhere.ToString(), prms==null?null:prms.Values);
 
+
+            return employees.ToList();
+        }
+
+        #region GetNewBusinessEntityID
         private int GetNewBusinessEntityID() {
             var be = new BusinessEntity();
             be.BusinessEntityID = 0;
@@ -95,7 +121,9 @@ namespace Wallnut.BusinessLogic.Implementations
             EFDbContext.BusinessEntities.Add(be);
             (EFDbContext as DbContext).SaveChanges();
             return be.BusinessEntityID;
-        }
+        }        
+        #endregion
+
 
     }
 }

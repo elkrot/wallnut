@@ -12,13 +12,13 @@ namespace Wallnut.Domain.Models
    public partial class WorkOrderHistory
     {
      [NotMapped]
-        public string ProductName { get {return "Product.Name";} }
+        public string ProductName { get {return Product.Name;} }
 
      [NotMapped]
-     public string StoreName { get { return "Employee.FIO"; } }
+     public string StoreName { get { return Employee.FIO; } }
 
        [NotMapped]
-       public string LocationName { get { return "Location.Name"; } } 
+       public string LocationName { get { return Location.Name; } } 
        
        /*
                                                                      *        

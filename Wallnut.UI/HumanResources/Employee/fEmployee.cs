@@ -29,7 +29,7 @@ namespace Wallnut.UI
 
             using (var unitOfWork = new UnitOfWork(new WallnutProductionContext()))
             {
-                var employees = unitOfWork.EmployeeRepository.GetAll();
+                var employees = unitOfWork.EmployeeRepository.GetEmployeeWithJobTitle(); 
                 eFEmployeesRBS.DataSource = employees;
             }
         }

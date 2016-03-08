@@ -61,9 +61,9 @@
             // 
             // ss
             // 
-            this.ss.Location = new System.Drawing.Point(0, 170);
+            this.ss.Location = new System.Drawing.Point(0, 233);
             this.ss.Name = "ss";
-            this.ss.Size = new System.Drawing.Size(856, 22);
+            this.ss.Size = new System.Drawing.Size(727, 22);
             this.ss.TabIndex = 0;
             this.ss.Text = "statusStrip1";
             // 
@@ -93,14 +93,14 @@
             this.bn.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bn.Name = "bn";
             this.bn.PositionItem = this.bindingNavigatorPositionItem;
-            this.bn.Size = new System.Drawing.Size(856, 25);
+            this.bn.Size = new System.Drawing.Size(727, 25);
             this.bn.TabIndex = 1;
             this.bn.Text = "bindingNavigator1";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(43, 22);
             this.bindingNavigatorCountItem.Text = "для {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
             // 
@@ -210,7 +210,7 @@
             this.dgv.Location = new System.Drawing.Point(0, 25);
             this.dgv.Name = "dgv";
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(856, 145);
+            this.dgv.Size = new System.Drawing.Size(727, 208);
             this.dgv.TabIndex = 2;
             this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
             // 
@@ -248,7 +248,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(856, 192);
+            this.ClientSize = new System.Drawing.Size(727, 255);
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.bn);
             this.Controls.Add(this.ss);

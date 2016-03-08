@@ -81,6 +81,7 @@
     <Compile Include="Entities\Shift.cs" />
     <Compile Include="Entities\StateProvince.cs" />
     <Compile Include="Entities\UnitMeasure.cs" />
+    <Compile Include="Entities\EmployeeWithAttr.cs" />
     <Compile Include="Entities\Vendor.cs" />
     <Compile Include="Entities\WorkOrder.cs" />
     <Compile Include="Entities\WorkOrderRouting.cs" />
@@ -155,6 +156,7 @@
     <Compile Include="Models\Mapping\TransactionHistoryArchiveMap.cs" />
     <Compile Include="Models\Mapping\TransactionHistoryMap.cs" />
     <Compile Include="Models\Mapping\UnitMeasureMap.cs" />
+    <Compile Include="Models\Mapping\vEmployeeCurrentJubMap.cs" />
     <Compile Include="Models\Mapping\VendorMap.cs" />
     <Compile Include="Models\Mapping\WorkOrderHistoryMap.cs" />
     <Compile Include="Models\Mapping\WorkOrderMap.cs" />
@@ -184,6 +186,7 @@
     <Compile Include="Models\TransactionHistory.cs" />
     <Compile Include="Models\TransactionHistoryArchive.cs" />
     <Compile Include="Models\UnitMeasure.cs" />
+    <Compile Include="Models\vEmployeeCurrentJub.cs" />
     <Compile Include="Models\Vendor.cs" />
     <Compile Include="Models\WallnutProductionContext.cs" />
     <Compile Include="Models\WorkOrder.cs" />

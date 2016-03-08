@@ -9,6 +9,7 @@ namespace Wallnut.Domain.Models
         public Location()
         {
             this.ProductInventories = new List<ProductInventory>();
+            this.WorkOrderHistories = new List<WorkOrderHistory>();
             this.WorkOrderRoutings = new List<WorkOrderRouting>();
         }
 
@@ -28,6 +29,7 @@ namespace Wallnut.Domain.Models
         [Column("ModifiedDate")] 
 	        public System.DateTime ModifiedDate { get; set; }
         public virtual ICollection<ProductInventory> ProductInventories { get; set; }
+        public virtual ICollection<WorkOrderHistory> WorkOrderHistories { get; set; }
         public virtual ICollection<WorkOrderRouting> WorkOrderRoutings { get; set; }
     }
 }

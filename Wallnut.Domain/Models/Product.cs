@@ -16,6 +16,7 @@ namespace Wallnut.Domain.Models
             this.SpecialOfferProducts = new List<SpecialOfferProduct>();
             this.TransactionHistories = new List<TransactionHistory>();
             this.WorkOrders = new List<WorkOrder>();
+            this.WorkOrderHistories = new List<WorkOrderHistory>();
         }
 
  
@@ -54,5 +55,6 @@ namespace Wallnut.Domain.Models
         public virtual ICollection<SpecialOfferProduct> SpecialOfferProducts { get; set; }
         public virtual ICollection<TransactionHistory> TransactionHistories { get; set; }
         public virtual ICollection<WorkOrder> WorkOrders { get; set; }
+        public virtual ICollection<WorkOrderHistory> WorkOrderHistories { get; set; }
     }
 }

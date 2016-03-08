@@ -33,7 +33,6 @@ namespace Wallnut.UI
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fEmployee));
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
-            this.eFEmployeesRBS = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -53,20 +52,30 @@ namespace Wallnut.UI
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.eFEmployeesRBS = new System.Windows.Forms.BindingSource(this.components);
+            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.dgvEmployee = new System.Windows.Forms.DataGridView();
-            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.NationalIDNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LoginID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.JobTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.middleNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nationalIDNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loginIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jobTitleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.birthDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hireDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salariedFlagDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.currentFlagDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.startDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shiftNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departmentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.eFEmployeesRBS)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).BeginInit();
             this.SuspendLayout();
             // 
             // bindingNavigator1
@@ -104,7 +113,7 @@ namespace Wallnut.UI
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(1105, 39);
+            this.bindingNavigator1.Size = new System.Drawing.Size(868, 39);
             this.bindingNavigator1.TabIndex = 1;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -266,24 +275,21 @@ namespace Wallnut.UI
             this.toolStripButton5.Text = "toolStripButton5";
             this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
-            // panel1
+            // eFEmployeesRBS
             // 
-            this.panel1.Controls.Add(this.statusStrip1);
-            this.panel1.Controls.Add(this.dgvEmployee);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 39);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1105, 348);
-            this.panel1.TabIndex = 2;
+            this.eFEmployeesRBS.DataSource = typeof(Wallnut.Domain.Models.EmployeeWithAttr);
+            // 
+            // employeeBindingSource
+            // 
+            this.employeeBindingSource.DataSource = typeof(Wallnut.Domain.Models.EmployeeWithAttr);
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 326);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 365);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(1105, 22);
-            this.statusStrip1.TabIndex = 2;
+            this.statusStrip1.Size = new System.Drawing.Size(868, 22);
+            this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // dgvEmployee
@@ -292,65 +298,149 @@ namespace Wallnut.UI
             this.dgvEmployee.AutoGenerateColumns = false;
             this.dgvEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmployee.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NationalIDNumber,
-            this.LastName,
-            this.LoginID,
-            this.JobTitle});
+            this.lastNameDataGridViewTextBoxColumn,
+            this.firstNameDataGridViewTextBoxColumn,
+            this.middleNameDataGridViewTextBoxColumn,
+            this.nationalIDNumberDataGridViewTextBoxColumn,
+            this.loginIDDataGridViewTextBoxColumn,
+            this.jobTitleDataGridViewTextBoxColumn,
+            this.birthDateDataGridViewTextBoxColumn,
+            this.hireDateDataGridViewTextBoxColumn,
+            this.salariedFlagDataGridViewCheckBoxColumn,
+            this.currentFlagDataGridViewCheckBoxColumn,
+            this.startDateDataGridViewTextBoxColumn,
+            this.endDateDataGridViewTextBoxColumn,
+            this.shiftNameDataGridViewTextBoxColumn,
+            this.departmentNameDataGridViewTextBoxColumn,
+            this.groupNameDataGridViewTextBoxColumn});
             this.dgvEmployee.DataSource = this.eFEmployeesRBS;
             this.dgvEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvEmployee.Location = new System.Drawing.Point(0, 0);
+            this.dgvEmployee.Location = new System.Drawing.Point(0, 39);
             this.dgvEmployee.Margin = new System.Windows.Forms.Padding(4);
             this.dgvEmployee.Name = "dgvEmployee";
             this.dgvEmployee.ReadOnly = true;
             this.dgvEmployee.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEmployee.Size = new System.Drawing.Size(1105, 348);
-            this.dgvEmployee.TabIndex = 1;
+            this.dgvEmployee.Size = new System.Drawing.Size(868, 326);
+            this.dgvEmployee.TabIndex = 4;
             // 
-            // employeeBindingSource
+            // lastNameDataGridViewTextBoxColumn
             // 
-            this.employeeBindingSource.DataSource = typeof(Wallnut.Domain.Models.Employee);
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.FillWeight = 200F;
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "Фамилия";
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lastNameDataGridViewTextBoxColumn.Width = 200;
             // 
-            // NationalIDNumber
+            // firstNameDataGridViewTextBoxColumn
             // 
-            this.NationalIDNumber.DataPropertyName = "NationalIDNumber";
-            this.NationalIDNumber.FillWeight = 200F;
-            this.NationalIDNumber.HeaderText = "ИНН";
-            this.NationalIDNumber.Name = "NationalIDNumber";
-            this.NationalIDNumber.ReadOnly = true;
-            this.NationalIDNumber.ToolTipText = "ИНН";
-            this.NationalIDNumber.Width = 200;
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.FillWeight = 200F;
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "Имя";
+            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.firstNameDataGridViewTextBoxColumn.Width = 200;
             // 
-            // LastName
+            // middleNameDataGridViewTextBoxColumn
             // 
-            this.LastName.DataPropertyName = "FIO";
-            this.LastName.FillWeight = 200F;
-            this.LastName.HeaderText = "ФИО";
-            this.LastName.Name = "LastName";
-            this.LastName.ReadOnly = true;
-            this.LastName.Width = 200;
+            this.middleNameDataGridViewTextBoxColumn.DataPropertyName = "MiddleName";
+            this.middleNameDataGridViewTextBoxColumn.FillWeight = 200F;
+            this.middleNameDataGridViewTextBoxColumn.HeaderText = "Отчество";
+            this.middleNameDataGridViewTextBoxColumn.Name = "middleNameDataGridViewTextBoxColumn";
+            this.middleNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.middleNameDataGridViewTextBoxColumn.Width = 200;
             // 
-            // LoginID
+            // nationalIDNumberDataGridViewTextBoxColumn
             // 
-            this.LoginID.DataPropertyName = "LoginID";
-            this.LoginID.HeaderText = "Логин";
-            this.LoginID.Name = "LoginID";
-            this.LoginID.ReadOnly = true;
+            this.nationalIDNumberDataGridViewTextBoxColumn.DataPropertyName = "NationalIDNumber";
+            this.nationalIDNumberDataGridViewTextBoxColumn.HeaderText = "ИНН";
+            this.nationalIDNumberDataGridViewTextBoxColumn.Name = "nationalIDNumberDataGridViewTextBoxColumn";
+            this.nationalIDNumberDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // JobTitle
+            // loginIDDataGridViewTextBoxColumn
             // 
-            this.JobTitle.DataPropertyName = "JobTitle";
-            this.JobTitle.FillWeight = 200F;
-            this.JobTitle.HeaderText = "Должность";
-            this.JobTitle.Name = "JobTitle";
-            this.JobTitle.ReadOnly = true;
-            this.JobTitle.Width = 200;
+            this.loginIDDataGridViewTextBoxColumn.DataPropertyName = "LoginID";
+            this.loginIDDataGridViewTextBoxColumn.HeaderText = "Логин";
+            this.loginIDDataGridViewTextBoxColumn.Name = "loginIDDataGridViewTextBoxColumn";
+            this.loginIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // jobTitleDataGridViewTextBoxColumn
+            // 
+            this.jobTitleDataGridViewTextBoxColumn.DataPropertyName = "JobTitle";
+            this.jobTitleDataGridViewTextBoxColumn.HeaderText = "Должность";
+            this.jobTitleDataGridViewTextBoxColumn.Name = "jobTitleDataGridViewTextBoxColumn";
+            this.jobTitleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // birthDateDataGridViewTextBoxColumn
+            // 
+            this.birthDateDataGridViewTextBoxColumn.DataPropertyName = "BirthDate";
+            this.birthDateDataGridViewTextBoxColumn.HeaderText = "День рожденья";
+            this.birthDateDataGridViewTextBoxColumn.Name = "birthDateDataGridViewTextBoxColumn";
+            this.birthDateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // hireDateDataGridViewTextBoxColumn
+            // 
+            this.hireDateDataGridViewTextBoxColumn.DataPropertyName = "HireDate";
+            this.hireDateDataGridViewTextBoxColumn.HeaderText = "Дата приема";
+            this.hireDateDataGridViewTextBoxColumn.Name = "hireDateDataGridViewTextBoxColumn";
+            this.hireDateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // salariedFlagDataGridViewCheckBoxColumn
+            // 
+            this.salariedFlagDataGridViewCheckBoxColumn.DataPropertyName = "SalariedFlag";
+            this.salariedFlagDataGridViewCheckBoxColumn.HeaderText = "SalariedFlag";
+            this.salariedFlagDataGridViewCheckBoxColumn.Name = "salariedFlagDataGridViewCheckBoxColumn";
+            this.salariedFlagDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // currentFlagDataGridViewCheckBoxColumn
+            // 
+            this.currentFlagDataGridViewCheckBoxColumn.DataPropertyName = "CurrentFlag";
+            this.currentFlagDataGridViewCheckBoxColumn.HeaderText = "CurrentFlag";
+            this.currentFlagDataGridViewCheckBoxColumn.Name = "currentFlagDataGridViewCheckBoxColumn";
+            this.currentFlagDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // startDateDataGridViewTextBoxColumn
+            // 
+            this.startDateDataGridViewTextBoxColumn.DataPropertyName = "StartDate";
+            this.startDateDataGridViewTextBoxColumn.HeaderText = "Начало работы";
+            this.startDateDataGridViewTextBoxColumn.Name = "startDateDataGridViewTextBoxColumn";
+            this.startDateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // endDateDataGridViewTextBoxColumn
+            // 
+            this.endDateDataGridViewTextBoxColumn.DataPropertyName = "EndDate";
+            this.endDateDataGridViewTextBoxColumn.HeaderText = "Дата увольнения";
+            this.endDateDataGridViewTextBoxColumn.Name = "endDateDataGridViewTextBoxColumn";
+            this.endDateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // shiftNameDataGridViewTextBoxColumn
+            // 
+            this.shiftNameDataGridViewTextBoxColumn.DataPropertyName = "ShiftName";
+            this.shiftNameDataGridViewTextBoxColumn.HeaderText = "Смена";
+            this.shiftNameDataGridViewTextBoxColumn.Name = "shiftNameDataGridViewTextBoxColumn";
+            this.shiftNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // departmentNameDataGridViewTextBoxColumn
+            // 
+            this.departmentNameDataGridViewTextBoxColumn.DataPropertyName = "DepartmentName";
+            this.departmentNameDataGridViewTextBoxColumn.HeaderText = "Подразделение";
+            this.departmentNameDataGridViewTextBoxColumn.Name = "departmentNameDataGridViewTextBoxColumn";
+            this.departmentNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // groupNameDataGridViewTextBoxColumn
+            // 
+            this.groupNameDataGridViewTextBoxColumn.DataPropertyName = "GroupName";
+            this.groupNameDataGridViewTextBoxColumn.HeaderText = "Группа";
+            this.groupNameDataGridViewTextBoxColumn.Name = "groupNameDataGridViewTextBoxColumn";
+            this.groupNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // fEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1105, 387);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(868, 387);
+            this.Controls.Add(this.dgvEmployee);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.bindingNavigator1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -362,10 +452,8 @@ namespace Wallnut.UI
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.eFEmployeesRBS)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -385,8 +473,6 @@ namespace Wallnut.UI
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton tsbEdit;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dgvEmployee;
         private System.Windows.Forms.ToolStripButton tsbAdd;
         private System.Windows.Forms.ToolStripButton tsbRemove;
         private System.Windows.Forms.BindingSource employeeBindingSource;
@@ -398,10 +484,22 @@ namespace Wallnut.UI
         private System.Windows.Forms.ToolStripButton toolStripButton9;
         private System.Windows.Forms.ToolStripButton toolStripButton5;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NationalIDNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LoginID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn JobTitle;
+        private System.Windows.Forms.DataGridView dgvEmployee;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn middleNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nationalIDNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn loginIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jobTitleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn birthDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hireDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn salariedFlagDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn currentFlagDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn startDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn endDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn shiftNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn departmentNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn groupNameDataGridViewTextBoxColumn;
     }
 }
 

@@ -21,10 +21,13 @@ namespace Wallnut.BusinessLogic.Implementations
         }
         public void UpdateDepartment(Department dp)
         {
-
                 (dbContext as DbContext).Entry(dp).State = System.Data.EntityState.Modified;
-            
-            
         }
+                public IEnumerable<Employee> GetEmployeeWithJubTitle(int id)
+        {
+            System.Data.SqlClient.SqlParameter param = new System.Data.SqlClient.SqlParameter("@id", id);
+            var employees = (dbContext as DbContext).Database.SqlQuery<Employee>("SELECT * FROM Phones WHERE Name LIKE @name", param);
+            return employees;
+                }
     }
 }

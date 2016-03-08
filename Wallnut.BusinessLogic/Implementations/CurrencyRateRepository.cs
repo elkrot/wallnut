@@ -18,12 +18,6 @@ namespace Wallnut.BusinessLogic.Implementations
     /// </summary>
     public class CurrencyRateRepository: Repository<CurrencyRate>,ICurrencyRateRepository
     {
-
-        #region Member Variables
-        #endregion
-
-        #region Constructors
-
         /// <summary>
         /// Initializes a new instance of the <see cref="CurrencyRateRepository" /> class.
         /// </summary>
@@ -33,15 +27,6 @@ namespace Wallnut.BusinessLogic.Implementations
 
         }
 
-        #endregion
 
-        #region Properties
-        #endregion
-
-        #region Functions
-        #endregion
-
-        #region Enums
-        #endregion
     }
 }

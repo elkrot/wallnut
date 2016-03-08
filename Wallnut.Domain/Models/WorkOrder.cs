@@ -8,6 +8,7 @@ namespace Wallnut.Domain.Models
     {
         public WorkOrder()
         {
+            this.WorkOrderHistories = new List<WorkOrderHistory>();
             this.WorkOrderRoutings = new List<WorkOrderRouting>();
         }
 
@@ -21,8 +22,7 @@ namespace Wallnut.Domain.Models
         [Column("OrderQty")] 
 	        public int OrderQty { get; set; }
  
-        [Column("StockedQty")]
-        [ DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Column("StockedQty")] 
 	        public int StockedQty { get; set; }
  
         [Column("ScrappedQty")] 
@@ -40,6 +40,7 @@ namespace Wallnut.Domain.Models
         [Column("ModifiedDate")] 
 	        public System.DateTime ModifiedDate { get; set; }
         public virtual Product Product { get; set; }
+        public virtual ICollection<WorkOrderHistory> WorkOrderHistories { get; set; }
         public virtual ICollection<WorkOrderRouting> WorkOrderRoutings { get; set; }
     }
 }
