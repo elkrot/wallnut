@@ -25,7 +25,16 @@ namespace Wallnut.BusinessLogic.Implementations
             : base(context as DbContext)
         {
         }
-        public IEnumerable<Employee> GetTopSellingCources(int count)
+
+        #region EFDbContext
+        public IDbContext EFDbContext
+        {
+            get { return Context as IDbContext; }
+        }        
+        #endregion
+
+        #region NoUse
+         public IEnumerable<Employee> GetTopSellingCources(int count)
         {
             return EFDbContext.Employees.OrderByDescending(c => c.LoginID).Take(count).ToList();
         }
@@ -41,39 +50,46 @@ namespace Wallnut.BusinessLogic.Implementations
             //.Include(c=>c.)
         }
 
+        public IEnumerable<Employee> GetEmployee()
+        {
+            return EFDbContext.Employees;
+        }
+
+        public Employee GetEmployeeById(int id)
+        {
+            return EFDbContext.Employees.Where(x => x.BusinessEntityID == id).FirstOrDefault();
+        }
+
+        public Employee GetEmployeeByName(string name)
+        {
+            return new Employee();
+        }
+        #endregion
+
+        #region GetPasswordByLogin
         public Password GetPasswordByLogin(string login) {
             //var p= new Password();
             var emp = EFDbContext.Employees.Include("Person").Include("Person.Password").Where(x=>x.LoginID==login).FirstOrDefault();
             var password = emp==null?null: emp.Person.Password;
             return password ;
              
-        }
+        }        
+        #endregion
 
-        public new IEnumerable<Employee> GetAll()
+        #region GetAll
+       public new IEnumerable<Employee> GetAll()
         {
             return EFDbContext.Employees.Include("Person").Include("Person.Password")
                     . ToList();
-        }
+        }        
+        #endregion
 
 
-        public IDbContext EFDbContext
-        {
-            get { return Context as IDbContext; }
-        }
 
 
-        public IEnumerable<Employee> GetEmployee()
-        {
-            return EFDbContext.Employees;
-        }
-        public Employee GetEmployeeById(int id)
-        {
-            return EFDbContext.Employees.Where(x => x.BusinessEntityID == id).FirstOrDefault();
-        }
-        public Employee GetEmployeeByName(string name)
-        {
-            return new Employee();
-        }
+
+
+       #region SaveEmployee
         public void SaveEmployee(Employee employee)
         {
             if (employee.BusinessEntityID == 0)
@@ -88,17 +104,19 @@ namespace Wallnut.BusinessLogic.Implementations
             }
          // (EFDbContext as DbContext).SaveChanges();
         }
+       #endregion
+
+        #region GetEmployeeWithJobTitle
+        /// <summary>
+        /// Данные для вида отображения Работников
+        /// </summary>
+        /// <param name="prms">Параметры запроса</param>
+        /// <param name="sqlWhere">Условие запроса</param>
+        /// <returns></returns>
         public IEnumerable<EmployeeWithAttr> GetEmployeeWithJobTitle
-            (Dictionary<string,System.Data.SqlClient.SqlParameter> prms=null)
+            (Dictionary<string,System.Data.SqlClient.SqlParameter> prms=null, string sqlWhere="")
         {
-            var strwhere = new StringBuilder();
-            if (prms != null)
-            {
-                foreach (var item in prms)
-                {
-                    strwhere.Append(" and " + item.Key + "=" + item.Value.ParameterName);
-                }
-            }
+
             var employees = (EFDbContext as DbContext).Database.SqlQuery<EmployeeWithAttr>
 (@"select e.[BusinessEntityID],e.[NationalIDNumber],e.[LoginID],e.[JobTitle]
 ,e.[BirthDate],e.[MaritalStatus],e.[Gender],e.[HireDate],e.[SalariedFlag]
@@ -107,11 +125,13 @@ namespace Wallnut.BusinessLogic.Implementations
 ,v.[GroupName],p.[FirstName],p.[MiddleName],p.[LastName]  from [HumanResources].Employee e
 left join[HumanResources].[vEmployeeCurrentJub] v on v.BusinessEntityID = e.BusinessEntityID
 left join [Person].[Person] p on p.BusinessEntityID
-=e.BusinessEntityID where 1=1 "+strwhere.ToString(), prms==null?null:prms.Values);
+=e.BusinessEntityID where 1=1 " + sqlWhere, prms == null ? null : prms.Values);
 
 
             return employees.ToList();
-        }
+        }        
+        #endregion
+
 
         #region GetNewBusinessEntityID
         private int GetNewBusinessEntityID() {

@@ -332,6 +332,12 @@
     <Compile Include="Production\WorkOrder\fAddWorkOrder.Designer.cs">
       <DependentUpon>fAddWorkOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Production\WorkOrder\fEmployeeToWorkCondition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\WorkOrder\fEmployeeToWorkCondition.Designer.cs">
+      <DependentUpon>fEmployeeToWorkCondition.cs</DependentUpon>
+    </Compile>
     <Compile Include="Production\WorkOrder\fWorkOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -645,6 +651,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Production\WorkOrder\fAddWorkOrder.resx">
       <DependentUpon>fAddWorkOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\WorkOrder\fEmployeeToWorkCondition.resx">
+      <DependentUpon>fEmployeeToWorkCondition.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Production\WorkOrder\fWorkOrder.resx">
       <DependentUpon>fWorkOrder.cs</DependentUpon>

@@ -514,7 +514,6 @@
             // 
             // birthDateDateTimePicker
             // 
-            this.birthDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bsEmployee, "BirthDate", true));
             this.birthDateDateTimePicker.Dock = System.Windows.Forms.DockStyle.Fill;
             this.birthDateDateTimePicker.Location = new System.Drawing.Point(254, 197);
             this.birthDateDateTimePicker.Margin = new System.Windows.Forms.Padding(4);

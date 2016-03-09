@@ -33,6 +33,7 @@ namespace Wallnut.UI
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fEmployee));
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.eFEmployeesRBS = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -52,7 +53,6 @@ namespace Wallnut.UI
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.eFEmployeesRBS = new System.Windows.Forms.BindingSource(this.components);
             this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.dgvEmployee = new System.Windows.Forms.DataGridView();
@@ -116,6 +116,10 @@ namespace Wallnut.UI
             this.bindingNavigator1.Size = new System.Drawing.Size(868, 39);
             this.bindingNavigator1.TabIndex = 1;
             this.bindingNavigator1.Text = "bindingNavigator1";
+            // 
+            // eFEmployeesRBS
+            // 
+            this.eFEmployeesRBS.DataSource = typeof(Wallnut.Domain.Models.EmployeeWithAttr);
             // 
             // bindingNavigatorCountItem
             // 
@@ -275,10 +279,6 @@ namespace Wallnut.UI
             this.toolStripButton5.Text = "toolStripButton5";
             this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
-            // eFEmployeesRBS
-            // 
-            this.eFEmployeesRBS.DataSource = typeof(Wallnut.Domain.Models.EmployeeWithAttr);
-            // 
             // employeeBindingSource
             // 
             this.employeeBindingSource.DataSource = typeof(Wallnut.Domain.Models.EmployeeWithAttr);
@@ -322,6 +322,7 @@ namespace Wallnut.UI
             this.dgvEmployee.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEmployee.Size = new System.Drawing.Size(868, 326);
             this.dgvEmployee.TabIndex = 4;
+            this.dgvEmployee.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployee_CellContentClick);
             // 
             // lastNameDataGridViewTextBoxColumn
             // 
@@ -388,14 +389,15 @@ namespace Wallnut.UI
             // salariedFlagDataGridViewCheckBoxColumn
             // 
             this.salariedFlagDataGridViewCheckBoxColumn.DataPropertyName = "SalariedFlag";
-            this.salariedFlagDataGridViewCheckBoxColumn.HeaderText = "SalariedFlag";
+            this.salariedFlagDataGridViewCheckBoxColumn.HeaderText = "Сдельная";
             this.salariedFlagDataGridViewCheckBoxColumn.Name = "salariedFlagDataGridViewCheckBoxColumn";
             this.salariedFlagDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.salariedFlagDataGridViewCheckBoxColumn.ToolTipText = "Классификация оплаты";
             // 
             // currentFlagDataGridViewCheckBoxColumn
             // 
             this.currentFlagDataGridViewCheckBoxColumn.DataPropertyName = "CurrentFlag";
-            this.currentFlagDataGridViewCheckBoxColumn.HeaderText = "CurrentFlag";
+            this.currentFlagDataGridViewCheckBoxColumn.HeaderText = "На работе";
             this.currentFlagDataGridViewCheckBoxColumn.Name = "currentFlagDataGridViewCheckBoxColumn";
             this.currentFlagDataGridViewCheckBoxColumn.ReadOnly = true;
             // 

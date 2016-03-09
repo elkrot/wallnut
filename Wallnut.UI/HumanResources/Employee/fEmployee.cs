@@ -54,7 +54,7 @@ namespace Wallnut.UI
             {
                 if (dgvEmployee.SelectedRows[0] != null)
                 {
-                    var emp = dgvEmployee.SelectedRows[0].DataBoundItem as Employee;
+                    var emp = dgvEmployee.SelectedRows[0].DataBoundItem as EmployeeWithAttr;
                     frm.employee = unitOfWork.EmployeeRepository.Get(emp.BusinessEntityID);
                     DialogResult result = frm.ShowDialog(this);
 
@@ -64,11 +64,16 @@ namespace Wallnut.UI
                         SetPassword(ref frm);
                         unitOfWork.Complete();
 
-                        eFEmployeesRBS.DataSource = unitOfWork.EmployeeRepository.GetAll().ToList();
+                        RereadData(unitOfWork);
 
                     }
                 }
             }
+        }
+
+        private void RereadData(UnitOfWork unitOfWork)
+        {
+            eFEmployeesRBS.DataSource = unitOfWork.EmployeeRepository.GetEmployeeWithJobTitle().ToList();
         }
         #endregion
         
@@ -87,12 +92,12 @@ namespace Wallnut.UI
                 {
                     frm.employee.ModifiedDate = DateTime.Now;
                     frm.employee.Person.ModifiedDate = DateTime.Now;
-                    frm.employee.BirthDate = DateTime.Parse("1975.07.27");
+                    //frm.employee.BirthDate = DateTime.Parse("1975.07.27");
                     frm.employee.HireDate = DateTime.Now;
                     unitOfWork.EmployeeRepository.SaveEmployee(frm.employee);
                     SetPassword(ref frm);
                     unitOfWork.Complete();
-                    eFEmployeesRBS.DataSource = unitOfWork.EmployeeRepository.GetAll().ToList();
+                    RereadData(unitOfWork);
                 }
             }
         }
@@ -136,11 +141,11 @@ namespace Wallnut.UI
             {
                 using (var unitOfWork = new UnitOfWork(new WallnutProductionContext()))
                 {
-                    var emp = dgvEmployee.SelectedRows[0].DataBoundItem as Employee;
+                    var emp = dgvEmployee.SelectedRows[0].DataBoundItem as EmployeeWithAttr;
                     var employee = unitOfWork.EmployeeRepository.Get(emp.BusinessEntityID);
                     unitOfWork.EmployeeRepository.Remove(employee);
                     unitOfWork.Complete();
-                    eFEmployeesRBS.DataSource = unitOfWork.EmployeeRepository.GetAll().ToList();
+                    RereadData(unitOfWork);
                 }
             }
         }
@@ -149,15 +154,24 @@ namespace Wallnut.UI
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
             var frm = new fEmployeeDepartmentHistory();
-                                var emp = dgvEmployee.SelectedRows[0].DataBoundItem as Employee;
-                    var employeeId =emp.BusinessEntityID;
+            var emp = dgvEmployee.SelectedRows[0].DataBoundItem as EmployeeWithAttr;
+                    var employeeId = emp.BusinessEntityID;
             frm.employeeID = employeeId;
             frm.ShowDialog();
+            using (var unitOfWork = new UnitOfWork(new WallnutProductionContext()))
+            {
+                RereadData(unitOfWork);
+            }
         }
 
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dgvEmployee_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
         
 

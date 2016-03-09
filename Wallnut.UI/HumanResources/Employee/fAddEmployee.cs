@@ -125,7 +125,14 @@ namespace Wallnut.UI
             }            
             #endregion
 
-          
+            this.birthDateDateTimePicker.DataBindings.Add("Value",
+                        this.employee ,
+                        "BirthDate",
+                        true,
+                        DataSourceUpdateMode.OnPropertyChanged);
+                
+                
+               
         }
         #endregion
 
