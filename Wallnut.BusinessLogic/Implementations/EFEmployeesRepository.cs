@@ -114,18 +114,18 @@ namespace Wallnut.BusinessLogic.Implementations
         /// <param name="sqlWhere">Условие запроса</param>
         /// <returns></returns>
         public IEnumerable<EmployeeWithAttr> GetEmployeeWithJobTitle
-            (Dictionary<string,System.Data.SqlClient.SqlParameter> prms=null, string sqlWhere="")
+            (List<System.Data.SqlClient.SqlParameter> prms=null, string sqlWhere="")
         {
 
             var employees = (EFDbContext as DbContext).Database.SqlQuery<EmployeeWithAttr>
-(@"select e.[BusinessEntityID],e.[NationalIDNumber],e.[LoginID],e.[JobTitle]
-,e.[BirthDate],e.[MaritalStatus],e.[Gender],e.[HireDate],e.[SalariedFlag]
-,e.[VacationHours],e.[SickLeaveHours],e.[CurrentFlag],e.[ModifiedDate]
-,v.[DepartmentID],v.[ShiftID],v.[StartDate],v.[EndDate],v.[ShiftName],v.[DepartmentName]
-,v.[GroupName],p.[FirstName],p.[MiddleName],p.[LastName]  from [HumanResources].Employee e
-left join[HumanResources].[vEmployeeCurrentJub] v on v.BusinessEntityID = e.BusinessEntityID
-left join [Person].[Person] p on p.BusinessEntityID
-=e.BusinessEntityID where 1=1 " + sqlWhere, prms == null ? null : prms.Values);
+(@"select e.BusinessEntityID,e.NationalIDNumber,e.LoginID,e.JobTitle
+,e.BirthDate,e.MaritalStatus,e.Gender,e.HireDate,e.SalariedFlag
+,e.VacationHours,e.SickLeaveHours,e.CurrentFlag,e.ModifiedDate
+,v.DepartmentID,v.ShiftID,v.StartDate,v.EndDate,v.ShiftName,v.DepartmentName
+,v.GroupName,p.FirstName,p.MiddleName,p.LastName  from HumanResources.Employee e
+ left join HumanResources.vEmployeeCurrentJub v on v.BusinessEntityID = e.BusinessEntityID
+ left join Person.Person p on p.BusinessEntityID
+=e.BusinessEntityID where 1=1 " + sqlWhere, prms == null ? null : prms.ToArray());
 
 
             return employees.ToList();

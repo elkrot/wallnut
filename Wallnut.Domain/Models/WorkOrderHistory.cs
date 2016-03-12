@@ -36,6 +36,10 @@ namespace Wallnut.Domain.Models
  
         [Column("ModifiedDate")] 
 	        public System.DateTime ModifiedDate { get; set; }
+
+        [Column("Qty")]
+        public decimal Qty { get; set; }
+
         public virtual Employee Employee { get; set; }
         public virtual Location Location { get; set; }
         public virtual Product Product { get; set; }

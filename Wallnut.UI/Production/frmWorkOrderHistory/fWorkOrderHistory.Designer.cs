@@ -47,12 +47,13 @@
             this.tsbDelete = new System.Windows.Forms.ToolStripButton();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.productIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.businessEntityIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLocationID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.actualStartDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.actualEndDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.actualResourceHrsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.actualCostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.bs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bn)).BeginInit();
             this.bn.SuspendLayout();
@@ -90,7 +91,9 @@
             this.bindingNavigatorSeparator2,
             this.tsbAdd,
             this.tsbEdit,
-            this.tsbDelete});
+            this.tsbDelete,
+            this.toolStripButton1,
+            this.toolStripButton2});
             this.bn.Location = new System.Drawing.Point(0, 0);
             this.bn.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bn.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -207,7 +210,6 @@
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.productIDDataGridViewTextBoxColumn,
-            this.businessEntityIDDataGridViewTextBoxColumn,
             this.colLocationID,
             this.actualStartDateDataGridViewTextBoxColumn,
             this.actualEndDateDataGridViewTextBoxColumn,
@@ -227,12 +229,6 @@
             this.productIDDataGridViewTextBoxColumn.HeaderText = "Продукт";
             this.productIDDataGridViewTextBoxColumn.Name = "productIDDataGridViewTextBoxColumn";
             this.productIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // businessEntityIDDataGridViewTextBoxColumn
-            // 
-            this.businessEntityIDDataGridViewTextBoxColumn.DataPropertyName = "EmployeeName";
-            this.businessEntityIDDataGridViewTextBoxColumn.HeaderText = "Работник";
-            this.businessEntityIDDataGridViewTextBoxColumn.Name = "businessEntityIDDataGridViewTextBoxColumn";
             // 
             // colLocationID
             // 
@@ -264,6 +260,25 @@
             this.actualCostDataGridViewTextBoxColumn.DataPropertyName = "ActualCost";
             this.actualCostDataGridViewTextBoxColumn.HeaderText = "Стоимость";
             this.actualCostDataGridViewTextBoxColumn.Name = "actualCostDataGridViewTextBoxColumn";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.None;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 36);
+            this.toolStripButton1.Text = "toolStripButton1";
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton2.Text = "toolStripButton2";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // fWorkOrderHistory
             // 
@@ -312,5 +327,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn actualEndDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn actualResourceHrsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn actualCostDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
     }
 }

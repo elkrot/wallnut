@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using Wallnut.UI.Implementations;
 using Wallnut.Domain.Models;
 using Wallnut.BusinessLogic.Implementations;
+using Wallnut.UI.Production.WorkOrder;
 
 namespace Wallnut.UI.Production.frmWorkOrderHistory
 {
@@ -85,6 +86,34 @@ namespace Wallnut.UI.Production.frmWorkOrderHistory
             }
             aForm.behavior.Refresh();
             return aForm;
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            var frm = new fEmployeeToWorkCondition();
+            var res = frm.ShowDialog();
+
+            if (res == System.Windows.Forms.DialogResult.OK) {
+                if (frm.FormResult != null)
+                {
+                    using (var unitOfWork = new UnitOfWork(new WallnutProductionContext()))
+                    {
+                        foreach (var item in frm.FormResult)
+                        {
+                            unitOfWork.WorkOrderHistoryRepository.Add(
+                            new WorkOrderHistory() {
+                                BusinessEntityID= item.EmployeeId
+                            ,
+                                WorkOrderID = aForm.workOrderID
+                                ,ProductID =item.ProductId
+                                ,
+                            });
+                        }
+                        
+                    }
+                }
+            }
+
         }
 
 

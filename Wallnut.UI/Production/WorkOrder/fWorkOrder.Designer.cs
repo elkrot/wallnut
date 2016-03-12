@@ -58,6 +58,7 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.ss = new System.Windows.Forms.StatusStrip();
             ((System.ComponentModel.ISupportInitialize)(this.bs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
@@ -87,6 +88,7 @@
             this.dgv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv.Location = new System.Drawing.Point(0, 39);
             this.dgv.Name = "dgv";
+            this.dgv.ReadOnly = true;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv.Size = new System.Drawing.Size(762, 201);
             this.dgv.TabIndex = 2;
@@ -104,6 +106,7 @@
             this.orderQtyDataGridViewTextBoxColumn.DataPropertyName = "OrderQty";
             this.orderQtyDataGridViewTextBoxColumn.HeaderText = "Количество";
             this.orderQtyDataGridViewTextBoxColumn.Name = "orderQtyDataGridViewTextBoxColumn";
+            this.orderQtyDataGridViewTextBoxColumn.ReadOnly = true;
             this.orderQtyDataGridViewTextBoxColumn.ToolTipText = "Количество производимого продукта";
             // 
             // scrappedQtyDataGridViewTextBoxColumn
@@ -111,6 +114,7 @@
             this.scrappedQtyDataGridViewTextBoxColumn.DataPropertyName = "ScrappedQty";
             this.scrappedQtyDataGridViewTextBoxColumn.HeaderText = "Отбраковано";
             this.scrappedQtyDataGridViewTextBoxColumn.Name = "scrappedQtyDataGridViewTextBoxColumn";
+            this.scrappedQtyDataGridViewTextBoxColumn.ReadOnly = true;
             this.scrappedQtyDataGridViewTextBoxColumn.ToolTipText = "Отбракованное количество";
             // 
             // stockedQtyDataGridViewTextBoxColumn
@@ -118,6 +122,7 @@
             this.stockedQtyDataGridViewTextBoxColumn.DataPropertyName = "StockedQty";
             this.stockedQtyDataGridViewTextBoxColumn.HeaderText = "Произведено";
             this.stockedQtyDataGridViewTextBoxColumn.Name = "stockedQtyDataGridViewTextBoxColumn";
+            this.stockedQtyDataGridViewTextBoxColumn.ReadOnly = true;
             this.stockedQtyDataGridViewTextBoxColumn.ToolTipText = "Произведенное количество для складских запасов";
             // 
             // startDateDataGridViewTextBoxColumn
@@ -127,6 +132,7 @@
             this.startDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.startDateDataGridViewTextBoxColumn.HeaderText = "Дата начала";
             this.startDateDataGridViewTextBoxColumn.Name = "startDateDataGridViewTextBoxColumn";
+            this.startDateDataGridViewTextBoxColumn.ReadOnly = true;
             this.startDateDataGridViewTextBoxColumn.ToolTipText = "Дата начала выполнения заказа на производство";
             // 
             // endDateDataGridViewTextBoxColumn
@@ -136,6 +142,7 @@
             this.endDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.endDateDataGridViewTextBoxColumn.HeaderText = "Дата окончания";
             this.endDateDataGridViewTextBoxColumn.Name = "endDateDataGridViewTextBoxColumn";
+            this.endDateDataGridViewTextBoxColumn.ReadOnly = true;
             this.endDateDataGridViewTextBoxColumn.ToolTipText = "Дата окончания выполнения заказа на производство";
             // 
             // dueDateDataGridViewTextBoxColumn
@@ -145,6 +152,7 @@
             this.dueDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.dueDateDataGridViewTextBoxColumn.HeaderText = "Срок выполнения";
             this.dueDateDataGridViewTextBoxColumn.Name = "dueDateDataGridViewTextBoxColumn";
+            this.dueDateDataGridViewTextBoxColumn.ReadOnly = true;
             this.dueDateDataGridViewTextBoxColumn.ToolTipText = "Срок выполнения заказа на производство";
             // 
             // bn
@@ -169,7 +177,8 @@
             this.tsbDelete,
             this.toolStripSeparator1,
             this.toolStripButton2,
-            this.toolStripButton1});
+            this.toolStripButton1,
+            this.toolStripButton3});
             this.bn.Location = new System.Drawing.Point(0, 0);
             this.bn.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bn.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -303,6 +312,15 @@
             this.toolStripButton1.Text = "Приемка";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.None;
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(23, 36);
+            this.toolStripButton3.Text = "toolStripButton3";
+            // 
             // ss
             // 
             this.ss.Location = new System.Drawing.Point(0, 240);
@@ -360,5 +378,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn endDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dueDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton toolStripButton3;
     }
 }

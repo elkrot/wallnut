@@ -24,4 +24,29 @@ namespace Wallnut.Domain.Models
                                                                      *        
                                                                      */
     }
+
+   public struct ListEmployeeToWork
+   {
+       public string Fio { get; set; }
+       public double Qty { get; set; }
+       public int Id { get; set; }
+       public string JobTitle { get; set; }
+       public bool Selected { get; set; }
+   }
+
+   public struct EmployeeToWorkCondition
+   {
+       public DateTime WorkDate { get; set; }
+       public short DepartmentId { get; set; }
+       public int ShiftId { get; set; }
+       public int ProductId { get; set; }
+   }
+
+   public struct EmployeeToWorkResult
+   {
+       public DateTime WorkDate { get; set; }
+       public int EmployeeId { get; set; }
+       public int ProductId { get; set; }
+       public double Qty { get; set; }
+   }
 }
