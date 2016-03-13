@@ -31,9 +31,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fWorkOrderHistory));
-            this.ss = new System.Windows.Forms.StatusStrip();
+            this.dgv = new System.Windows.Forms.DataGridView();
             this.bn = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -45,32 +47,49 @@
             this.tsbAdd = new System.Windows.Forms.ToolStripButton();
             this.tsbEdit = new System.Windows.Forms.ToolStripButton();
             this.tsbDelete = new System.Windows.Forms.ToolStripButton();
-            this.dgv = new System.Windows.Forms.DataGridView();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.ss = new System.Windows.Forms.StatusStrip();
             this.productIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLocationID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.actualStartDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.actualEndDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.actualResourceHrsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.actualCostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.bs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bn)).BeginInit();
             this.bn.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
             // bs
             // 
             this.bs.DataSource = typeof(Wallnut.Domain.Models.WorkOrderHistory);
             // 
-            // ss
+            // dgv
             // 
-            this.ss.Location = new System.Drawing.Point(0, 240);
-            this.ss.Name = "ss";
-            this.ss.Size = new System.Drawing.Size(679, 22);
-            this.ss.TabIndex = 0;
-            this.ss.Text = "statusStrip1";
+            this.dgv.AllowUserToAddRows = false;
+            this.dgv.AllowUserToDeleteRows = false;
+            this.dgv.AutoGenerateColumns = false;
+            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.productIDDataGridViewTextBoxColumn,
+            this.colQty,
+            this.colEmployeeName,
+            this.colLocationID,
+            this.actualStartDateDataGridViewTextBoxColumn,
+            this.actualEndDateDataGridViewTextBoxColumn,
+            this.actualResourceHrsDataGridViewTextBoxColumn,
+            this.actualCostDataGridViewTextBoxColumn});
+            this.dgv.DataSource = this.bs;
+            this.dgv.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv.Location = new System.Drawing.Point(0, 39);
+            this.dgv.Name = "dgv";
+            this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv.Size = new System.Drawing.Size(679, 201);
+            this.dgv.TabIndex = 2;
             // 
             // bn
             // 
@@ -80,6 +99,8 @@
             this.bn.DeleteItem = null;
             this.bn.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.bn.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabel1,
+            this.toolStripButton3,
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
             this.bindingNavigatorSeparator,
@@ -111,6 +132,23 @@
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(43, 36);
             this.bindingNavigatorCountItem.Text = "для {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripLabel1.Image = global::Wallnut.UI.Properties.Resources.purchase;
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(32, 36);
+            this.toolStripLabel1.Text = "toolStripLabel1";
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(140, 36);
+            this.toolStripButton3.Text = "Выдача в производство";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -202,65 +240,6 @@
             this.tsbDelete.Text = "Удалить";
             this.tsbDelete.Click += new System.EventHandler(this.tsbDelete_Click);
             // 
-            // dgv
-            // 
-            this.dgv.AllowUserToAddRows = false;
-            this.dgv.AllowUserToDeleteRows = false;
-            this.dgv.AutoGenerateColumns = false;
-            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.productIDDataGridViewTextBoxColumn,
-            this.colLocationID,
-            this.actualStartDateDataGridViewTextBoxColumn,
-            this.actualEndDateDataGridViewTextBoxColumn,
-            this.actualResourceHrsDataGridViewTextBoxColumn,
-            this.actualCostDataGridViewTextBoxColumn});
-            this.dgv.DataSource = this.bs;
-            this.dgv.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv.Location = new System.Drawing.Point(0, 39);
-            this.dgv.Name = "dgv";
-            this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(679, 201);
-            this.dgv.TabIndex = 2;
-            // 
-            // productIDDataGridViewTextBoxColumn
-            // 
-            this.productIDDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
-            this.productIDDataGridViewTextBoxColumn.HeaderText = "Продукт";
-            this.productIDDataGridViewTextBoxColumn.Name = "productIDDataGridViewTextBoxColumn";
-            this.productIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // colLocationID
-            // 
-            this.colLocationID.DataPropertyName = "LocationName";
-            this.colLocationID.HeaderText = "Расположение";
-            this.colLocationID.Name = "colLocationID";
-            this.colLocationID.ReadOnly = true;
-            // 
-            // actualStartDateDataGridViewTextBoxColumn
-            // 
-            this.actualStartDateDataGridViewTextBoxColumn.DataPropertyName = "ActualStartDate";
-            this.actualStartDateDataGridViewTextBoxColumn.HeaderText = "Начальная дата";
-            this.actualStartDateDataGridViewTextBoxColumn.Name = "actualStartDateDataGridViewTextBoxColumn";
-            // 
-            // actualEndDateDataGridViewTextBoxColumn
-            // 
-            this.actualEndDateDataGridViewTextBoxColumn.DataPropertyName = "ActualEndDate";
-            this.actualEndDateDataGridViewTextBoxColumn.HeaderText = "Конечная дата";
-            this.actualEndDateDataGridViewTextBoxColumn.Name = "actualEndDateDataGridViewTextBoxColumn";
-            // 
-            // actualResourceHrsDataGridViewTextBoxColumn
-            // 
-            this.actualResourceHrsDataGridViewTextBoxColumn.DataPropertyName = "ActualResourceHrs";
-            this.actualResourceHrsDataGridViewTextBoxColumn.HeaderText = "Временные затраты";
-            this.actualResourceHrsDataGridViewTextBoxColumn.Name = "actualResourceHrsDataGridViewTextBoxColumn";
-            // 
-            // actualCostDataGridViewTextBoxColumn
-            // 
-            this.actualCostDataGridViewTextBoxColumn.DataPropertyName = "ActualCost";
-            this.actualCostDataGridViewTextBoxColumn.HeaderText = "Стоимость";
-            this.actualCostDataGridViewTextBoxColumn.Name = "actualCostDataGridViewTextBoxColumn";
-            // 
             // toolStripButton1
             // 
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.None;
@@ -280,6 +259,68 @@
             this.toolStripButton2.Text = "toolStripButton2";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
+            // ss
+            // 
+            this.ss.Location = new System.Drawing.Point(0, 240);
+            this.ss.Name = "ss";
+            this.ss.Size = new System.Drawing.Size(679, 22);
+            this.ss.TabIndex = 0;
+            this.ss.Text = "statusStrip1";
+            // 
+            // productIDDataGridViewTextBoxColumn
+            // 
+            this.productIDDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
+            this.productIDDataGridViewTextBoxColumn.HeaderText = "Продукт";
+            this.productIDDataGridViewTextBoxColumn.Name = "productIDDataGridViewTextBoxColumn";
+            this.productIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // colQty
+            // 
+            this.colQty.DataPropertyName = "Qty";
+            this.colQty.HeaderText = "Количество";
+            this.colQty.Name = "colQty";
+            // 
+            // colEmployeeName
+            // 
+            this.colEmployeeName.DataPropertyName = "EmployeeName";
+            this.colEmployeeName.HeaderText = "Работник";
+            this.colEmployeeName.Name = "colEmployeeName";
+            this.colEmployeeName.ReadOnly = true;
+            // 
+            // colLocationID
+            // 
+            this.colLocationID.DataPropertyName = "LocationName";
+            this.colLocationID.HeaderText = "Расположение";
+            this.colLocationID.Name = "colLocationID";
+            this.colLocationID.ReadOnly = true;
+            // 
+            // actualStartDateDataGridViewTextBoxColumn
+            // 
+            this.actualStartDateDataGridViewTextBoxColumn.DataPropertyName = "ActualStartDate";
+            this.actualStartDateDataGridViewTextBoxColumn.HeaderText = "Начальная дата";
+            this.actualStartDateDataGridViewTextBoxColumn.Name = "actualStartDateDataGridViewTextBoxColumn";
+            // 
+            // actualEndDateDataGridViewTextBoxColumn
+            // 
+            this.actualEndDateDataGridViewTextBoxColumn.DataPropertyName = "ActualEndDate";
+            this.actualEndDateDataGridViewTextBoxColumn.HeaderText = "Конечная дата";
+            this.actualEndDateDataGridViewTextBoxColumn.Name = "actualEndDateDataGridViewTextBoxColumn";
+            this.actualEndDateDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // actualResourceHrsDataGridViewTextBoxColumn
+            // 
+            this.actualResourceHrsDataGridViewTextBoxColumn.DataPropertyName = "ActualResourceHrs";
+            this.actualResourceHrsDataGridViewTextBoxColumn.HeaderText = "Временные затраты";
+            this.actualResourceHrsDataGridViewTextBoxColumn.Name = "actualResourceHrsDataGridViewTextBoxColumn";
+            this.actualResourceHrsDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // actualCostDataGridViewTextBoxColumn
+            // 
+            this.actualCostDataGridViewTextBoxColumn.DataPropertyName = "ActualCost";
+            this.actualCostDataGridViewTextBoxColumn.HeaderText = "Стоимость";
+            this.actualCostDataGridViewTextBoxColumn.Name = "actualCostDataGridViewTextBoxColumn";
+            this.actualCostDataGridViewTextBoxColumn.Visible = false;
+            // 
             // fWorkOrderHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -292,10 +333,10 @@
             this.Text = "История. Производство";
             this.Load += new System.EventHandler(this.fList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bn)).EndInit();
             this.bn.ResumeLayout(false);
             this.bn.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -319,15 +360,17 @@
         private System.Windows.Forms.ToolStripButton tsbEdit;
         private System.Windows.Forms.ToolStripButton tsbDelete;
         private System.Windows.Forms.DataGridView dgv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn locationIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn businessEntityIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colQty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEmployeeName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colLocationID;
         private System.Windows.Forms.DataGridViewTextBoxColumn actualStartDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn actualEndDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn actualResourceHrsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn actualCostDataGridViewTextBoxColumn;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
     }
 }

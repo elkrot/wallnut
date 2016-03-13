@@ -11,17 +11,20 @@ using Wallnut.Domain.Models;
 
 namespace Wallnut.UI.Production.WorkOrder
 {
-    public partial class fEmployeeToWorkCondition : Form
+    public partial class fBackFromProduction : Form
     {
         private List<Department> departmentList;
         private List<Shift> shiftList;
         private List<Product> productList;
         private EmployeeToWorkCondition curCondition;
         public List<EmployeeToWorkResult> FormResult;
-        public fEmployeeToWorkCondition()
+        public fBackFromProduction ()
         {
             FormResult = new List<EmployeeToWorkResult>();
-            curCondition = new EmployeeToWorkCondition() { WorkDate = DateTime.Now, DepartmentId = 2, ShiftId = 1, ProductId = 1 };
+            curCondition = new EmployeeToWorkCondition() { WorkDate = DateTime.Now
+                , DepartmentId = Wallnut.Utils.Settings.WorkshopId
+                , ShiftId = Wallnut.Utils.Settings.DefaultShiftId
+                , ProductId = (int)Wallnut.Utils.Settings.WallnutState.IntaktNut };
             InitializeComponent();
         }
 
@@ -54,7 +57,7 @@ namespace Wallnut.UI.Production.WorkOrder
 
                 var strWhere = @" and v.DepartmentID=@DepartmentID and v.ShiftID=@ShiftID";
                 var obj = unitOfWork.EmployeeRepository.GetEmployeeWithJobTitle(prms, strWhere)
-                    .Select(p => new ListEmployeeToWork
+                    .Select(p => new ListBackFromProduction
                     {
                         Fio = p.FirstName + " " + p.MiddleName + " " + p.LastName
                         ,

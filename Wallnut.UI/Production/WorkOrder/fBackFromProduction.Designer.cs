@@ -1,6 +1,6 @@
 ﻿namespace Wallnut.UI.Production.WorkOrder
 {
-    partial class fEmployeeToWorkCondition
+    partial class fBackFromProduction
     {
         /// <summary>
         /// Required designer variable.
@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -48,6 +51,9 @@
             this.bs = new System.Windows.Forms.BindingSource(this.components);
             this.colSelected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colQtyIssued = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colQtyKernel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colQtyShucks = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colQtyNuts = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colJobTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
@@ -62,7 +68,7 @@
             this.statusStrip1.Location = new System.Drawing.Point(0, 355);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(711, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(859, 22);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -73,7 +79,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(711, 170);
+            this.panel1.Size = new System.Drawing.Size(859, 170);
             this.panel1.TabIndex = 1;
             // 
             // tableLayoutPanel1
@@ -84,13 +90,13 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.Controls.Add(this.dtpWorkDate, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.cbDepartment, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.cbShift, 2, 4);
             this.tableLayoutPanel1.Controls.Add(this.label1, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.cbProduct, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.cbDepartment, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label3, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.cbShift, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label4, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.cbProduct, 2, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
@@ -102,7 +108,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(711, 170);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(859, 170);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // dtpWorkDate
@@ -116,7 +122,7 @@
             // cbDepartment
             // 
             this.cbDepartment.FormattingEnabled = true;
-            this.cbDepartment.Location = new System.Drawing.Point(366, 85);
+            this.cbDepartment.Location = new System.Drawing.Point(366, 53);
             this.cbDepartment.Margin = new System.Windows.Forms.Padding(4);
             this.cbDepartment.Name = "cbDepartment";
             this.cbDepartment.Size = new System.Drawing.Size(216, 26);
@@ -125,7 +131,7 @@
             // cbShift
             // 
             this.cbShift.FormattingEnabled = true;
-            this.cbShift.Location = new System.Drawing.Point(366, 118);
+            this.cbShift.Location = new System.Drawing.Point(366, 85);
             this.cbShift.Margin = new System.Windows.Forms.Padding(4);
             this.cbShift.Name = "cbShift";
             this.cbShift.Size = new System.Drawing.Size(216, 26);
@@ -144,7 +150,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(34, 81);
+            this.label2.Location = new System.Drawing.Point(34, 49);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(119, 18);
@@ -154,7 +160,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(34, 114);
+            this.label3.Location = new System.Drawing.Point(34, 81);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 18);
@@ -164,7 +170,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(34, 49);
+            this.label4.Location = new System.Drawing.Point(34, 114);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 18);
@@ -174,7 +180,7 @@
             // cbProduct
             // 
             this.cbProduct.FormattingEnabled = true;
-            this.cbProduct.Location = new System.Drawing.Point(366, 53);
+            this.cbProduct.Location = new System.Drawing.Point(366, 118);
             this.cbProduct.Margin = new System.Windows.Forms.Padding(4);
             this.cbProduct.Name = "cbProduct";
             this.cbProduct.Size = new System.Drawing.Size(216, 26);
@@ -189,13 +195,13 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 291);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(711, 64);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(859, 64);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(595, 4);
+            this.btnCancel.Location = new System.Drawing.Point(743, 4);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(112, 54);
@@ -206,7 +212,7 @@
             // btnOK
             // 
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOK.Location = new System.Drawing.Point(475, 4);
+            this.btnOK.Location = new System.Drawing.Point(623, 4);
             this.btnOK.Margin = new System.Windows.Forms.Padding(4);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(112, 54);
@@ -224,6 +230,9 @@
             this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colSelected,
             this.colQtyIssued,
+            this.colQtyKernel,
+            this.colQtyShucks,
+            this.colQtyNuts,
             this.colFIO,
             this.colJobTitle});
             this.dgv.DataSource = this.bs;
@@ -232,23 +241,54 @@
             this.dgv.Location = new System.Drawing.Point(0, 170);
             this.dgv.Margin = new System.Windows.Forms.Padding(4);
             this.dgv.Name = "dgv";
-            this.dgv.Size = new System.Drawing.Size(711, 121);
+            this.dgv.Size = new System.Drawing.Size(859, 121);
             this.dgv.TabIndex = 3;
             this.dgv.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgv_CellValidating);
             // 
             // colSelected
             // 
             this.colSelected.DataPropertyName = "Selected";
+            this.colSelected.FillWeight = 30F;
             this.colSelected.HeaderText = "...";
             this.colSelected.Name = "colSelected";
+            this.colSelected.Width = 30;
             // 
             // colQtyIssued
             // 
             this.colQtyIssued.DataPropertyName = "QtyIssued";
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
             this.colQtyIssued.DefaultCellStyle = dataGridViewCellStyle1;
-            this.colQtyIssued.HeaderText = "Выдано";
+            this.colQtyIssued.HeaderText = "Выдано в производство";
             this.colQtyIssued.Name = "colQtyIssued";
+            // 
+            // colQtyKernel
+            // 
+            this.colQtyKernel.DataPropertyName = "QtyKernel";
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.colQtyKernel.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colQtyKernel.HeaderText = "Принято ядро";
+            this.colQtyKernel.Name = "colQtyKernel";
+            // 
+            // colQtyShucks
+            // 
+            this.colQtyShucks.DataPropertyName = "QtyShucks";
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.colQtyShucks.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colQtyShucks.HeaderText = "Принято Скорлупа";
+            this.colQtyShucks.Name = "colQtyShucks";
+            // 
+            // colQtyNuts
+            // 
+            this.colQtyNuts.DataPropertyName = "QtyNuts";
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.colQtyNuts.DefaultCellStyle = dataGridViewCellStyle4;
+            this.colQtyNuts.HeaderText = "Принято целый орех";
+            this.colQtyNuts.Name = "colQtyNuts";
             // 
             // colFIO
             // 
@@ -270,19 +310,19 @@
             this.colJobTitle.ReadOnly = true;
             this.colJobTitle.Width = 200;
             // 
-            // fEmployeeToWorkCondition
+            // fBackFromProduction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(711, 377);
+            this.ClientSize = new System.Drawing.Size(859, 377);
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "fEmployeeToWorkCondition";
-            this.Text = "Выдача Ореха Работнику в производство";
+            this.Name = "fBackFromProduction";
+            this.Text = "Приемка ореха от работника";
             this.Load += new System.EventHandler(this.fEmployeeToWorkCondition_Load);
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -316,6 +356,9 @@
         private System.Windows.Forms.ComboBox cbProduct;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colSelected;
         private System.Windows.Forms.DataGridViewTextBoxColumn colQtyIssued;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colQtyKernel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colQtyShucks;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colQtyNuts;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFIO;
         private System.Windows.Forms.DataGridViewTextBoxColumn colJobTitle;
     }

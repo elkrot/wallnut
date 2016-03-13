@@ -90,30 +90,49 @@ namespace Wallnut.UI.Production.frmWorkOrderHistory
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
+            
+            if (aForm.operationSequence == 2)
+            {            
             var frm = new fEmployeeToWorkCondition();
             var res = frm.ShowDialog();
 
-            if (res == System.Windows.Forms.DialogResult.OK) {
-                if (frm.FormResult != null)
+                if (res == System.Windows.Forms.DialogResult.OK)
                 {
-                    using (var unitOfWork = new UnitOfWork(new WallnutProductionContext()))
+                    if (frm.FormResult != null)
                     {
-                        foreach (var item in frm.FormResult)
+                        using (var unitOfWork = new UnitOfWork(new WallnutProductionContext()))
                         {
-                            unitOfWork.WorkOrderHistoryRepository.Add(
-                            new WorkOrderHistory() {
-                                BusinessEntityID= item.EmployeeId
-                            ,
-                                WorkOrderID = aForm.workOrderID
-                                ,ProductID =item.ProductId
-                                ,
-                            });
+                            foreach (var item in frm.FormResult)
+                            {
+                                unitOfWork.WorkOrderHistoryRepository.Add(
+                                new WorkOrderHistory()
+                                {
+                                    BusinessEntityID = item.EmployeeId
+                                    ,
+                                    WorkOrderID = aForm.workOrderID
+                                    ,
+                                    ProductID = item.ProductId
+                                    ,
+                                    Qty = item.Qty
+                                    ,
+                                    ModifiedDate = DateTime.Now
+                                    ,
+                                    OperationSequence = aForm.operationSequence
+                                    ,
+                                    ActualStartDate = item.WorkDate
+                                    ,
+                                    LocationID = 1
+                                    ,
+                                    ActualCost = 10
+                                });
+                                unitOfWork.Complete();
+                            }
+
                         }
-                        
                     }
                 }
             }
-
+            behavior.RefreshData();
         }
 
 

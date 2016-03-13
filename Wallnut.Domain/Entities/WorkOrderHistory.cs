@@ -15,7 +15,7 @@ namespace Wallnut.Domain.Models
         public string ProductName { get {return Product.Name;} }
 
      [NotMapped]
-     public string StoreName { get { return Employee.FIO; } }
+     public string EmployeeName { get { return Employee.FIO; } }
 
        [NotMapped]
        public string LocationName { get { return Location.Name; } } 
@@ -25,14 +25,28 @@ namespace Wallnut.Domain.Models
                                                                      */
     }
 
-   public struct ListEmployeeToWork
+
+   public class ListEmployeeToWork
    {
        public string Fio { get; set; }
-       public double Qty { get; set; }
+       public decimal QtyIssued { get; set; }
        public int Id { get; set; }
        public string JobTitle { get; set; }
        public bool Selected { get; set; }
    }
+
+   public class ListBackFromProduction
+   {
+       public string Fio { get; set; }
+       public decimal QtyIssued { get; set; }
+       public decimal QtyKernel { get; set; }
+       public decimal QtyShucks { get; set; }
+       public decimal QtyNuts { get; set; }
+       public int Id { get; set; }
+       public string JobTitle { get; set; }
+       public bool Selected { get; set; }
+   }
+
 
    public struct EmployeeToWorkCondition
    {
@@ -47,6 +61,6 @@ namespace Wallnut.Domain.Models
        public DateTime WorkDate { get; set; }
        public int EmployeeId { get; set; }
        public int ProductId { get; set; }
-       public double Qty { get; set; }
+       public decimal Qty { get; set; }
    }
 }
