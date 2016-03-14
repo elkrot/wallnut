@@ -37,18 +37,17 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dtpWorkDate = new System.Windows.Forms.DateTimePicker();
-            this.cbDepartment = new System.Windows.Forms.ComboBox();
-            this.cbShift = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.cbDepartment = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.cbShift = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cbProduct = new System.Windows.Forms.ComboBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.bs = new System.Windows.Forms.BindingSource(this.components);
             this.colSelected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colQtyIssued = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colQtyKernel = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +55,7 @@
             this.colQtyNuts = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colJobTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bs = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -65,10 +65,10 @@
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 355);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 397);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(859, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(926, 22);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -79,7 +79,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(859, 170);
+            this.panel1.Size = new System.Drawing.Size(926, 170);
             this.panel1.TabIndex = 1;
             // 
             // tableLayoutPanel1
@@ -108,7 +108,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(859, 170);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(926, 170);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // dtpWorkDate
@@ -118,24 +118,6 @@
             this.dtpWorkDate.Name = "dtpWorkDate";
             this.dtpWorkDate.Size = new System.Drawing.Size(216, 24);
             this.dtpWorkDate.TabIndex = 1;
-            // 
-            // cbDepartment
-            // 
-            this.cbDepartment.FormattingEnabled = true;
-            this.cbDepartment.Location = new System.Drawing.Point(366, 53);
-            this.cbDepartment.Margin = new System.Windows.Forms.Padding(4);
-            this.cbDepartment.Name = "cbDepartment";
-            this.cbDepartment.Size = new System.Drawing.Size(216, 26);
-            this.cbDepartment.TabIndex = 2;
-            // 
-            // cbShift
-            // 
-            this.cbShift.FormattingEnabled = true;
-            this.cbShift.Location = new System.Drawing.Point(366, 85);
-            this.cbShift.Margin = new System.Windows.Forms.Padding(4);
-            this.cbShift.Name = "cbShift";
-            this.cbShift.Size = new System.Drawing.Size(216, 26);
-            this.cbShift.TabIndex = 2;
             // 
             // label1
             // 
@@ -157,6 +139,15 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Подразделение";
             // 
+            // cbDepartment
+            // 
+            this.cbDepartment.FormattingEnabled = true;
+            this.cbDepartment.Location = new System.Drawing.Point(366, 53);
+            this.cbDepartment.Margin = new System.Windows.Forms.Padding(4);
+            this.cbDepartment.Name = "cbDepartment";
+            this.cbDepartment.Size = new System.Drawing.Size(216, 26);
+            this.cbDepartment.TabIndex = 2;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -166,6 +157,15 @@
             this.label3.Size = new System.Drawing.Size(54, 18);
             this.label3.TabIndex = 0;
             this.label3.Text = "Смена";
+            // 
+            // cbShift
+            // 
+            this.cbShift.FormattingEnabled = true;
+            this.cbShift.Location = new System.Drawing.Point(366, 85);
+            this.cbShift.Margin = new System.Windows.Forms.Padding(4);
+            this.cbShift.Name = "cbShift";
+            this.cbShift.Size = new System.Drawing.Size(216, 26);
+            this.cbShift.TabIndex = 2;
             // 
             // label4
             // 
@@ -192,16 +192,16 @@
             this.flowLayoutPanel1.Controls.Add(this.btnOK);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 291);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 333);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(859, 64);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(926, 64);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(743, 4);
+            this.btnCancel.Location = new System.Drawing.Point(810, 4);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(112, 54);
@@ -212,7 +212,7 @@
             // btnOK
             // 
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOK.Location = new System.Drawing.Point(623, 4);
+            this.btnOK.Location = new System.Drawing.Point(690, 4);
             this.btnOK.Margin = new System.Windows.Forms.Padding(4);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(112, 54);
@@ -241,7 +241,7 @@
             this.dgv.Location = new System.Drawing.Point(0, 170);
             this.dgv.Margin = new System.Windows.Forms.Padding(4);
             this.dgv.Name = "dgv";
-            this.dgv.Size = new System.Drawing.Size(859, 121);
+            this.dgv.Size = new System.Drawing.Size(926, 163);
             this.dgv.TabIndex = 3;
             this.dgv.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgv_CellValidating);
             // 
@@ -314,7 +314,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(859, 377);
+            this.ClientSize = new System.Drawing.Size(926, 419);
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);

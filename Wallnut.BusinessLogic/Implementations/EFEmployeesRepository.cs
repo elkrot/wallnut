@@ -116,20 +116,29 @@ namespace Wallnut.BusinessLogic.Implementations
         public IEnumerable<EmployeeWithAttr> GetEmployeeWithJobTitle
             (List<System.Data.SqlClient.SqlParameter> prms=null, string sqlWhere="")
         {
-
-            var employees = (EFDbContext as DbContext).Database.SqlQuery<EmployeeWithAttr>
-(@"select e.BusinessEntityID,e.NationalIDNumber,e.LoginID,e.JobTitle
+            IEnumerable<EmployeeWithAttr> employees;
+            var stssql = @"select e.BusinessEntityID,e.NationalIDNumber,e.LoginID,e.JobTitle
 ,e.BirthDate,e.MaritalStatus,e.Gender,e.HireDate,e.SalariedFlag
 ,e.VacationHours,e.SickLeaveHours,e.CurrentFlag,e.ModifiedDate
 ,v.DepartmentID,v.ShiftID,v.StartDate,v.EndDate,v.ShiftName,v.DepartmentName
 ,v.GroupName,p.FirstName,p.MiddleName,p.LastName  from HumanResources.Employee e
  left join HumanResources.vEmployeeCurrentJub v on v.BusinessEntityID = e.BusinessEntityID
  left join Person.Person p on p.BusinessEntityID
-=e.BusinessEntityID where 1=1 " + sqlWhere, prms == null ? null : prms.ToArray());
-
+=e.BusinessEntityID where 1=1 ";
+            if (prms != null)
+            {
+                employees = (EFDbContext as DbContext).Database.SqlQuery<EmployeeWithAttr>
+                   (stssql + sqlWhere, prms.ToArray());
+            }
+            else
+            {
+                employees = (EFDbContext as DbContext).Database.SqlQuery<EmployeeWithAttr>
+    (stssql + sqlWhere);
+            }
 
             return employees.ToList();
-        }        
+        }      
+  
         #endregion
 
 

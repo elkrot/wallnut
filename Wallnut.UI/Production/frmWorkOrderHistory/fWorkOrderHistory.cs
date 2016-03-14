@@ -21,6 +21,8 @@ namespace Wallnut.UI.Production.frmWorkOrderHistory
 
         private static fWorkOrderHistory aForm = null;
         public ListFormBehavior<Wallnut.Domain.Models.WorkOrderHistory, fAddWorkOrderHistory> behavior;
+
+        #region Constructor
         public fWorkOrderHistory()
         {
             behavior = new ListFormBehavior<WorkOrderHistory, fAddWorkOrderHistory>(
@@ -28,7 +30,9 @@ namespace Wallnut.UI.Production.frmWorkOrderHistory
                         && x.OperationSequence == operationSequence
                 , Reread);
             InitializeComponent();
-        }
+        }        
+        #endregion
+
         public void Reread()
         {
             bs.DataSource = behavior.EntityList.ToList();
@@ -90,49 +94,105 @@ namespace Wallnut.UI.Production.frmWorkOrderHistory
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            
+
             if (aForm.operationSequence == 2)
-            {            
-            var frm = new fEmployeeToWorkCondition();
+            {
+                OpenEmployeeToWork();
+            }
+            else {
+                OpenBackFromProduction();
+            }
+            behavior.RefreshData();
+        }
+
+        #region OpenBackFromProduction
+        private void OpenBackFromProduction()
+        {
+            var frm = new fBackFromProduction();
             var res = frm.ShowDialog();
 
-                if (res == System.Windows.Forms.DialogResult.OK)
+            if (res == System.Windows.Forms.DialogResult.OK)
+            {
+                if (frm.FormResult != null)
                 {
-                    if (frm.FormResult != null)
+                    using (var unitOfWork = new UnitOfWork(new WallnutProductionContext()))
                     {
-                        using (var unitOfWork = new UnitOfWork(new WallnutProductionContext()))
+                        foreach (var item in frm.FormResult)
                         {
-                            foreach (var item in frm.FormResult)
+                            unitOfWork.WorkOrderHistoryRepository.Add(
+                            new WorkOrderHistory()
                             {
-                                unitOfWork.WorkOrderHistoryRepository.Add(
-                                new WorkOrderHistory()
-                                {
-                                    BusinessEntityID = item.EmployeeId
-                                    ,
-                                    WorkOrderID = aForm.workOrderID
-                                    ,
-                                    ProductID = item.ProductId
-                                    ,
-                                    Qty = item.Qty
-                                    ,
-                                    ModifiedDate = DateTime.Now
-                                    ,
-                                    OperationSequence = aForm.operationSequence
-                                    ,
-                                    ActualStartDate = item.WorkDate
-                                    ,
-                                    LocationID = 1
-                                    ,
-                                    ActualCost = 10
-                                });
-                                unitOfWork.Complete();
-                            }
-
+                                BusinessEntityID = item.EmployeeId
+                                ,
+                                WorkOrderID = aForm.workOrderID
+                                ,
+                                ProductID = item.ProductId
+                                ,
+                                Qty = item.Qty
+                                ,
+                                ModifiedDate = DateTime.Now
+                                ,
+                                OperationSequence = aForm.operationSequence
+                                ,
+                                ActualStartDate = item.WorkDate
+                                ,
+                                LocationID = 1
+                                ,
+                                ActualCost = 10
+                            });
+                            unitOfWork.Complete();
                         }
+
                     }
                 }
             }
-            behavior.RefreshData();
+        }
+        #endregion
+        
+
+        #region OpenEmployeeToWork
+         private static void OpenEmployeeToWork()
+        {
+            var frm = new fEmployeeToWorkCondition();
+            var res = frm.ShowDialog();
+
+            if (res == System.Windows.Forms.DialogResult.OK)
+            {
+                if (frm.FormResult != null)
+                {
+                    using (var unitOfWork = new UnitOfWork(new WallnutProductionContext()))
+                    {
+                        foreach (var item in frm.FormResult)
+                        {
+                            unitOfWork.WorkOrderHistoryRepository.Add(
+                            new WorkOrderHistory()
+                            {
+                                BusinessEntityID = item.EmployeeId
+                                ,
+                                WorkOrderID = aForm.workOrderID
+                                ,
+                                ProductID = item.ProductId
+                                ,
+                                Qty = item.Qty
+                                ,
+                                ModifiedDate = DateTime.Now
+                                ,
+                                OperationSequence = aForm.operationSequence
+                                ,
+                                ActualStartDate = item.WorkDate
+                                ,
+                                LocationID = 1
+                                ,
+                                ActualCost = 10
+                            });
+                            unitOfWork.Complete();
+                        }
+
+                    }
+                }
+            }
+        #endregion
+       
         }
 
 

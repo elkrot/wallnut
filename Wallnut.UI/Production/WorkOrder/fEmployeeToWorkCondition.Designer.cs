@@ -45,11 +45,11 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.bs = new System.Windows.Forms.BindingSource(this.components);
             this.colSelected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colQtyIssued = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colJobTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bs = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();

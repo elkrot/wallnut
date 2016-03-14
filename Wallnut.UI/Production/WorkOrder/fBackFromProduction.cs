@@ -36,13 +36,12 @@ namespace Wallnut.UI.Production.WorkOrder
             ReReadGrid();
         }
 
+        #region ReReadGrid
         private void ReReadGrid()
         {
             using (var unitOfWork = new UnitOfWork(new WallnutProductionContext()))
             {
-
-                List<System.Data.SqlClient.SqlParameter> prms =
-                    new List<System.Data.SqlClient.SqlParameter>();
+                List<System.Data.SqlClient.SqlParameter> prms = new List<System.Data.SqlClient.SqlParameter>();
 
                 var DepartmentId = new System.Data.SqlClient.SqlParameter("@DepartmentID", SqlDbType.Int);
                 DepartmentId.Value = curCondition.DepartmentId;
@@ -53,8 +52,6 @@ namespace Wallnut.UI.Production.WorkOrder
 
                 prms.Add(ShiftId);
 
-                //r("@ShiftID",curCondition.ShiftId) };
-
                 var strWhere = @" and v.DepartmentID=@DepartmentID and v.ShiftID=@ShiftID";
                 var obj = unitOfWork.EmployeeRepository.GetEmployeeWithJobTitle(prms, strWhere)
                     .Select(p => new ListBackFromProduction
@@ -63,19 +60,22 @@ namespace Wallnut.UI.Production.WorkOrder
                         ,
                         QtyIssued = 0
                         ,
+                        QtyKernel = 0
+                        ,
+                        QtyNuts = 0
+                        ,
+                        QtyShucks = 0
+                        ,
                         Id = p.BusinessEntityID
                         ,
                         JobTitle = p.JobTitle
-                    ,
+                        ,
                         Selected = true
                     });
-
-
                 bs.DataSource = obj.ToList();
-
             }
         }
-
+        #endregion
 
         #region BindingData
         private void BindingData()

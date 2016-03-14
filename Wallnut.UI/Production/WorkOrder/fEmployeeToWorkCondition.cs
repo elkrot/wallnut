@@ -21,7 +21,10 @@ namespace Wallnut.UI.Production.WorkOrder
         public fEmployeeToWorkCondition()
         {
             FormResult = new List<EmployeeToWorkResult>();
-            curCondition = new EmployeeToWorkCondition() { WorkDate = DateTime.Now, DepartmentId = 2, ShiftId = 1, ProductId = 1 };
+            curCondition = new EmployeeToWorkCondition() { WorkDate = DateTime.Now 
+             , DepartmentId = Wallnut.Utils.Settings.WorkshopId
+                , ShiftId = Wallnut.Utils.Settings.DefaultShiftId
+                , ProductId = (int)Wallnut.Utils.Settings.WallnutState.WalnutKernel};
             InitializeComponent();
         }
 
@@ -33,6 +36,7 @@ namespace Wallnut.UI.Production.WorkOrder
             ReReadGrid();
         }
 
+        #region ReReadGrid
         private void ReReadGrid()
         {
             using (var unitOfWork = new UnitOfWork(new WallnutProductionContext()))
@@ -72,6 +76,8 @@ namespace Wallnut.UI.Production.WorkOrder
 
             }
         }
+        #endregion
+        
 
 
         #region BindingData
