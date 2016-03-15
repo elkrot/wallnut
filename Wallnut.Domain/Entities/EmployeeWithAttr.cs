@@ -30,4 +30,15 @@ namespace Wallnut.Domain.Models
             public string MiddleName { get; set; }
             public string LastName { get; set; }
     }
+
+
+    public class EmployeeBackFromProduction
+    {
+         public int BusinessEntityID { get; set; }
+         public decimal Qty { get; set; }
+        
+         public string JobTitle { get; set; }
+         public System.DateTime BirthDate { get; set; }
+         public string Fio { get; set; }
+    }
 }

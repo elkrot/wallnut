@@ -18,13 +18,19 @@ namespace Wallnut.UI.Production.WorkOrder
         private List<Product> productList;
         private EmployeeToWorkCondition curCondition;
         public List<EmployeeToWorkResult> FormResult;
-        public fBackFromProduction ()
+        public fBackFromProduction()
         {
             FormResult = new List<EmployeeToWorkResult>();
-            curCondition = new EmployeeToWorkCondition() { WorkDate = DateTime.Now
-                , DepartmentId = Wallnut.Utils.Settings.WorkshopId
-                , ShiftId = Wallnut.Utils.Settings.DefaultShiftId
-                , ProductId = (int)Wallnut.Utils.Settings.WallnutState.IntaktNut };
+            curCondition = new EmployeeToWorkCondition()
+            {
+                WorkDate = DateTime.Now
+                ,
+                DepartmentId = Wallnut.Utils.Settings.WorkshopId
+                ,
+                ShiftId = Wallnut.Utils.Settings.DefaultShiftId
+                ,
+                ProductId = (int)Wallnut.Utils.Settings.WallnutState.IntaktNut
+            };
             InitializeComponent();
         }
 
@@ -41,24 +47,13 @@ namespace Wallnut.UI.Production.WorkOrder
         {
             using (var unitOfWork = new UnitOfWork(new WallnutProductionContext()))
             {
-                List<System.Data.SqlClient.SqlParameter> prms = new List<System.Data.SqlClient.SqlParameter>();
-
-                var DepartmentId = new System.Data.SqlClient.SqlParameter("@DepartmentID", SqlDbType.Int);
-                DepartmentId.Value = curCondition.DepartmentId;
-
-                var ShiftId = new System.Data.SqlClient.SqlParameter("@ShiftID", SqlDbType.Int);
-                ShiftId.Value = curCondition.ShiftId;
-                prms.Add(DepartmentId);
-
-                prms.Add(ShiftId);
-
-                var strWhere = @" and v.DepartmentID=@DepartmentID and v.ShiftID=@ShiftID";
-                var obj = unitOfWork.EmployeeRepository.GetEmployeeWithJobTitle(prms, strWhere)
+                var obj = unitOfWork.EmployeeRepository.GetEmployeeListBackFromProdaction
+            (curCondition.DepartmentId, curCondition.ShiftId, curCondition.WorkDate)
                     .Select(p => new ListBackFromProduction
                     {
-                        Fio = p.FirstName + " " + p.MiddleName + " " + p.LastName
+                        Fio = p.Fio
                         ,
-                        QtyIssued = 0
+                        QtyIssued = p.Qty
                         ,
                         QtyKernel = 0
                         ,
@@ -138,7 +133,7 @@ namespace Wallnut.UI.Production.WorkOrder
         private void dgv_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
 
-            if (dgv.CurrentCell.ColumnIndex == 1)
+            if (dgv.CurrentCell.ColumnIndex == 2 || dgv.CurrentCell.ColumnIndex == 3 || dgv.CurrentCell.ColumnIndex == 4)
             {
                 dgv.Rows[e.RowIndex].ErrorText = "";
                 decimal newInteger;
@@ -180,14 +175,53 @@ namespace Wallnut.UI.Production.WorkOrder
                     ProductId = productId
                 });
             }
-        }        
+        }
         #endregion
+
+        private void dtpWorkDate_ValueChanged(object sender, EventArgs e)
+        {
+            curCondition.WorkDate = (DateTime)dtpWorkDate.Value;
+            ReReadGrid();
+        }
+
+        private void dgv_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (e.ColumnIndex < 0 || e.RowIndex < 0)
+                return;
+            decimal qtyIssued=0;
+            decimal qtyKernel =0; 
+            decimal qtyShucks =0;
+            decimal qtyNuts=0;
+
+                decimal.TryParse(dgv.Rows[e.RowIndex].Cells["colQtyIssued"].Value.ToString(), out qtyIssued);
+                decimal.TryParse(dgv.Rows[e.RowIndex].Cells["colQtyKernel"].Value.ToString(), out qtyKernel);
+                decimal.TryParse(dgv.Rows[e.RowIndex].Cells["colQtyShucks"].Value.ToString(), out qtyShucks);
+                decimal.TryParse(dgv.Rows[e.RowIndex].Cells["colQtyNuts"].Value.ToString(), out qtyNuts);
+
+            switch (e.ColumnIndex)
+	{
+                case 2:
+            dgv.Rows[e.RowIndex].Cells[4].Value =
+                (qtyIssued - qtyKernel - qtyShucks).ToString();
+                    break;
+                case 3:
+                    dgv.Rows[e.RowIndex].Cells[4].Value =
+                (qtyIssued - qtyKernel - qtyShucks).ToString();
+                    break;
+                case 4:
+                    break;
+		default:
+ break;
+	}
+            
+        }
 
     }
 
 
 
- 
+
 
 
 }

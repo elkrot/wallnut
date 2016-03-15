@@ -56,7 +56,7 @@ namespace Wallnut.UI.Production.WorkOrder
 
                 //r("@ShiftID",curCondition.ShiftId) };
 
-                var strWhere = @" and v.DepartmentID=@DepartmentID and v.ShiftID=@ShiftID";
+                var strWhere = @" and e.CurrentFlag=1 and v.DepartmentID=@DepartmentID and v.ShiftID=@ShiftID";
                 var obj = unitOfWork.EmployeeRepository.GetEmployeeWithJobTitle(prms, strWhere)
                     .Select(p => new ListEmployeeToWork
                     {

@@ -15,6 +15,8 @@ namespace Wallnut.BusinessLogic.Interfaces
         Password GetPasswordByLogin(string login);
         IEnumerable<EmployeeWithAttr> GetEmployeeWithJobTitle
             (List<System.Data.SqlClient.SqlParameter> prms = null, string sqlWhere = "");
+        IEnumerable<EmployeeBackFromProduction> GetEmployeeListBackFromProdaction
+            (int departmentId, int shiftId, DateTime actualStartDate);
         //MembershipUser
         //CreateEmployee
         //ValidateEmployee

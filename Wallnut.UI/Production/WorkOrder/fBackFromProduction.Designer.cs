@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -48,6 +48,7 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
             this.dgv = new System.Windows.Forms.DataGridView();
+            this.bs = new System.Windows.Forms.BindingSource(this.components);
             this.colSelected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colQtyIssued = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colQtyKernel = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,7 +56,6 @@
             this.colQtyNuts = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colJobTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bs = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -118,6 +118,7 @@
             this.dtpWorkDate.Name = "dtpWorkDate";
             this.dtpWorkDate.Size = new System.Drawing.Size(216, 24);
             this.dtpWorkDate.TabIndex = 1;
+            this.dtpWorkDate.ValueChanged += new System.EventHandler(this.dtpWorkDate_ValueChanged);
             // 
             // label1
             // 
@@ -244,6 +245,7 @@
             this.dgv.Size = new System.Drawing.Size(926, 163);
             this.dgv.TabIndex = 3;
             this.dgv.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgv_CellValidating);
+            this.dgv.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellValueChanged);
             // 
             // colSelected
             // 
@@ -256,37 +258,38 @@
             // colQtyIssued
             // 
             this.colQtyIssued.DataPropertyName = "QtyIssued";
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.colQtyIssued.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Format = "N2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.colQtyIssued.DefaultCellStyle = dataGridViewCellStyle5;
             this.colQtyIssued.HeaderText = "Выдано в производство";
             this.colQtyIssued.Name = "colQtyIssued";
+            this.colQtyIssued.ReadOnly = true;
             // 
             // colQtyKernel
             // 
             this.colQtyKernel.DataPropertyName = "QtyKernel";
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.colQtyKernel.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle6.Format = "N2";
+            dataGridViewCellStyle6.NullValue = null;
+            this.colQtyKernel.DefaultCellStyle = dataGridViewCellStyle6;
             this.colQtyKernel.HeaderText = "Принято ядро";
             this.colQtyKernel.Name = "colQtyKernel";
             // 
             // colQtyShucks
             // 
             this.colQtyShucks.DataPropertyName = "QtyShucks";
-            dataGridViewCellStyle3.Format = "N2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.colQtyShucks.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Format = "N2";
+            dataGridViewCellStyle7.NullValue = null;
+            this.colQtyShucks.DefaultCellStyle = dataGridViewCellStyle7;
             this.colQtyShucks.HeaderText = "Принято Скорлупа";
             this.colQtyShucks.Name = "colQtyShucks";
             // 
             // colQtyNuts
             // 
             this.colQtyNuts.DataPropertyName = "QtyNuts";
-            dataGridViewCellStyle4.Format = "N2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.colQtyNuts.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Format = "N2";
+            dataGridViewCellStyle8.NullValue = null;
+            this.colQtyNuts.DefaultCellStyle = dataGridViewCellStyle8;
             this.colQtyNuts.HeaderText = "Принято целый орех";
             this.colQtyNuts.Name = "colQtyNuts";
             // 
