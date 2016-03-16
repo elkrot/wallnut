@@ -7,11 +7,19 @@ namespace Wallnut.Utils
 {
     public static class Settings
     {
-        public static short WorkshopId { get { return 2; } } 
+        public static short DepartmentWorkshopId { get { return 2; } }
+
+        public static short LocationWorkshopId { get { return 2; } }
+        public static short LocationStorehouseId { get { return 1; } } 
+
         public static int DefaultShiftId { get { return 1; }  }
-        public enum WallnutState
-        {
-            IntaktNut=1, WalnutKernel=2, Shucks=3
-        }
+        
+
+        public static int IntaktNutId { get {return 1;} }
+        public static int WalnutKernelId { get { return 5; }  }
+        public static int ShucksId { get { return 8; }  }
+        
+        
+        
     }
 }

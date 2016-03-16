@@ -25,11 +25,11 @@ namespace Wallnut.UI.Production.WorkOrder
             {
                 WorkDate = DateTime.Now
                 ,
-                DepartmentId = Wallnut.Utils.Settings.WorkshopId
+                DepartmentId = Wallnut.Utils.Settings.DepartmentWorkshopId
                 ,
                 ShiftId = Wallnut.Utils.Settings.DefaultShiftId
                 ,
-                ProductId = (int)Wallnut.Utils.Settings.WallnutState.IntaktNut
+                ProductId = Wallnut.Utils.Settings.WalnutKernelId
             };
             InitializeComponent();
         }

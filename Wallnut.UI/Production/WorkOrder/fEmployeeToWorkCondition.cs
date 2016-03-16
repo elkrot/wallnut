@@ -22,9 +22,9 @@ namespace Wallnut.UI.Production.WorkOrder
         {
             FormResult = new List<EmployeeToWorkResult>();
             curCondition = new EmployeeToWorkCondition() { WorkDate = DateTime.Now 
-             , DepartmentId = Wallnut.Utils.Settings.WorkshopId
+             , DepartmentId = Wallnut.Utils.Settings.DepartmentWorkshopId
                 , ShiftId = Wallnut.Utils.Settings.DefaultShiftId
-                , ProductId = (int)Wallnut.Utils.Settings.WallnutState.WalnutKernel};
+                , ProductId = (int)Wallnut.Utils.Settings.IntaktNutId};
             InitializeComponent();
         }
 
