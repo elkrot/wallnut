@@ -48,6 +48,8 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
             this.ep = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label7 = new System.Windows.Forms.Label();
+            this.tbQty = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ep)).BeginInit();
@@ -60,7 +62,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.tbNamelbl, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.tbNamelbl, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.cbProductID, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.label1, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label2, 1, 2);
@@ -71,13 +73,16 @@
             this.tableLayoutPanel1.Controls.Add(this.cbLocationID, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.dtActualStartDate, 2, 4);
             this.tableLayoutPanel1.Controls.Add(this.dtActualEndDate, 2, 5);
-            this.tableLayoutPanel1.Controls.Add(this.tbActualCost, 2, 7);
-            this.tableLayoutPanel1.Controls.Add(this.label6, 1, 7);
-            this.tableLayoutPanel1.Controls.Add(this.tbxActualResourceHrs, 2, 6);
+            this.tableLayoutPanel1.Controls.Add(this.tbActualCost, 2, 8);
+            this.tableLayoutPanel1.Controls.Add(this.label6, 1, 8);
+            this.tableLayoutPanel1.Controls.Add(this.tbxActualResourceHrs, 2, 7);
+            this.tableLayoutPanel1.Controls.Add(this.label7, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.tbQty, 2, 6);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 9;
+            this.tableLayoutPanel1.RowCount = 10;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
@@ -87,14 +92,14 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(498, 276);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(501, 278);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tbNamelbl
             // 
             this.tbNamelbl.AutoSize = true;
             this.tbNamelbl.Dock = System.Windows.Forms.DockStyle.Left;
-            this.tbNamelbl.Location = new System.Drawing.Point(23, 150);
+            this.tbNamelbl.Location = new System.Drawing.Point(23, 175);
             this.tbNamelbl.Name = "tbNamelbl";
             this.tbNamelbl.Size = new System.Drawing.Size(80, 25);
             this.tbNamelbl.TabIndex = 0;
@@ -107,7 +112,7 @@
             this.cbProductID.FormattingEnabled = true;
             this.cbProductID.Location = new System.Drawing.Point(223, 28);
             this.cbProductID.Name = "cbProductID";
-            this.cbProductID.Size = new System.Drawing.Size(252, 21);
+            this.cbProductID.Size = new System.Drawing.Size(255, 21);
             this.cbProductID.TabIndex = 2;
             // 
             // label1
@@ -171,7 +176,7 @@
             this.cbBusinessEntityID.FormattingEnabled = true;
             this.cbBusinessEntityID.Location = new System.Drawing.Point(223, 53);
             this.cbBusinessEntityID.Name = "cbBusinessEntityID";
-            this.cbBusinessEntityID.Size = new System.Drawing.Size(252, 21);
+            this.cbBusinessEntityID.Size = new System.Drawing.Size(255, 21);
             this.cbBusinessEntityID.TabIndex = 2;
             // 
             // cbLocationID
@@ -180,7 +185,7 @@
             this.cbLocationID.FormattingEnabled = true;
             this.cbLocationID.Location = new System.Drawing.Point(223, 78);
             this.cbLocationID.Name = "cbLocationID";
-            this.cbLocationID.Size = new System.Drawing.Size(252, 21);
+            this.cbLocationID.Size = new System.Drawing.Size(255, 21);
             this.cbLocationID.TabIndex = 2;
             // 
             // dtActualStartDate
@@ -188,7 +193,7 @@
             this.dtActualStartDate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtActualStartDate.Location = new System.Drawing.Point(223, 103);
             this.dtActualStartDate.Name = "dtActualStartDate";
-            this.dtActualStartDate.Size = new System.Drawing.Size(252, 20);
+            this.dtActualStartDate.Size = new System.Drawing.Size(255, 20);
             this.dtActualStartDate.TabIndex = 4;
             // 
             // dtActualEndDate
@@ -198,23 +203,23 @@
             this.dtActualEndDate.Location = new System.Drawing.Point(223, 128);
             this.dtActualEndDate.Name = "dtActualEndDate";
             this.dtActualEndDate.ShowCheckBox = true;
-            this.dtActualEndDate.Size = new System.Drawing.Size(252, 20);
+            this.dtActualEndDate.Size = new System.Drawing.Size(255, 20);
             this.dtActualEndDate.TabIndex = 5;
             this.dtActualEndDate.ValueChanged += new System.EventHandler(this.dtActualEndDate_ValueChanged);
             // 
             // tbActualCost
             // 
             this.tbActualCost.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbActualCost.Location = new System.Drawing.Point(223, 178);
+            this.tbActualCost.Location = new System.Drawing.Point(223, 203);
             this.tbActualCost.Name = "tbActualCost";
-            this.tbActualCost.Size = new System.Drawing.Size(252, 20);
+            this.tbActualCost.Size = new System.Drawing.Size(255, 20);
             this.tbActualCost.TabIndex = 1;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label6.Location = new System.Drawing.Point(23, 175);
+            this.label6.Location = new System.Drawing.Point(23, 200);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(102, 25);
             this.label6.TabIndex = 3;
@@ -224,9 +229,9 @@
             // tbxActualResourceHrs
             // 
             this.tbxActualResourceHrs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbxActualResourceHrs.Location = new System.Drawing.Point(223, 153);
+            this.tbxActualResourceHrs.Location = new System.Drawing.Point(223, 178);
             this.tbxActualResourceHrs.Name = "tbxActualResourceHrs";
-            this.tbxActualResourceHrs.Size = new System.Drawing.Size(252, 20);
+            this.tbxActualResourceHrs.Size = new System.Drawing.Size(255, 20);
             this.tbxActualResourceHrs.TabIndex = 6;
             // 
             // flowLayoutPanel1
@@ -236,15 +241,15 @@
             this.flowLayoutPanel1.Controls.Add(this.btnOK);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 247);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 249);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(498, 29);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(501, 29);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(420, 3);
+            this.btnCancel.Location = new System.Drawing.Point(423, 3);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 0;
@@ -254,7 +259,7 @@
             // btnOK
             // 
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOK.Location = new System.Drawing.Point(339, 3);
+            this.btnOK.Location = new System.Drawing.Point(342, 3);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 1;
@@ -266,11 +271,30 @@
             // 
             this.ep.ContainerControl = this;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label7.Location = new System.Drawing.Point(23, 150);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(66, 25);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Количество";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // tbQty
+            // 
+            this.tbQty.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbQty.Location = new System.Drawing.Point(223, 153);
+            this.tbQty.Name = "tbQty";
+            this.tbQty.Size = new System.Drawing.Size(255, 20);
+            this.tbQty.TabIndex = 6;
+            // 
             // fAddWorkOrderHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(498, 276);
+            this.ClientSize = new System.Drawing.Size(501, 278);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "fAddWorkOrderHistory";
@@ -306,5 +330,7 @@
         private System.Windows.Forms.TextBox tbActualCost;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox tbxActualResourceHrs;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox tbQty;
     }
 }

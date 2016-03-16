@@ -63,4 +63,16 @@ namespace Wallnut.Domain.Models
        public int ProductId { get; set; }
        public decimal Qty { get; set; }
    }
+
+
+   public struct BackFromProductionResult
+   {
+       public DateTime WorkDate { get; set; }
+       public int EmployeeId { get; set; }
+       public int ProductId { get; set; }
+       public decimal QtyKernel { get; set; }
+       public decimal QtyShucks { get; set; }
+       public decimal QtyNuts { get; set; }
+   }
+
 }

@@ -49,6 +49,14 @@ namespace Wallnut.UI.Production.frmWorkOrderHistory
             DataSourceUpdateMode.OnPropertyChanged);
             #endregion
 
+            #region Qty
+            this.tbQty.DataBindings.Add("Text",
+            this.entity as WorkOrderHistory,
+            "Qty",
+            false,
+            DataSourceUpdateMode.OnPropertyChanged);
+            #endregion
+
             #region Fill Lists
             using (var unitOfWork = new UnitOfWork(new WallnutProductionContext()))
             {

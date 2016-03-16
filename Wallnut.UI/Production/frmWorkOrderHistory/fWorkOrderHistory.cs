@@ -10,6 +10,7 @@ using Wallnut.UI.Implementations;
 using Wallnut.Domain.Models;
 using Wallnut.BusinessLogic.Implementations;
 using Wallnut.UI.Production.WorkOrder;
+using Wallnut.Utils;
 
 namespace Wallnut.UI.Production.frmWorkOrderHistory
 {
@@ -26,9 +27,7 @@ namespace Wallnut.UI.Production.frmWorkOrderHistory
         public fWorkOrderHistory()
         {
             behavior = new ListFormBehavior<WorkOrderHistory, fAddWorkOrderHistory>(
-                x => x.WorkOrderID == workOrderID 
-                        && x.OperationSequence == operationSequence
-                , Reread);
+                x => x.WorkOrderID == workOrderID && x.OperationSequence == operationSequence, Reread);
             InitializeComponent();
         }        
         #endregion
@@ -119,27 +118,32 @@ namespace Wallnut.UI.Production.frmWorkOrderHistory
                     {
                         foreach (var item in frm.FormResult)
                         {
-                            unitOfWork.WorkOrderHistoryRepository.Add(
-                            new WorkOrderHistory()
+
+                            #region QtyKernel
+                            unitOfWork.WorkOrderHistoryRepository.Add( new WorkOrderHistory()
+                            { BusinessEntityID = item.EmployeeId, WorkOrderID = aForm.workOrderID, ProductID = item.ProductId, Qty = item.QtyKernel
+                            , ModifiedDate = DateTime.Now, OperationSequence = aForm.operationSequence, ActualStartDate = item.WorkDate, LocationID = 1, ActualCost = 10 });
+                            #endregion
+
+                            #region QtyShucks
+                            unitOfWork.WorkOrderHistoryRepository.Add(new WorkOrderHistory()
+                            {   BusinessEntityID = item.EmployeeId,  WorkOrderID = aForm.workOrderID
+                                ,
+                                ProductID =(int)Settings.WallnutState.Shucks
+                                , Qty = item.QtyShucks, ModifiedDate = DateTime.Now, OperationSequence = aForm.operationSequence,
+                                ActualStartDate = item.WorkDate, LocationID = 1,  ActualCost = 10 });                            
+                            #endregion
+
+                            #region QtyNuts
+                            unitOfWork.WorkOrderHistoryRepository.Add(new WorkOrderHistory()
                             {
-                                BusinessEntityID = item.EmployeeId
-                                ,
-                                WorkOrderID = aForm.workOrderID
-                                ,
-                                ProductID = item.ProductId
-                                ,
-                                Qty = item.Qty
-                                ,
-                                ModifiedDate = DateTime.Now
-                                ,
-                                OperationSequence = aForm.operationSequence
-                                ,
-                                ActualStartDate = item.WorkDate
-                                ,
-                                LocationID = 1
-                                ,
-                                ActualCost = 10
+                                BusinessEntityID = item.EmployeeId,  WorkOrderID = aForm.workOrderID
+                                , ProductID = (int)Settings.WallnutState.IntaktNut
+                                , Qty = item.QtyNuts
+                                , ModifiedDate = DateTime.Now, OperationSequence = aForm.operationSequence, ActualStartDate = item.WorkDate,
+                                LocationID = 1, ActualCost = 10
                             });
+                            #endregion
                             unitOfWork.Complete();
                         }
 

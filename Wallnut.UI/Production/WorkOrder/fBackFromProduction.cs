@@ -17,10 +17,10 @@ namespace Wallnut.UI.Production.WorkOrder
         private List<Shift> shiftList;
         private List<Product> productList;
         private EmployeeToWorkCondition curCondition;
-        public List<EmployeeToWorkResult> FormResult;
+        public List<BackFromProductionResult> FormResult;
         public fBackFromProduction()
         {
-            FormResult = new List<EmployeeToWorkResult>();
+            FormResult = new List<BackFromProductionResult>();
             curCondition = new EmployeeToWorkCondition()
             {
                 WorkDate = DateTime.Now
@@ -163,14 +163,16 @@ namespace Wallnut.UI.Production.WorkOrder
             var workDate = curCondition.WorkDate;
             var productId = curCondition.ProductId;
 
-            var employeeToWorkList = (bs.DataSource as List<ListEmployeeToWork>).Where(m => m.Selected == true);
+            var employeeToWorkList = (bs.DataSource as List<ListBackFromProduction>).Where(m => m.Selected == true);
 
             foreach (var item in employeeToWorkList)
             {
-                FormResult.Add(new EmployeeToWorkResult()
+                FormResult.Add(new BackFromProductionResult()
                 {
                     EmployeeId = item.Id,
-                    Qty = item.QtyIssued,
+                    QtyKernel = item.QtyKernel,
+                    QtyShucks = item.QtyShucks,
+                    QtyNuts = item.QtyNuts,
                     WorkDate = workDate,
                     ProductId = productId
                 });
