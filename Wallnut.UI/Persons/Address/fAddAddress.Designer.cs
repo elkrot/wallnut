@@ -220,7 +220,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "fAddAddress";
-            this.Text = "fAddAddress";
+            this.Text = "Адрес.";
             this.Load += new System.EventHandler(this.fEdit_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

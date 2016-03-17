@@ -170,6 +170,18 @@
     <Compile Include="Persons\CountryRegion\fCountryRegion.Designer.cs">
       <DependentUpon>fCountryRegion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Persons\frmBusinessEntityAddress\AddBusinessEntityAddress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Persons\frmBusinessEntityAddress\AddBusinessEntityAddress.Designer.cs">
+      <DependentUpon>AddBusinessEntityAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Persons\frmBusinessEntityAddress\fBusinessEntityAddress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Persons\frmBusinessEntityAddress\fBusinessEntityAddress.Designer.cs">
+      <DependentUpon>fBusinessEntityAddress.cs</DependentUpon>
+    </Compile>
     <Compile Include="Persons\StateProvince\fAddStateProvince.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -577,6 +589,12 @@
     <EmbeddedResource Include="Persons\CountryRegion\fCountryRegion.resx">
       <DependentUpon>fCountryRegion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Persons\frmBusinessEntityAddress\AddBusinessEntityAddress.resx">
+      <DependentUpon>AddBusinessEntityAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persons\frmBusinessEntityAddress\fBusinessEntityAddress.resx">
+      <DependentUpon>fBusinessEntityAddress.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Persons\StateProvince\fAddStateProvince.resx">
       <DependentUpon>fAddStateProvince.cs</DependentUpon>
     </EmbeddedResource>
@@ -856,6 +874,7 @@
   <ItemGroup>
     <None Include="ico\door_out.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

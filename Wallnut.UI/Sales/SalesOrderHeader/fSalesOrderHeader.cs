@@ -65,7 +65,16 @@ namespace Wallnut.UI.Sales.SalesOrderHeader
         }
         private void tsbAdd_Click(object sender, EventArgs e)
         {
-            behavior.AddEntity();
+            try
+            {
+          behavior.AddEntity();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+  
         }
 
         private void tsbEdit_Click(object sender, EventArgs e)

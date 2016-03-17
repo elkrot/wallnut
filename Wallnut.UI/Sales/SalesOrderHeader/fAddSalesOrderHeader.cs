@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using Wallnut.Domain.Models;
 using Wallnut.BusinessLogic.Implementations;
+using Wallnut.UI.Sales.Customer;
+using Wallnut.UI.Sales.SalesTerritory;
 
 namespace Wallnut.UI.Sales.SalesOrderHeader
 {
@@ -202,9 +204,6 @@ namespace Wallnut.UI.Sales.SalesOrderHeader
             if ((this.entity as Wallnut.Domain.Models.SalesOrderHeader).CurrencyRateID!=null){
              var CurrencyRateID=(this.entity as Wallnut.Domain.Models.SalesOrderHeader).CurrencyRateID;
             tbCurrencyRateID.Text = CurrencyRateList.Where(x => x.CurrencyRateID == CurrencyRateID).FirstOrDefault().Rate.ToString();
-            
-
-            
             }
             #endregion
 
@@ -245,6 +244,18 @@ namespace Wallnut.UI.Sales.SalesOrderHeader
 
                 this.DialogResult = System.Windows.Forms.DialogResult.None;
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            fCustomer f = new fCustomer();
+            f.ShowDialog();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            fSalesTerritory f = new fSalesTerritory();
+            f.ShowDialog();
         }
     }
 }

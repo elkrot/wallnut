@@ -65,7 +65,7 @@
             this.cbBillToAddressID = new System.Windows.Forms.ComboBox();
             this.lbBillToAddressID = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbShipToAddressID = new System.Windows.Forms.ComboBox();
             this.cbShipMethodID = new System.Windows.Forms.ComboBox();
             this.lbShipMethodID = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -386,6 +386,7 @@
             this.button4.TabIndex = 7;
             this.button4.Text = "...";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button6
             // 
@@ -395,6 +396,7 @@
             this.button6.TabIndex = 7;
             this.button6.Text = "...";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
@@ -439,14 +441,14 @@
             // 
             this.tableLayoutPanel2.ColumnCount = 5;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.26543F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.73457F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.10183F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.89817F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 98F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 74F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 79F));
             this.tableLayoutPanel2.Controls.Add(this.cbBillToAddressID, 2, 1);
             this.tableLayoutPanel2.Controls.Add(this.lbBillToAddressID, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.label2, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.comboBox1, 2, 2);
+            this.tableLayoutPanel2.Controls.Add(this.cbShipToAddressID, 2, 2);
             this.tableLayoutPanel2.Controls.Add(this.cbShipMethodID, 2, 3);
             this.tableLayoutPanel2.Controls.Add(this.lbShipMethodID, 1, 3);
             this.tableLayoutPanel2.Controls.Add(this.button1, 3, 1);
@@ -472,9 +474,9 @@
             // 
             this.cbBillToAddressID.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbBillToAddressID.FormattingEnabled = true;
-            this.cbBillToAddressID.Location = new System.Drawing.Point(203, 28);
+            this.cbBillToAddressID.Location = new System.Drawing.Point(269, 28);
             this.cbBillToAddressID.Name = "cbBillToAddressID";
-            this.cbBillToAddressID.Size = new System.Drawing.Size(310, 21);
+            this.cbBillToAddressID.Size = new System.Drawing.Size(239, 21);
             this.cbBillToAddressID.TabIndex = 0;
             // 
             // lbBillToAddressID
@@ -482,7 +484,7 @@
             this.lbBillToAddressID.AutoSize = true;
             this.lbBillToAddressID.Location = new System.Drawing.Point(23, 25);
             this.lbBillToAddressID.Name = "lbBillToAddressID";
-            this.lbBillToAddressID.Size = new System.Drawing.Size(118, 25);
+            this.lbBillToAddressID.Size = new System.Drawing.Size(216, 13);
             this.lbBillToAddressID.TabIndex = 1;
             this.lbBillToAddressID.Text = "Адрес заказчика для выставления счета";
             // 
@@ -495,22 +497,22 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Адрес заказчика для отгрузки";
             // 
-            // comboBox1
+            // cbShipToAddressID
             // 
-            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(203, 53);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(310, 21);
-            this.comboBox1.TabIndex = 0;
+            this.cbShipToAddressID.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbShipToAddressID.FormattingEnabled = true;
+            this.cbShipToAddressID.Location = new System.Drawing.Point(269, 53);
+            this.cbShipToAddressID.Name = "cbShipToAddressID";
+            this.cbShipToAddressID.Size = new System.Drawing.Size(239, 21);
+            this.cbShipToAddressID.TabIndex = 0;
             // 
             // cbShipMethodID
             // 
             this.cbShipMethodID.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbShipMethodID.FormattingEnabled = true;
-            this.cbShipMethodID.Location = new System.Drawing.Point(203, 78);
+            this.cbShipMethodID.Location = new System.Drawing.Point(269, 78);
             this.cbShipMethodID.Name = "cbShipMethodID";
-            this.cbShipMethodID.Size = new System.Drawing.Size(310, 21);
+            this.cbShipMethodID.Size = new System.Drawing.Size(239, 21);
             this.cbShipMethodID.TabIndex = 0;
             // 
             // lbShipMethodID
@@ -524,7 +526,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(519, 28);
+            this.button1.Location = new System.Drawing.Point(514, 28);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(37, 19);
             this.button1.TabIndex = 2;
@@ -533,7 +535,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(519, 53);
+            this.button2.Location = new System.Drawing.Point(514, 53);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(37, 19);
             this.button2.TabIndex = 2;
@@ -542,7 +544,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(519, 78);
+            this.button3.Location = new System.Drawing.Point(514, 78);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(37, 19);
             this.button3.TabIndex = 2;
@@ -567,7 +569,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.88272F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.11728F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableLayoutPanel3.Controls.Add(this.lbSubTotal, 1, 1);
             this.tableLayoutPanel3.Controls.Add(this.tbSubTotal, 2, 1);
             this.tableLayoutPanel3.Controls.Add(this.lbTaxAmt, 1, 2);
@@ -606,9 +608,9 @@
             // tbSubTotal
             // 
             this.tbSubTotal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbSubTotal.Location = new System.Drawing.Point(219, 28);
+            this.tbSubTotal.Location = new System.Drawing.Point(218, 28);
             this.tbSubTotal.Name = "tbSubTotal";
-            this.tbSubTotal.Size = new System.Drawing.Size(331, 20);
+            this.tbSubTotal.Size = new System.Drawing.Size(327, 20);
             this.tbSubTotal.TabIndex = 1;
             // 
             // lbTaxAmt
@@ -634,17 +636,17 @@
             // tbTaxAmt
             // 
             this.tbTaxAmt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbTaxAmt.Location = new System.Drawing.Point(219, 53);
+            this.tbTaxAmt.Location = new System.Drawing.Point(218, 53);
             this.tbTaxAmt.Name = "tbTaxAmt";
-            this.tbTaxAmt.Size = new System.Drawing.Size(331, 20);
+            this.tbTaxAmt.Size = new System.Drawing.Size(327, 20);
             this.tbTaxAmt.TabIndex = 1;
             // 
             // tbTotalDue
             // 
             this.tbTotalDue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbTotalDue.Location = new System.Drawing.Point(219, 103);
+            this.tbTotalDue.Location = new System.Drawing.Point(218, 103);
             this.tbTotalDue.Name = "tbTotalDue";
-            this.tbTotalDue.Size = new System.Drawing.Size(331, 20);
+            this.tbTotalDue.Size = new System.Drawing.Size(327, 20);
             this.tbTotalDue.TabIndex = 1;
             // 
             // label6
@@ -659,9 +661,9 @@
             // tbFreight
             // 
             this.tbFreight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbFreight.Location = new System.Drawing.Point(219, 78);
+            this.tbFreight.Location = new System.Drawing.Point(218, 78);
             this.tbFreight.Name = "tbFreight";
-            this.tbFreight.Size = new System.Drawing.Size(331, 20);
+            this.tbFreight.Size = new System.Drawing.Size(327, 20);
             this.tbFreight.TabIndex = 3;
             // 
             // lbCurrencyRate
@@ -675,7 +677,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(556, 128);
+            this.button7.Location = new System.Drawing.Point(551, 128);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(34, 19);
             this.button7.TabIndex = 6;
@@ -685,9 +687,9 @@
             // tbCurrencyRateID
             // 
             this.tbCurrencyRateID.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbCurrencyRateID.Location = new System.Drawing.Point(219, 128);
+            this.tbCurrencyRateID.Location = new System.Drawing.Point(218, 128);
             this.tbCurrencyRateID.Name = "tbCurrencyRateID";
-            this.tbCurrencyRateID.Size = new System.Drawing.Size(331, 20);
+            this.tbCurrencyRateID.Size = new System.Drawing.Size(327, 20);
             this.tbCurrencyRateID.TabIndex = 7;
             // 
             // fAddSalesOrderHeader
@@ -754,7 +756,7 @@
         private System.Windows.Forms.ComboBox cbBillToAddressID;
         private System.Windows.Forms.Label lbBillToAddressID;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbShipToAddressID;
         private System.Windows.Forms.ComboBox cbShipMethodID;
         private System.Windows.Forms.Label lbShipMethodID;
         private System.Windows.Forms.Button button1;

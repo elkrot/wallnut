@@ -119,7 +119,7 @@ namespace Wallnut.BusinessLogic.Implementations
         /// <returns></returns>
         public int Complete()
         {
-            
+
             try
             {
                 return (_context as DbContext).SaveChanges();
@@ -136,20 +136,25 @@ namespace Wallnut.BusinessLogic.Implementations
 
                 // Combine the original exception message with the new one.
                 var exceptionMessage = string.Concat(ex.Message, " Ошибки валидации: ", fullErrorMessage);
-                return 0;
+                throw new DbEntityValidationException(exceptionMessage, ex.EntityValidationErrors);
+                //return 0;
                 // Throw a new DbEntityValidationException with the improved exception message.
-                //throw new DbEntityValidationException(exceptionMessage, ex.EntityValidationErrors);
+                
             }
             catch (DbUpdateException ex)
             {
                 // Retrieve the error messages as a list of strings.
                 var errorMessages = ex.InnerException.InnerException.Message;
                 var exceptionMessage = string.Concat(ex.Message, " Ошибки Сохранения в БД: ", errorMessages);
-                System.Windows.Forms.MessageBox.Show(exceptionMessage,"Ошибка приложения"
-                    ,System.Windows.Forms.MessageBoxButtons.OK,System.Windows.Forms.MessageBoxIcon.Error);
+                System.Windows.Forms.MessageBox.Show(exceptionMessage, "Ошибка приложения"
+                    , System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
                 // Throw a new DbEntityValidationException with the improved exception message.
-               // throw new DbUpdateException(exceptionMessage);
-                return 0;
+                 throw new DbUpdateException(exceptionMessage);
+               // return 0;
+            }
+            catch (Exception ex)
+            {
+                throw;
             }
         }
         #endregion
