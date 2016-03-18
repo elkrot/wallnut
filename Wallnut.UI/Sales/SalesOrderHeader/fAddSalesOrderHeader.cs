@@ -10,6 +10,7 @@ using Wallnut.Domain.Models;
 using Wallnut.BusinessLogic.Implementations;
 using Wallnut.UI.Sales.Customer;
 using Wallnut.UI.Sales.SalesTerritory;
+using Wallnut.UI.Persons.frmBusinessEntityAddress;
 
 namespace Wallnut.UI.Sales.SalesOrderHeader
 {
@@ -255,6 +256,12 @@ namespace Wallnut.UI.Sales.SalesOrderHeader
         private void button6_Click(object sender, EventArgs e)
         {
             fSalesTerritory f = new fSalesTerritory();
+            f.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            fBusinessEntityAddress f = new fBusinessEntityAddress();
             f.ShowDialog();
         }
     }

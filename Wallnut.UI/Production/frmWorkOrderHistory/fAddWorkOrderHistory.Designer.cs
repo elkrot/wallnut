@@ -44,12 +44,12 @@
             this.tbActualCost = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.tbxActualResourceHrs = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tbQty = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
             this.ep = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label7 = new System.Windows.Forms.Label();
-            this.tbQty = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ep)).BeginInit();
@@ -234,6 +234,25 @@
             this.tbxActualResourceHrs.Size = new System.Drawing.Size(255, 20);
             this.tbxActualResourceHrs.TabIndex = 6;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label7.Location = new System.Drawing.Point(23, 150);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(66, 25);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Количество";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // tbQty
+            // 
+            this.tbQty.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbQty.Location = new System.Drawing.Point(223, 153);
+            this.tbQty.Name = "tbQty";
+            this.tbQty.Size = new System.Drawing.Size(255, 20);
+            this.tbQty.TabIndex = 6;
+            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoSize = true;
@@ -270,25 +289,6 @@
             // ep
             // 
             this.ep.ContainerControl = this;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label7.Location = new System.Drawing.Point(23, 150);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(66, 25);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Количество";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // tbQty
-            // 
-            this.tbQty.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbQty.Location = new System.Drawing.Point(223, 153);
-            this.tbQty.Name = "tbQty";
-            this.tbQty.Size = new System.Drawing.Size(255, 20);
-            this.tbQty.TabIndex = 6;
             // 
             // fAddWorkOrderHistory
             // 

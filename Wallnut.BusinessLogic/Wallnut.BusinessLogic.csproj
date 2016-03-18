@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Implementations\AddressRepository.cs" />
     <Compile Include="Implementations\AddressTypeRepository.cs" />
+    <Compile Include="Implementations\BusinessEntityAddressRepository.cs" />
     <Compile Include="Implementations\BusinessEntityRepository.cs" />
     <Compile Include="Implementations\ContactTypeRepository.cs" />
     <Compile Include="Implementations\CountryRegionRepository.cs" />
@@ -90,6 +91,7 @@
     <Compile Include="Implementations\WorkOrderRepository.cs" />
     <Compile Include="Interfaces\IAddressRepository.cs" />
     <Compile Include="Interfaces\IAddressTypeRepository.cs" />
+    <Compile Include="Interfaces\IBusinessEntityAddressRepository.cs" />
     <Compile Include="Interfaces\IBusinessEntityRepository.cs" />
     <Compile Include="Interfaces\IContactTypeRepository.cs" />
     <Compile Include="Interfaces\ICountryRegionRepository.cs" />

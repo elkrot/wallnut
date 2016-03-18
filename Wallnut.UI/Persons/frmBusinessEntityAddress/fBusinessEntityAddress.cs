@@ -14,10 +14,10 @@ namespace Wallnut.UI.Persons.frmBusinessEntityAddress
 {
     public partial class fBusinessEntityAddress : Wallnut.UI.Implementations.ListForm
     {
-        public ListFormBehavior<object, AddForm> behavior;
+        public ListFormBehavior<BusinessEntityAddress, AddBusinessEntityAddress> behavior;
         public fBusinessEntityAddress()
         {
-            behavior = new ListFormBehavior<object, AddForm>(null, Reread);
+            behavior = new ListFormBehavior<BusinessEntityAddress, AddBusinessEntityAddress>(x=>true, Reread);
             InitializeComponent();
         }
         public void Reread()

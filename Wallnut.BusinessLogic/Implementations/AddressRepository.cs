@@ -20,19 +20,13 @@ namespace Wallnut.BusinessLogic.Implementations
     public class AddressRepository : Repository<Address>, IAddressRepository
     {
 
-        #region Member Variables
-        #endregion
 
-        #region Constructors
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AddressRepository" /> class.
-        /// </summary>
         public AddressRepository(IDbContext context)
             : base(context as DbContext)
         {
 
         }
-        #endregion
+
 
         public new IEnumerable<Address> GetAll()
         {
