@@ -18,11 +18,12 @@ namespace Wallnut.UI.Sales.SalesOrderHeader
     {
 
         private List<Wallnut.Domain.Models.Customer> CustomerList;
-        //    private List<Wallnut.Domain.Models.SalesPerson> SalesPersonList;
+        private List<Wallnut.Domain.Models.BusinessEntityAddress> BillToAddressList;
+        private List<Wallnut.Domain.Models.BusinessEntityAddress> ShipToAddressList;
         private List<Wallnut.Domain.Models.SalesTerritory> SalesTerritoryList;
         private List<Wallnut.Domain.Models.CurrencyRate> CurrencyRateList;
         private List<Wallnut.Domain.Models.ShipMethod> ShipMethodList;
-
+        public int CustomerID { get; set; }
 
         public fAddSalesOrderHeader()
         {
@@ -34,43 +35,67 @@ namespace Wallnut.UI.Sales.SalesOrderHeader
         {
             /*
 
-
-      ,[]
-
       ,[BillToAddressID]
       ,[ShipToAddressID]
-      ,[]
-      ,[]
+
 
              */
             #region FillLists
              using (var unitOfWork = new UnitOfWork(new WallnutProductionContext()))
             {
-                this.CustomerList = unitOfWork.CustomerRepository.GetAll().ToList<Wallnut.Domain.Models.Customer>();
+                BillToAddressList = unitOfWork.BusinessEntityAddressRepository
+                .Find(x=>x.BusinessEntityID==CustomerID).ToList<Wallnut.Domain.Models.BusinessEntityAddress>();
+
+                ShipToAddressList = unitOfWork.BusinessEntityAddressRepository
+                .Find(x => x.BusinessEntityID == CustomerID).ToList<Wallnut.Domain.Models.BusinessEntityAddress>();
+
+               this.CustomerList = unitOfWork.CustomerRepository.GetAll()
+               .ToList<Wallnut.Domain.Models.Customer>();
                cbCustomerID.DataSource = CustomerList;
-             /*  this.SalesPersonList = unitOfWork.SalesPersonRepository.GetAll().ToList<Wallnut.Domain.Models.SalesPerson>();
-               cbSalesPersonID.DataSource = SalesPersonList;*/
-               #region CustomerID
-               cbCustomerID.ValueMember = "CustomerID";
-               cbCustomerID.DisplayMember = "CustomerName";
 
-               cbCustomerID.SelectedIndexChanged += (x, y) =>
-               {
-                   (this.entity as Wallnut.Domain.Models.SalesOrderHeader).CustomerID = (int)cbCustomerID.SelectedValue;
-               };
-               #endregion
-
-               this.SalesTerritoryList = unitOfWork.SalesTerritoryRepository.GetAll().ToList<Wallnut.Domain.Models.SalesTerritory>();
+               this.SalesTerritoryList = unitOfWork.SalesTerritoryRepository.GetAll()
+               .ToList<Wallnut.Domain.Models.SalesTerritory>();
                cbTerritoryID.DataSource = SalesTerritoryList;
-                this.ShipMethodList = unitOfWork.ShipMethodRepository.GetAll().ToList<Wallnut.Domain.Models.ShipMethod>();
+
+                this.ShipMethodList = unitOfWork.ShipMethodRepository.GetAll()
+                .ToList<Wallnut.Domain.Models.ShipMethod>();
                cbShipMethodID.DataSource = ShipMethodList;
 
-               this.CurrencyRateList = unitOfWork.CurrencyRateRepository.GetAll().ToList<Wallnut.Domain.Models.CurrencyRate>();
+               this.CurrencyRateList = unitOfWork.CurrencyRateRepository.GetAll()
+                   .ToList<Wallnut.Domain.Models.CurrencyRate>();
                
                 
             }
             #endregion
-           
+
+            #region CustomerID
+             cbCustomerID.ValueMember = "CustomerID";
+             cbCustomerID.DisplayMember = "CustomerName";
+
+             //cbCustomerID.SelectedIndex = (this.entity as Wallnut.Domain.Models.SalesOrderHeader).CustomerID;
+
+             if ((this.entity as Wallnut.Domain.Models.SalesOrderHeader).CustomerID == 0)
+             { cbCustomerID.SelectedIndex = 0; }
+
+             (this.entity as Wallnut.Domain.Models.SalesOrderHeader).CustomerID = (int)(cbCustomerID.SelectedValue);
+
+             cbCustomerID.SelectedIndexChanged += (x, y) =>
+             { (this.entity as Wallnut.Domain.Models.SalesOrderHeader).CustomerID = (int)cbCustomerID.SelectedValue; };
+
+             BillToAddress();
+
+             ShipToAddress();
+
+             #endregion    
+
+            #region BillToAddress
+             BillToAddress();
+	#endregion
+
+            #region ShipToAddress
+             ShipToAddress();
+	#endregion
+                
             #region Status
             cbStatus.DataSource = new BindingSource(
                          new Dictionary<byte, string>() { 
@@ -193,7 +218,7 @@ namespace Wallnut.UI.Sales.SalesOrderHeader
             #region SalesTerritory
             cbTerritoryID.ValueMember = "TerritoryID";
             cbTerritoryID.DisplayMember = "Name";
-
+            (this.entity as Wallnut.Domain.Models.SalesOrderHeader).TerritoryID = (int)cbTerritoryID.SelectedValue;
             cbTerritoryID.SelectedIndexChanged += (x, y) =>
             {
                 (this.entity as Wallnut.Domain.Models.SalesOrderHeader).TerritoryID = (int)cbTerritoryID.SelectedValue;
@@ -211,8 +236,8 @@ namespace Wallnut.UI.Sales.SalesOrderHeader
             #region ShipMethod
             cbShipMethodID.ValueMember = "ShipMethodID";
             cbShipMethodID.DisplayMember = "Name";
-
-            cbTerritoryID.SelectedIndexChanged += (x, y) =>
+            (this.entity as Wallnut.Domain.Models.SalesOrderHeader).ShipMethodID = (int)cbShipMethodID.SelectedValue;
+            cbShipMethodID.SelectedIndexChanged += (x, y) =>
             {
                 (this.entity as Wallnut.Domain.Models.SalesOrderHeader).ShipMethodID = (int)cbShipMethodID.SelectedValue;
             };               
@@ -221,11 +246,38 @@ namespace Wallnut.UI.Sales.SalesOrderHeader
                 
         }
 
+        private void ShipToAddress()
+        {
+            cbShipToAddressID.ValueMember = "AddressID";
+            cbShipToAddressID.DisplayMember = "Address.AddressTitle";
+            (this.entity as Wallnut.Domain.Models.SalesOrderHeader).ShipToAddressID 
+                = (int)cbShipToAddressID.SelectedValue;
+            cbShipToAddressID.SelectedIndexChanged += (x, y) =>
+            {
+                (this.entity as Wallnut.Domain.Models.SalesOrderHeader).ShipToAddressID = (int)cbShipMethodID.SelectedValue;
+            };
+        }
+
+        private void BillToAddress()
+        {
+            cbBillToAddressID.ValueMember = "AddressID";
+            cbBillToAddressID.DisplayMember = "Address.AddressTitle";
+            if (cbBillToAddressID.
+            (this.entity as Wallnut.Domain.Models.SalesOrderHeader).BillToAddressID 
+                = (int)cbBillToAddressID.SelectedValue;
+
+            cbBillToAddressID.SelectedIndexChanged += (x, y) =>
+            {
+                (this.entity as Wallnut.Domain.Models.SalesOrderHeader).BillToAddressID = (int)cbBillToAddressID.SelectedValue;
+            };
+        }
+
         private void fEdit_Load(object sender, EventArgs e)
         {
             BindingData();
         }
 
+        #region tbName_Validating
         private void tbName_Validating(object sender, CancelEventArgs e)
         {
             if (string.IsNullOrEmpty(tbAccountNumber.Text))
@@ -236,7 +288,9 @@ namespace Wallnut.UI.Sales.SalesOrderHeader
             {
                 e.Cancel = false; ep.SetError(tbAccountNumber, "");
             }
-        }
+        }        
+        #endregion
+
 
         private void btnOK_Click(object sender, EventArgs e)
         {
@@ -261,8 +315,13 @@ namespace Wallnut.UI.Sales.SalesOrderHeader
 
         private void button1_Click(object sender, EventArgs e)
         {
-            fBusinessEntityAddress f = new fBusinessEntityAddress();
-            f.ShowDialog();
+            if (cbCustomerID.SelectedIndex !=-1)
+            {
+                fBusinessEntityAddress f = new fBusinessEntityAddress();
+
+                f.BusinessEntityID = (int)cbCustomerID.SelectedValue;
+                f.ShowDialog();
+            }
         }
     }
 }

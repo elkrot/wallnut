@@ -9,7 +9,11 @@ namespace Wallnut.Domain.Models
     /// Cross-reference table mapping customers, vendors, and employees to their addresses
     /// </summary>
     public partial class BusinessEntityAddress
-    {/*
+    {
+        public string AddressTitle { get {return Address.AddressLine1;}  }
+        public string AddressTypeTitle { get { return AddressType.Name; } }
+        
+        /*
         /// <summary>
         /// Первичный ключ для строк Foreign key to BusinessEntity.BusinessEntityID.
         /// </summary>

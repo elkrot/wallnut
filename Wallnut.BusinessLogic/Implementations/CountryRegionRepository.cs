@@ -19,29 +19,13 @@ namespace Wallnut.BusinessLogic.Implementations
     public class CountryRegionRepository : Repository<CountryRegion>, ICountryRegionRepository
     {
 
-        #region Member Variables
-        #endregion
 
-        #region Constructors
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CountryRegionRepository" /> class.
-        /// </summary>
         public CountryRegionRepository(IDbContext context)
             : base(context as DbContext)
         {
 
         }
 
-        #endregion
 
-        #region Properties
-        #endregion
-
-        #region Functions
-        #endregion
-
-        #region Enums
-        #endregion
     }
 }

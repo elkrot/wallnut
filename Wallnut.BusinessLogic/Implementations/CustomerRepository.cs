@@ -36,7 +36,13 @@ namespace Wallnut.BusinessLogic.Implementations
                 .Include("Store")
                 .Where(predicate);
         }
-
+        new public IEnumerable<Customer> GetAll()
+        {
+            return Context.Set<Customer>().
+                Include("SalesTerritory")
+                .Include("Person")
+                .Include("Store").ToList();
+        }
         private int GetNewBusinessEntityID()
         {
             var be = new BusinessEntity();

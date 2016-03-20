@@ -45,6 +45,10 @@
             this.tsbEdit = new System.Windows.Forms.ToolStripButton();
             this.tsbDelete = new System.Windows.Forms.ToolStripButton();
             this.dgv = new System.Windows.Forms.DataGridView();
+            this.colStateProvinceCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCountryRegionCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTerritory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bn)).BeginInit();
             this.bn.SuspendLayout();
@@ -192,6 +196,11 @@
             this.dgv.AllowUserToDeleteRows = false;
             this.dgv.AutoGenerateColumns = false;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colStateProvinceCode,
+            this.colCountryRegionCode,
+            this.colName,
+            this.colTerritory});
             this.dgv.DataSource = this.bs;
             this.dgv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv.Location = new System.Drawing.Point(0, 25);
@@ -199,6 +208,30 @@
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv.Size = new System.Drawing.Size(437, 215);
             this.dgv.TabIndex = 2;
+            // 
+            // colStateProvinceCode
+            // 
+            this.colStateProvinceCode.DataPropertyName = "StateProvinceCode";
+            this.colStateProvinceCode.HeaderText = "Код Области";
+            this.colStateProvinceCode.Name = "colStateProvinceCode";
+            // 
+            // colCountryRegionCode
+            // 
+            this.colCountryRegionCode.DataPropertyName = "CountryRegionCode";
+            this.colCountryRegionCode.HeaderText = "Код Страны";
+            this.colCountryRegionCode.Name = "colCountryRegionCode";
+            // 
+            // colName
+            // 
+            this.colName.DataPropertyName = "Name";
+            this.colName.HeaderText = "Наименование Области";
+            this.colName.Name = "colName";
+            // 
+            // colTerritory
+            // 
+            this.colTerritory.DataPropertyName = "TerritoryName";
+            this.colTerritory.HeaderText = "Территория";
+            this.colTerritory.Name = "colTerritory";
             // 
             // fStateProvince
             // 
@@ -209,7 +242,7 @@
             this.Controls.Add(this.bn);
             this.Controls.Add(this.ss);
             this.Name = "fStateProvince";
-            this.Text = "fStateProvince";
+            this.Text = "Список Областей";
             this.Load += new System.EventHandler(this.fList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bn)).EndInit();
@@ -239,5 +272,9 @@
         private System.Windows.Forms.ToolStripButton tsbEdit;
         private System.Windows.Forms.ToolStripButton tsbDelete;
         private System.Windows.Forms.DataGridView dgv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStateProvinceCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCountryRegionCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTerritory;
     }
 }

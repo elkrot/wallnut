@@ -13,6 +13,7 @@ using Wallnut.Domain.Models;
 using Wallnut.BusinessLogic.Interfaces;
 using Wallnut.Domain.Interfaces;
 using System.Data.Entity;
+    using System.Linq.Expressions;
 
     /// <summary>
     /// Super class
@@ -33,6 +34,11 @@ using System.Data.Entity;
             return Context.Set<BusinessEntityAddress>().Include("Address").Include("AddressType").ToList();
         }
 
-
+        new public IEnumerable<BusinessEntityAddress> Find(Expression<Func<BusinessEntityAddress, bool>> predicate)
+        {
+            return Context.Set<BusinessEntityAddress>().
+                Include("Address").Include("AddressType")
+                .Where(predicate);
+        }
     }
 }

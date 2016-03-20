@@ -49,6 +49,7 @@
             this.tsmiCurrency = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCustomer = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSalesTerritory = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiStore = new System.Windows.Forms.ToolStripMenuItem();
             this.статистикаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSalesOrder = new System.Windows.Forms.ToolStripMenuItem();
             this.курсыВалютToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -80,8 +81,8 @@
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.tsmiStore = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.tsmSRegion = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.SuspendLayout();
@@ -172,7 +173,7 @@
             this.tsmiProductionToolStripMenuItem,
             this.единицыИзмеренияToolStripMenuItem});
             this.справочникиToolStripMenuItem4.Name = "справочникиToolStripMenuItem4";
-            this.справочникиToolStripMenuItem4.Size = new System.Drawing.Size(152, 22);
+            this.справочникиToolStripMenuItem4.Size = new System.Drawing.Size(149, 22);
             this.справочникиToolStripMenuItem4.Text = "Справочники";
             // 
             // tsmiProductionToolStripMenuItem
@@ -195,7 +196,7 @@
             this.производствоToolStripMenuItem,
             this.tsmiInventory});
             this.статистикаToolStripMenuItem4.Name = "статистикаToolStripMenuItem4";
-            this.статистикаToolStripMenuItem4.Size = new System.Drawing.Size(152, 22);
+            this.статистикаToolStripMenuItem4.Size = new System.Drawing.Size(149, 22);
             this.статистикаToolStripMenuItem4.Text = "Статистика";
             // 
             // производствоToolStripMenuItem
@@ -253,6 +254,13 @@
             this.tsmiSalesTerritory.Text = "Территории продаж";
             this.tsmiSalesTerritory.Click += new System.EventHandler(this.tsmiSalesTerritory_Click);
             // 
+            // tsmiStore
+            // 
+            this.tsmiStore.Name = "tsmiStore";
+            this.tsmiStore.Size = new System.Drawing.Size(186, 22);
+            this.tsmiStore.Text = "Магазин";
+            this.tsmiStore.Click += new System.EventHandler(this.tsmiStore_Click);
+            // 
             // статистикаToolStripMenuItem
             // 
             this.статистикаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -265,14 +273,14 @@
             // tsmiSalesOrder
             // 
             this.tsmiSalesOrder.Name = "tsmiSalesOrder";
-            this.tsmiSalesOrder.Size = new System.Drawing.Size(152, 22);
+            this.tsmiSalesOrder.Size = new System.Drawing.Size(146, 22);
             this.tsmiSalesOrder.Text = "Продажи";
             this.tsmiSalesOrder.Click += new System.EventHandler(this.продажиToolStripMenuItem1_Click);
             // 
             // курсыВалютToolStripMenuItem1
             // 
             this.курсыВалютToolStripMenuItem1.Name = "курсыВалютToolStripMenuItem1";
-            this.курсыВалютToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.курсыВалютToolStripMenuItem1.Size = new System.Drawing.Size(146, 22);
             this.курсыВалютToolStripMenuItem1.Text = "Курсы валют";
             this.курсыВалютToolStripMenuItem1.Click += new System.EventHandler(this.курсыВалютToolStripMenuItem1_Click);
             // 
@@ -294,9 +302,10 @@
             this.tsmiContactType,
             this.tsmiCountryRegionToolStripMenuItem,
             this.tsmShiftToolStripMenuItem,
-            this.tsmiAddressToolStripMenuItem});
+            this.tsmiAddressToolStripMenuItem,
+            this.tsmSRegion});
             this.справочникиToolStripMenuItem2.Name = "справочникиToolStripMenuItem2";
-            this.справочникиToolStripMenuItem2.Size = new System.Drawing.Size(149, 22);
+            this.справочникиToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
             this.справочникиToolStripMenuItem2.Text = "Справочники";
             // 
             // tsmiEmployee
@@ -354,7 +363,7 @@
             this.выходыToolStripMenuItem,
             this.кассаToolStripMenuItem});
             this.статистикаToolStripMenuItem2.Name = "статистикаToolStripMenuItem2";
-            this.статистикаToolStripMenuItem2.Size = new System.Drawing.Size(149, 22);
+            this.статистикаToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
             this.статистикаToolStripMenuItem2.Text = "Статистика";
             // 
             // выходыToolStripMenuItem
@@ -512,13 +521,6 @@
             this.toolStripButton4.Text = "Выход";
             this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
-            // tsmiStore
-            // 
-            this.tsmiStore.Name = "tsmiStore";
-            this.tsmiStore.Size = new System.Drawing.Size(186, 22);
-            this.tsmiStore.Text = "Магазин";
-            this.tsmiStore.Click += new System.EventHandler(this.tsmiStore_Click);
-            // 
             // toolStripButton5
             // 
             this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -527,6 +529,13 @@
             this.toolStripButton5.Name = "toolStripButton5";
             this.toolStripButton5.Size = new System.Drawing.Size(34, 36);
             this.toolStripButton5.Text = "toolStripButton5";
+            // 
+            // tsmSRegion
+            // 
+            this.tsmSRegion.Name = "tsmSRegion";
+            this.tsmSRegion.Size = new System.Drawing.Size(204, 22);
+            this.tsmSRegion.Text = "Область";
+            this.tsmSRegion.Click += new System.EventHandler(this.tsmSRegion_Click);
             // 
             // fMain
             // 
@@ -606,5 +615,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiSalesTerritory;
         private System.Windows.Forms.ToolStripMenuItem tsmiStore;
         private System.Windows.Forms.ToolStripButton toolStripButton5;
+        private System.Windows.Forms.ToolStripMenuItem tsmSRegion;
     }
 }

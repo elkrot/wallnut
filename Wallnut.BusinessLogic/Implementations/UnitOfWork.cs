@@ -67,6 +67,7 @@ namespace Wallnut.BusinessLogic.Implementations
             SalesTerritoryRepository = new SalesTerritoryRepository(_context);
             //  _ = new _(_context);
             BusinessEntityAddressRepository = new BusinessEntityAddressRepository(_context);
+            AddressTypeRepository = new AddressTypeRepository(_context);
             
         }
         #endregion
@@ -113,7 +114,8 @@ namespace Wallnut.BusinessLogic.Implementations
         public IStoreRepository StoreRepository { get; private set; }
 
         public IBusinessEntityAddressRepository BusinessEntityAddressRepository { get; private set; }
-        
+
+        public IAddressTypesRepository AddressTypeRepository { get; private set; }
         //public I  { get; private set; }
         #endregion
 
@@ -260,8 +262,10 @@ namespace Wallnut.BusinessLogic.Implementations
                      break;
         case "BusinessEntityAddress": ret = (IRepository<T>)BusinessEntityAddressRepository;
                      break;
-
-                     
+        case "AddressTypeRepository": ret = (IRepository<T>)AddressTypeRepository;
+                     break;
+        case "StateProvinceRepository": ret = (IRepository<T>)StateProvinceRepository;
+                     break;
                  default:
                      ret = null;
                      break;

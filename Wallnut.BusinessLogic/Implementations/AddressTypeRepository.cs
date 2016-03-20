@@ -19,10 +19,6 @@ namespace Wallnut.BusinessLogic.Implementations
     public class AddressTypeRepository: Repository<AddressType>,IAddressTypesRepository
     {
 
-        #region Member Variables
-        #endregion
-
-        #region Constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AddressTypeRepository" /> class.
@@ -33,15 +29,7 @@ namespace Wallnut.BusinessLogic.Implementations
 
         }
 
-        #endregion
 
-        #region Properties
-        #endregion
-
-        #region Functions
-        #endregion
-
-        #region Enums
-        #endregion
+    
     }
 }

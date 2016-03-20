@@ -31,13 +31,13 @@
             this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tbNamelbl = new System.Windows.Forms.Label();
+            this.tbName = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbCountryRegionCode = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
             this.ep = new System.Windows.Forms.ErrorProvider(this.components);
-            this.tbName = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbCountryRegionCode = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ep)).BeginInit();
@@ -72,6 +72,36 @@
             this.tbNamelbl.TabIndex = 0;
             this.tbNamelbl.Text = "Наименование";
             this.tbNamelbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // tbName
+            // 
+            this.tbName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ep.SetError(this.tbName, "Поле код страны не может быть пустым");
+            this.tbName.Location = new System.Drawing.Point(103, 28);
+            this.tbName.Name = "tbName";
+            this.tbName.Size = new System.Drawing.Size(383, 20);
+            this.tbName.TabIndex = 1;
+            this.tbName.Validating += new System.ComponentModel.CancelEventHandler(this.tbName_Validating);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 25);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Код страны";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // tbCountryRegionCode
+            // 
+            this.tbCountryRegionCode.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbCountryRegionCode.Location = new System.Drawing.Point(103, 3);
+            this.tbCountryRegionCode.Name = "tbCountryRegionCode";
+            this.tbCountryRegionCode.Size = new System.Drawing.Size(383, 20);
+            this.tbCountryRegionCode.TabIndex = 0;
+            this.tbCountryRegionCode.Validating += new System.ComponentModel.CancelEventHandler(this.tbCountryRegionCode_Validating);
             // 
             // flowLayoutPanel1
             // 
@@ -110,36 +140,6 @@
             // 
             this.ep.ContainerControl = this;
             this.ep.RightToLeft = true;
-            // 
-            // tbName
-            // 
-            this.tbName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ep.SetError(this.tbName, "Поле код страны не может быть пустым");
-            this.tbName.Location = new System.Drawing.Point(103, 28);
-            this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(383, 20);
-            this.tbName.TabIndex = 1;
-            this.tbName.Validating += new System.ComponentModel.CancelEventHandler(this.tbName_Validating);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 25);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Код страны";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // tbCountryRegionCode
-            // 
-            this.tbCountryRegionCode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbCountryRegionCode.Location = new System.Drawing.Point(103, 3);
-            this.tbCountryRegionCode.Name = "tbCountryRegionCode";
-            this.tbCountryRegionCode.Size = new System.Drawing.Size(383, 20);
-            this.tbCountryRegionCode.TabIndex = 0;
-            this.tbCountryRegionCode.Validating += new System.ComponentModel.CancelEventHandler(this.tbCountryRegionCode_Validating);
             // 
             // fAddCountryRegion
             // 

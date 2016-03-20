@@ -45,6 +45,8 @@
             this.tsbEdit = new System.Windows.Forms.ToolStripButton();
             this.tsbDelete = new System.Windows.Forms.ToolStripButton();
             this.dgv = new System.Windows.Forms.DataGridView();
+            this.cbAddressTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cbAddressTytleTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bn)).BeginInit();
             this.bn.SuspendLayout();
@@ -55,7 +57,7 @@
             // 
             this.ss.Location = new System.Drawing.Point(0, 240);
             this.ss.Name = "ss";
-            this.ss.Size = new System.Drawing.Size(437, 22);
+            this.ss.Size = new System.Drawing.Size(564, 22);
             this.ss.TabIndex = 0;
             this.ss.Text = "statusStrip1";
             // 
@@ -86,7 +88,7 @@
             this.bn.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bn.Name = "bn";
             this.bn.PositionItem = this.bindingNavigatorPositionItem;
-            this.bn.Size = new System.Drawing.Size(437, 39);
+            this.bn.Size = new System.Drawing.Size(564, 39);
             this.bn.TabIndex = 1;
             this.bn.Text = "bindingNavigator1";
             // 
@@ -193,19 +195,38 @@
             this.dgv.AllowUserToDeleteRows = false;
             this.dgv.AutoGenerateColumns = false;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cbAddressTitle,
+            this.cbAddressTytleTitle});
             this.dgv.DataSource = this.bs;
             this.dgv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv.Location = new System.Drawing.Point(0, 39);
             this.dgv.Name = "dgv";
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(437, 201);
+            this.dgv.Size = new System.Drawing.Size(564, 201);
             this.dgv.TabIndex = 2;
+            // 
+            // cbAddressTitle
+            // 
+            this.cbAddressTitle.DataPropertyName = "AddressTitle";
+            this.cbAddressTitle.FillWeight = 300F;
+            this.cbAddressTitle.HeaderText = "Адрес";
+            this.cbAddressTitle.Name = "cbAddressTitle";
+            this.cbAddressTitle.Width = 300;
+            // 
+            // cbAddressTytleTitle
+            // 
+            this.cbAddressTytleTitle.DataPropertyName = "AddressTytleTitle";
+            this.cbAddressTytleTitle.FillWeight = 200F;
+            this.cbAddressTytleTitle.HeaderText = "Тип Адреса";
+            this.cbAddressTytleTitle.Name = "cbAddressTytleTitle";
+            this.cbAddressTytleTitle.Width = 200;
             // 
             // fBusinessEntityAddress
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(437, 262);
+            this.ClientSize = new System.Drawing.Size(564, 262);
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.bn);
             this.Controls.Add(this.ss);
@@ -240,5 +261,7 @@
         private System.Windows.Forms.ToolStripButton tsbEdit;
         private System.Windows.Forms.ToolStripButton tsbDelete;
         private System.Windows.Forms.DataGridView dgv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cbAddressTitle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cbAddressTytleTitle;
     }
 }

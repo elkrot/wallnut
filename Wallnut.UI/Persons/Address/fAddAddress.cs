@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Wallnut.Domain.Models;
 using Wallnut.BusinessLogic.Implementations;
+using Wallnut.UI.Persons.StateProvince;
 
 namespace Wallnut.UI.Persons.Address
 {
@@ -23,9 +24,6 @@ namespace Wallnut.UI.Persons.Address
 
         private void BindingData()
         {
-
-
-
             // StateProvinceID
 
             this.tbAddressLine1.DataBindings.Add("Text",
@@ -35,22 +33,22 @@ namespace Wallnut.UI.Persons.Address
             DataSourceUpdateMode.OnPropertyChanged);
 
             this.tbAddressLine2.DataBindings.Add("Text",
-this.entity as Wallnut.Domain.Models.Address,
-"AddressLine2",
-false,
-DataSourceUpdateMode.OnPropertyChanged);
+            this.entity as Wallnut.Domain.Models.Address,
+            "AddressLine2",
+            false,
+            DataSourceUpdateMode.OnPropertyChanged);
 
             this.tbCity.DataBindings.Add("Text",
-this.entity as Wallnut.Domain.Models.Address,
-"City",
-false,
-DataSourceUpdateMode.OnPropertyChanged);
+            this.entity as Wallnut.Domain.Models.Address,
+            "City",
+            false,
+            DataSourceUpdateMode.OnPropertyChanged);
 
             this.tbPostalCode.DataBindings.Add("Text",
-this.entity as Wallnut.Domain.Models.Address,
-"PostalCode",
-false,
-DataSourceUpdateMode.OnPropertyChanged);
+            this.entity as Wallnut.Domain.Models.Address,
+            "PostalCode",
+            false,
+            DataSourceUpdateMode.OnPropertyChanged);
 
 
             using (var unitOfWork = new UnitOfWork(new WallnutProductionContext()))
@@ -95,6 +93,12 @@ DataSourceUpdateMode.OnPropertyChanged);
 
                 this.DialogResult = System.Windows.Forms.DialogResult.None;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            fStateProvince f = new fStateProvince();
+            f.ShowDialog();
         }
     }
 }

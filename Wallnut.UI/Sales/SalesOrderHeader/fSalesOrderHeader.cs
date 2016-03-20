@@ -20,7 +20,8 @@ namespace Wallnut.UI.Sales.SalesOrderHeader
         private static fSalesOrderHeader aForm = null;
         private fSalesOrderHeader()
         {
-            behavior = new ListFormBehavior<Wallnut.Domain.Models.SalesOrderHeader, fAddSalesOrderHeader>(x => true, Reread);
+            behavior = new ListFormBehavior<Wallnut.Domain.Models.SalesOrderHeader, 
+                fAddSalesOrderHeader>(x => true, Reread);
             detailBehavior = new ListFormBehavior<Wallnut.Domain.Models.SalesOrderDetail
  , fAddSalesOrderDetail>(x => true, Reread);
             InitializeComponent();

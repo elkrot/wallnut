@@ -15,9 +15,10 @@ namespace Wallnut.UI.Persons.frmBusinessEntityAddress
     public partial class fBusinessEntityAddress : Wallnut.UI.Implementations.ListForm
     {
         public ListFormBehavior<BusinessEntityAddress, AddBusinessEntityAddress> behavior;
+        public int BusinessEntityID { get; set; }
         public fBusinessEntityAddress()
         {
-            behavior = new ListFormBehavior<BusinessEntityAddress, AddBusinessEntityAddress>(x=>true, Reread);
+            behavior = new ListFormBehavior<BusinessEntityAddress, AddBusinessEntityAddress>(x=>x.BusinessEntityID==BusinessEntityID, Reread);
             InitializeComponent();
         }
         public void Reread()
@@ -31,29 +32,25 @@ namespace Wallnut.UI.Persons.frmBusinessEntityAddress
 
         private void tsbAdd_Click(object sender, EventArgs e)
         {
-            behavior.AddEntity();
+            behavior.AddEntity(BusinessEntityID);
         }
 
         private void tsbEdit_Click(object sender, EventArgs e)
         {
-            //var entity = dgv.SelectedRows[0].DataBoundItem as Entity;
-            //int id=entity.%%%Id
-            behavior.UpdateEntity(0);
+            var entity = dgv.SelectedRows[0].DataBoundItem as BusinessEntityAddress;
+           
+            int AddressID = entity.AddressID;
+            int AddressTypeID = entity.AddressTypeID;
+            behavior.UpdateEntity(entity.BusinessEntityID, AddressID, AddressTypeID);
         }
 
         private void tsbDelete_Click(object sender, EventArgs e)
         {
-            //var entity = dgv.SelectedRows[0].DataBoundItem as Entity;
-            //int id=entity.%%%Id
-            behavior.RemoveEntity(0);
+            var entity = dgv.SelectedRows[0].DataBoundItem as BusinessEntityAddress;
+            
+            int AddressID = entity.AddressID;
+            int AddressTypeID = entity.AddressTypeID;
+            behavior.RemoveEntity(this.BusinessEntityID, AddressID, AddressTypeID);
         }
-
-
-
-
-
-
-
-
     }
 }
