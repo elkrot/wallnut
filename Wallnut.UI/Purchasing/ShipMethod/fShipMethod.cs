@@ -17,10 +17,10 @@ namespace Wallnut.UI.Purchasing.ShipMethod
     {
         private static fShipMethod aForm = null;
         public ListFormBehavior<Wallnut.Domain.Models.ShipMethod, fAddShipMethod> behavior;
-        private fShipMethod()
+        public fShipMethod()
         {
             behavior = new ListFormBehavior<Wallnut.Domain.Models.ShipMethod,
-                  fAddShipMethod>(x => true, Reread);
+            fAddShipMethod>(x => true, Reread);
             InitializeComponent();
             behavior.RefreshData();
         }
