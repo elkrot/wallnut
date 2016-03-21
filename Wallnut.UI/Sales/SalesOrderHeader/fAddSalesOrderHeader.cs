@@ -261,10 +261,15 @@ namespace Wallnut.UI.Sales.SalesOrderHeader
             if ((this.entity as Wallnut.Domain.Models.SalesOrderHeader).CustomerID == 0)
             { cbCustomerID.SelectedIndex = 0; }
 
-            (this.entity as Wallnut.Domain.Models.SalesOrderHeader).CustomerID = (int)(cbCustomerID.SelectedValue);
+            (this.entity as Wallnut.Domain.Models.SalesOrderHeader).CustomerID = (int)(cbCustomerID.SelectedValue as Wallnut.Domain.Models.Customer).CustomerID;
 
             cbCustomerID.SelectedIndexChanged += (x, y) =>
-            { (this.entity as Wallnut.Domain.Models.SalesOrderHeader).CustomerID = (int)cbCustomerID.SelectedValue; };
+            { 
+                CustomerID = (int)(cbCustomerID.SelectedValue as Wallnut.Domain.Models.Customer).CustomerID;
+                (this.entity as Wallnut.Domain.Models.SalesOrderHeader).CustomerID = CustomerID;
+                    
+                UpdateBillToAddress();
+            };
 
             UpdateBillToAddress();
 
@@ -313,7 +318,7 @@ namespace Wallnut.UI.Sales.SalesOrderHeader
             UpdateAdressLists();
             cbBillToAddressID.ValueMember = "AddressID";
             cbBillToAddressID.DisplayMember = "Address.AddressTitle";
-            if (BillToAddressList.Count > 0)
+            if (cbBillToAddressID.Items.Count > 0)
             {
                 (this.entity as Wallnut.Domain.Models.SalesOrderHeader).BillToAddressID
                     = (int)cbBillToAddressID.SelectedValue;
@@ -424,6 +429,8 @@ namespace Wallnut.UI.Sales.SalesOrderHeader
             }
         }
         #endregion
+
+
 
     }
 }
