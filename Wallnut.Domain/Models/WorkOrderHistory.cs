@@ -28,6 +28,9 @@ namespace Wallnut.Domain.Models
         [Column("ActualEndDate")] 
 	        public Nullable<System.DateTime> ActualEndDate { get; set; }
  
+        [Column("Qty")] 
+	        public Nullable<decimal> Qty { get; set; }
+ 
         [Column("ActualResourceHrs")] 
 	        public decimal ActualResourceHrs { get; set; }
  
@@ -36,10 +39,6 @@ namespace Wallnut.Domain.Models
  
         [Column("ModifiedDate")] 
 	        public System.DateTime ModifiedDate { get; set; }
-
-        [Column("Qty")]
-        public decimal Qty { get; set; }
-
         public virtual Employee Employee { get; set; }
         public virtual Location Location { get; set; }
         public virtual Product Product { get; set; }

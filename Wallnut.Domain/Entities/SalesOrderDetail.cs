@@ -13,7 +13,7 @@ namespace Wallnut.Domain.Models
     /// </summary>
     public partial class SalesOrderDetail
     {
-        /*
+        /*[DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         /// <summary>
         /// Первичный ключ. Внешний ключ к таблице SalesOrderHeader.SalesOrderID.
         /// </summary>
