@@ -21,6 +21,9 @@ namespace Wallnut.Domain.Models
  
         [Column("ModifiedDate")] 
 	        public System.DateTime ModifiedDate { get; set; }
+ 
+        [Column("IsSysRow")] 
+	        public bool IsSysRow { get; set; }
         public virtual ICollection<CurrencyRate> CurrencyRates { get; set; }
         public virtual ICollection<CurrencyRate> CurrencyRates1 { get; set; }
     }

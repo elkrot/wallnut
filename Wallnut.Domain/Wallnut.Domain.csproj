@@ -155,6 +155,7 @@
     <Compile Include="Models\Mapping\sysdiagramMap.cs" />
     <Compile Include="Models\Mapping\TransactionHistoryArchiveMap.cs" />
     <Compile Include="Models\Mapping\TransactionHistoryMap.cs" />
+    <Compile Include="Models\Mapping\TransactionTypeMap.cs" />
     <Compile Include="Models\Mapping\UnitMeasureMap.cs" />
     <Compile Include="Models\Mapping\vEmployeeCurrentJubMap.cs" />
     <Compile Include="Models\Mapping\VendorMap.cs" />
@@ -185,6 +186,7 @@
     <Compile Include="Models\sysdiagram.cs" />
     <Compile Include="Models\TransactionHistory.cs" />
     <Compile Include="Models\TransactionHistoryArchive.cs" />
+    <Compile Include="Models\TransactionType.cs" />
     <Compile Include="Models\UnitMeasure.cs" />
     <Compile Include="Models\vEmployeeCurrentJub.cs" />
     <Compile Include="Models\Vendor.cs" />

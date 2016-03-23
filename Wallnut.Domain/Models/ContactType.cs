@@ -20,6 +20,9 @@ namespace Wallnut.Domain.Models
  
         [Column("ModifiedDate")] 
 	        public System.DateTime ModifiedDate { get; set; }
+ 
+        [Column("IsSysRow")] 
+	        public bool IsSysRow { get; set; }
         public virtual ICollection<BusinessEntityContact> BusinessEntityContacts { get; set; }
     }
 }
