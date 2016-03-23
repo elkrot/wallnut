@@ -34,5 +34,6 @@ namespace Wallnut.Domain.Models
         [Column("ModifiedDate")] 
 	        public System.DateTime ModifiedDate { get; set; }
         public virtual Product Product { get; set; }
+        public virtual TransactionType TransactionType1 { get; set; }
     }
 }

@@ -28,6 +28,9 @@ namespace Wallnut.Domain.Models
  
         [Column("ModifiedDate")] 
 	        public System.DateTime ModifiedDate { get; set; }
+ 
+        [Column("IsSysRow")] 
+	        public bool IsSysRow { get; set; }
         public virtual ICollection<ProductInventory> ProductInventories { get; set; }
         public virtual ICollection<WorkOrderHistory> WorkOrderHistories { get; set; }
         public virtual ICollection<WorkOrderRouting> WorkOrderRoutings { get; set; }

@@ -46,6 +46,9 @@ namespace Wallnut.Domain.Models
  
         [Column("ModifiedDate")] 
 	        public System.DateTime ModifiedDate { get; set; }
+ 
+        [Column("IsSysRow")] 
+	        public bool IsSysRow { get; set; }
         public virtual UnitMeasure UnitMeasure { get; set; }
         public virtual ICollection<ProductCostHistory> ProductCostHistories { get; set; }
         public virtual ICollection<ProductInventory> ProductInventories { get; set; }

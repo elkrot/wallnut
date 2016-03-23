@@ -21,6 +21,9 @@ namespace Wallnut.Domain.Models.Mapping
             this.HasRequired(t => t.Product)
                 .WithMany(t => t.TransactionHistories)
                 .HasForeignKey(d => d.ProductID);
+            this.HasRequired(t => t.TransactionType1)
+                .WithMany(t => t.TransactionHistories)
+                .HasForeignKey(d => d.TransactionType);
 
         }
     }

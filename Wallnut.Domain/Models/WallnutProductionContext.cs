@@ -49,6 +49,7 @@ namespace Wallnut.Domain.Models
         public DbSet<ProductListPriceHistory> ProductListPriceHistories { get; set; }
         public DbSet<TransactionHistory> TransactionHistories { get; set; }
         public DbSet<TransactionHistoryArchive> TransactionHistoryArchives { get; set; }
+        public DbSet<TransactionType> TransactionTypes { get; set; }
         public DbSet<UnitMeasure> UnitMeasures { get; set; }
         public DbSet<WorkOrder> WorkOrders { get; set; }
         public DbSet<WorkOrderHistory> WorkOrderHistories { get; set; }
@@ -104,6 +105,7 @@ namespace Wallnut.Domain.Models
             modelBuilder.Configurations.Add(new ProductListPriceHistoryMap());
             modelBuilder.Configurations.Add(new TransactionHistoryMap());
             modelBuilder.Configurations.Add(new TransactionHistoryArchiveMap());
+            modelBuilder.Configurations.Add(new TransactionTypeMap());
             modelBuilder.Configurations.Add(new UnitMeasureMap());
             modelBuilder.Configurations.Add(new WorkOrderMap());
             modelBuilder.Configurations.Add(new WorkOrderHistoryMap());
