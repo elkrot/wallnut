@@ -260,12 +260,18 @@ namespace Wallnut.UI.Sales.SalesOrderHeader
 
             if ((this.entity as Wallnut.Domain.Models.SalesOrderHeader).CustomerID == 0)
             { cbCustomerID.SelectedIndex = 0; }
-
-            (this.entity as Wallnut.Domain.Models.SalesOrderHeader).CustomerID = (int)(cbCustomerID.SelectedValue as Wallnut.Domain.Models.Customer).CustomerID;
-
+            if (cbCustomerID.SelectedValue is Wallnut.Domain.Models.Customer)
+            {
+                (this.entity as Wallnut.Domain.Models.SalesOrderHeader).CustomerID =
+                    (int)(cbCustomerID.SelectedValue as Wallnut.Domain.Models.Customer).CustomerID;
+            }
             cbCustomerID.SelectedIndexChanged += (x, y) =>
-            { 
-                CustomerID = (int)(cbCustomerID.SelectedValue as Wallnut.Domain.Models.Customer).CustomerID;
+            {
+                if (cbCustomerID.SelectedValue is Wallnut.Domain.Models.Customer)
+                {
+                    CustomerID = (int)(cbCustomerID.SelectedValue as Wallnut.Domain.Models.Customer).CustomerID;
+                }
+                else { CustomerID = (int)cbCustomerID.SelectedValue;}
                 (this.entity as Wallnut.Domain.Models.SalesOrderHeader).CustomerID = CustomerID;
                     
                 UpdateBillToAddress();
