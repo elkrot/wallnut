@@ -30,7 +30,8 @@ namespace Wallnut.Domain.Models
         [Column("Status")] 
 	        public byte Status { get; set; }
  
-        [Column("SalesOrderNumber")] 
+        [Column("SalesOrderNumber")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
 	        public string SalesOrderNumber { get; set; }
  
         [Column("PurchaseOrderNumber")] 
@@ -69,7 +70,8 @@ namespace Wallnut.Domain.Models
         [Column("Freight")] 
 	        public decimal Freight { get; set; }
  
-        [Column("TotalDue")] 
+        [Column("TotalDue")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
 	        public decimal TotalDue { get; set; }
  
         [Column("Comment")] 

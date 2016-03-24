@@ -435,7 +435,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.37318F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.62682F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 47F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 48F));
             this.tableLayoutPanel2.Controls.Add(this.cbBillToAddressID, 2, 1);
             this.tableLayoutPanel2.Controls.Add(this.lbBillToAddressID, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.label2, 1, 2);
@@ -466,7 +466,7 @@
             // 
             this.cbBillToAddressID.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbBillToAddressID.FormattingEnabled = true;
-            this.cbBillToAddressID.Location = new System.Drawing.Point(348, 39);
+            this.cbBillToAddressID.Location = new System.Drawing.Point(347, 39);
             this.cbBillToAddressID.Margin = new System.Windows.Forms.Padding(4);
             this.cbBillToAddressID.Name = "cbBillToAddressID";
             this.cbBillToAddressID.Size = new System.Drawing.Size(289, 26);
@@ -496,7 +496,7 @@
             // 
             this.cbShipToAddressID.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbShipToAddressID.FormattingEnabled = true;
-            this.cbShipToAddressID.Location = new System.Drawing.Point(348, 74);
+            this.cbShipToAddressID.Location = new System.Drawing.Point(347, 74);
             this.cbShipToAddressID.Margin = new System.Windows.Forms.Padding(4);
             this.cbShipToAddressID.Name = "cbShipToAddressID";
             this.cbShipToAddressID.Size = new System.Drawing.Size(289, 26);
@@ -506,7 +506,7 @@
             // 
             this.cbShipMethodID.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbShipMethodID.FormattingEnabled = true;
-            this.cbShipMethodID.Location = new System.Drawing.Point(348, 109);
+            this.cbShipMethodID.Location = new System.Drawing.Point(347, 109);
             this.cbShipMethodID.Margin = new System.Windows.Forms.Padding(4);
             this.cbShipMethodID.Name = "cbShipMethodID";
             this.cbShipMethodID.Size = new System.Drawing.Size(289, 26);
@@ -524,7 +524,7 @@
             // 
             // btnBillToAddressEdit
             // 
-            this.btnBillToAddressEdit.Location = new System.Drawing.Point(645, 39);
+            this.btnBillToAddressEdit.Location = new System.Drawing.Point(644, 39);
             this.btnBillToAddressEdit.Margin = new System.Windows.Forms.Padding(4);
             this.btnBillToAddressEdit.Name = "btnBillToAddressEdit";
             this.btnBillToAddressEdit.Size = new System.Drawing.Size(52, 26);
@@ -535,7 +535,7 @@
             // 
             // btnShipToAddressEdit
             // 
-            this.btnShipToAddressEdit.Location = new System.Drawing.Point(645, 74);
+            this.btnShipToAddressEdit.Location = new System.Drawing.Point(644, 74);
             this.btnShipToAddressEdit.Margin = new System.Windows.Forms.Padding(4);
             this.btnShipToAddressEdit.Name = "btnShipToAddressEdit";
             this.btnShipToAddressEdit.Size = new System.Drawing.Size(52, 26);
@@ -546,7 +546,7 @@
             // 
             // btnShipMethod
             // 
-            this.btnShipMethod.Location = new System.Drawing.Point(645, 109);
+            this.btnShipMethod.Location = new System.Drawing.Point(644, 109);
             this.btnShipMethod.Margin = new System.Windows.Forms.Padding(4);
             this.btnShipMethod.Name = "btnShipMethod";
             this.btnShipMethod.Size = new System.Drawing.Size(52, 26);
@@ -574,7 +574,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.88272F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.11728F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 105F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 133F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 134F));
             this.tableLayoutPanel3.Controls.Add(this.lbSubTotal, 1, 1);
             this.tableLayoutPanel3.Controls.Add(this.tbSubTotal, 2, 1);
             this.tableLayoutPanel3.Controls.Add(this.lbTaxAmt, 1, 2);
@@ -618,7 +618,7 @@
             this.tbSubTotal.Location = new System.Drawing.Point(211, 39);
             this.tbSubTotal.Margin = new System.Windows.Forms.Padding(4);
             this.tbSubTotal.Name = "tbSubTotal";
-            this.tbSubTotal.Size = new System.Drawing.Size(295, 24);
+            this.tbSubTotal.Size = new System.Drawing.Size(294, 24);
             this.tbSubTotal.TabIndex = 1;
             // 
             // lbTaxAmt
@@ -649,7 +649,7 @@
             this.tbTaxAmt.Location = new System.Drawing.Point(211, 74);
             this.tbTaxAmt.Margin = new System.Windows.Forms.Padding(4);
             this.tbTaxAmt.Name = "tbTaxAmt";
-            this.tbTaxAmt.Size = new System.Drawing.Size(295, 24);
+            this.tbTaxAmt.Size = new System.Drawing.Size(294, 24);
             this.tbTaxAmt.TabIndex = 1;
             // 
             // tbTotalDue
@@ -658,7 +658,7 @@
             this.tbTotalDue.Location = new System.Drawing.Point(211, 144);
             this.tbTotalDue.Margin = new System.Windows.Forms.Padding(4);
             this.tbTotalDue.Name = "tbTotalDue";
-            this.tbTotalDue.Size = new System.Drawing.Size(295, 24);
+            this.tbTotalDue.Size = new System.Drawing.Size(294, 24);
             this.tbTotalDue.TabIndex = 1;
             // 
             // label6
@@ -677,7 +677,7 @@
             this.tbFreight.Location = new System.Drawing.Point(211, 109);
             this.tbFreight.Margin = new System.Windows.Forms.Padding(4);
             this.tbFreight.Name = "tbFreight";
-            this.tbFreight.Size = new System.Drawing.Size(295, 24);
+            this.tbFreight.Size = new System.Drawing.Size(294, 24);
             this.tbFreight.TabIndex = 3;
             // 
             // lbCurrencyRate
@@ -692,7 +692,7 @@
             // 
             // btnCurrencyRateEdit
             // 
-            this.btnCurrencyRateEdit.Location = new System.Drawing.Point(514, 179);
+            this.btnCurrencyRateEdit.Location = new System.Drawing.Point(513, 179);
             this.btnCurrencyRateEdit.Margin = new System.Windows.Forms.Padding(4);
             this.btnCurrencyRateEdit.Name = "btnCurrencyRateEdit";
             this.btnCurrencyRateEdit.Size = new System.Drawing.Size(51, 26);
@@ -707,7 +707,7 @@
             this.tbCurrencyRateID.Location = new System.Drawing.Point(211, 179);
             this.tbCurrencyRateID.Margin = new System.Windows.Forms.Padding(4);
             this.tbCurrencyRateID.Name = "tbCurrencyRateID";
-            this.tbCurrencyRateID.Size = new System.Drawing.Size(295, 24);
+            this.tbCurrencyRateID.Size = new System.Drawing.Size(294, 24);
             this.tbCurrencyRateID.TabIndex = 7;
             // 
             // flowLayoutPanel1
