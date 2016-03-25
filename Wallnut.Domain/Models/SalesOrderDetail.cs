@@ -31,7 +31,8 @@ namespace Wallnut.Domain.Models
         [Column("UnitPriceDiscount")] 
 	        public decimal UnitPriceDiscount { get; set; }
  
-        [Column("LineTotal")] 
+        [Column("LineTotal")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
 	        public decimal LineTotal { get; set; }
  
         [Column("ModifiedDate")] 

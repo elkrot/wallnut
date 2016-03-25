@@ -35,26 +35,6 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.revisionNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dueDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.shipDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.salesOrderNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.purchaseOrderNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.accountNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.salesPersonIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.territoryIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.billToAddressIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.shipToAddressIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.shipMethodIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.currencyRateIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.taxAmtDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.freightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalDueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.commentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bn = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -91,6 +71,27 @@
             this.tsbAddDetail = new System.Windows.Forms.ToolStripButton();
             this.tsbEditDetail = new System.Windows.Forms.ToolStripButton();
             this.tsbDeleteDetail = new System.Windows.Forms.ToolStripButton();
+            this.revisionNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dueDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shipDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salesOrderNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.purchaseOrderNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.accountNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salesPersonIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.territoryIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.billToAddressIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shipToAddressIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shipMethodIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.currencyRateIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCurrencyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.taxAmtDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.freightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalDueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.commentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -124,7 +125,7 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -147,7 +148,7 @@
             this.panel1.Controls.Add(this.dgv);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 39);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(970, 208);
             this.panel1.TabIndex = 5;
@@ -174,6 +175,7 @@
             this.shipToAddressIDDataGridViewTextBoxColumn,
             this.shipMethodIDDataGridViewTextBoxColumn,
             this.currencyRateIDDataGridViewTextBoxColumn,
+            this.colCurrencyName,
             this.subTotalDataGridViewTextBoxColumn,
             this.taxAmtDataGridViewTextBoxColumn,
             this.freightDataGridViewTextBoxColumn,
@@ -182,148 +184,11 @@
             this.dgv.DataSource = this.bs;
             this.dgv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv.Location = new System.Drawing.Point(0, 0);
-            this.dgv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgv.Margin = new System.Windows.Forms.Padding(4);
             this.dgv.Name = "dgv";
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv.Size = new System.Drawing.Size(970, 208);
             this.dgv.TabIndex = 4;
-            // 
-            // revisionNumberDataGridViewTextBoxColumn
-            // 
-            this.revisionNumberDataGridViewTextBoxColumn.DataPropertyName = "RevisionNumber";
-            this.revisionNumberDataGridViewTextBoxColumn.FillWeight = 40F;
-            this.revisionNumberDataGridViewTextBoxColumn.HeaderText = "№Рев";
-            this.revisionNumberDataGridViewTextBoxColumn.Name = "revisionNumberDataGridViewTextBoxColumn";
-            this.revisionNumberDataGridViewTextBoxColumn.ToolTipText = "Порядковый номер для отслеживания изменений заказа на продажу с течением времени." +
-    "";
-            this.revisionNumberDataGridViewTextBoxColumn.Width = 40;
-            // 
-            // orderDateDataGridViewTextBoxColumn
-            // 
-            this.orderDateDataGridViewTextBoxColumn.DataPropertyName = "OrderDate";
-            this.orderDateDataGridViewTextBoxColumn.HeaderText = "Дата заказа";
-            this.orderDateDataGridViewTextBoxColumn.Name = "orderDateDataGridViewTextBoxColumn";
-            this.orderDateDataGridViewTextBoxColumn.ToolTipText = "Дата создания заказа на продажу";
-            // 
-            // dueDateDataGridViewTextBoxColumn
-            // 
-            this.dueDateDataGridViewTextBoxColumn.DataPropertyName = "DueDate";
-            this.dueDateDataGridViewTextBoxColumn.HeaderText = "Дата выполнения";
-            this.dueDateDataGridViewTextBoxColumn.Name = "dueDateDataGridViewTextBoxColumn";
-            this.dueDateDataGridViewTextBoxColumn.ToolTipText = "Дата выполнения заказа.";
-            // 
-            // shipDateDataGridViewTextBoxColumn
-            // 
-            this.shipDateDataGridViewTextBoxColumn.DataPropertyName = "ShipDate";
-            this.shipDateDataGridViewTextBoxColumn.HeaderText = "Дата отправки";
-            this.shipDateDataGridViewTextBoxColumn.Name = "shipDateDataGridViewTextBoxColumn";
-            this.shipDateDataGridViewTextBoxColumn.ToolTipText = "Дата отправки заказа клиенту.";
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Статус";
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            // 
-            // salesOrderNumberDataGridViewTextBoxColumn
-            // 
-            this.salesOrderNumberDataGridViewTextBoxColumn.DataPropertyName = "SalesOrderNumber";
-            this.salesOrderNumberDataGridViewTextBoxColumn.HeaderText = "Номер заказа";
-            this.salesOrderNumberDataGridViewTextBoxColumn.Name = "salesOrderNumberDataGridViewTextBoxColumn";
-            this.salesOrderNumberDataGridViewTextBoxColumn.ToolTipText = "Уникальный идентификационный номер заказа на продажу";
-            // 
-            // purchaseOrderNumberDataGridViewTextBoxColumn
-            // 
-            this.purchaseOrderNumberDataGridViewTextBoxColumn.DataPropertyName = "PurchaseOrderNumber";
-            this.purchaseOrderNumberDataGridViewTextBoxColumn.HeaderText = "Номер счета ";
-            this.purchaseOrderNumberDataGridViewTextBoxColumn.Name = "purchaseOrderNumberDataGridViewTextBoxColumn";
-            this.purchaseOrderNumberDataGridViewTextBoxColumn.ToolTipText = "Ссылка на номер заказа на покупку";
-            // 
-            // accountNumberDataGridViewTextBoxColumn
-            // 
-            this.accountNumberDataGridViewTextBoxColumn.DataPropertyName = "AccountNumber";
-            this.accountNumberDataGridViewTextBoxColumn.HeaderText = "Ссылка на номер финансового счета";
-            this.accountNumberDataGridViewTextBoxColumn.Name = "accountNumberDataGridViewTextBoxColumn";
-            this.accountNumberDataGridViewTextBoxColumn.ToolTipText = "Ссылка на номер финансового счета";
-            // 
-            // customerIDDataGridViewTextBoxColumn
-            // 
-            this.customerIDDataGridViewTextBoxColumn.DataPropertyName = "CustomerID";
-            this.customerIDDataGridViewTextBoxColumn.HeaderText = "Заказчик";
-            this.customerIDDataGridViewTextBoxColumn.Name = "customerIDDataGridViewTextBoxColumn";
-            this.customerIDDataGridViewTextBoxColumn.ToolTipText = " заказчик";
-            // 
-            // salesPersonIDDataGridViewTextBoxColumn
-            // 
-            this.salesPersonIDDataGridViewTextBoxColumn.DataPropertyName = "SalesPersonID";
-            this.salesPersonIDDataGridViewTextBoxColumn.HeaderText = "Контакт заказчика";
-            this.salesPersonIDDataGridViewTextBoxColumn.Name = "salesPersonIDDataGridViewTextBoxColumn";
-            // 
-            // territoryIDDataGridViewTextBoxColumn
-            // 
-            this.territoryIDDataGridViewTextBoxColumn.DataPropertyName = "TerritoryID";
-            this.territoryIDDataGridViewTextBoxColumn.HeaderText = "Территория продаж";
-            this.territoryIDDataGridViewTextBoxColumn.Name = "territoryIDDataGridViewTextBoxColumn";
-            // 
-            // billToAddressIDDataGridViewTextBoxColumn
-            // 
-            this.billToAddressIDDataGridViewTextBoxColumn.DataPropertyName = "BillToAddressID";
-            this.billToAddressIDDataGridViewTextBoxColumn.HeaderText = "Адрес для выст. счета";
-            this.billToAddressIDDataGridViewTextBoxColumn.Name = "billToAddressIDDataGridViewTextBoxColumn";
-            this.billToAddressIDDataGridViewTextBoxColumn.ToolTipText = "Адрес заказчика для выставления счета";
-            // 
-            // shipToAddressIDDataGridViewTextBoxColumn
-            // 
-            this.shipToAddressIDDataGridViewTextBoxColumn.DataPropertyName = "ShipToAddressID";
-            this.shipToAddressIDDataGridViewTextBoxColumn.HeaderText = "Адрес  для отгрузки";
-            this.shipToAddressIDDataGridViewTextBoxColumn.Name = "shipToAddressIDDataGridViewTextBoxColumn";
-            this.shipToAddressIDDataGridViewTextBoxColumn.ToolTipText = "Адрес заказчика для отгрузки";
-            // 
-            // shipMethodIDDataGridViewTextBoxColumn
-            // 
-            this.shipMethodIDDataGridViewTextBoxColumn.DataPropertyName = "ShipMethodID";
-            this.shipMethodIDDataGridViewTextBoxColumn.HeaderText = "Метод доставки";
-            this.shipMethodIDDataGridViewTextBoxColumn.Name = "shipMethodIDDataGridViewTextBoxColumn";
-            this.shipMethodIDDataGridViewTextBoxColumn.ToolTipText = "Метод доставки";
-            // 
-            // currencyRateIDDataGridViewTextBoxColumn
-            // 
-            this.currencyRateIDDataGridViewTextBoxColumn.DataPropertyName = "CurrencyRateID";
-            this.currencyRateIDDataGridViewTextBoxColumn.HeaderText = "Курс";
-            this.currencyRateIDDataGridViewTextBoxColumn.Name = "currencyRateIDDataGridViewTextBoxColumn";
-            this.currencyRateIDDataGridViewTextBoxColumn.ToolTipText = "Используемый курс обмена валюты";
-            // 
-            // subTotalDataGridViewTextBoxColumn
-            // 
-            this.subTotalDataGridViewTextBoxColumn.DataPropertyName = "SubTotal";
-            this.subTotalDataGridViewTextBoxColumn.HeaderText = "Подытог продаж";
-            this.subTotalDataGridViewTextBoxColumn.Name = "subTotalDataGridViewTextBoxColumn";
-            // 
-            // taxAmtDataGridViewTextBoxColumn
-            // 
-            this.taxAmtDataGridViewTextBoxColumn.DataPropertyName = "TaxAmt";
-            this.taxAmtDataGridViewTextBoxColumn.HeaderText = "Сумма налогов";
-            this.taxAmtDataGridViewTextBoxColumn.Name = "taxAmtDataGridViewTextBoxColumn";
-            // 
-            // freightDataGridViewTextBoxColumn
-            // 
-            this.freightDataGridViewTextBoxColumn.DataPropertyName = "Freight";
-            this.freightDataGridViewTextBoxColumn.HeaderText = "Стоимость доставки";
-            this.freightDataGridViewTextBoxColumn.Name = "freightDataGridViewTextBoxColumn";
-            // 
-            // totalDueDataGridViewTextBoxColumn
-            // 
-            this.totalDueDataGridViewTextBoxColumn.DataPropertyName = "TotalDue";
-            this.totalDueDataGridViewTextBoxColumn.HeaderText = "Общая задолж.";
-            this.totalDueDataGridViewTextBoxColumn.Name = "totalDueDataGridViewTextBoxColumn";
-            this.totalDueDataGridViewTextBoxColumn.ToolTipText = "Общая задолженность заказчика";
-            // 
-            // commentDataGridViewTextBoxColumn
-            // 
-            this.commentDataGridViewTextBoxColumn.DataPropertyName = "Comment";
-            this.commentDataGridViewTextBoxColumn.HeaderText = "Комментарии";
-            this.commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
-            this.commentDataGridViewTextBoxColumn.ToolTipText = "Комментарии, сделанные коммерческим представителем";
             // 
             // bn
             // 
@@ -459,7 +324,7 @@
             this.panel2.Controls.Add(this.dgvDetail);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 39);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(970, 205);
             this.panel2.TabIndex = 1;
@@ -482,7 +347,7 @@
             this.dgvDetail.DataSource = this.bsDetail;
             this.dgvDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDetail.Location = new System.Drawing.Point(0, 0);
-            this.dgvDetail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvDetail.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDetail.Name = "dgvDetail";
             this.dgvDetail.Size = new System.Drawing.Size(970, 205);
             this.dgvDetail.TabIndex = 0;
@@ -671,6 +536,152 @@
             this.tsbDeleteDetail.Text = "toolStripButton3";
             this.tsbDeleteDetail.Click += new System.EventHandler(this.tsbDeleteDetail_Click);
             // 
+            // revisionNumberDataGridViewTextBoxColumn
+            // 
+            this.revisionNumberDataGridViewTextBoxColumn.DataPropertyName = "RevisionNumber";
+            this.revisionNumberDataGridViewTextBoxColumn.FillWeight = 40F;
+            this.revisionNumberDataGridViewTextBoxColumn.HeaderText = "№Рев";
+            this.revisionNumberDataGridViewTextBoxColumn.Name = "revisionNumberDataGridViewTextBoxColumn";
+            this.revisionNumberDataGridViewTextBoxColumn.ToolTipText = "Порядковый номер для отслеживания изменений заказа на продажу с течением времени." +
+    "";
+            this.revisionNumberDataGridViewTextBoxColumn.Width = 40;
+            // 
+            // orderDateDataGridViewTextBoxColumn
+            // 
+            this.orderDateDataGridViewTextBoxColumn.DataPropertyName = "OrderDate";
+            this.orderDateDataGridViewTextBoxColumn.HeaderText = "Дата заказа";
+            this.orderDateDataGridViewTextBoxColumn.Name = "orderDateDataGridViewTextBoxColumn";
+            this.orderDateDataGridViewTextBoxColumn.ToolTipText = "Дата создания заказа на продажу";
+            // 
+            // dueDateDataGridViewTextBoxColumn
+            // 
+            this.dueDateDataGridViewTextBoxColumn.DataPropertyName = "DueDate";
+            this.dueDateDataGridViewTextBoxColumn.HeaderText = "Дата выполнения";
+            this.dueDateDataGridViewTextBoxColumn.Name = "dueDateDataGridViewTextBoxColumn";
+            this.dueDateDataGridViewTextBoxColumn.ToolTipText = "Дата выполнения заказа.";
+            // 
+            // shipDateDataGridViewTextBoxColumn
+            // 
+            this.shipDateDataGridViewTextBoxColumn.DataPropertyName = "ShipDate";
+            this.shipDateDataGridViewTextBoxColumn.HeaderText = "Дата отправки";
+            this.shipDateDataGridViewTextBoxColumn.Name = "shipDateDataGridViewTextBoxColumn";
+            this.shipDateDataGridViewTextBoxColumn.ToolTipText = "Дата отправки заказа клиенту.";
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Статус";
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            // 
+            // salesOrderNumberDataGridViewTextBoxColumn
+            // 
+            this.salesOrderNumberDataGridViewTextBoxColumn.DataPropertyName = "SalesOrderNumber";
+            this.salesOrderNumberDataGridViewTextBoxColumn.HeaderText = "Номер заказа";
+            this.salesOrderNumberDataGridViewTextBoxColumn.Name = "salesOrderNumberDataGridViewTextBoxColumn";
+            this.salesOrderNumberDataGridViewTextBoxColumn.ToolTipText = "Уникальный идентификационный номер заказа на продажу";
+            // 
+            // purchaseOrderNumberDataGridViewTextBoxColumn
+            // 
+            this.purchaseOrderNumberDataGridViewTextBoxColumn.DataPropertyName = "PurchaseOrderNumber";
+            this.purchaseOrderNumberDataGridViewTextBoxColumn.HeaderText = "Номер счета ";
+            this.purchaseOrderNumberDataGridViewTextBoxColumn.Name = "purchaseOrderNumberDataGridViewTextBoxColumn";
+            this.purchaseOrderNumberDataGridViewTextBoxColumn.ToolTipText = "Ссылка на номер заказа на покупку";
+            // 
+            // accountNumberDataGridViewTextBoxColumn
+            // 
+            this.accountNumberDataGridViewTextBoxColumn.DataPropertyName = "AccountNumber";
+            this.accountNumberDataGridViewTextBoxColumn.HeaderText = "Ссылка на номер финансового счета";
+            this.accountNumberDataGridViewTextBoxColumn.Name = "accountNumberDataGridViewTextBoxColumn";
+            this.accountNumberDataGridViewTextBoxColumn.ToolTipText = "Ссылка на номер финансового счета";
+            // 
+            // customerIDDataGridViewTextBoxColumn
+            // 
+            this.customerIDDataGridViewTextBoxColumn.DataPropertyName = "CustomerName";
+            this.customerIDDataGridViewTextBoxColumn.HeaderText = "Заказчик";
+            this.customerIDDataGridViewTextBoxColumn.Name = "customerIDDataGridViewTextBoxColumn";
+            this.customerIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.customerIDDataGridViewTextBoxColumn.ToolTipText = " заказчик";
+            // 
+            // salesPersonIDDataGridViewTextBoxColumn
+            // 
+            this.salesPersonIDDataGridViewTextBoxColumn.DataPropertyName = "SalesPersonID";
+            this.salesPersonIDDataGridViewTextBoxColumn.HeaderText = "Контакт заказчика";
+            this.salesPersonIDDataGridViewTextBoxColumn.Name = "salesPersonIDDataGridViewTextBoxColumn";
+            // 
+            // territoryIDDataGridViewTextBoxColumn
+            // 
+            this.territoryIDDataGridViewTextBoxColumn.DataPropertyName = "TerritoryName";
+            this.territoryIDDataGridViewTextBoxColumn.HeaderText = "Территория продаж";
+            this.territoryIDDataGridViewTextBoxColumn.Name = "territoryIDDataGridViewTextBoxColumn";
+            this.territoryIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // billToAddressIDDataGridViewTextBoxColumn
+            // 
+            this.billToAddressIDDataGridViewTextBoxColumn.DataPropertyName = "BillToAddressTitle";
+            this.billToAddressIDDataGridViewTextBoxColumn.HeaderText = "Адрес для выст. счета";
+            this.billToAddressIDDataGridViewTextBoxColumn.Name = "billToAddressIDDataGridViewTextBoxColumn";
+            this.billToAddressIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.billToAddressIDDataGridViewTextBoxColumn.ToolTipText = "Адрес заказчика для выставления счета";
+            // 
+            // shipToAddressIDDataGridViewTextBoxColumn
+            // 
+            this.shipToAddressIDDataGridViewTextBoxColumn.DataPropertyName = "ShipToAddressTitle";
+            this.shipToAddressIDDataGridViewTextBoxColumn.HeaderText = "Адрес  для отгрузки";
+            this.shipToAddressIDDataGridViewTextBoxColumn.Name = "shipToAddressIDDataGridViewTextBoxColumn";
+            this.shipToAddressIDDataGridViewTextBoxColumn.ToolTipText = "Адрес заказчика для отгрузки";
+            // 
+            // shipMethodIDDataGridViewTextBoxColumn
+            // 
+            this.shipMethodIDDataGridViewTextBoxColumn.DataPropertyName = "ShipMethodName";
+            this.shipMethodIDDataGridViewTextBoxColumn.HeaderText = "Метод доставки";
+            this.shipMethodIDDataGridViewTextBoxColumn.Name = "shipMethodIDDataGridViewTextBoxColumn";
+            this.shipMethodIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.shipMethodIDDataGridViewTextBoxColumn.ToolTipText = "Метод доставки";
+            // 
+            // currencyRateIDDataGridViewTextBoxColumn
+            // 
+            this.currencyRateIDDataGridViewTextBoxColumn.DataPropertyName = "CurrencyRateID";
+            this.currencyRateIDDataGridViewTextBoxColumn.HeaderText = "Курс";
+            this.currencyRateIDDataGridViewTextBoxColumn.Name = "currencyRateIDDataGridViewTextBoxColumn";
+            this.currencyRateIDDataGridViewTextBoxColumn.ToolTipText = "Используемый курс обмена валюты";
+            // 
+            // colCurrencyName
+            // 
+            this.colCurrencyName.HeaderText = "Валюта";
+            this.colCurrencyName.Name = "colCurrencyName";
+            // 
+            // subTotalDataGridViewTextBoxColumn
+            // 
+            this.subTotalDataGridViewTextBoxColumn.DataPropertyName = "SubTotal";
+            this.subTotalDataGridViewTextBoxColumn.HeaderText = "Подытог продаж";
+            this.subTotalDataGridViewTextBoxColumn.Name = "subTotalDataGridViewTextBoxColumn";
+            // 
+            // taxAmtDataGridViewTextBoxColumn
+            // 
+            this.taxAmtDataGridViewTextBoxColumn.DataPropertyName = "TaxAmt";
+            this.taxAmtDataGridViewTextBoxColumn.HeaderText = "Сумма налогов";
+            this.taxAmtDataGridViewTextBoxColumn.Name = "taxAmtDataGridViewTextBoxColumn";
+            // 
+            // freightDataGridViewTextBoxColumn
+            // 
+            this.freightDataGridViewTextBoxColumn.DataPropertyName = "Freight";
+            this.freightDataGridViewTextBoxColumn.HeaderText = "Стоимость доставки";
+            this.freightDataGridViewTextBoxColumn.Name = "freightDataGridViewTextBoxColumn";
+            // 
+            // totalDueDataGridViewTextBoxColumn
+            // 
+            this.totalDueDataGridViewTextBoxColumn.DataPropertyName = "TotalDue";
+            this.totalDueDataGridViewTextBoxColumn.HeaderText = "Общая задолж.";
+            this.totalDueDataGridViewTextBoxColumn.Name = "totalDueDataGridViewTextBoxColumn";
+            this.totalDueDataGridViewTextBoxColumn.ToolTipText = "Общая задолженность заказчика";
+            // 
+            // commentDataGridViewTextBoxColumn
+            // 
+            this.commentDataGridViewTextBoxColumn.DataPropertyName = "Comment";
+            this.commentDataGridViewTextBoxColumn.HeaderText = "Комментарии";
+            this.commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
+            this.commentDataGridViewTextBoxColumn.ToolTipText = "Комментарии, сделанные коммерческим представителем";
+            // 
             // fSalesOrderHeader
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -679,7 +690,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.ss);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fSalesOrderHeader";
             this.Text = "Заказ на продажу";
             this.Load += new System.EventHandler(this.fList_Load);
@@ -741,6 +752,13 @@
         private System.Windows.Forms.ToolStripButton tsbAddDetail;
         private System.Windows.Forms.ToolStripButton tsbEditDetail;
         private System.Windows.Forms.ToolStripButton tsbDeleteDetail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn carrierTrackingNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderQtyDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn specialOfferIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unitPriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unitPriceDiscountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lineTotalDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn revisionNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dueDateDataGridViewTextBoxColumn;
@@ -756,17 +774,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn shipToAddressIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn shipMethodIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn currencyRateIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCurrencyName;
         private System.Windows.Forms.DataGridViewTextBoxColumn subTotalDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn taxAmtDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn freightDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalDueDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn commentDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn carrierTrackingNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn orderQtyDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn specialOfferIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn unitPriceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn unitPriceDiscountDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lineTotalDataGridViewTextBoxColumn;
     }
 }

@@ -78,6 +78,7 @@
     <Compile Include="Entities\PurchaseOrderDetail.cs" />
     <Compile Include="Entities\PurchaseOrderHeader.cs" />
     <Compile Include="Entities\SalesOrderDetail.cs" />
+    <Compile Include="Entities\SalesOrderHeader.cs" />
     <Compile Include="Entities\Shift.cs" />
     <Compile Include="Entities\StateProvince.cs" />
     <Compile Include="Entities\UnitMeasure.cs" />

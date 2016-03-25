@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.ComponentModel.DataAnnotations;
 
 namespace Wallnut.Domain.Models
 {
@@ -10,7 +11,9 @@ namespace Wallnut.Domain.Models
     /// </summary>
     public partial class BusinessEntityAddress
     {
+        [NotMapped]
         public string AddressTitle { get {return Address.AddressLine1;}  }
+        [NotMapped]
         public string AddressTypeTitle { get { return AddressType.Name; } }
         
         /*

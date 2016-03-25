@@ -23,7 +23,11 @@ namespace Wallnut.BusinessLogic.Implementations
             return Context.Set<SalesOrderHeader>().Include("Customer")
                 .Include("Customer.Person")
                 .Include("Customer.Store")
+                .Include("ShipMethod")
+                .Include("Address")
+                .Include("Address1")
                 .Include("SalesTerritory").Where(predicate);
         }
     }
 }
+
