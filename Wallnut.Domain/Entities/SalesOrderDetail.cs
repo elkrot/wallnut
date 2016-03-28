@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.ComponentModel.DataAnnotations;
 
 namespace Wallnut.Domain.Models
 {
@@ -13,6 +14,12 @@ namespace Wallnut.Domain.Models
     /// </summary>
     public partial class SalesOrderDetail
     {
+        [NotMapped]
+        public string ProductName { get { return Product.Name; } }
+
+        [NotMapped]
+        public decimal LineTotalLoc { get { return UnitPrice*(1 -UnitPriceDiscount)*OrderQty; } }
+
         /*[DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         /// <summary>
         /// Первичный ключ. Внешний ключ к таблице SalesOrderHeader.SalesOrderID.

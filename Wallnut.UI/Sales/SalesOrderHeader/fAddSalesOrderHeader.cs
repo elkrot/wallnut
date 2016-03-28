@@ -116,37 +116,61 @@ namespace Wallnut.UI.Sales.SalesOrderHeader
             DataSourceUpdateMode.OnPropertyChanged, string.Empty);
             #endregion
 
+
             #region SubTotal
-            this.tbSubTotal.DataBindings.Add("Text",
+            this.tbSubTotal.DataBindings.Add("NumericValue",
             this.entity as Wallnut.Domain.Models.SalesOrderHeader,
             "SubTotal",
             true,
             DataSourceUpdateMode.OnPropertyChanged, 0);
+            this.tbSubTotal.NumericPrecision = 16;
+            this.tbSubTotal.NumericScaleOnFocus = 2;
+            this.tbSubTotal.NumericScaleOnLostFocus = 2;
+            this.tbSubTotal.ZeroIsValid = false;
+            this.tbSubTotal.Validated += (x, y) =>
+            {
+                CalculateTotalDue();
+            };
             #endregion
 
             #region TaxAmt
-            this.tbTaxAmt.DataBindings.Add("Text",
+            this.tbTaxAmt.DataBindings.Add("NumericValue",
             this.entity as Wallnut.Domain.Models.SalesOrderHeader,
             "TaxAmt",
             true,
             DataSourceUpdateMode.OnPropertyChanged, 0);
+            this.tbTaxAmt.NumericPrecision = 16;
+            this.tbTaxAmt.NumericScaleOnFocus = 2;
+            this.tbTaxAmt.NumericScaleOnLostFocus = 2;
+            this.tbTaxAmt.ZeroIsValid = false;
+            this.tbTaxAmt.Validated += (x, y) =>
+            {
+                CalculateTotalDue();
+            };
             #endregion
 
             #region Freight
-            this.tbFreight.DataBindings.Add("Text",
+            this.tbFreight.DataBindings.Add("NumericValue",
             this.entity as Wallnut.Domain.Models.SalesOrderHeader,
             "Freight",
             true,
             DataSourceUpdateMode.OnPropertyChanged, 0);
-            #endregion
+            this.tbFreight.NumericPrecision = 16;
+            this.tbFreight.NumericScaleOnFocus = 2;
+            this.tbFreight.NumericScaleOnLostFocus = 2;
+            this.tbFreight.ZeroIsValid = false;
+            this.tbFreight.Validated += (x, y) =>
+            {
+                CalculateTotalDue();
+            };
 
-            #region TotalDue
-    /*        this.tbTotalDue.DataBindings.Add("Text",
-            this.entity as Wallnut.Domain.Models.SalesOrderHeader,
-            "TotalDue",
-            true,
-            DataSourceUpdateMode.OnPropertyChanged, 0);*/
             #endregion
+            
+            #region TotalDueLoc
+            CalculateTotalDue();
+	#endregion
+
+
 
             #region Status
             cbStatus.DataSource = new BindingSource(
@@ -181,6 +205,11 @@ namespace Wallnut.UI.Sales.SalesOrderHeader
             DataSourceUpdateMode.OnPropertyChanged, string.Empty);
             #endregion
 
+        }
+
+        private void CalculateTotalDue()
+        {
+            lblTotalDue.Text = string.Format("{0:0.00}", (this.entity as Wallnut.Domain.Models.SalesOrderHeader).TotalDueLoc);
         }
         /* Update List */
         #region UpdateShipMethod
@@ -264,9 +293,9 @@ namespace Wallnut.UI.Sales.SalesOrderHeader
                 UpdateShipToAddress();
             };
 
-            UpdateBillToAddress();
+            //UpdateBillToAddress();
 
-            UpdateShipToAddress();
+            //UpdateShipToAddress();
         }        
         #endregion
 
@@ -278,15 +307,16 @@ namespace Wallnut.UI.Sales.SalesOrderHeader
                 Int32.TryParse(cbCustomerID.SelectedValue.ToString(), out CustomerID); 
             UpdateShipToAddressList(CustomerID);
             cbShipToAddressID.DataSource = ShipToAddressList;
-                cbShipToAddressID.ValueMember = "AddressID";
+            cbShipToAddressID.ValueMember = "AddressID";
                 cbShipToAddressID.DisplayMember = "AddressTitle";
                 
-                    cbShipToAddressID.SelectedValue=(this.entity as Wallnut.Domain.Models.SalesOrderHeader).ShipToAddressID;
+                cbShipToAddressID.SelectedValue=(this.entity as Wallnut.Domain.Models.SalesOrderHeader).ShipToAddressID;
 
                 cbShipToAddressID.SelectedIndexChanged += (x, y) =>
                 {
-                    (this.entity as Wallnut.Domain.Models.SalesOrderHeader).ShipToAddressID 
-                        = (int)cbShipMethodID.SelectedValue;
+                    (this.entity as Wallnut.Domain.Models.SalesOrderHeader).ShipToAddressID
+                        = (int)cbShipToAddressID.SelectedValue;
+                  
                 };
 
         }        
@@ -421,7 +451,6 @@ namespace Wallnut.UI.Sales.SalesOrderHeader
         }
         #endregion
 
-
         #region tbName_Validating
         private void tbName_Validating(object sender, CancelEventArgs e)
         {
@@ -435,6 +464,55 @@ namespace Wallnut.UI.Sales.SalesOrderHeader
             }
         }
         #endregion
+
+        private void dtOrderDate_Validating(object sender, CancelEventArgs e)
+        {
+            Wallnut.Utils.Validation.FieldIsRequired<DateTimePicker>(ref  sender, ref  e, "Дата создания заказа на продажу", ref ep);
+        }
+
+        private void cbStatus_Validating(object sender, CancelEventArgs e)
+        {
+            Wallnut.Utils.Validation.FieldIsRequired<ComboBox>(ref  sender, ref  e, "Статус", ref ep);
+        }
+
+        private void cbCustomerID_Validating(object sender, CancelEventArgs e)
+        {
+            Wallnut.Utils.Validation.FieldIsRequired<ComboBox>(ref  sender, ref  e, "Заказчик", ref ep);
+        }
+
+        private void cbBillToAddressID_Validating(object sender, CancelEventArgs e)
+        {
+            Wallnut.Utils.Validation.FieldIsRequired<ComboBox>(ref  sender, ref  e, "Адрес заказчика для выставления счета", ref ep);
+        }
+
+        private void cbShipToAddressID_Validating(object sender, CancelEventArgs e)
+        {
+            Wallnut.Utils.Validation.FieldIsRequired<ComboBox>(ref  sender, ref  e, "Адрес заказчика для отгрузки", ref ep);
+        }
+
+        private void cbShipMethodID_Validating(object sender, CancelEventArgs e)
+        {
+            Wallnut.Utils.Validation.FieldIsRequired<ComboBox>(ref  sender, ref  e, "Метод доставки", ref ep);
+        }
+
+        private void tbSubTotal_Validating(object sender, CancelEventArgs e)
+        {
+            Wallnut.Utils.Validation.FieldIsRequired<TextBox>(ref  sender, ref  e, lbSubTotal.Text, ref ep);
+        }
+
+        private void tbTaxAmt_Validating(object sender, CancelEventArgs e)
+        {
+            Wallnut.Utils.Validation.FieldIsRequired<TextBox>(ref  sender, ref  e, lbTaxAmt.Text, ref ep);
+        }
+
+        
+
+        private void tbFreight_Validating(object sender, CancelEventArgs e)
+        {
+            Wallnut.Utils.Validation.FieldIsRequired<TextBox>(ref  sender, ref  e, lbFreight.Text, ref ep);
+        }
+
+
 
 
 

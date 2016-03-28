@@ -16,7 +16,7 @@ namespace Wallnut.Domain.Models
         public string BillToAddressTitle { get {return Address.FullAddress;} }
 
         [NotMapped]
-        public string ShipToAddressIDTitle { get { return Address.FullAddress; } }
+        public string ShipToAddressTitle { get { return Address1.FullAddress; } }
 
 
         [NotMapped]
@@ -24,6 +24,11 @@ namespace Wallnut.Domain.Models
 
         [NotMapped]
         public string CurrencyName { get { return CurrencyRate.Currency.Name; } }
+
+        [NotMapped]
+        public decimal TotalDueLoc { get {
+            return SubTotal+TaxAmt+Freight;
+        } }
 /*
 	    public int SalesOrderID { get; set; }
         public byte RevisionNumber { get; set; }

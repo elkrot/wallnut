@@ -44,7 +44,8 @@ namespace Wallnut.UI.Purchasing.PurchaseOrder
         #endregion
 
         #region SetConditionPredicate
-        private Expression<Func<PurchaseOrderHeader, bool>> SetConditionPredicate(Expression<Func<PurchaseOrderHeader, bool>> predicate)
+        private Expression<Func<PurchaseOrderHeader, bool>> 
+            SetConditionPredicate(Expression<Func<PurchaseOrderHeader, bool>> predicate)
         {
             if (IsConditionChange())
             {
@@ -120,6 +121,8 @@ namespace Wallnut.UI.Purchasing.PurchaseOrder
         {
             this.WindowState = FormWindowState.Maximized;
             this.BringToFront();
+            Expression<Func<PurchaseOrderHeader, bool>> predicate = null;
+            predicate = SetConditionPredicate(predicate);
             behavior.RefreshData();
             detailBehavior.RefreshData();
         }

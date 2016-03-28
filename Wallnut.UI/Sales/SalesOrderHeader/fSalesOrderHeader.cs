@@ -119,6 +119,15 @@ namespace Wallnut.UI.Sales.SalesOrderHeader
             detailBehavior.RemoveEntity(SalesOrderId, SalesOrderDetailID);
         }
 
+        private void bs_CurrentChanged(object sender, EventArgs e)
+        {
+            if (dgv.SelectedRows.Count != 0)
+            {
+                DetailReread();
+            }
+        }
+
+
   
 
 

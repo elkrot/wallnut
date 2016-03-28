@@ -32,7 +32,7 @@ namespace Wallnut.BusinessLogic.Implementations
 
         new public IEnumerable<SalesOrderDetail> Find(Expression<Func<SalesOrderDetail, bool>> predicate)
         {
-            return Context.Set<SalesOrderDetail>().Where(predicate);
+            return Context.Set<SalesOrderDetail>().Include("Product").Where(predicate);//
         }
 
 

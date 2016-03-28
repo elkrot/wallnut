@@ -61,6 +61,9 @@
     <Compile Include="fTemplates\fListTpl.Designer.cs">
       <DependentUpon>fListTpl.cs</DependentUpon>
     </Compile>
+    <Compile Include="fTemplates\NumericTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="HumanResources\Department\fAddDepartment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,8 +123,13 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Interfaces\IAddForm.cs" />
+    <Compile Include="Implementations\ConditionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\IConditionValues.cs" />
     <Compile Include="Interfaces\IListForm.cs" />
     <Compile Include="Interfaces\INewListForm.cs" />
+    <Compile Include="Interfaces\IScreenCondition.cs" />
     <Compile Include="Persons\AddressTypes\fAddAddressType.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -478,6 +486,12 @@
     <Compile Include="Sales\SalesOrderHeader\fAddSalesOrderHeader.Designer.cs">
       <DependentUpon>fAddSalesOrderHeader.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sales\SalesOrderHeader\fSalesCondition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\SalesOrderHeader\fSalesCondition.Designer.cs">
+      <DependentUpon>fSalesCondition.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sales\SalesOrderHeader\fSalesOrderHeader.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -751,6 +765,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Sales\SalesOrderHeader\fAddSalesOrderHeader.resx">
       <DependentUpon>fAddSalesOrderHeader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales\SalesOrderHeader\fSalesCondition.resx">
+      <DependentUpon>fSalesCondition.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sales\SalesOrderHeader\fSalesOrderHeader.resx">
       <DependentUpon>fSalesOrderHeader.cs</DependentUpon>

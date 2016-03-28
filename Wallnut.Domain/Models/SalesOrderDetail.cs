@@ -39,5 +39,6 @@ namespace Wallnut.Domain.Models
 	        public System.DateTime ModifiedDate { get; set; }
         public virtual SalesOrderHeader SalesOrderHeader { get; set; }
         public virtual SpecialOfferProduct SpecialOfferProduct { get; set; }
+        public virtual Product Product { get; set; }
     }
 }

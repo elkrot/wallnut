@@ -70,16 +70,16 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.lbSubTotal = new System.Windows.Forms.Label();
-            this.tbSubTotal = new System.Windows.Forms.TextBox();
             this.lbTaxAmt = new System.Windows.Forms.Label();
             this.lbTotalDue = new System.Windows.Forms.Label();
-            this.tbTaxAmt = new System.Windows.Forms.TextBox();
-            this.tbTotalDue = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.tbFreight = new System.Windows.Forms.TextBox();
+            this.tbTaxAmt = new Wallnut.UI.fTemplates.NumericTextBox();
+            this.lbFreight = new System.Windows.Forms.Label();
+            this.tbFreight = new Wallnut.UI.fTemplates.NumericTextBox();
             this.lbCurrencyRate = new System.Windows.Forms.Label();
             this.btnCurrencyRateEdit = new System.Windows.Forms.Button();
             this.tbCurrencyRateID = new System.Windows.Forms.TextBox();
+            this.lblTotalDue = new System.Windows.Forms.Label();
+            this.tbSubTotal = new Wallnut.UI.fTemplates.NumericTextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
@@ -133,12 +133,12 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 5;
+            this.tableLayoutPanel1.ColumnCount = 4;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 297F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 76F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.lbTerritoryID, 1, 9);
             this.tableLayoutPanel1.Controls.Add(this.dtOrderDate, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.lbOrderDate, 1, 1);
@@ -200,8 +200,9 @@
             this.dtOrderDate.Location = new System.Drawing.Point(331, 39);
             this.dtOrderDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtOrderDate.Name = "dtOrderDate";
-            this.dtOrderDate.Size = new System.Drawing.Size(278, 24);
-            this.dtOrderDate.TabIndex = 2;
+            this.dtOrderDate.Size = new System.Drawing.Size(364, 24);
+            this.dtOrderDate.TabIndex = 0;
+            this.dtOrderDate.Validating += new System.ComponentModel.CancelEventHandler(this.dtOrderDate_Validating);
             // 
             // lbOrderDate
             // 
@@ -229,8 +230,8 @@
             this.dtDueDate.Location = new System.Drawing.Point(331, 74);
             this.dtDueDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtDueDate.Name = "dtDueDate";
-            this.dtDueDate.Size = new System.Drawing.Size(278, 24);
-            this.dtDueDate.TabIndex = 2;
+            this.dtDueDate.Size = new System.Drawing.Size(364, 24);
+            this.dtDueDate.TabIndex = 1;
             // 
             // dtShipDate
             // 
@@ -240,7 +241,7 @@
             this.dtShipDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtShipDate.Name = "dtShipDate";
             this.dtShipDate.ShowCheckBox = true;
-            this.dtShipDate.Size = new System.Drawing.Size(278, 24);
+            this.dtShipDate.Size = new System.Drawing.Size(364, 24);
             this.dtShipDate.TabIndex = 2;
             // 
             // lbShipDate
@@ -260,8 +261,9 @@
             this.cbStatus.Location = new System.Drawing.Point(331, 144);
             this.cbStatus.Margin = new System.Windows.Forms.Padding(4);
             this.cbStatus.Name = "cbStatus";
-            this.cbStatus.Size = new System.Drawing.Size(278, 26);
-            this.cbStatus.TabIndex = 4;
+            this.cbStatus.Size = new System.Drawing.Size(364, 26);
+            this.cbStatus.TabIndex = 3;
+            this.cbStatus.Validating += new System.ComponentModel.CancelEventHandler(this.cbStatus_Validating);
             // 
             // lbStatus
             // 
@@ -279,8 +281,8 @@
             this.tbPurchaseOrderNumber.Location = new System.Drawing.Point(331, 179);
             this.tbPurchaseOrderNumber.Margin = new System.Windows.Forms.Padding(4);
             this.tbPurchaseOrderNumber.Name = "tbPurchaseOrderNumber";
-            this.tbPurchaseOrderNumber.Size = new System.Drawing.Size(278, 24);
-            this.tbPurchaseOrderNumber.TabIndex = 5;
+            this.tbPurchaseOrderNumber.Size = new System.Drawing.Size(364, 24);
+            this.tbPurchaseOrderNumber.TabIndex = 4;
             // 
             // lbPurchaseOrderNumber
             // 
@@ -298,7 +300,7 @@
             this.tbAccountNumber.Location = new System.Drawing.Point(331, 214);
             this.tbAccountNumber.Margin = new System.Windows.Forms.Padding(4);
             this.tbAccountNumber.Name = "tbAccountNumber";
-            this.tbAccountNumber.Size = new System.Drawing.Size(278, 24);
+            this.tbAccountNumber.Size = new System.Drawing.Size(364, 24);
             this.tbAccountNumber.TabIndex = 5;
             // 
             // lbAccountNumber
@@ -339,8 +341,9 @@
             this.cbCustomerID.Location = new System.Drawing.Point(331, 249);
             this.cbCustomerID.Margin = new System.Windows.Forms.Padding(4);
             this.cbCustomerID.Name = "cbCustomerID";
-            this.cbCustomerID.Size = new System.Drawing.Size(278, 26);
+            this.cbCustomerID.Size = new System.Drawing.Size(364, 26);
             this.cbCustomerID.TabIndex = 6;
+            this.cbCustomerID.Validating += new System.ComponentModel.CancelEventHandler(this.cbCustomerID_Validating);
             // 
             // cbSalesPersonID
             // 
@@ -349,8 +352,8 @@
             this.cbSalesPersonID.Location = new System.Drawing.Point(331, 284);
             this.cbSalesPersonID.Margin = new System.Windows.Forms.Padding(4);
             this.cbSalesPersonID.Name = "cbSalesPersonID";
-            this.cbSalesPersonID.Size = new System.Drawing.Size(278, 26);
-            this.cbSalesPersonID.TabIndex = 6;
+            this.cbSalesPersonID.Size = new System.Drawing.Size(364, 26);
+            this.cbSalesPersonID.TabIndex = 7;
             this.cbSalesPersonID.Visible = false;
             // 
             // cbTerritoryID
@@ -360,15 +363,15 @@
             this.cbTerritoryID.Location = new System.Drawing.Point(331, 319);
             this.cbTerritoryID.Margin = new System.Windows.Forms.Padding(4);
             this.cbTerritoryID.Name = "cbTerritoryID";
-            this.cbTerritoryID.Size = new System.Drawing.Size(278, 26);
-            this.cbTerritoryID.TabIndex = 6;
+            this.cbTerritoryID.Size = new System.Drawing.Size(364, 26);
+            this.cbTerritoryID.TabIndex = 8;
             // 
             // btnCustomerEdit
             // 
-            this.btnCustomerEdit.Location = new System.Drawing.Point(617, 249);
+            this.btnCustomerEdit.Location = new System.Drawing.Point(703, 249);
             this.btnCustomerEdit.Margin = new System.Windows.Forms.Padding(4);
             this.btnCustomerEdit.Name = "btnCustomerEdit";
-            this.btnCustomerEdit.Size = new System.Drawing.Size(48, 26);
+            this.btnCustomerEdit.Size = new System.Drawing.Size(42, 26);
             this.btnCustomerEdit.TabIndex = 7;
             this.btnCustomerEdit.Text = "...";
             this.btnCustomerEdit.UseVisualStyleBackColor = true;
@@ -376,10 +379,10 @@
             // 
             // btnTerritoryEdit
             // 
-            this.btnTerritoryEdit.Location = new System.Drawing.Point(617, 319);
+            this.btnTerritoryEdit.Location = new System.Drawing.Point(703, 319);
             this.btnTerritoryEdit.Margin = new System.Windows.Forms.Padding(4);
             this.btnTerritoryEdit.Name = "btnTerritoryEdit";
-            this.btnTerritoryEdit.Size = new System.Drawing.Size(48, 26);
+            this.btnTerritoryEdit.Size = new System.Drawing.Size(42, 26);
             this.btnTerritoryEdit.TabIndex = 7;
             this.btnTerritoryEdit.Text = "...";
             this.btnTerritoryEdit.UseVisualStyleBackColor = true;
@@ -387,10 +390,10 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(617, 284);
+            this.button5.Location = new System.Drawing.Point(703, 284);
             this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(48, 26);
+            this.button5.Size = new System.Drawing.Size(42, 26);
             this.button5.TabIndex = 7;
             this.button5.Text = "...";
             this.button5.UseVisualStyleBackColor = true;
@@ -402,8 +405,8 @@
             this.tbComment.Location = new System.Drawing.Point(331, 354);
             this.tbComment.Margin = new System.Windows.Forms.Padding(4);
             this.tbComment.Name = "tbComment";
-            this.tbComment.Size = new System.Drawing.Size(278, 65);
-            this.tbComment.TabIndex = 8;
+            this.tbComment.Size = new System.Drawing.Size(364, 65);
+            this.tbComment.TabIndex = 9;
             this.tbComment.Text = "";
             // 
             // lbComment
@@ -435,7 +438,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.37318F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.62682F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 48F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableLayoutPanel2.Controls.Add(this.cbBillToAddressID, 2, 1);
             this.tableLayoutPanel2.Controls.Add(this.lbBillToAddressID, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.label2, 1, 2);
@@ -466,11 +469,12 @@
             // 
             this.cbBillToAddressID.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbBillToAddressID.FormattingEnabled = true;
-            this.cbBillToAddressID.Location = new System.Drawing.Point(347, 39);
+            this.cbBillToAddressID.Location = new System.Drawing.Point(336, 39);
             this.cbBillToAddressID.Margin = new System.Windows.Forms.Padding(4);
             this.cbBillToAddressID.Name = "cbBillToAddressID";
-            this.cbBillToAddressID.Size = new System.Drawing.Size(289, 26);
+            this.cbBillToAddressID.Size = new System.Drawing.Size(278, 26);
             this.cbBillToAddressID.TabIndex = 0;
+            this.cbBillToAddressID.Validating += new System.ComponentModel.CancelEventHandler(this.cbBillToAddressID_Validating);
             // 
             // lbBillToAddressID
             // 
@@ -496,21 +500,23 @@
             // 
             this.cbShipToAddressID.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbShipToAddressID.FormattingEnabled = true;
-            this.cbShipToAddressID.Location = new System.Drawing.Point(347, 74);
+            this.cbShipToAddressID.Location = new System.Drawing.Point(336, 74);
             this.cbShipToAddressID.Margin = new System.Windows.Forms.Padding(4);
             this.cbShipToAddressID.Name = "cbShipToAddressID";
-            this.cbShipToAddressID.Size = new System.Drawing.Size(289, 26);
-            this.cbShipToAddressID.TabIndex = 0;
+            this.cbShipToAddressID.Size = new System.Drawing.Size(278, 26);
+            this.cbShipToAddressID.TabIndex = 1;
+            this.cbShipToAddressID.Validating += new System.ComponentModel.CancelEventHandler(this.cbShipToAddressID_Validating);
             // 
             // cbShipMethodID
             // 
             this.cbShipMethodID.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbShipMethodID.FormattingEnabled = true;
-            this.cbShipMethodID.Location = new System.Drawing.Point(347, 109);
+            this.cbShipMethodID.Location = new System.Drawing.Point(336, 109);
             this.cbShipMethodID.Margin = new System.Windows.Forms.Padding(4);
             this.cbShipMethodID.Name = "cbShipMethodID";
-            this.cbShipMethodID.Size = new System.Drawing.Size(289, 26);
-            this.cbShipMethodID.TabIndex = 0;
+            this.cbShipMethodID.Size = new System.Drawing.Size(278, 26);
+            this.cbShipMethodID.TabIndex = 2;
+            this.cbShipMethodID.Validating += new System.ComponentModel.CancelEventHandler(this.cbShipMethodID_Validating);
             // 
             // lbShipMethodID
             // 
@@ -524,7 +530,7 @@
             // 
             // btnBillToAddressEdit
             // 
-            this.btnBillToAddressEdit.Location = new System.Drawing.Point(644, 39);
+            this.btnBillToAddressEdit.Location = new System.Drawing.Point(622, 39);
             this.btnBillToAddressEdit.Margin = new System.Windows.Forms.Padding(4);
             this.btnBillToAddressEdit.Name = "btnBillToAddressEdit";
             this.btnBillToAddressEdit.Size = new System.Drawing.Size(52, 26);
@@ -535,7 +541,7 @@
             // 
             // btnShipToAddressEdit
             // 
-            this.btnShipToAddressEdit.Location = new System.Drawing.Point(644, 74);
+            this.btnShipToAddressEdit.Location = new System.Drawing.Point(622, 74);
             this.btnShipToAddressEdit.Margin = new System.Windows.Forms.Padding(4);
             this.btnShipToAddressEdit.Name = "btnShipToAddressEdit";
             this.btnShipToAddressEdit.Size = new System.Drawing.Size(52, 26);
@@ -546,7 +552,7 @@
             // 
             // btnShipMethod
             // 
-            this.btnShipMethod.Location = new System.Drawing.Point(644, 109);
+            this.btnShipMethod.Location = new System.Drawing.Point(622, 109);
             this.btnShipMethod.Margin = new System.Windows.Forms.Padding(4);
             this.btnShipMethod.Name = "btnShipMethod";
             this.btnShipMethod.Size = new System.Drawing.Size(52, 26);
@@ -574,18 +580,18 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.88272F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.11728F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 105F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 134F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 156F));
             this.tableLayoutPanel3.Controls.Add(this.lbSubTotal, 1, 1);
-            this.tableLayoutPanel3.Controls.Add(this.tbSubTotal, 2, 1);
             this.tableLayoutPanel3.Controls.Add(this.lbTaxAmt, 1, 2);
             this.tableLayoutPanel3.Controls.Add(this.lbTotalDue, 1, 4);
             this.tableLayoutPanel3.Controls.Add(this.tbTaxAmt, 2, 2);
-            this.tableLayoutPanel3.Controls.Add(this.tbTotalDue, 2, 4);
-            this.tableLayoutPanel3.Controls.Add(this.label6, 1, 3);
+            this.tableLayoutPanel3.Controls.Add(this.lbFreight, 1, 3);
             this.tableLayoutPanel3.Controls.Add(this.tbFreight, 2, 3);
             this.tableLayoutPanel3.Controls.Add(this.lbCurrencyRate, 1, 5);
             this.tableLayoutPanel3.Controls.Add(this.btnCurrencyRateEdit, 3, 5);
             this.tableLayoutPanel3.Controls.Add(this.tbCurrencyRateID, 2, 5);
+            this.tableLayoutPanel3.Controls.Add(this.lblTotalDue, 2, 4);
+            this.tableLayoutPanel3.Controls.Add(this.tbSubTotal, 2, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 4);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
@@ -612,15 +618,6 @@
             this.lbSubTotal.TabIndex = 0;
             this.lbSubTotal.Text = "Подытог продаж";
             // 
-            // tbSubTotal
-            // 
-            this.tbSubTotal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbSubTotal.Location = new System.Drawing.Point(211, 39);
-            this.tbSubTotal.Margin = new System.Windows.Forms.Padding(4);
-            this.tbSubTotal.Name = "tbSubTotal";
-            this.tbSubTotal.Size = new System.Drawing.Size(294, 24);
-            this.tbSubTotal.TabIndex = 1;
-            // 
             // lbTaxAmt
             // 
             this.lbTaxAmt.AutoSize = true;
@@ -645,40 +642,57 @@
             // 
             // tbTaxAmt
             // 
+            this.tbTaxAmt.AllowNegative = true;
             this.tbTaxAmt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbTaxAmt.Location = new System.Drawing.Point(211, 74);
+            this.tbTaxAmt.Location = new System.Drawing.Point(202, 74);
             this.tbTaxAmt.Margin = new System.Windows.Forms.Padding(4);
             this.tbTaxAmt.Name = "tbTaxAmt";
-            this.tbTaxAmt.Size = new System.Drawing.Size(294, 24);
+            this.tbTaxAmt.NumericPrecision = 1;
+            this.tbTaxAmt.NumericScaleOnFocus = 0;
+            this.tbTaxAmt.NumericScaleOnLostFocus = 0;
+            this.tbTaxAmt.NumericValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.tbTaxAmt.Size = new System.Drawing.Size(281, 24);
             this.tbTaxAmt.TabIndex = 1;
+            this.tbTaxAmt.Text = "0";
+            this.tbTaxAmt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbTaxAmt.ZeroIsValid = false;
+            this.tbTaxAmt.Validating += new System.ComponentModel.CancelEventHandler(this.tbTaxAmt_Validating);
             // 
-            // tbTotalDue
+            // lbFreight
             // 
-            this.tbTotalDue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbTotalDue.Location = new System.Drawing.Point(211, 144);
-            this.tbTotalDue.Margin = new System.Windows.Forms.Padding(4);
-            this.tbTotalDue.Name = "tbTotalDue";
-            this.tbTotalDue.Size = new System.Drawing.Size(294, 24);
-            this.tbTotalDue.TabIndex = 1;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(34, 105);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(155, 18);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Стоимость доставки";
+            this.lbFreight.AutoSize = true;
+            this.lbFreight.Location = new System.Drawing.Point(34, 105);
+            this.lbFreight.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbFreight.Name = "lbFreight";
+            this.lbFreight.Size = new System.Drawing.Size(155, 18);
+            this.lbFreight.TabIndex = 2;
+            this.lbFreight.Text = "Стоимость доставки";
             // 
             // tbFreight
             // 
+            this.tbFreight.AllowNegative = true;
             this.tbFreight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbFreight.Location = new System.Drawing.Point(211, 109);
+            this.tbFreight.Location = new System.Drawing.Point(202, 109);
             this.tbFreight.Margin = new System.Windows.Forms.Padding(4);
             this.tbFreight.Name = "tbFreight";
-            this.tbFreight.Size = new System.Drawing.Size(294, 24);
-            this.tbFreight.TabIndex = 3;
+            this.tbFreight.NumericPrecision = 1;
+            this.tbFreight.NumericScaleOnFocus = 0;
+            this.tbFreight.NumericScaleOnLostFocus = 0;
+            this.tbFreight.NumericValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.tbFreight.Size = new System.Drawing.Size(281, 24);
+            this.tbFreight.TabIndex = 2;
+            this.tbFreight.Text = "0";
+            this.tbFreight.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbFreight.ZeroIsValid = false;
+            this.tbFreight.Validating += new System.ComponentModel.CancelEventHandler(this.tbFreight_Validating);
             // 
             // lbCurrencyRate
             // 
@@ -692,7 +706,7 @@
             // 
             // btnCurrencyRateEdit
             // 
-            this.btnCurrencyRateEdit.Location = new System.Drawing.Point(513, 179);
+            this.btnCurrencyRateEdit.Location = new System.Drawing.Point(491, 179);
             this.btnCurrencyRateEdit.Margin = new System.Windows.Forms.Padding(4);
             this.btnCurrencyRateEdit.Name = "btnCurrencyRateEdit";
             this.btnCurrencyRateEdit.Size = new System.Drawing.Size(51, 26);
@@ -704,11 +718,41 @@
             // tbCurrencyRateID
             // 
             this.tbCurrencyRateID.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbCurrencyRateID.Location = new System.Drawing.Point(211, 179);
+            this.tbCurrencyRateID.Location = new System.Drawing.Point(202, 179);
             this.tbCurrencyRateID.Margin = new System.Windows.Forms.Padding(4);
             this.tbCurrencyRateID.Name = "tbCurrencyRateID";
-            this.tbCurrencyRateID.Size = new System.Drawing.Size(294, 24);
-            this.tbCurrencyRateID.TabIndex = 7;
+            this.tbCurrencyRateID.Size = new System.Drawing.Size(281, 24);
+            this.tbCurrencyRateID.TabIndex = 4;
+            // 
+            // lblTotalDue
+            // 
+            this.lblTotalDue.AutoSize = true;
+            this.lblTotalDue.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTotalDue.Location = new System.Drawing.Point(201, 140);
+            this.lblTotalDue.Name = "lblTotalDue";
+            this.lblTotalDue.Size = new System.Drawing.Size(283, 35);
+            this.lblTotalDue.TabIndex = 3;
+            this.lblTotalDue.Text = "0";
+            this.lblTotalDue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // tbSubTotal
+            // 
+            this.tbSubTotal.AllowNegative = true;
+            this.tbSubTotal.Location = new System.Drawing.Point(201, 38);
+            this.tbSubTotal.Name = "tbSubTotal";
+            this.tbSubTotal.NumericPrecision = 1;
+            this.tbSubTotal.NumericScaleOnFocus = 0;
+            this.tbSubTotal.NumericScaleOnLostFocus = 0;
+            this.tbSubTotal.NumericValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.tbSubTotal.Size = new System.Drawing.Size(283, 24);
+            this.tbSubTotal.TabIndex = 0;
+            this.tbSubTotal.Text = "0";
+            this.tbSubTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbSubTotal.ZeroIsValid = false;
             // 
             // flowLayoutPanel1
             // 
@@ -730,7 +774,7 @@
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(112, 32);
-            this.btnCancel.TabIndex = 0;
+            this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "Отмена";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
@@ -741,7 +785,7 @@
             this.btnOK.Margin = new System.Windows.Forms.Padding(4);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(112, 32);
-            this.btnOK.TabIndex = 1;
+            this.btnOK.TabIndex = 0;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
@@ -825,17 +869,17 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label lbSubTotal;
-        private System.Windows.Forms.TextBox tbSubTotal;
         private System.Windows.Forms.Label lbTaxAmt;
         private System.Windows.Forms.Label lbTotalDue;
-        private System.Windows.Forms.TextBox tbTaxAmt;
-        private System.Windows.Forms.TextBox tbTotalDue;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox tbFreight;
+        private System.Windows.Forms.Label lbFreight;
         private System.Windows.Forms.Label lbCurrencyRate;
         private System.Windows.Forms.RichTextBox tbComment;
         private System.Windows.Forms.Label lbComment;
         private System.Windows.Forms.Button btnCurrencyRateEdit;
         private System.Windows.Forms.TextBox tbCurrencyRateID;
+        private System.Windows.Forms.Label lblTotalDue;
+        private fTemplates.NumericTextBox tbSubTotal;
+        private fTemplates.NumericTextBox tbTaxAmt;
+        private fTemplates.NumericTextBox tbFreight;
     }
 }

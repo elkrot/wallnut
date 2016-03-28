@@ -26,6 +26,8 @@ namespace Wallnut.BusinessLogic.Implementations
                 .Include("ShipMethod")
                 .Include("Address")
                 .Include("Address1")
+                .Include("Address.StateProvince")
+                .Include("Address1.StateProvince")
                 .Include("SalesTerritory").Where(predicate);
         }
     }

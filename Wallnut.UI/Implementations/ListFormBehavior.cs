@@ -20,21 +20,54 @@ namespace Wallnut.UI.Implementations
         public event EventHandler AfterAddEntity;
         public event EventHandler AfterUpdateEntity;
         public event EventHandler AfterRemoveEntity;
+        public ConditionForm ConditionForm;
 
-        public ListFormBehavior() : base() { 
+        #region Constructors
+       public ListFormBehavior() : base() { 
        }
+
         public ListFormBehavior(Expression<Func<T, bool>> predicate, Action rereadDataSource)
             : base()
         {
-
             SetCondition(predicate);
             RereadDataSource += rereadDataSource;
         }
 
+        /// <summary>
+        /// Конструктор для формы с условием отбора
+        /// </summary>
+        /// <param name="predicate">Условие отбора</param>
+        /// <param name="rereadDataSource">Процедура перечитки</param>
+        /// <param name="conditionForm">Форма Условия отбора</param>
+        public ListFormBehavior(Expression<Func<T, bool>> predicate, Action rereadDataSource, ConditionForm conditionForm)
+            : base()
+        {
+            ConditionForm = conditionForm;
+            if (ConditionForm.SetScreenConditionFieldsValues())
+            {
+                SetCondition(predicate);
+            }
+            RereadDataSource += rereadDataSource;
+        }
+        #endregion
+
+        #region IsConditionChange
+        private bool IsConditionChange()
+        {
+            DialogResult result = ConditionForm.ShowDialog();
+            return (result == System.Windows.Forms.DialogResult.OK);
+        }
+        #endregion
+
+
+
+        #region SetCondition
         public void SetCondition(Expression<Func<T, bool>> predicate)
         {
             Predicate = predicate;
-        }
+        }        
+        #endregion
+
         
         public Expression<Func<T, bool>> Predicate = null;
         public List<T> EntityList { get; set; }
@@ -75,8 +108,6 @@ namespace Wallnut.UI.Implementations
         }
         #endregion
 
-        //var entity = dgv.SelectedRows[0].DataBoundItem as Entity;
-        //int id=entity.%%%Id
         #region Update
         public void UpdateEntity(params object[] KeyValues)  
         {

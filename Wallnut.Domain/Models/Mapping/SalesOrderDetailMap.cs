@@ -28,6 +28,9 @@ namespace Wallnut.Domain.Models.Mapping
             this.HasRequired(t => t.SpecialOfferProduct)
                 .WithMany(t => t.SalesOrderDetails)
                 .HasForeignKey(d => new { d.SpecialOfferID, d.ProductID });
+            this.HasRequired(t => t.Product)
+    .WithMany(t => t.SalesOrderDetails)
+    .HasForeignKey(d => new { d.ProductID });
 
         }
     }

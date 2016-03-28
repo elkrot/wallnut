@@ -31,7 +31,17 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fSalesOrderHeader));
-            this.ss = new System.Windows.Forms.StatusStrip();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.bsDetail = new System.Windows.Forms.BindingSource(this.components);
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgv = new System.Windows.Forms.DataGridView();
@@ -50,14 +60,6 @@
             this.tsbDelete = new System.Windows.Forms.ToolStripButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvDetail = new System.Windows.Forms.DataGridView();
-            this.carrierTrackingNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderQtyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.specialOfferIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unitPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unitPriceDiscountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lineTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bsDetail = new System.Windows.Forms.BindingSource(this.components);
             this.bnDetail = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem1 = new System.Windows.Forms.ToolStripButton();
@@ -71,6 +73,7 @@
             this.tsbAddDetail = new System.Windows.Forms.ToolStripButton();
             this.tsbEditDetail = new System.Windows.Forms.ToolStripButton();
             this.tsbDeleteDetail = new System.Windows.Forms.ToolStripButton();
+            this.ss = new System.Windows.Forms.StatusStrip();
             this.revisionNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dueDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -92,7 +95,15 @@
             this.freightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalDueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.commentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carrierTrackingNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderQtyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.specialOfferIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitPriceDiscountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lineTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -103,7 +114,6 @@
             this.bn.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bnDetail)).BeginInit();
             this.bnDetail.SuspendLayout();
             this.SuspendLayout();
@@ -111,15 +121,11 @@
             // bs
             // 
             this.bs.DataSource = typeof(Wallnut.Domain.Models.SalesOrderHeader);
+            this.bs.CurrentChanged += new System.EventHandler(this.bs_CurrentChanged);
             // 
-            // ss
+            // bsDetail
             // 
-            this.ss.Location = new System.Drawing.Point(0, 497);
-            this.ss.Name = "ss";
-            this.ss.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
-            this.ss.Size = new System.Drawing.Size(970, 22);
-            this.ss.TabIndex = 0;
-            this.ss.Text = "statusStrip1";
+            this.bsDetail.DataSource = typeof(Wallnut.Domain.Models.SalesOrderDetail);
             // 
             // splitContainer1
             // 
@@ -349,63 +355,10 @@
             this.dgvDetail.Location = new System.Drawing.Point(0, 0);
             this.dgvDetail.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDetail.Name = "dgvDetail";
+            this.dgvDetail.ReadOnly = true;
+            this.dgvDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetail.Size = new System.Drawing.Size(970, 205);
             this.dgvDetail.TabIndex = 0;
-            // 
-            // carrierTrackingNumberDataGridViewTextBoxColumn
-            // 
-            this.carrierTrackingNumberDataGridViewTextBoxColumn.DataPropertyName = "CarrierTrackingNumber";
-            this.carrierTrackingNumberDataGridViewTextBoxColumn.HeaderText = "Трак. ном.";
-            this.carrierTrackingNumberDataGridViewTextBoxColumn.Name = "carrierTrackingNumberDataGridViewTextBoxColumn";
-            this.carrierTrackingNumberDataGridViewTextBoxColumn.ToolTipText = "номер, предоставляемый компанией-поставщиком для отслеживания грузов";
-            // 
-            // orderQtyDataGridViewTextBoxColumn
-            // 
-            this.orderQtyDataGridViewTextBoxColumn.DataPropertyName = "OrderQty";
-            this.orderQtyDataGridViewTextBoxColumn.HeaderText = "Количество";
-            this.orderQtyDataGridViewTextBoxColumn.Name = "orderQtyDataGridViewTextBoxColumn";
-            this.orderQtyDataGridViewTextBoxColumn.ToolTipText = "Заказанное количество по видам продукта";
-            // 
-            // productIDDataGridViewTextBoxColumn
-            // 
-            this.productIDDataGridViewTextBoxColumn.DataPropertyName = "ProductID";
-            this.productIDDataGridViewTextBoxColumn.HeaderText = "Продукт";
-            this.productIDDataGridViewTextBoxColumn.Name = "productIDDataGridViewTextBoxColumn";
-            this.productIDDataGridViewTextBoxColumn.ToolTipText = "Проданный заказчику продукт";
-            // 
-            // specialOfferIDDataGridViewTextBoxColumn
-            // 
-            this.specialOfferIDDataGridViewTextBoxColumn.DataPropertyName = "SpecialOfferID";
-            this.specialOfferIDDataGridViewTextBoxColumn.HeaderText = "SpecialOfferID";
-            this.specialOfferIDDataGridViewTextBoxColumn.Name = "specialOfferIDDataGridViewTextBoxColumn";
-            this.specialOfferIDDataGridViewTextBoxColumn.ToolTipText = "Код рекламной акции";
-            this.specialOfferIDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // unitPriceDataGridViewTextBoxColumn
-            // 
-            this.unitPriceDataGridViewTextBoxColumn.DataPropertyName = "UnitPrice";
-            this.unitPriceDataGridViewTextBoxColumn.HeaderText = "Цена";
-            this.unitPriceDataGridViewTextBoxColumn.Name = "unitPriceDataGridViewTextBoxColumn";
-            this.unitPriceDataGridViewTextBoxColumn.ToolTipText = "Отпускная цена за единицу продукта";
-            // 
-            // unitPriceDiscountDataGridViewTextBoxColumn
-            // 
-            this.unitPriceDiscountDataGridViewTextBoxColumn.DataPropertyName = "UnitPriceDiscount";
-            this.unitPriceDiscountDataGridViewTextBoxColumn.HeaderText = "Скидка";
-            this.unitPriceDiscountDataGridViewTextBoxColumn.Name = "unitPriceDiscountDataGridViewTextBoxColumn";
-            this.unitPriceDiscountDataGridViewTextBoxColumn.ToolTipText = "Сумма скидки";
-            this.unitPriceDiscountDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // lineTotalDataGridViewTextBoxColumn
-            // 
-            this.lineTotalDataGridViewTextBoxColumn.DataPropertyName = "LineTotal";
-            this.lineTotalDataGridViewTextBoxColumn.HeaderText = "Сумма";
-            this.lineTotalDataGridViewTextBoxColumn.Name = "lineTotalDataGridViewTextBoxColumn";
-            this.lineTotalDataGridViewTextBoxColumn.ToolTipText = "Промежуточный итог за продукт";
-            // 
-            // bsDetail
-            // 
-            this.bsDetail.DataSource = typeof(Wallnut.Domain.Models.SalesOrderDetail);
             // 
             // bnDetail
             // 
@@ -536,11 +489,20 @@
             this.tsbDeleteDetail.Text = "toolStripButton3";
             this.tsbDeleteDetail.Click += new System.EventHandler(this.tsbDeleteDetail_Click);
             // 
+            // ss
+            // 
+            this.ss.Location = new System.Drawing.Point(0, 497);
+            this.ss.Name = "ss";
+            this.ss.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
+            this.ss.Size = new System.Drawing.Size(970, 22);
+            this.ss.TabIndex = 0;
+            this.ss.Text = "statusStrip1";
+            // 
             // revisionNumberDataGridViewTextBoxColumn
             // 
             this.revisionNumberDataGridViewTextBoxColumn.DataPropertyName = "RevisionNumber";
             this.revisionNumberDataGridViewTextBoxColumn.FillWeight = 40F;
-            this.revisionNumberDataGridViewTextBoxColumn.HeaderText = "№Рев";
+            this.revisionNumberDataGridViewTextBoxColumn.HeaderText = "№ Рев";
             this.revisionNumberDataGridViewTextBoxColumn.Name = "revisionNumberDataGridViewTextBoxColumn";
             this.revisionNumberDataGridViewTextBoxColumn.ToolTipText = "Порядковый номер для отслеживания изменений заказа на продажу с течением времени." +
     "";
@@ -549,6 +511,9 @@
             // orderDateDataGridViewTextBoxColumn
             // 
             this.orderDateDataGridViewTextBoxColumn.DataPropertyName = "OrderDate";
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.orderDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.orderDateDataGridViewTextBoxColumn.HeaderText = "Дата заказа";
             this.orderDateDataGridViewTextBoxColumn.Name = "orderDateDataGridViewTextBoxColumn";
             this.orderDateDataGridViewTextBoxColumn.ToolTipText = "Дата создания заказа на продажу";
@@ -556,6 +521,9 @@
             // dueDateDataGridViewTextBoxColumn
             // 
             this.dueDateDataGridViewTextBoxColumn.DataPropertyName = "DueDate";
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = null;
+            this.dueDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.dueDateDataGridViewTextBoxColumn.HeaderText = "Дата выполнения";
             this.dueDateDataGridViewTextBoxColumn.Name = "dueDateDataGridViewTextBoxColumn";
             this.dueDateDataGridViewTextBoxColumn.ToolTipText = "Дата выполнения заказа.";
@@ -563,6 +531,9 @@
             // shipDateDataGridViewTextBoxColumn
             // 
             this.shipDateDataGridViewTextBoxColumn.DataPropertyName = "ShipDate";
+            dataGridViewCellStyle3.Format = "d";
+            dataGridViewCellStyle3.NullValue = null;
+            this.shipDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.shipDateDataGridViewTextBoxColumn.HeaderText = "Дата отправки";
             this.shipDateDataGridViewTextBoxColumn.Name = "shipDateDataGridViewTextBoxColumn";
             this.shipDateDataGridViewTextBoxColumn.ToolTipText = "Дата отправки заказа клиенту.";
@@ -590,53 +561,66 @@
             // accountNumberDataGridViewTextBoxColumn
             // 
             this.accountNumberDataGridViewTextBoxColumn.DataPropertyName = "AccountNumber";
-            this.accountNumberDataGridViewTextBoxColumn.HeaderText = "Ссылка на номер финансового счета";
+            this.accountNumberDataGridViewTextBoxColumn.HeaderText = "Номер счета";
             this.accountNumberDataGridViewTextBoxColumn.Name = "accountNumberDataGridViewTextBoxColumn";
             this.accountNumberDataGridViewTextBoxColumn.ToolTipText = "Ссылка на номер финансового счета";
             // 
             // customerIDDataGridViewTextBoxColumn
             // 
             this.customerIDDataGridViewTextBoxColumn.DataPropertyName = "CustomerName";
+            this.customerIDDataGridViewTextBoxColumn.FillWeight = 300F;
             this.customerIDDataGridViewTextBoxColumn.HeaderText = "Заказчик";
             this.customerIDDataGridViewTextBoxColumn.Name = "customerIDDataGridViewTextBoxColumn";
             this.customerIDDataGridViewTextBoxColumn.ReadOnly = true;
             this.customerIDDataGridViewTextBoxColumn.ToolTipText = " заказчик";
+            this.customerIDDataGridViewTextBoxColumn.Width = 300;
             // 
             // salesPersonIDDataGridViewTextBoxColumn
             // 
             this.salesPersonIDDataGridViewTextBoxColumn.DataPropertyName = "SalesPersonID";
+            this.salesPersonIDDataGridViewTextBoxColumn.FillWeight = 200F;
             this.salesPersonIDDataGridViewTextBoxColumn.HeaderText = "Контакт заказчика";
             this.salesPersonIDDataGridViewTextBoxColumn.Name = "salesPersonIDDataGridViewTextBoxColumn";
+            this.salesPersonIDDataGridViewTextBoxColumn.Width = 200;
             // 
             // territoryIDDataGridViewTextBoxColumn
             // 
             this.territoryIDDataGridViewTextBoxColumn.DataPropertyName = "TerritoryName";
+            this.territoryIDDataGridViewTextBoxColumn.FillWeight = 200F;
             this.territoryIDDataGridViewTextBoxColumn.HeaderText = "Территория продаж";
             this.territoryIDDataGridViewTextBoxColumn.Name = "territoryIDDataGridViewTextBoxColumn";
             this.territoryIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.territoryIDDataGridViewTextBoxColumn.Width = 200;
             // 
             // billToAddressIDDataGridViewTextBoxColumn
             // 
             this.billToAddressIDDataGridViewTextBoxColumn.DataPropertyName = "BillToAddressTitle";
+            this.billToAddressIDDataGridViewTextBoxColumn.FillWeight = 200F;
             this.billToAddressIDDataGridViewTextBoxColumn.HeaderText = "Адрес для выст. счета";
             this.billToAddressIDDataGridViewTextBoxColumn.Name = "billToAddressIDDataGridViewTextBoxColumn";
             this.billToAddressIDDataGridViewTextBoxColumn.ReadOnly = true;
             this.billToAddressIDDataGridViewTextBoxColumn.ToolTipText = "Адрес заказчика для выставления счета";
+            this.billToAddressIDDataGridViewTextBoxColumn.Width = 200;
             // 
             // shipToAddressIDDataGridViewTextBoxColumn
             // 
             this.shipToAddressIDDataGridViewTextBoxColumn.DataPropertyName = "ShipToAddressTitle";
-            this.shipToAddressIDDataGridViewTextBoxColumn.HeaderText = "Адрес  для отгрузки";
+            this.shipToAddressIDDataGridViewTextBoxColumn.FillWeight = 200F;
+            this.shipToAddressIDDataGridViewTextBoxColumn.HeaderText = "Адрес для отгрузки";
             this.shipToAddressIDDataGridViewTextBoxColumn.Name = "shipToAddressIDDataGridViewTextBoxColumn";
+            this.shipToAddressIDDataGridViewTextBoxColumn.ReadOnly = true;
             this.shipToAddressIDDataGridViewTextBoxColumn.ToolTipText = "Адрес заказчика для отгрузки";
+            this.shipToAddressIDDataGridViewTextBoxColumn.Width = 200;
             // 
             // shipMethodIDDataGridViewTextBoxColumn
             // 
             this.shipMethodIDDataGridViewTextBoxColumn.DataPropertyName = "ShipMethodName";
+            this.shipMethodIDDataGridViewTextBoxColumn.FillWeight = 150F;
             this.shipMethodIDDataGridViewTextBoxColumn.HeaderText = "Метод доставки";
             this.shipMethodIDDataGridViewTextBoxColumn.Name = "shipMethodIDDataGridViewTextBoxColumn";
             this.shipMethodIDDataGridViewTextBoxColumn.ReadOnly = true;
             this.shipMethodIDDataGridViewTextBoxColumn.ToolTipText = "Метод доставки";
+            this.shipMethodIDDataGridViewTextBoxColumn.Width = 150;
             // 
             // currencyRateIDDataGridViewTextBoxColumn
             // 
@@ -653,24 +637,41 @@
             // subTotalDataGridViewTextBoxColumn
             // 
             this.subTotalDataGridViewTextBoxColumn.DataPropertyName = "SubTotal";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.subTotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.subTotalDataGridViewTextBoxColumn.HeaderText = "Подытог продаж";
             this.subTotalDataGridViewTextBoxColumn.Name = "subTotalDataGridViewTextBoxColumn";
+            this.subTotalDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // taxAmtDataGridViewTextBoxColumn
             // 
             this.taxAmtDataGridViewTextBoxColumn.DataPropertyName = "TaxAmt";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "N2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.taxAmtDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.taxAmtDataGridViewTextBoxColumn.HeaderText = "Сумма налогов";
             this.taxAmtDataGridViewTextBoxColumn.Name = "taxAmtDataGridViewTextBoxColumn";
             // 
             // freightDataGridViewTextBoxColumn
             // 
             this.freightDataGridViewTextBoxColumn.DataPropertyName = "Freight";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.Format = "N2";
+            dataGridViewCellStyle6.NullValue = null;
+            this.freightDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
             this.freightDataGridViewTextBoxColumn.HeaderText = "Стоимость доставки";
             this.freightDataGridViewTextBoxColumn.Name = "freightDataGridViewTextBoxColumn";
             // 
             // totalDueDataGridViewTextBoxColumn
             // 
             this.totalDueDataGridViewTextBoxColumn.DataPropertyName = "TotalDue";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.Format = "N2";
+            dataGridViewCellStyle7.NullValue = null;
+            this.totalDueDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
             this.totalDueDataGridViewTextBoxColumn.HeaderText = "Общая задолж.";
             this.totalDueDataGridViewTextBoxColumn.Name = "totalDueDataGridViewTextBoxColumn";
             this.totalDueDataGridViewTextBoxColumn.ToolTipText = "Общая задолженность заказчика";
@@ -681,6 +682,76 @@
             this.commentDataGridViewTextBoxColumn.HeaderText = "Комментарии";
             this.commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
             this.commentDataGridViewTextBoxColumn.ToolTipText = "Комментарии, сделанные коммерческим представителем";
+            // 
+            // carrierTrackingNumberDataGridViewTextBoxColumn
+            // 
+            this.carrierTrackingNumberDataGridViewTextBoxColumn.DataPropertyName = "CarrierTrackingNumber";
+            this.carrierTrackingNumberDataGridViewTextBoxColumn.HeaderText = "Трак. ном.";
+            this.carrierTrackingNumberDataGridViewTextBoxColumn.Name = "carrierTrackingNumberDataGridViewTextBoxColumn";
+            this.carrierTrackingNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            this.carrierTrackingNumberDataGridViewTextBoxColumn.ToolTipText = "номер, предоставляемый компанией-поставщиком для отслеживания грузов";
+            // 
+            // orderQtyDataGridViewTextBoxColumn
+            // 
+            this.orderQtyDataGridViewTextBoxColumn.DataPropertyName = "OrderQty";
+            this.orderQtyDataGridViewTextBoxColumn.HeaderText = "Количество";
+            this.orderQtyDataGridViewTextBoxColumn.Name = "orderQtyDataGridViewTextBoxColumn";
+            this.orderQtyDataGridViewTextBoxColumn.ReadOnly = true;
+            this.orderQtyDataGridViewTextBoxColumn.ToolTipText = "Заказанное количество по видам продукта";
+            // 
+            // productIDDataGridViewTextBoxColumn
+            // 
+            this.productIDDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
+            this.productIDDataGridViewTextBoxColumn.HeaderText = "Продукт";
+            this.productIDDataGridViewTextBoxColumn.Name = "productIDDataGridViewTextBoxColumn";
+            this.productIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.productIDDataGridViewTextBoxColumn.ToolTipText = "Проданный заказчику продукт";
+            // 
+            // specialOfferIDDataGridViewTextBoxColumn
+            // 
+            this.specialOfferIDDataGridViewTextBoxColumn.DataPropertyName = "SpecialOfferID";
+            this.specialOfferIDDataGridViewTextBoxColumn.HeaderText = "SpecialOfferID";
+            this.specialOfferIDDataGridViewTextBoxColumn.Name = "specialOfferIDDataGridViewTextBoxColumn";
+            this.specialOfferIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.specialOfferIDDataGridViewTextBoxColumn.ToolTipText = "Код рекламной акции";
+            this.specialOfferIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // unitPriceDataGridViewTextBoxColumn
+            // 
+            this.unitPriceDataGridViewTextBoxColumn.DataPropertyName = "UnitPrice";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.Format = "N2";
+            dataGridViewCellStyle8.NullValue = null;
+            this.unitPriceDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
+            this.unitPriceDataGridViewTextBoxColumn.HeaderText = "Цена";
+            this.unitPriceDataGridViewTextBoxColumn.Name = "unitPriceDataGridViewTextBoxColumn";
+            this.unitPriceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.unitPriceDataGridViewTextBoxColumn.ToolTipText = "Отпускная цена за единицу продукта";
+            // 
+            // unitPriceDiscountDataGridViewTextBoxColumn
+            // 
+            this.unitPriceDiscountDataGridViewTextBoxColumn.DataPropertyName = "UnitPriceDiscount";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle9.Format = "N2";
+            dataGridViewCellStyle9.NullValue = null;
+            this.unitPriceDiscountDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
+            this.unitPriceDiscountDataGridViewTextBoxColumn.HeaderText = "Скидка";
+            this.unitPriceDiscountDataGridViewTextBoxColumn.Name = "unitPriceDiscountDataGridViewTextBoxColumn";
+            this.unitPriceDiscountDataGridViewTextBoxColumn.ReadOnly = true;
+            this.unitPriceDiscountDataGridViewTextBoxColumn.ToolTipText = "Сумма скидки";
+            this.unitPriceDiscountDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // lineTotalDataGridViewTextBoxColumn
+            // 
+            this.lineTotalDataGridViewTextBoxColumn.DataPropertyName = "LineTotal";
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle10.Format = "N2";
+            dataGridViewCellStyle10.NullValue = null;
+            this.lineTotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
+            this.lineTotalDataGridViewTextBoxColumn.HeaderText = "Сумма";
+            this.lineTotalDataGridViewTextBoxColumn.Name = "lineTotalDataGridViewTextBoxColumn";
+            this.lineTotalDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lineTotalDataGridViewTextBoxColumn.ToolTipText = "Промежуточный итог за продукт";
             // 
             // fSalesOrderHeader
             // 
@@ -695,6 +766,7 @@
             this.Text = "Заказ на продажу";
             this.Load += new System.EventHandler(this.fList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsDetail)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -708,7 +780,6 @@
             this.bn.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bnDetail)).EndInit();
             this.bnDetail.ResumeLayout(false);
             this.bnDetail.PerformLayout();
@@ -752,13 +823,6 @@
         private System.Windows.Forms.ToolStripButton tsbAddDetail;
         private System.Windows.Forms.ToolStripButton tsbEditDetail;
         private System.Windows.Forms.ToolStripButton tsbDeleteDetail;
-        private System.Windows.Forms.DataGridViewTextBoxColumn carrierTrackingNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn orderQtyDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn specialOfferIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn unitPriceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn unitPriceDiscountDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lineTotalDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn revisionNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dueDateDataGridViewTextBoxColumn;
@@ -780,5 +844,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn freightDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalDueDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn commentDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn carrierTrackingNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderQtyDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn specialOfferIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unitPriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unitPriceDiscountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lineTotalDataGridViewTextBoxColumn;
     }
 }
