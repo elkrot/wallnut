@@ -12,6 +12,7 @@ using Wallnut.UI.Sales.Customer;
 using Wallnut.UI.Sales.SalesTerritory;
 using Wallnut.UI.Persons.frmBusinessEntityAddress;
 using Wallnut.UI.Purchasing.ShipMethod;
+using Wallnut.UI.Sales.CurrencyRate;
 
 namespace Wallnut.UI.Sales.SalesOrderHeader
 {
@@ -238,15 +239,16 @@ namespace Wallnut.UI.Sales.SalesOrderHeader
         {
             using (var unitOfWork = new UnitOfWork(new WallnutProductionContext()))
             {
-                this.CurrencyRateList = unitOfWork.CurrencyRateRepository.GetAll()
-                .ToList<Wallnut.Domain.Models.CurrencyRate>();
+                if ((this.entity as Wallnut.Domain.Models.SalesOrderHeader).CurrencyRateID != null)
+                {
+                    var CurrencyRateID = (this.entity as Wallnut.Domain.Models.SalesOrderHeader).CurrencyRateID;
+                    var rate = unitOfWork.CurrencyRateRepository.Find(x => x.CurrencyRateID == 
+                        CurrencyRateID).FirstOrDefault();
+                    lbRate.Text = rate.Rate.ToString();
+                    lbCurrency.Text = rate.Currency1.CurrencyCode.ToString();
+                }
+            }
 
-            }
-            if ((this.entity as Wallnut.Domain.Models.SalesOrderHeader).CurrencyRateID != null)
-            {
-                var CurrencyRateID = (this.entity as Wallnut.Domain.Models.SalesOrderHeader).CurrencyRateID;
-                tbCurrencyRateID.Text = CurrencyRateList.Where(x => x.CurrencyRateID == CurrencyRateID).FirstOrDefault().Rate.ToString();
-            }
         }        
         #endregion
 
@@ -437,9 +439,14 @@ namespace Wallnut.UI.Sales.SalesOrderHeader
         #region CurrencyRate_Click
         private void CurrencyRate_Click(object sender, EventArgs e)
         {
-            fShipMethod f = new fShipMethod();
+            fCurrencyRate f = new fCurrencyRate();
+            f.FormMode = Implementations.ListFormMode.Help;
             f.ShowDialog();
-            UpdateCurrencyRate();
+            if (f.DialogResult == System.Windows.Forms.DialogResult.OK) {
+                (this.entity as Wallnut.Domain.Models.SalesOrderHeader).CurrencyRateID = f.RetId;
+                UpdateCurrencyRate();
+            }
+            
         }        
         #endregion
 
@@ -511,6 +518,7 @@ namespace Wallnut.UI.Sales.SalesOrderHeader
         {
             Wallnut.Utils.Validation.FieldIsRequired<TextBox>(ref  sender, ref  e, lbFreight.Text, ref ep);
         }
+
 
 
 

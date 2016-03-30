@@ -44,6 +44,7 @@
             this.tsbAdd = new System.Windows.Forms.ToolStripButton();
             this.tsbEdit = new System.Windows.Forms.ToolStripButton();
             this.tsbDelete = new System.Windows.Forms.ToolStripButton();
+            this.tsbHelpOk = new System.Windows.Forms.ToolStripButton();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.currencyRateDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fromCurrencyCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,7 +74,9 @@
             this.bn.BindingSource = this.bs;
             this.bn.CountItem = this.bindingNavigatorCountItem;
             this.bn.DeleteItem = null;
+            this.bn.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.bn.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbHelpOk,
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
             this.bindingNavigatorSeparator,
@@ -93,14 +96,14 @@
             this.bn.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bn.Name = "bn";
             this.bn.PositionItem = this.bindingNavigatorPositionItem;
-            this.bn.Size = new System.Drawing.Size(544, 25);
+            this.bn.Size = new System.Drawing.Size(544, 39);
             this.bn.TabIndex = 1;
             this.bn.Text = "bindingNavigator1";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(43, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(43, 36);
             this.bindingNavigatorCountItem.Text = "для {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
             // 
@@ -110,7 +113,7 @@
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(36, 36);
             this.bindingNavigatorMoveFirstItem.Text = "Переместить в начало";
             // 
             // bindingNavigatorMovePreviousItem
@@ -119,13 +122,13 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(36, 36);
             this.bindingNavigatorMovePreviousItem.Text = "Переместить назад";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 39);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -139,7 +142,7 @@
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 39);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -147,7 +150,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(36, 36);
             this.bindingNavigatorMoveNextItem.Text = "Переместить вперед";
             // 
             // bindingNavigatorMoveLastItem
@@ -156,13 +159,13 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(36, 36);
             this.bindingNavigatorMoveLastItem.Text = "Переместить в конец";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 39);
             // 
             // tsbAdd
             // 
@@ -170,7 +173,7 @@
             this.tsbAdd.Image = global::Wallnut.UI.Properties.Resources.edit_add;
             this.tsbAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbAdd.Name = "tsbAdd";
-            this.tsbAdd.Size = new System.Drawing.Size(23, 22);
+            this.tsbAdd.Size = new System.Drawing.Size(36, 36);
             this.tsbAdd.Text = "Добавить";
             this.tsbAdd.Click += new System.EventHandler(this.tsbAdd_Click);
             // 
@@ -180,7 +183,7 @@
             this.tsbEdit.Image = global::Wallnut.UI.Properties.Resources.pencil;
             this.tsbEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEdit.Name = "tsbEdit";
-            this.tsbEdit.Size = new System.Drawing.Size(23, 22);
+            this.tsbEdit.Size = new System.Drawing.Size(36, 36);
             this.tsbEdit.Text = "Изменить";
             this.tsbEdit.Click += new System.EventHandler(this.tsbEdit_Click);
             // 
@@ -190,9 +193,18 @@
             this.tsbDelete.Image = global::Wallnut.UI.Properties.Resources.edit_delete;
             this.tsbDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbDelete.Name = "tsbDelete";
-            this.tsbDelete.Size = new System.Drawing.Size(23, 22);
+            this.tsbDelete.Size = new System.Drawing.Size(36, 36);
             this.tsbDelete.Text = "Удалить";
             this.tsbDelete.Click += new System.EventHandler(this.tsbDelete_Click);
+            // 
+            // tsbHelpOk
+            // 
+            this.tsbHelpOk.Image = ((System.Drawing.Image)(resources.GetObject("tsbHelpOk.Image")));
+            this.tsbHelpOk.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbHelpOk.Name = "tsbHelpOk";
+            this.tsbHelpOk.Size = new System.Drawing.Size(90, 36);
+            this.tsbHelpOk.Text = "Выбрать";
+            this.tsbHelpOk.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // dgv
             // 
@@ -207,10 +219,10 @@
             this.rateDataGridViewTextBoxColumn});
             this.dgv.DataSource = this.bs;
             this.dgv.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv.Location = new System.Drawing.Point(0, 25);
+            this.dgv.Location = new System.Drawing.Point(0, 39);
             this.dgv.Name = "dgv";
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(544, 215);
+            this.dgv.Size = new System.Drawing.Size(544, 201);
             this.dgv.TabIndex = 2;
             // 
             // currencyRateDateDataGridViewTextBoxColumn
@@ -280,5 +292,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fromCurrencyCodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn toCurrencyCodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn rateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStripButton tsbHelpOk;
     }
 }

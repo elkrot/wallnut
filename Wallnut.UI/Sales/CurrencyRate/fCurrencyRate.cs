@@ -14,13 +14,16 @@ namespace Wallnut.UI.Sales.CurrencyRate
 {
     public partial class fCurrencyRate : Wallnut.UI.Implementations.ListForm
     {
+        public int RetId { get; set; }
         public fCurrencyRate()
         {
+            RetId = 0;
             InitializeComponent();
         }
 
         private void fList_Load(object sender, EventArgs e)
         {
+            bn.Items["tsbHelpOk"].Visible = (FormMode == ListFormMode.Help);
             RefreshData<Wallnut.Domain.Models.CurrencyRate>();
         }
 
@@ -41,6 +44,17 @@ namespace Wallnut.UI.Sales.CurrencyRate
             var entity = dgv.SelectedRows[0].DataBoundItem as Wallnut.Domain.Models.CurrencyRate;
             int CurrencyRateID = entity.CurrencyRateID;
             RemoveEntity<Wallnut.Domain.Models.CurrencyRate>(CurrencyRateID);
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            if (FormMode == ListFormMode.Help)
+            {
+                if (dgv.SelectedRows[0] != null)
+                    RetId = (dgv.SelectedRows[0].DataBoundItem as Wallnut.Domain.Models.CurrencyRate).CurrencyRateID;
+                this.DialogResult = System.Windows.Forms.DialogResult.OK;
+                Close();
+            }
         }
 
 

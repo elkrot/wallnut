@@ -12,7 +12,10 @@ namespace Wallnut.UI.Implementations
 {
     public class ListForm:Form,IListForm 
     {
-        public ListForm() : base() { }
+        public ListFormMode FormMode { get; set; }
+        public ListForm() : base() {
+            FormMode = ListFormMode.Edit;
+        }
         /*public ListForm(Expression<Func<T, bool>> predicate)  :base() {
             Predicate = predicate;
         }*/
@@ -118,5 +121,10 @@ namespace Wallnut.UI.Implementations
         }
 
 
+    }
+
+    public enum ListFormMode
+    {
+        Help, ReadOnly, Edit
     }
 }
