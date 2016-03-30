@@ -10,13 +10,10 @@ namespace Wallnut.UI.Implementations
     /// <summary>
     /// Интерфейс формы изменения условия
     /// </summary>
-    public abstract class ConditionForm:Form
+    public  interface IConditionForm
     {
-        public ConditionForm(IScreenConditionFields scf) {
-            bs.DataSource = scf;
-        }
-        //public IScreenConditionFields scf;
-        public BindingSource bs;
-        public abstract bool SetScreenConditionFieldsValues();
+         object DataSource { get; set; }
+         void BindingData();
+         DialogResult ShowForm();
     }
 }

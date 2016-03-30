@@ -20,8 +20,9 @@ namespace Wallnut.UI.Implementations
         public event EventHandler AfterAddEntity;
         public event EventHandler AfterUpdateEntity;
         public event EventHandler AfterRemoveEntity;
-        public ConditionForm ConditionForm;
-
+        public IConditionForm ConditionForm;
+        public delegate Expression<Func<T, bool>> GetPredicate(object p);
+        public GetPredicate GetPredicateMethod;
         #region Constructors
        public ListFormBehavior() : base() { 
        }
@@ -30,31 +31,38 @@ namespace Wallnut.UI.Implementations
             : base()
         {
             SetCondition(predicate);
-            RereadDataSource += rereadDataSource;
+            RereadDataSource = rereadDataSource;
         }
 
         /// <summary>
-        /// Конструктор для формы с условием отбора
+        /// Конструктор для формы с условием отбора 
         /// </summary>
-        /// <param name="predicate">Условие отбора</param>
-        /// <param name="rereadDataSource">Процедура перечитки</param>
+        /// <param name="rereadDataSource">Процедура обновления данных</param>
         /// <param name="conditionForm">Форма Условия отбора</param>
-        public ListFormBehavior(Expression<Func<T, bool>> predicate, Action rereadDataSource, ConditionForm conditionForm)
+        /// <param name="GetPredicate">Процедура установки условия</param>
+        public ListFormBehavior(Action rereadDataSource, IConditionForm conditionForm, GetPredicate GetPredicate)
             : base()
         {
             ConditionForm = conditionForm;
-            if (ConditionForm.SetScreenConditionFieldsValues())
-            {
-                SetCondition(predicate);
-            }
-            RereadDataSource += rereadDataSource;
+            GetPredicateMethod = GetPredicate;
+            UpdateCondition();
+            RereadDataSource = rereadDataSource;
         }
+
         #endregion
 
+        public void UpdateCondition()
+        {
+            if (ConditionForm.DataSource != null)
+            {
+                if (IsConditionChange() && GetPredicateMethod!=null)
+                    SetCondition(GetPredicateMethod(ConditionForm.DataSource));
+            }
+        }
         #region IsConditionChange
         private bool IsConditionChange()
         {
-            DialogResult result = ConditionForm.ShowDialog();
+            DialogResult result = ConditionForm.ShowForm();
             return (result == System.Windows.Forms.DialogResult.OK);
         }
         #endregion
@@ -64,7 +72,8 @@ namespace Wallnut.UI.Implementations
         #region SetCondition
         public void SetCondition(Expression<Func<T, bool>> predicate)
         {
-            Predicate = predicate;
+            // Не трогать
+                 Predicate = predicate;
         }        
         #endregion
 

@@ -10,6 +10,8 @@ using Wallnut.UI.Implementations;
 using Wallnut.Domain.Models;
 using Wallnut.BusinessLogic.Implementations;
 using Wallnut.UI.Sales.SalesOrderDetail;
+using System.Linq.Expressions;
+using Wallnut.Domain.Entities;
 
 namespace Wallnut.UI.Sales.SalesOrderHeader
 {
@@ -20,11 +22,21 @@ namespace Wallnut.UI.Sales.SalesOrderHeader
         private static fSalesOrderHeader aForm = null;
         private fSalesOrderHeader()
         {
+            fSalesCondition frm= new fSalesCondition();
             behavior = new ListFormBehavior<Wallnut.Domain.Models.SalesOrderHeader, 
-                fAddSalesOrderHeader>(x => true, Reread);
+                fAddSalesOrderHeader>(Reread, frm,  GetPredicate);
+
             detailBehavior = new ListFormBehavior<Wallnut.Domain.Models.SalesOrderDetail
- , fAddSalesOrderDetail>(x => true, Reread);
+                , fAddSalesOrderDetail>(x => true, Reread);
             InitializeComponent();
+        }
+
+        public Expression<Func<Wallnut.Domain.Models.SalesOrderHeader, bool>> GetPredicate(object src)
+        {
+            SalesCondition cond = (src as SalesCondition);
+            Expression<Func<Wallnut.Domain.Models.SalesOrderHeader, bool>>
+                p = (x => x.OrderDate >= cond.DateFirst && x.OrderDate <= cond.DateLast);
+            return p;
         }
         #region RereadData
         public void Reread()
@@ -53,6 +65,7 @@ namespace Wallnut.UI.Sales.SalesOrderHeader
         {
             this.WindowState = FormWindowState.Maximized;
             this.BringToFront();
+            behavior.UpdateCondition();
             behavior.RefreshData();
             detailBehavior.RefreshData();
         }
@@ -127,8 +140,17 @@ namespace Wallnut.UI.Sales.SalesOrderHeader
             }
         }
 
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            behavior.UpdateCondition();
+            behavior.RefreshData();
+            detailBehavior.RefreshData();
+        }
 
-  
+
+
+
+
 
 
 

@@ -45,6 +45,7 @@
             this.btnOK.TabIndex = 0;
             this.btnOK.Text = "Установить";
             this.btnOK.UseVisualStyleBackColor = true;
+            
             // 
             // btnCancel
             // 
@@ -104,7 +105,7 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(537, 247);
             this.MinimizeBox = false;

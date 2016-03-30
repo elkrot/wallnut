@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dtFirst = new System.Windows.Forms.DateTimePicker();
+            this.purchaseConditionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dtLast = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -37,7 +38,6 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.purchaseConditionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.purchaseConditionBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,6 +49,10 @@
             this.dtFirst.ShowCheckBox = true;
             this.dtFirst.Size = new System.Drawing.Size(169, 24);
             this.dtFirst.TabIndex = 0;
+            // 
+            // purchaseConditionBindingSource
+            // 
+            this.purchaseConditionBindingSource.DataSource = typeof(Wallnut.Domain.Entities.PurchaseCondition);
             // 
             // dtLast
             // 
@@ -123,10 +127,6 @@
             this.checkBox2.Text = "Мелкий опт";
             this.checkBox2.UseVisualStyleBackColor = true;
             // 
-            // purchaseConditionBindingSource
-            // 
-            this.purchaseConditionBindingSource.DataSource = typeof(Wallnut.Domain.Entities.PurchaseCondition);
-            // 
             // fCondition
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -141,7 +141,7 @@
             this.Controls.Add(this.dtLast);
             this.Controls.Add(this.dtFirst);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(549, 178);

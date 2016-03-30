@@ -123,13 +123,11 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Interfaces\IAddForm.cs" />
-    <Compile Include="Implementations\ConditionForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Implementations\ConditionForm.cs" />
     <Compile Include="Interfaces\IConditionValues.cs" />
     <Compile Include="Interfaces\IListForm.cs" />
     <Compile Include="Interfaces\INewListForm.cs" />
-    <Compile Include="Interfaces\IScreenCondition.cs" />
+    <Compile Include="Interfaces\ICondition.cs" />
     <Compile Include="Persons\AddressTypes\fAddAddressType.cs">
       <SubType>Form</SubType>
     </Compile>

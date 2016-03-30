@@ -77,6 +77,7 @@
     <Compile Include="Entities\PurchaseCondition.cs" />
     <Compile Include="Entities\PurchaseOrderDetail.cs" />
     <Compile Include="Entities\PurchaseOrderHeader.cs" />
+    <Compile Include="Entities\SalesCondition.cs" />
     <Compile Include="Entities\SalesOrderDetail.cs" />
     <Compile Include="Entities\SalesOrderHeader.cs" />
     <Compile Include="Entities\Shift.cs" />
