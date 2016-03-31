@@ -45,7 +45,7 @@ namespace Wallnut.UI.Implementations
         {
             ConditionForm = conditionForm;
             GetPredicateMethod = GetPredicate;
-            UpdateCondition();
+            // UpdateCondition();
             RereadDataSource = rereadDataSource;
         }
 
@@ -55,8 +55,10 @@ namespace Wallnut.UI.Implementations
         {
             if (ConditionForm.DataSource != null)
             {
-                if (IsConditionChange() && GetPredicateMethod!=null)
+                if (IsConditionChange() && GetPredicateMethod != null)
                     SetCondition(GetPredicateMethod(ConditionForm.DataSource));
+                else
+                    SetCondition(x=>false);
             }
         }
         #region IsConditionChange

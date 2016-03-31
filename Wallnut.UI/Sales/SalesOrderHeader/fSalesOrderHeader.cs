@@ -23,6 +23,10 @@ namespace Wallnut.UI.Sales.SalesOrderHeader
         private fSalesOrderHeader()
         {
             fSalesCondition frm= new fSalesCondition();
+            frm.DataSource = new SalesCondition();
+            (frm.DataSource as SalesCondition).DateFirst = DateTime.Now.AddDays(-DateTime.Now.Day);
+            (frm.DataSource as SalesCondition).DateLast = DateTime.Now.AddDays(1);
+
             behavior = new ListFormBehavior<Wallnut.Domain.Models.SalesOrderHeader, 
                 fAddSalesOrderHeader>(Reread, frm,  GetPredicate);
 
