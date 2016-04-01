@@ -32,8 +32,8 @@ namespace Wallnut.UI.Sales.SalesOrderHeader
 
             InitializeComponent();
         }
-
-        private void BindingData()
+        #region BindingData
+           private void BindingData()
         {
 
 /* Lists */
@@ -207,7 +207,9 @@ namespace Wallnut.UI.Sales.SalesOrderHeader
             #endregion
 
         }
-
+   
+        #endregion
+  
         private void CalculateTotalDue()
         {
             lblTotalDue.Text = string.Format("{0:0.00}", (this.entity as Wallnut.Domain.Models.SalesOrderHeader).TotalDueLoc);

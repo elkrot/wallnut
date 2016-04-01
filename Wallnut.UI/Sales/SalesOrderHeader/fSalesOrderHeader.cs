@@ -37,10 +37,10 @@ namespace Wallnut.UI.Sales.SalesOrderHeader
 
         public Expression<Func<Wallnut.Domain.Models.SalesOrderHeader, bool>> GetPredicate(object src)
         {
+            
             SalesCondition cond = (src as SalesCondition);
-            Expression<Func<Wallnut.Domain.Models.SalesOrderHeader, bool>>
-                p = (x => x.OrderDate >= cond.DateFirst && x.OrderDate <= cond.DateLast);
-            return p;
+            return cond.GetCondition();
+
         }
         #region RereadData
         public void Reread()

@@ -440,7 +440,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.37318F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.62682F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 79F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tableLayoutPanel2.Controls.Add(this.cbBillToAddressID, 2, 1);
             this.tableLayoutPanel2.Controls.Add(this.lbBillToAddressID, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.label2, 1, 2);
@@ -474,7 +474,7 @@
             this.cbBillToAddressID.Location = new System.Drawing.Point(331, 39);
             this.cbBillToAddressID.Margin = new System.Windows.Forms.Padding(4);
             this.cbBillToAddressID.Name = "cbBillToAddressID";
-            this.cbBillToAddressID.Size = new System.Drawing.Size(274, 26);
+            this.cbBillToAddressID.Size = new System.Drawing.Size(273, 26);
             this.cbBillToAddressID.TabIndex = 0;
             this.cbBillToAddressID.Validating += new System.ComponentModel.CancelEventHandler(this.cbBillToAddressID_Validating);
             // 
@@ -505,7 +505,7 @@
             this.cbShipToAddressID.Location = new System.Drawing.Point(331, 74);
             this.cbShipToAddressID.Margin = new System.Windows.Forms.Padding(4);
             this.cbShipToAddressID.Name = "cbShipToAddressID";
-            this.cbShipToAddressID.Size = new System.Drawing.Size(274, 26);
+            this.cbShipToAddressID.Size = new System.Drawing.Size(273, 26);
             this.cbShipToAddressID.TabIndex = 1;
             this.cbShipToAddressID.Validating += new System.ComponentModel.CancelEventHandler(this.cbShipToAddressID_Validating);
             // 
@@ -516,7 +516,7 @@
             this.cbShipMethodID.Location = new System.Drawing.Point(331, 109);
             this.cbShipMethodID.Margin = new System.Windows.Forms.Padding(4);
             this.cbShipMethodID.Name = "cbShipMethodID";
-            this.cbShipMethodID.Size = new System.Drawing.Size(274, 26);
+            this.cbShipMethodID.Size = new System.Drawing.Size(273, 26);
             this.cbShipMethodID.TabIndex = 2;
             this.cbShipMethodID.Validating += new System.ComponentModel.CancelEventHandler(this.cbShipMethodID_Validating);
             // 
@@ -532,7 +532,7 @@
             // 
             // btnBillToAddressEdit
             // 
-            this.btnBillToAddressEdit.Location = new System.Drawing.Point(613, 39);
+            this.btnBillToAddressEdit.Location = new System.Drawing.Point(612, 39);
             this.btnBillToAddressEdit.Margin = new System.Windows.Forms.Padding(4);
             this.btnBillToAddressEdit.Name = "btnBillToAddressEdit";
             this.btnBillToAddressEdit.Size = new System.Drawing.Size(52, 26);
@@ -543,7 +543,7 @@
             // 
             // btnShipToAddressEdit
             // 
-            this.btnShipToAddressEdit.Location = new System.Drawing.Point(613, 74);
+            this.btnShipToAddressEdit.Location = new System.Drawing.Point(612, 74);
             this.btnShipToAddressEdit.Margin = new System.Windows.Forms.Padding(4);
             this.btnShipToAddressEdit.Name = "btnShipToAddressEdit";
             this.btnShipToAddressEdit.Size = new System.Drawing.Size(52, 26);
@@ -554,7 +554,7 @@
             // 
             // btnShipMethod
             // 
-            this.btnShipMethod.Location = new System.Drawing.Point(613, 109);
+            this.btnShipMethod.Location = new System.Drawing.Point(612, 109);
             this.btnShipMethod.Margin = new System.Windows.Forms.Padding(4);
             this.btnShipMethod.Name = "btnShipMethod";
             this.btnShipMethod.Size = new System.Drawing.Size(52, 26);
@@ -582,7 +582,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.88272F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.11728F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 105F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 165F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 166F));
             this.tableLayoutPanel3.Controls.Add(this.lbSubTotal, 1, 1);
             this.tableLayoutPanel3.Controls.Add(this.lbTaxAmt, 1, 2);
             this.tableLayoutPanel3.Controls.Add(this.lbTotalDue, 1, 4);
@@ -660,7 +660,7 @@
             0,
             0,
             0});
-            this.tbTaxAmt.Size = new System.Drawing.Size(275, 24);
+            this.tbTaxAmt.Size = new System.Drawing.Size(274, 24);
             this.tbTaxAmt.TabIndex = 1;
             this.tbTaxAmt.Text = "0";
             this.tbTaxAmt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -692,7 +692,7 @@
             0,
             0,
             0});
-            this.tbFreight.Size = new System.Drawing.Size(275, 24);
+            this.tbFreight.Size = new System.Drawing.Size(274, 24);
             this.tbFreight.TabIndex = 2;
             this.tbFreight.Text = "0";
             this.tbFreight.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -711,7 +711,7 @@
             // 
             // btnCurrencyRateEdit
             // 
-            this.btnCurrencyRateEdit.Location = new System.Drawing.Point(482, 179);
+            this.btnCurrencyRateEdit.Location = new System.Drawing.Point(481, 179);
             this.btnCurrencyRateEdit.Margin = new System.Windows.Forms.Padding(4);
             this.btnCurrencyRateEdit.Name = "btnCurrencyRateEdit";
             this.btnCurrencyRateEdit.Size = new System.Drawing.Size(51, 26);
@@ -726,7 +726,7 @@
             this.lblTotalDue.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTotalDue.Location = new System.Drawing.Point(198, 140);
             this.lblTotalDue.Name = "lblTotalDue";
-            this.lblTotalDue.Size = new System.Drawing.Size(277, 35);
+            this.lblTotalDue.Size = new System.Drawing.Size(276, 35);
             this.lblTotalDue.TabIndex = 3;
             this.lblTotalDue.Text = "0";
             this.lblTotalDue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -744,7 +744,7 @@
             0,
             0,
             0});
-            this.tbSubTotal.Size = new System.Drawing.Size(277, 24);
+            this.tbSubTotal.Size = new System.Drawing.Size(276, 24);
             this.tbSubTotal.TabIndex = 0;
             this.tbSubTotal.Text = "0";
             this.tbSubTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -757,7 +757,7 @@
             this.lbRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbRate.Location = new System.Drawing.Point(198, 175);
             this.lbRate.Name = "lbRate";
-            this.lbRate.Size = new System.Drawing.Size(277, 35);
+            this.lbRate.Size = new System.Drawing.Size(276, 35);
             this.lbRate.TabIndex = 7;
             this.lbRate.Text = "0";
             this.lbRate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -779,7 +779,7 @@
             this.lbCurrency.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbCurrency.Location = new System.Drawing.Point(198, 210);
             this.lbCurrency.Name = "lbCurrency";
-            this.lbCurrency.Size = new System.Drawing.Size(277, 35);
+            this.lbCurrency.Size = new System.Drawing.Size(276, 35);
             this.lbCurrency.TabIndex = 7;
             this.lbCurrency.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
