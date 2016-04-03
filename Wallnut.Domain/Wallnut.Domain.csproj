@@ -69,6 +69,7 @@
     <Compile Include="Entities\Person.cs" />
     <Compile Include="Entities\PersonPhone.cs" />
     <Compile Include="Entities\PhoneNumberType.cs" />
+    <Compile Include="Entities\PredicateBuilder.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\ProductCostHistory.cs" />
     <Compile Include="Entities\ProductInventory.cs" />
