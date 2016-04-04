@@ -27,92 +27,94 @@ namespace Wallnut.UI.Sales.SalesOrderHeader
         #region BindingData
            public void BindingData()
         {
-            #region DateFirst
-                        this.dtFrom.DataBindings.Add("Value",
-                        (this.DataSource as SalesCondition),
-                        "DateFirst",
-                        false,
-                        DataSourceUpdateMode.OnPropertyChanged);		 
-	        #endregion
-
-            #region DateLast
-                    this.dtTo.DataBindings.Add("Value",
-                     (this.DataSource as SalesCondition),
-                     "DateLast",
-                     false,
-                     DataSourceUpdateMode.OnPropertyChanged);		 
-	        #endregion
-
-            #region IsCustomer
-                    this.chIsCustomer.DataBindings.Add("Checked",
-                     (this.DataSource as SalesCondition),
-                     "IsCustomer",
-                     false,
-                     DataSourceUpdateMode.OnPropertyChanged);		 
-	        #endregion
-
-            #region IsSalesTerritory
-                    this.chIsSalesTerritory.DataBindings.Add("Checked",
-                     (this.DataSource as SalesCondition),
-                     "IsSalesTerritory",
-                     false,
-                     DataSourceUpdateMode.OnPropertyChanged);		 
-	        #endregion
-
-            #region IsSalesOrderNumber
-                    this.chIsSalesOrderNumber.DataBindings.Add("Checked",
-                     (this.DataSource as SalesCondition),
-                     "IsSalesOrderNumber",
-                     false,
-                     DataSourceUpdateMode.OnPropertyChanged);		 
-	        #endregion
-
-            #region Customer
-		 using (var unitOfWork = new UnitOfWork(new WallnutProductionContext()))
+            if (this.dtFrom.DataBindings.Count == 0)
             {
-                this.CustomerList = unitOfWork.CustomerRepository.GetAll()
-                .ToList<Wallnut.Domain.Models.Customer>();
-                cbCustomerID.DataSource = CustomerList;
-            }
+                #region DateFirst
+                this.dtFrom.DataBindings.Add("Value",
+                (this.DataSource as SalesCondition),
+                "DateFirst",
+                false,
+                DataSourceUpdateMode.OnPropertyChanged);
+                #endregion
 
-            cbCustomerID.ValueMember = "CustomerID";
-            cbCustomerID.DisplayMember = "CustomerName";
+                #region DateLast
+                this.dtTo.DataBindings.Add("Value",
+                 (this.DataSource as SalesCondition),
+                 "DateLast",
+                 false,
+                 DataSourceUpdateMode.OnPropertyChanged);
+                #endregion
 
-            cbCustomerID.SelectedValue = (this.DataSource as SalesCondition).CustomerID;
- 
-            cbCustomerID.SelectedIndexChanged += (x, y) =>
-            {
-                (this.DataSource as SalesCondition).CustomerID = (int)cbCustomerID.SelectedValue;
+                #region IsCustomer
+                this.chIsCustomer.DataBindings.Add("Checked",
+                 (this.DataSource as SalesCondition),
+                 "IsCustomer",
+                 false,
+                 DataSourceUpdateMode.OnPropertyChanged);
+                #endregion
 
-            };
-	#endregion
-      
-            #region SalesTerritoryID
-		 using (var unitOfWork = new UnitOfWork(new WallnutProductionContext()))
-            {
+                #region IsSalesTerritory
+                this.chIsSalesTerritory.DataBindings.Add("Checked",
+                 (this.DataSource as SalesCondition),
+                 "IsSalesTerritory",
+                 false,
+                 DataSourceUpdateMode.OnPropertyChanged);
+                #endregion
 
-                this.SalesTerritoryList = unitOfWork.SalesTerritoryRepository.GetAll()
-                .ToList<Wallnut.Domain.Models.SalesTerritory>();
-                cbTerritoryID.DataSource = SalesTerritoryList;
+                #region IsSalesOrderNumber
+                this.chIsSalesOrderNumber.DataBindings.Add("Checked",
+                 (this.DataSource as SalesCondition),
+                 "IsSalesOrderNumber",
+                 false,
+                 DataSourceUpdateMode.OnPropertyChanged);
+                #endregion
 
-            }
-            cbTerritoryID.ValueMember = "TerritoryID";
-            cbTerritoryID.DisplayMember = "Name";
-             (this.DataSource as SalesCondition).SalesTerritoryID = (int)cbTerritoryID.SelectedValue;
-            cbTerritoryID.SelectedIndexChanged += (x, y) =>
-            {
+                #region Customer
+                using (var unitOfWork = new UnitOfWork(new WallnutProductionContext()))
+                {
+                    this.CustomerList = unitOfWork.CustomerRepository.GetAll()
+                    .ToList<Wallnut.Domain.Models.Customer>();
+                    cbCustomerID.DataSource = CustomerList;
+                }
+
+                cbCustomerID.ValueMember = "CustomerID";
+                cbCustomerID.DisplayMember = "CustomerName";
+
+                cbCustomerID.SelectedValue = (this.DataSource as SalesCondition).CustomerID;
+
+                cbCustomerID.SelectedIndexChanged += (x, y) =>
+                {
+                    (this.DataSource as SalesCondition).CustomerID = (int)cbCustomerID.SelectedValue;
+
+                };
+                #endregion
+
+                #region SalesTerritoryID
+                using (var unitOfWork = new UnitOfWork(new WallnutProductionContext()))
+                {
+
+                    this.SalesTerritoryList = unitOfWork.SalesTerritoryRepository.GetAll()
+                    .ToList<Wallnut.Domain.Models.SalesTerritory>();
+                    cbTerritoryID.DataSource = SalesTerritoryList;
+
+                }
+                cbTerritoryID.ValueMember = "TerritoryID";
+                cbTerritoryID.DisplayMember = "Name";
                 (this.DataSource as SalesCondition).SalesTerritoryID = (int)cbTerritoryID.SelectedValue;
-            };
-	    #endregion
-       
-            #region SalesOrderNumber
-            this.tbSalesOrderNumber.DataBindings.Add("Text",
-            (this.DataSource as SalesCondition),
-            "SalesOrderNumber",
-            false,
-            DataSourceUpdateMode.OnPropertyChanged, string.Empty);
-            #endregion
-       
+                cbTerritoryID.SelectedIndexChanged += (x, y) =>
+                {
+                    (this.DataSource as SalesCondition).SalesTerritoryID = (int)cbTerritoryID.SelectedValue;
+                };
+                #endregion
+
+                #region SalesOrderNumber
+                this.tbSalesOrderNumber.DataBindings.Add("Text",
+                (this.DataSource as SalesCondition),
+                "SalesOrderNumber",
+                false,
+                DataSourceUpdateMode.OnPropertyChanged, string.Empty);
+                #endregion
+            }
         }
       
         #endregion

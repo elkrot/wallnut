@@ -26,7 +26,7 @@ namespace Wallnut.Domain.Entities
 
        if (IsCustomer) {
            Expression<Func<Wallnut.Domain.Models.SalesOrderHeader, bool>> pCustomer = (x => x.CustomerID == this.CustomerID);
-          Expression.MakeBinary(ExpressionType.And,ret_exp, pCustomer);
+          Expression .MakeBinary(ExpressionType.And,ret_exp, pCustomer);
        }
        if (IsSalesTerritory)
        {
