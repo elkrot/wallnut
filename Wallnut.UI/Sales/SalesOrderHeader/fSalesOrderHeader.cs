@@ -51,7 +51,7 @@ namespace Wallnut.UI.Sales.SalesOrderHeader
 
         public void DetailReread()
         {
-            if (dgv.RowCount > 0)
+            if (dgv.SelectedRows[0]!=null)
             {
                 var entity = dgv.SelectedRows[0].DataBoundItem as Wallnut.Domain.Models.SalesOrderHeader;
                 int SalesOrderId = entity.SalesOrderID;

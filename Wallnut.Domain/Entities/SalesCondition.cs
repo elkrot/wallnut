@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Linq.Expressions;
 using Wallnut.Domain.Models;
-
+using System.Data.Entity;
+using Wallnut.Domain.Implementations;
 namespace Wallnut.Domain.Entities
 {
    public class SalesCondition
@@ -20,27 +21,32 @@ namespace Wallnut.Domain.Entities
 
         public Expression<Func<Wallnut.Domain.Models.SalesOrderHeader, bool>> GetCondition()
         {
-            Expression<Func<Wallnut.Domain.Models.SalesOrderHeader, bool>> ret_exp;
-
-         ret_exp = (x => x.OrderDate >= this.DateFirst && x.OrderDate <= this.DateLast);
-
+       Expression<Func<Wallnut.Domain.Models.SalesOrderHeader, bool>> ret_exp;
+         ret_exp = PredicateBuilder.Create<SalesOrderHeader>(x => x.OrderDate >= this.DateFirst && x.OrderDate <= this.DateLast);
        if (IsCustomer) {
-           Expression<Func<Wallnut.Domain.Models.SalesOrderHeader, bool>> pCustomer = (x => x.CustomerID == this.CustomerID);
-          Expression .MakeBinary(ExpressionType.And,ret_exp, pCustomer);
+           Expression<Func<Wallnut.Domain.Models.SalesOrderHeader, bool>> pCustomer =
+               PredicateBuilder.Create<SalesOrderHeader>(x => x.CustomerID == this.CustomerID);
+           ret_exp = ret_exp.And(pCustomer);
        }
        if (IsSalesTerritory)
        {
-           Expression<Func<SalesOrderHeader, bool>> pSalesTerritory = (x => x.TerritoryID == this.SalesTerritoryID);
-           Expression.MakeBinary(ExpressionType.And,ret_exp, pSalesTerritory);
+           Expression<Func<SalesOrderHeader, bool>> pSalesTerritory = 
+               PredicateBuilder.Create<SalesOrderHeader>(x => x.TerritoryID == this.SalesTerritoryID);
+
+           ret_exp = ret_exp.And( pSalesTerritory);
+
+         
        }
 
        if (!string.IsNullOrWhiteSpace(this.SalesOrderNumber))
        {
-           Expression<Func<SalesOrderHeader, bool>> pCustomer = (x => x.SalesOrderNumber == this.SalesOrderNumber);
-           Expression.MakeBinary(ExpressionType.And,ret_exp, pCustomer);
+           Expression<Func<SalesOrderHeader, bool>> pSalesOrderNumber =
+               PredicateBuilder.Create<SalesOrderHeader>(x => x.SalesOrderNumber == this.SalesOrderNumber);
+           
+           ret_exp = ret_exp.And( pSalesOrderNumber);
        }
 
-           return ret_exp;
+       return ret_exp;
        }
     }
 }
