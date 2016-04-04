@@ -31,7 +31,7 @@ namespace Wallnut.UI.Sales.SalesOrderHeader
                 fAddSalesOrderHeader>(Reread, frm,  GetPredicate);
 
             detailBehavior = new ListFormBehavior<Wallnut.Domain.Models.SalesOrderDetail
-                , fAddSalesOrderDetail>(x => true, Reread);
+                , fAddSalesOrderDetail>(x => false, Reread);
             InitializeComponent();
         }
 
@@ -46,12 +46,15 @@ namespace Wallnut.UI.Sales.SalesOrderHeader
         public void Reread()
         {
             bs.DataSource = behavior.EntityList.ToList();
+            dgv.DataSource = bs;
+            dgv.Refresh();
+            
             DetailReread();
         }
 
         public void DetailReread()
         {
-            if (dgv.SelectedRows[0]!=null)
+            if ((bs.DataSource as List< Wallnut.Domain.Models.SalesOrderHeader>).Count > 0)
             {
                 var entity = dgv.SelectedRows[0].DataBoundItem as Wallnut.Domain.Models.SalesOrderHeader;
                 int SalesOrderId = entity.SalesOrderID;
@@ -71,7 +74,7 @@ namespace Wallnut.UI.Sales.SalesOrderHeader
             this.BringToFront();
             behavior.UpdateCondition();
             behavior.RefreshData();
-            detailBehavior.RefreshData();
+           // detailBehavior.RefreshData();
         }
         public static fSalesOrderHeader Instance()
         {
