@@ -25,7 +25,8 @@ namespace Wallnut.Domain.Models
         [Column("UnitPrice")] 
 	        public decimal UnitPrice { get; set; }
  
-        [Column("LineTotal")] 
+        [Column("LineTotal")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
 	        public decimal LineTotal { get; set; }
  
         [Column("ReceivedQty")] 
@@ -34,7 +35,8 @@ namespace Wallnut.Domain.Models
         [Column("RejectedQty")] 
 	        public decimal RejectedQty { get; set; }
  
-        [Column("StockedQty")] 
+        [Column("StockedQty")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
 	        public decimal StockedQty { get; set; }
  
         [Column("ModifiedDate")] 

@@ -154,6 +154,18 @@ namespace Wallnut.UI.Sales.SalesOrderHeader
             detailBehavior.RefreshData();
         }
 
+        private void dgv_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (dgv.SortOrder.ToString() == "Ascending") // Check if sorting is Ascending
+            {
+                dgv.Sort(dgv.Columns[dgv.SortedColumn.Name], ListSortDirection.Descending);
+            }
+            else
+            {
+                dgv.Sort(dgv.Columns[dgv.SortedColumn.Name], ListSortDirection.Ascending);
+            }
+        }
+
 
 
 

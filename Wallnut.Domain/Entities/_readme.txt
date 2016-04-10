@@ -7,3 +7,15 @@ TotalDue
 SalesOrderDetail
 
 LineTotal
+
+
+PurshaseOrderHeader
+TotalDue
+[DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+
+PurshaseOrderDetail
+LineTotal
+[DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+
+StockedQty
+[DatabaseGenerated(DatabaseGeneratedOption.Computed)]

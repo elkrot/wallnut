@@ -90,18 +90,20 @@ namespace Wallnut.UI.Purchasing.PurchaseOrder
 
         public void DetailReread()
         {
-            if (dgv.RowCount > 0)
+
+            int PurchaseOrderId = 0;
+            if ((bs.DataSource as List<Wallnut.Domain.Models.PurchaseOrderHeader>).Count > 0)
             {
                 var entity = dgv.SelectedRows[0].DataBoundItem as Wallnut.Domain.Models.PurchaseOrderHeader;
-                int PurchaseOrderId = entity.PurchaseOrderID;
-
+                PurchaseOrderId = entity.PurchaseOrderID;
+            }  
                 detailBehavior.Predicate = (x => x.PurchaseOrderID == PurchaseOrderId);
                 if (detailBehavior.EntityList != null)
                 {
                     detailBehavior.Refresh();
                     bsDetail.DataSource = detailBehavior.EntityList.ToList();
                 }
-            }
+            
         }
         #endregion
 
@@ -121,8 +123,8 @@ namespace Wallnut.UI.Purchasing.PurchaseOrder
         {
             this.WindowState = FormWindowState.Maximized;
             this.BringToFront();
-            Expression<Func<PurchaseOrderHeader, bool>> predicate = null;
-            predicate = SetConditionPredicate(predicate);
+          //  Expression<Func<PurchaseOrderHeader, bool>> predicate = null;
+          //  predicate = SetConditionPredicate(predicate);
             behavior.RefreshData();
             detailBehavior.RefreshData();
         }
@@ -212,6 +214,7 @@ namespace Wallnut.UI.Purchasing.PurchaseOrder
                 int PurchaseOrderDetailID = detailEntity.PurchaseOrderDetailID;
                 detailBehavior.UpdateEntity(PurchaseOrderId, PurchaseOrderDetailID);
             }
+            
         }
         #endregion
 
@@ -302,6 +305,18 @@ namespace Wallnut.UI.Purchasing.PurchaseOrder
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
             SetCondition();
+        }
+
+        private void dgv_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+           /* if (dgv.SortOrder.ToString() == "Ascending") // Check if sorting is Ascending
+            {
+                dgv.Sort(dgv.Columns[e.ColumnIndex], ListSortDirection.Descending);
+            }
+            else
+            {
+                dgv.Sort(dgv.Columns[e.ColumnIndex], ListSortDirection.Ascending);
+            }*/
         }
 
 
