@@ -413,7 +413,9 @@
             this.bn.Name = "bn";
             this.bn.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.bn.PositionItem = this.bindingNavigatorPositionItem;
+            this.bn.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.bn.Size = new System.Drawing.Size(970, 39);
+            this.bn.Stretch = true;
             this.bn.TabIndex = 4;
             this.bn.Text = "bindingNavigator1";
             // 
@@ -423,6 +425,7 @@
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(43, 36);
             this.bindingNavigatorCountItem.Text = "для {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
+            this.bindingNavigatorCountItem.Visible = false;
             // 
             // toolStripButton1
             // 
@@ -441,6 +444,7 @@
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(36, 36);
             this.bindingNavigatorMoveFirstItem.Text = "Переместить в начало";
+            this.bindingNavigatorMoveFirstItem.Visible = false;
             // 
             // bindingNavigatorMovePreviousItem
             // 
@@ -450,6 +454,7 @@
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(36, 36);
             this.bindingNavigatorMovePreviousItem.Text = "Переместить назад";
+            this.bindingNavigatorMovePreviousItem.Visible = false;
             // 
             // bindingNavigatorSeparator
             // 
@@ -464,11 +469,13 @@
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(73, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Текущее положение";
+            this.bindingNavigatorPositionItem.Visible = false;
             // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 39);
+            this.bindingNavigatorSeparator1.Visible = false;
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -478,6 +485,7 @@
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(36, 36);
             this.bindingNavigatorMoveNextItem.Text = "Переместить вперед";
+            this.bindingNavigatorMoveNextItem.Visible = false;
             // 
             // bindingNavigatorMoveLastItem
             // 
@@ -487,11 +495,13 @@
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(36, 36);
             this.bindingNavigatorMoveLastItem.Text = "Переместить в конец";
+            this.bindingNavigatorMoveLastItem.Visible = false;
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 39);
+            this.bindingNavigatorSeparator2.Visible = false;
             // 
             // tsbAdd
             // 
