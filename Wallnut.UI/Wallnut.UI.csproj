@@ -368,6 +368,12 @@
     <Compile Include="Production\WorkOrder\fBackFromProduction.Designer.cs">
       <DependentUpon>fBackFromProduction.cs</DependentUpon>
     </Compile>
+    <Compile Include="Production\WorkOrder\WorkOrderCondition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\WorkOrder\WorkOrderCondition.Designer.cs">
+      <DependentUpon>WorkOrderCondition.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Purchasing\ProductVendor\fAddProductVendor.cs">
@@ -696,6 +702,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Production\WorkOrder\fBackFromProduction.resx">
       <DependentUpon>fBackFromProduction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\WorkOrder\WorkOrderCondition.resx">
+      <DependentUpon>WorkOrderCondition.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
