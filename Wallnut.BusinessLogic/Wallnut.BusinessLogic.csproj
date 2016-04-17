@@ -89,6 +89,8 @@
     <Compile Include="Implementations\VendorRepository.cs" />
     <Compile Include="Implementations\WorkOrderHistoryRepository.cs" />
     <Compile Include="Implementations\WorkOrderRepository.cs" />
+    <Compile Include="Implementations\SpecialOfferRepository.cs" />
+    <Compile Include="Implementations\SpecialOfferProductRepository.cs" />
     <Compile Include="Interfaces\IAddressRepository.cs" />
     <Compile Include="Interfaces\IAddressTypeRepository.cs" />
     <Compile Include="Interfaces\IBusinessEntityAddressRepository.cs" />
@@ -130,6 +132,8 @@
     <Compile Include="Interfaces\IVendorRepository.cs" />
     <Compile Include="Interfaces\IWorkOrderHistoryRepository.cs" />
     <Compile Include="Interfaces\IWorkOrderRepository.cs" />
+    <Compile Include="Interfaces\ISpecialOfferRepository.cs" />
+    <Compile Include="Interfaces\ISpecialOfferProductRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

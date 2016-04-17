@@ -82,6 +82,7 @@
     <Compile Include="Entities\SalesOrderDetail.cs" />
     <Compile Include="Entities\SalesOrderHeader.cs" />
     <Compile Include="Entities\Shift.cs" />
+    <Compile Include="Entities\SpecialOfferProduct.cs" />
     <Compile Include="Entities\StateProvince.cs" />
     <Compile Include="Entities\UnitMeasure.cs" />
     <Compile Include="Entities\EmployeeWithAttr.cs" />
@@ -89,6 +90,8 @@
     <Compile Include="Entities\WorkOrder.cs" />
     <Compile Include="Entities\WorkOrderRouting.cs" />
     <Compile Include="Entities\WorkOrderHistory.cs" />
+    <Compile Include="Entities\WorkOrderCondition.cs" />
+    <Compile Include="Entities\ExpenditureCostHistoryCondition.cs" />
     <Compile Include="Interfaces\IDbContext.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\AddressType.cs" />

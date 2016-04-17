@@ -17,7 +17,7 @@ namespace Wallnut.Utils
 
         public static int IntaktNutId { get {return 1;} }
         public static int WalnutKernelId { get { return 5; }  }
-        public static int ShucksId { get { return 8; }  }
+        public static int ShucksId { get { return 6; }  }
         
         
         

@@ -32,6 +32,7 @@ using Wallnut.UI.Sales.SalesTerritory;
 using Wallnut.UI.Sales.StoreFrm;
 using Wallnut.UI.Sales.SalesOrderHeader;
 using Wallnut.UI.Persons.StateProvince;
+using Wallnut.UI.Sales.SpecialOfferFrm;
 
 namespace Wallnut.UI
 {
@@ -251,6 +252,18 @@ namespace Wallnut.UI
         private void tsmSRegion_Click(object sender, EventArgs e)
         {
             fStateProvince f = new fStateProvince();
+            f.ShowDialog();
+        }
+
+        private void tsmSpecialOfferToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fSpecialOffer f = new fSpecialOffer();
+            f.ShowDialog();
+        }
+
+        private void tsmSpecialOfferProduct_Click(object sender, EventArgs e)
+        {
+            fSpecialOfferProduct f = new fSpecialOfferProduct();
             f.ShowDialog();
         }
         

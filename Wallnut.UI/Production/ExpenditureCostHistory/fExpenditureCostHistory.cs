@@ -9,6 +9,8 @@ using System.Windows.Forms;
 using Wallnut.UI.Implementations;
 using Wallnut.Domain.Models;
 using Wallnut.BusinessLogic.Implementations;
+using Wallnut.Domain.Entities;
+using System.Linq.Expressions;
 
 namespace Wallnut.UI.Production.ExpenditureCostHistory
 {
@@ -18,16 +20,33 @@ namespace Wallnut.UI.Production.ExpenditureCostHistory
             , fAddExpenditureCostHistory> behavior;
         public fExpenditureCostHistory()
         {
-            behavior = new ListFormBehavior<Wallnut.Domain.Models.ExpenditureCostHistory
-                , fAddExpenditureCostHistory>(x => true, Reread);
+            fExpenditureCostHistoryCondition frm = new fExpenditureCostHistoryCondition();
+            frm.DataSource = new ExpenditureCostHistoryCondition();
+            (frm.DataSource as ExpenditureCostHistoryCondition).DateFirst = DateTime.Now.AddDays(-DateTime.Now.Day);
+            (frm.DataSource as ExpenditureCostHistoryCondition).DateLast = DateTime.Now.AddDays(1);
+
+            behavior = new ListFormBehavior<Wallnut.Domain.Models.ExpenditureCostHistory,
+                fAddExpenditureCostHistory>(Reread, frm, GetPredicate);
+
+
+
             InitializeComponent();
         }
+
+        public Expression<Func<Wallnut.Domain.Models.ExpenditureCostHistory, bool>> GetPredicate(object src)
+        {
+            ExpenditureCostHistoryCondition cond = (src as ExpenditureCostHistoryCondition);
+            return cond.GetCondition();
+        }
+
+
         public void Reread()
         {
             bs.DataSource = behavior.EntityList.ToList();
         }
         private void fList_Load(object sender, EventArgs e)
         {
+            behavior.UpdateCondition();
             behavior.RefreshData();
         }
 
@@ -50,6 +69,12 @@ namespace Wallnut.UI.Production.ExpenditureCostHistory
             int id = entity.ExpenditureID;
             DateTime StartDate = entity.StartDate;
             behavior.RemoveEntity(id, StartDate);
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            behavior.UpdateCondition();
+            behavior.RefreshData();
         }
 
 
