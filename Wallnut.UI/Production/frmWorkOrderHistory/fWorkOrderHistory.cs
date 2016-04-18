@@ -48,7 +48,7 @@ namespace Wallnut.UI.Production.frmWorkOrderHistory
             var WorkOrderID = workOrderID;
 
             var OperationSequence = operationSequence;
-            behavior.AddEntity(workOrderID, operationSequence);
+            behavior.AddEntity(workOrderID, operationSequence,0);
         }
 
         private void tsbEdit_Click(object sender, EventArgs e)
@@ -56,26 +56,16 @@ namespace Wallnut.UI.Production.frmWorkOrderHistory
             var entity = dgv.SelectedRows[0].DataBoundItem as WorkOrderHistory;
 
    var WorkOrderID = entity.WorkOrderID;
-	var ProductID = entity.ProductID;
-	var BusinessEntityID = entity.BusinessEntityID;
-    var OperationSequence = entity.OperationSequence;
-
-    var ActualStartDate = entity.ActualStartDate;
-    behavior.UpdateEntity(WorkOrderID, ProductID, BusinessEntityID, OperationSequence
-        , ActualStartDate);
+   var WorkOrderDetailID = entity.WorkOrderDetailID;
+    behavior.UpdateEntity(WorkOrderID, WorkOrderDetailID);
         }
 
         private void tsbDelete_Click(object sender, EventArgs e)
         {
             var entity = dgv.SelectedRows[0].DataBoundItem as WorkOrderHistory;
             var WorkOrderID = entity.WorkOrderID;
-            var ProductID = entity.ProductID;
-            var BusinessEntityID = entity.BusinessEntityID;
-            var OperationSequence = entity.OperationSequence;
-            
-            var ActualStartDate = entity.ActualStartDate;
-            behavior.RemoveEntity(WorkOrderID, ProductID, BusinessEntityID, OperationSequence
-        , ActualStartDate);
+            var WorkOrderDetailID = entity.WorkOrderDetailID;
+            behavior.RemoveEntity(WorkOrderID, WorkOrderDetailID);
         }
 
         public static fWorkOrderHistory Instance(params object[] prm)

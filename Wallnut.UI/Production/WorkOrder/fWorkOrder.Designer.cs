@@ -30,9 +30,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fWorkOrder));
             this.dgv = new System.Windows.Forms.DataGridView();
             this.productIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -129,8 +129,8 @@
             // startDateDataGridViewTextBoxColumn
             // 
             this.startDateDataGridViewTextBoxColumn.DataPropertyName = "StartDate";
-            dataGridViewCellStyle1.Format = "dd.MM.yyyy";
-            this.startDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Format = "dd.MM.yyyy";
+            this.startDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.startDateDataGridViewTextBoxColumn.HeaderText = "Дата начала";
             this.startDateDataGridViewTextBoxColumn.Name = "startDateDataGridViewTextBoxColumn";
             this.startDateDataGridViewTextBoxColumn.ReadOnly = true;
@@ -139,8 +139,8 @@
             // endDateDataGridViewTextBoxColumn
             // 
             this.endDateDataGridViewTextBoxColumn.DataPropertyName = "EndDate";
-            dataGridViewCellStyle2.Format = "dd.MM.yyyy";
-            this.endDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Format = "dd.MM.yyyy";
+            this.endDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.endDateDataGridViewTextBoxColumn.HeaderText = "Дата окончания";
             this.endDateDataGridViewTextBoxColumn.Name = "endDateDataGridViewTextBoxColumn";
             this.endDateDataGridViewTextBoxColumn.ReadOnly = true;
@@ -149,8 +149,8 @@
             // dueDateDataGridViewTextBoxColumn
             // 
             this.dueDateDataGridViewTextBoxColumn.DataPropertyName = "DueDate";
-            dataGridViewCellStyle3.Format = "dd.MM.yyyy";
-            this.dueDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Format = "dd.MM.yyyy";
+            this.dueDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
             this.dueDateDataGridViewTextBoxColumn.HeaderText = "Срок выполнения";
             this.dueDateDataGridViewTextBoxColumn.Name = "dueDateDataGridViewTextBoxColumn";
             this.dueDateDataGridViewTextBoxColumn.ReadOnly = true;
