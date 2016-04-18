@@ -15,9 +15,9 @@ namespace Wallnut.Utils
         public static int DefaultShiftId { get { return 1; }  }
         
 
-        public static int IntaktNutId { get {return 1;} }
-        public static int WalnutKernelId { get { return 5; }  }
-        public static int ShucksId { get { return 6; }  }
+        public static int IntaktNutId { get {return 1;} } // Целый орех
+        public static int WalnutKernelId { get { return 5; }  }// Ядро
+        public static int ShucksId { get { return 6; }  } // Скорлупа
         
         
         

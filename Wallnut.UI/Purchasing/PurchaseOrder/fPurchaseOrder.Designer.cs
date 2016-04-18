@@ -128,7 +128,7 @@
             this.ss.Location = new System.Drawing.Point(0, 555);
             this.ss.Name = "ss";
             this.ss.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
-            this.ss.Size = new System.Drawing.Size(664, 22);
+            this.ss.Size = new System.Drawing.Size(894, 22);
             this.ss.TabIndex = 0;
             this.ss.Text = "statusStrip1";
             // 
@@ -149,7 +149,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgvDetail);
             this.splitContainer1.Panel2.Controls.Add(this.bnDetail);
-            this.splitContainer1.Size = new System.Drawing.Size(664, 555);
+            this.splitContainer1.Size = new System.Drawing.Size(894, 555);
             this.splitContainer1.SplitterDistance = 266;
             this.splitContainer1.SplitterWidth = 6;
             this.splitContainer1.TabIndex = 4;
@@ -197,7 +197,7 @@
             this.dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgv.RowHeadersVisible = false;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(664, 227);
+            this.dgv.Size = new System.Drawing.Size(894, 227);
             this.dgv.TabIndex = 4;
             this.dgv.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_CellMouseDoubleClick);
             this.dgv.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_ColumnHeaderMouseClick);
@@ -339,7 +339,7 @@
             this.bn.Name = "bn";
             this.bn.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.bn.PositionItem = this.bindingNavigatorPositionItem;
-            this.bn.Size = new System.Drawing.Size(664, 39);
+            this.bn.Size = new System.Drawing.Size(894, 39);
             this.bn.TabIndex = 3;
             this.bn.Text = "bindingNavigator1";
             // 
@@ -511,7 +511,7 @@
             this.dgvDetail.ReadOnly = true;
             this.dgvDetail.RowHeadersVisible = false;
             this.dgvDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDetail.Size = new System.Drawing.Size(664, 244);
+            this.dgvDetail.Size = new System.Drawing.Size(894, 244);
             this.dgvDetail.TabIndex = 2;
             this.dgvDetail.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDetail_CellMouseDoubleClick);
             // 
@@ -632,7 +632,7 @@
             this.bnDetail.Name = "bnDetail";
             this.bnDetail.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.bnDetail.PositionItem = this.toolStripTextBox1;
-            this.bnDetail.Size = new System.Drawing.Size(664, 39);
+            this.bnDetail.Size = new System.Drawing.Size(894, 39);
             this.bnDetail.TabIndex = 1;
             this.bnDetail.Text = "bindingNavigator1";
             // 
@@ -753,7 +753,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(664, 577);
+            this.ClientSize = new System.Drawing.Size(894, 577);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.ss);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
