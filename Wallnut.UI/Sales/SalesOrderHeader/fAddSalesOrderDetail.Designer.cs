@@ -40,6 +40,8 @@
             this.cbProductID = new System.Windows.Forms.ComboBox();
             this.tbUnitPrice = new Wallnut.UI.fTemplates.NumericTextBox();
             this.lbLineTotalLoc = new System.Windows.Forms.Label();
+            this.cbSpecialOfferID = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
@@ -61,22 +63,25 @@
             this.tableLayoutPanel1.Controls.Add(this.lbCarrierTrackingNumber, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.tbCarrierTrackingNumber, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.lbProductID, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.lbUnitPrice, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.lbLineTotal, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.lbUnitPrice, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.lbLineTotal, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.cbProductID, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.tbUnitPrice, 2, 4);
-            this.tableLayoutPanel1.Controls.Add(this.lbLineTotalLoc, 2, 5);
+            this.tableLayoutPanel1.Controls.Add(this.tbUnitPrice, 2, 5);
+            this.tableLayoutPanel1.Controls.Add(this.lbLineTotalLoc, 2, 6);
+            this.tableLayoutPanel1.Controls.Add(this.cbSpecialOfferID, 2, 4);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 1, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 7;
+            this.tableLayoutPanel1.RowCount = 8;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(675, 291);
             this.tableLayoutPanel1.TabIndex = 0;
@@ -119,10 +124,10 @@
             // 
             this.lbCarrierTrackingNumber.AutoSize = true;
             this.lbCarrierTrackingNumber.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lbCarrierTrackingNumber.Location = new System.Drawing.Point(34, 35);
+            this.lbCarrierTrackingNumber.Location = new System.Drawing.Point(34, 38);
             this.lbCarrierTrackingNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbCarrierTrackingNumber.Name = "lbCarrierTrackingNumber";
-            this.lbCarrierTrackingNumber.Size = new System.Drawing.Size(159, 35);
+            this.lbCarrierTrackingNumber.Size = new System.Drawing.Size(159, 32);
             this.lbCarrierTrackingNumber.TabIndex = 2;
             this.lbCarrierTrackingNumber.Text = "Номер отслеживания";
             this.lbCarrierTrackingNumber.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -130,7 +135,7 @@
             // tbCarrierTrackingNumber
             // 
             this.tbCarrierTrackingNumber.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbCarrierTrackingNumber.Location = new System.Drawing.Point(288, 39);
+            this.tbCarrierTrackingNumber.Location = new System.Drawing.Point(288, 42);
             this.tbCarrierTrackingNumber.Margin = new System.Windows.Forms.Padding(4);
             this.tbCarrierTrackingNumber.Name = "tbCarrierTrackingNumber";
             this.tbCarrierTrackingNumber.Size = new System.Drawing.Size(353, 24);
@@ -139,11 +144,10 @@
             // lbProductID
             // 
             this.lbProductID.AutoSize = true;
-            this.lbProductID.Dock = System.Windows.Forms.DockStyle.Left;
             this.lbProductID.Location = new System.Drawing.Point(34, 105);
             this.lbProductID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbProductID.Name = "lbProductID";
-            this.lbProductID.Size = new System.Drawing.Size(67, 35);
+            this.lbProductID.Size = new System.Drawing.Size(67, 18);
             this.lbProductID.TabIndex = 2;
             this.lbProductID.Text = "Продукт";
             this.lbProductID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -152,10 +156,10 @@
             // 
             this.lbUnitPrice.AutoSize = true;
             this.lbUnitPrice.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lbUnitPrice.Location = new System.Drawing.Point(34, 140);
+            this.lbUnitPrice.Location = new System.Drawing.Point(34, 172);
             this.lbUnitPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbUnitPrice.Name = "lbUnitPrice";
-            this.lbUnitPrice.Size = new System.Drawing.Size(43, 35);
+            this.lbUnitPrice.Size = new System.Drawing.Size(43, 32);
             this.lbUnitPrice.TabIndex = 2;
             this.lbUnitPrice.Text = "Цена";
             this.lbUnitPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -164,10 +168,10 @@
             // 
             this.lbLineTotal.AutoSize = true;
             this.lbLineTotal.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lbLineTotal.Location = new System.Drawing.Point(34, 175);
+            this.lbLineTotal.Location = new System.Drawing.Point(34, 204);
             this.lbLineTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbLineTotal.Name = "lbLineTotal";
-            this.lbLineTotal.Size = new System.Drawing.Size(41, 35);
+            this.lbLineTotal.Size = new System.Drawing.Size(41, 33);
             this.lbLineTotal.TabIndex = 2;
             this.lbLineTotal.Text = "Итог";
             this.lbLineTotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -186,7 +190,7 @@
             // 
             this.tbUnitPrice.AllowNegative = true;
             this.tbUnitPrice.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbUnitPrice.Location = new System.Drawing.Point(288, 144);
+            this.tbUnitPrice.Location = new System.Drawing.Point(288, 176);
             this.tbUnitPrice.Margin = new System.Windows.Forms.Padding(4);
             this.tbUnitPrice.Name = "tbUnitPrice";
             this.tbUnitPrice.NumericPrecision = 1;
@@ -209,13 +213,33 @@
             this.lbLineTotalLoc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbLineTotalLoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbLineTotalLoc.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lbLineTotalLoc.Location = new System.Drawing.Point(288, 175);
+            this.lbLineTotalLoc.Location = new System.Drawing.Point(288, 204);
             this.lbLineTotalLoc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbLineTotalLoc.Name = "lbLineTotalLoc";
-            this.lbLineTotalLoc.Size = new System.Drawing.Size(353, 35);
+            this.lbLineTotalLoc.Size = new System.Drawing.Size(353, 33);
             this.lbLineTotalLoc.TabIndex = 5;
             this.lbLineTotalLoc.Text = "0";
             this.lbLineTotalLoc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // cbSpecialOfferID
+            // 
+            this.cbSpecialOfferID.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbSpecialOfferID.FormattingEnabled = true;
+            this.cbSpecialOfferID.Location = new System.Drawing.Point(287, 143);
+            this.cbSpecialOfferID.Name = "cbSpecialOfferID";
+            this.cbSpecialOfferID.Size = new System.Drawing.Size(355, 26);
+            this.cbSpecialOfferID.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(34, 140);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 18);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Скидка";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // flowLayoutPanel1
             // 
@@ -295,5 +319,7 @@
         private System.Windows.Forms.Label lbLineTotalLoc;
         private fTemplates.NumericTextBox tbOrderQty;
         private fTemplates.NumericTextBox tbUnitPrice;
+        private System.Windows.Forms.ComboBox cbSpecialOfferID;
+        private System.Windows.Forms.Label label1;
     }
 }

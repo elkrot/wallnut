@@ -20,22 +20,9 @@ namespace Wallnut.BusinessLogic.Implementations
     /// </summary>
     public class PurchaseOrderHeaderRepository: Repository<PurchaseOrderHeader>,IPurchaseOrderHeaderRepository
     {
-
-        #region Member Variables
-        #endregion
-
-        #region Constructors
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PurchaseOrderHeaderRepository" /> class.
-        /// </summary>
         public PurchaseOrderHeaderRepository(IDbContext context)
             : base(context as DbContext)
-        {
-
-        }
-
-        #endregion
+        {    }
 
         new public  IEnumerable<PurchaseOrderHeader>  Find(Expression<Func<PurchaseOrderHeader, bool>> predicate)
         {

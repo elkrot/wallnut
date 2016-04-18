@@ -19,3 +19,7 @@ LineTotal
 
 StockedQty
 [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+
+WorkOrder
+StockedQty
+[DatabaseGenerated(DatabaseGeneratedOption.Computed)]

@@ -212,6 +212,12 @@
     <Compile Include="Production\ExpenditureCostHistory\fExpenditureCostHistory.Designer.cs">
       <DependentUpon>fExpenditureCostHistory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Production\ExpenditureCostHistory\fExpenditureCostHistoryCondition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\ExpenditureCostHistory\fExpenditureCostHistoryCondition.Designer.cs">
+      <DependentUpon>fExpenditureCostHistoryCondition.cs</DependentUpon>
+    </Compile>
     <Compile Include="Production\Expentitude\fAddExpenditure.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -368,6 +374,12 @@
     <Compile Include="Production\WorkOrder\fBackFromProduction.Designer.cs">
       <DependentUpon>fBackFromProduction.cs</DependentUpon>
     </Compile>
+    <Compile Include="Production\WorkOrder\fWorkOrderCondition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\WorkOrder\fWorkOrderCondition.Designer.cs">
+      <DependentUpon>fWorkOrderCondition.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Purchasing\ProductVendor\fAddProductVendor.cs">
@@ -520,6 +532,30 @@
     <Compile Include="Sales\SalesTerritory\fSalesTerritory.Designer.cs">
       <DependentUpon>fSalesTerritory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sales\SpecialOfferFrm\fAddSpecialOffer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\SpecialOfferFrm\fAddSpecialOffer.Designer.cs">
+      <DependentUpon>fAddSpecialOffer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\SpecialOfferFrm\fAddSpecialOfferProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\SpecialOfferFrm\fAddSpecialOfferProduct.Designer.cs">
+      <DependentUpon>fAddSpecialOfferProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\SpecialOfferFrm\fSpecialOffer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\SpecialOfferFrm\fSpecialOffer.Designer.cs">
+      <DependentUpon>fSpecialOffer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\SpecialOfferFrm\fSpecialOfferProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\SpecialOfferFrm\fSpecialOfferProduct.Designer.cs">
+      <DependentUpon>fSpecialOfferProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sales\StoreFrm\fAddStore.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -619,6 +655,9 @@
     <EmbeddedResource Include="Production\ExpenditureCostHistory\fExpenditureCostHistory.resx">
       <DependentUpon>fExpenditureCostHistory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Production\ExpenditureCostHistory\fExpenditureCostHistoryCondition.resx">
+      <DependentUpon>fExpenditureCostHistoryCondition.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Production\Expentitude\fAddExpenditure.resx">
       <DependentUpon>fAddExpenditure.cs</DependentUpon>
     </EmbeddedResource>
@@ -696,6 +735,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Production\WorkOrder\fBackFromProduction.resx">
       <DependentUpon>fBackFromProduction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\WorkOrder\fWorkOrderCondition.resx">
+      <DependentUpon>fWorkOrderCondition.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -782,6 +824,18 @@
     <EmbeddedResource Include="Sales\SalesTerritory\fSalesTerritory.resx">
       <DependentUpon>fSalesTerritory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Sales\SpecialOfferFrm\fAddSpecialOffer.resx">
+      <DependentUpon>fAddSpecialOffer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales\SpecialOfferFrm\fAddSpecialOfferProduct.resx">
+      <DependentUpon>fAddSpecialOfferProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales\SpecialOfferFrm\fSpecialOffer.resx">
+      <DependentUpon>fSpecialOffer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales\SpecialOfferFrm\fSpecialOfferProduct.resx">
+      <DependentUpon>fSpecialOfferProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Sales\StoreFrm\fAddStore.resx">
       <DependentUpon>fAddStore.cs</DependentUpon>
     </EmbeddedResource>
@@ -819,6 +873,8 @@
     <None Include="Properties\DataSources\Wallnut.Domain.Models.SalesTerritory.datasource" />
     <None Include="Properties\DataSources\Wallnut.Domain.Models.Shift.datasource" />
     <None Include="Properties\DataSources\Wallnut.Domain.Models.ShipMethod.datasource" />
+    <None Include="Properties\DataSources\Wallnut.Domain.Models.SpecialOffer.datasource" />
+    <None Include="Properties\DataSources\Wallnut.Domain.Models.SpecialOfferProduct.datasource" />
     <None Include="Properties\DataSources\Wallnut.Domain.Models.Store.datasource" />
     <None Include="Properties\DataSources\Wallnut.Domain.Models.UnitMeasure.datasource" />
     <None Include="Properties\DataSources\Wallnut.Domain.Models.Vendor.datasource" />

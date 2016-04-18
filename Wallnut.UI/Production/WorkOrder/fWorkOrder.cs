@@ -10,18 +10,38 @@ using Wallnut.UI.Implementations;
 using Wallnut.Domain.Models;
 using Wallnut.BusinessLogic.Implementations;
 using Wallnut.UI.Production.frmWorkOrderHistory;
+using System.Linq.Expressions;
+using Wallnut.Domain.Entities;
 
 namespace Wallnut.UI.Production.WorkOrder
 {
     public partial class fWorkOrder : Wallnut.UI.Implementations.ListForm
     {
         private static fWorkOrder aForm = null;
+        
         public ListFormBehavior<Wallnut.Domain.Models.WorkOrder, fAddWorkOrder> behavior;
+
         private fWorkOrder()
         {
-            behavior = new ListFormBehavior<Wallnut.Domain.Models.WorkOrder, fAddWorkOrder>(x=>true, Reread);
+            fWorkOrderCondition frm = new fWorkOrderCondition();
+            frm.DataSource = new WorkOrderCondition();
+            (frm.DataSource as WorkOrderCondition).DateFirst = DateTime.Now.AddDays(-DateTime.Now.Day);
+            (frm.DataSource as WorkOrderCondition).DateLast = DateTime.Now.AddDays(1);
+
+            behavior = new ListFormBehavior<Wallnut.Domain.Models.WorkOrder,
+                fAddWorkOrder>(Reread, frm, GetPredicate);
+
+
             InitializeComponent();
         }
+
+        public Expression<Func<Wallnut.Domain.Models.WorkOrder, bool>> GetPredicate(object src)
+        {
+            WorkOrderCondition cond = (src as WorkOrderCondition);
+            return cond.GetCondition();
+        }
+
+
         public void Reread()
         {
             bs.DataSource = behavior.EntityList.ToList();
@@ -30,7 +50,7 @@ namespace Wallnut.UI.Production.WorkOrder
         {
             this.WindowState = FormWindowState.Maximized;
             this.BringToFront();
-            
+            behavior.UpdateCondition();
             behavior.RefreshData();
         }
 
@@ -41,16 +61,22 @@ namespace Wallnut.UI.Production.WorkOrder
 
         private void tsbEdit_Click(object sender, EventArgs e)
         {
-            var entity = dgv.SelectedRows[0].DataBoundItem as Wallnut.Domain.Models.WorkOrder;
-            int id = entity.WorkOrderID;
-            behavior.UpdateEntity(id);
+            if (bs.Count > 0)
+            {
+                var entity = dgv.SelectedRows[0].DataBoundItem as Wallnut.Domain.Models.WorkOrder;
+                int id = entity.WorkOrderID;
+                behavior.UpdateEntity(id);
+            }
         }
 
         private void tsbDelete_Click(object sender, EventArgs e)
         {
-            var entity = dgv.SelectedRows[0].DataBoundItem as Wallnut.Domain.Models.WorkOrder;
-            int id = entity.WorkOrderID;
-            behavior.RemoveEntity(id);
+            if (bs.Count > 0)
+            {
+                var entity = dgv.SelectedRows[0].DataBoundItem as Wallnut.Domain.Models.WorkOrder;
+                int id = entity.WorkOrderID;
+                behavior.RemoveEntity(id);
+            }
         }
 
         public static fWorkOrder Instance()
@@ -64,30 +90,43 @@ namespace Wallnut.UI.Production.WorkOrder
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            var entity = dgv.SelectedRows[0].DataBoundItem as Wallnut.Domain.Models.WorkOrder;
-            int workorderid = entity.WorkOrderID;
-            fWorkOrderHistory f = fWorkOrderHistory.Instance(workorderid, 1);
+            if (bs.Count > 0)
+            {
+                var entity = dgv.SelectedRows[0].DataBoundItem as Wallnut.Domain.Models.WorkOrder;
+                int workorderid = entity.WorkOrderID;
+                fWorkOrderHistory f = fWorkOrderHistory.Instance(workorderid, 1);
 
-            f.MdiParent = this.MdiParent;
+                f.MdiParent = this.MdiParent;
 
-            f.Show();
-            f.Activate();
+                f.Show();
+                f.Activate();
+            }
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            var entity = dgv.SelectedRows[0].DataBoundItem as Wallnut.Domain.Models.WorkOrder;
-            int workorderid = entity.WorkOrderID;
-            fWorkOrderHistory f = fWorkOrderHistory.Instance(workorderid, 2);
+            if (bs.Count > 0)
+            {
+                var entity = dgv.SelectedRows[0].DataBoundItem as Wallnut.Domain.Models.WorkOrder;
+                int workorderid = entity.WorkOrderID;
+                fWorkOrderHistory f = fWorkOrderHistory.Instance(workorderid, 2);
 
-            f.MdiParent = this.MdiParent;
+                f.MdiParent = this.MdiParent;
 
-            f.Show();
-            f.Activate();
+                f.Show();
+                f.Activate();
+            }
         }
 
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void toolStripButton4_Click_1(object sender, EventArgs e)
+        {
+            behavior.UpdateCondition();
+            behavior.RefreshData();
 
         }
 

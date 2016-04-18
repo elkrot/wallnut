@@ -1,7 +1,6 @@
-﻿using Wallnut.UI.fTemplates;
-namespace Wallnut.UI.Production.ExpenditureCostHistory
+﻿namespace Wallnut.UI.Sales.SpecialOfferFrm
 {
-    partial class fExpenditureCostHistory
+    partial class fSpecialOffer
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +29,7 @@ namespace Wallnut.UI.Production.ExpenditureCostHistory
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fExpenditureCostHistory));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fSpecialOffer));
             this.ss = new System.Windows.Forms.StatusStrip();
             this.bn = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -46,11 +45,14 @@ namespace Wallnut.UI.Production.ExpenditureCostHistory
             this.tsbEdit = new System.Windows.Forms.ToolStripButton();
             this.tsbDelete = new System.Windows.Forms.ToolStripButton();
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.Expenditure = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.discountPctDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.startDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.endDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.standardCostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.minQtyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maxQtyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bn)).BeginInit();
             this.bn.SuspendLayout();
@@ -59,14 +61,14 @@ namespace Wallnut.UI.Production.ExpenditureCostHistory
             // 
             // bs
             // 
-            this.bs.DataSource = typeof(Wallnut.Domain.Models.ExpenditureCostHistory);
+            this.bs.DataSource = typeof(Wallnut.Domain.Models.SpecialOffer);
             // 
             // ss
             // 
-            this.ss.Location = new System.Drawing.Point(0, 465);
+            this.ss.Location = new System.Drawing.Point(0, 277);
             this.ss.Name = "ss";
             this.ss.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
-            this.ss.Size = new System.Drawing.Size(677, 22);
+            this.ss.Size = new System.Drawing.Size(844, 22);
             this.ss.TabIndex = 0;
             this.ss.Text = "statusStrip1";
             // 
@@ -89,8 +91,7 @@ namespace Wallnut.UI.Production.ExpenditureCostHistory
             this.bindingNavigatorSeparator2,
             this.tsbAdd,
             this.tsbEdit,
-            this.tsbDelete,
-            this.toolStripButton1});
+            this.tsbDelete});
             this.bn.Location = new System.Drawing.Point(0, 0);
             this.bn.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bn.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -99,7 +100,7 @@ namespace Wallnut.UI.Production.ExpenditureCostHistory
             this.bn.Name = "bn";
             this.bn.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.bn.PositionItem = this.bindingNavigatorPositionItem;
-            this.bn.Size = new System.Drawing.Size(677, 39);
+            this.bn.Size = new System.Drawing.Size(844, 39);
             this.bn.TabIndex = 1;
             this.bn.Text = "bindingNavigator1";
             // 
@@ -181,28 +182,31 @@ namespace Wallnut.UI.Production.ExpenditureCostHistory
             // 
             // tsbAdd
             // 
+            this.tsbAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsbAdd.Image = global::Wallnut.UI.Properties.Resources.edit_add;
             this.tsbAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbAdd.Name = "tsbAdd";
-            this.tsbAdd.Size = new System.Drawing.Size(95, 36);
+            this.tsbAdd.Size = new System.Drawing.Size(36, 36);
             this.tsbAdd.Text = "Добавить";
             this.tsbAdd.Click += new System.EventHandler(this.tsbAdd_Click);
             // 
             // tsbEdit
             // 
+            this.tsbEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsbEdit.Image = global::Wallnut.UI.Properties.Resources.pencil;
             this.tsbEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEdit.Name = "tsbEdit";
-            this.tsbEdit.Size = new System.Drawing.Size(97, 36);
+            this.tsbEdit.Size = new System.Drawing.Size(36, 36);
             this.tsbEdit.Text = "Изменить";
             this.tsbEdit.Click += new System.EventHandler(this.tsbEdit_Click);
             // 
             // tsbDelete
             // 
+            this.tsbDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsbDelete.Image = global::Wallnut.UI.Properties.Resources.edit_delete;
             this.tsbDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbDelete.Name = "tsbDelete";
-            this.tsbDelete.Size = new System.Drawing.Size(87, 36);
+            this.tsbDelete.Size = new System.Drawing.Size(36, 36);
             this.tsbDelete.Text = "Удалить";
             this.tsbDelete.Click += new System.EventHandler(this.tsbDelete_Click);
             // 
@@ -213,70 +217,83 @@ namespace Wallnut.UI.Production.ExpenditureCostHistory
             this.dgv.AutoGenerateColumns = false;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Expenditure,
+            this.descriptionDataGridViewTextBoxColumn,
+            this.discountPctDataGridViewTextBoxColumn,
+            this.typeDataGridViewTextBoxColumn,
+            this.categoryDataGridViewTextBoxColumn,
             this.startDateDataGridViewTextBoxColumn,
             this.endDateDataGridViewTextBoxColumn,
-            this.standardCostDataGridViewTextBoxColumn});
+            this.minQtyDataGridViewTextBoxColumn,
+            this.maxQtyDataGridViewTextBoxColumn});
             this.dgv.DataSource = this.bs;
             this.dgv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv.Location = new System.Drawing.Point(0, 39);
             this.dgv.Margin = new System.Windows.Forms.Padding(4);
             this.dgv.Name = "dgv";
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(677, 426);
+            this.dgv.Size = new System.Drawing.Size(844, 238);
             this.dgv.TabIndex = 2;
             // 
-            // Expenditure
+            // descriptionDataGridViewTextBoxColumn
             // 
-            this.Expenditure.DataPropertyName = "ExpenditureName";
-            this.Expenditure.FillWeight = 300F;
-            this.Expenditure.HeaderText = "Наименование затраты";
-            this.Expenditure.Name = "Expenditure";
-            this.Expenditure.ReadOnly = true;
-            this.Expenditure.Width = 300;
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Описание";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            // 
+            // discountPctDataGridViewTextBoxColumn
+            // 
+            this.discountPctDataGridViewTextBoxColumn.DataPropertyName = "DiscountPct";
+            this.discountPctDataGridViewTextBoxColumn.HeaderText = "Процент";
+            this.discountPctDataGridViewTextBoxColumn.Name = "discountPctDataGridViewTextBoxColumn";
+            // 
+            // typeDataGridViewTextBoxColumn
+            // 
+            this.typeDataGridViewTextBoxColumn.DataPropertyName = "Type";
+            this.typeDataGridViewTextBoxColumn.HeaderText = "Тип";
+            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
+            // 
+            // categoryDataGridViewTextBoxColumn
+            // 
+            this.categoryDataGridViewTextBoxColumn.DataPropertyName = "Category";
+            this.categoryDataGridViewTextBoxColumn.HeaderText = "Категория";
+            this.categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
             // 
             // startDateDataGridViewTextBoxColumn
             // 
             this.startDateDataGridViewTextBoxColumn.DataPropertyName = "StartDate";
             this.startDateDataGridViewTextBoxColumn.HeaderText = "Начало";
             this.startDateDataGridViewTextBoxColumn.Name = "startDateDataGridViewTextBoxColumn";
-            this.startDateDataGridViewTextBoxColumn.ToolTipText = "Начало периода";
             // 
             // endDateDataGridViewTextBoxColumn
             // 
             this.endDateDataGridViewTextBoxColumn.DataPropertyName = "EndDate";
             this.endDateDataGridViewTextBoxColumn.HeaderText = "Конец";
             this.endDateDataGridViewTextBoxColumn.Name = "endDateDataGridViewTextBoxColumn";
-            this.endDateDataGridViewTextBoxColumn.ToolTipText = "Конечная дата периода";
             // 
-            // standardCostDataGridViewTextBoxColumn
+            // minQtyDataGridViewTextBoxColumn
             // 
-            this.standardCostDataGridViewTextBoxColumn.DataPropertyName = "StandardCost";
-            this.standardCostDataGridViewTextBoxColumn.HeaderText = "Сумма";
-            this.standardCostDataGridViewTextBoxColumn.Name = "standardCostDataGridViewTextBoxColumn";
-            this.standardCostDataGridViewTextBoxColumn.ToolTipText = "Сумма затраты";
+            this.minQtyDataGridViewTextBoxColumn.DataPropertyName = "MinQty";
+            this.minQtyDataGridViewTextBoxColumn.HeaderText = "Мин.Кол-во";
+            this.minQtyDataGridViewTextBoxColumn.Name = "minQtyDataGridViewTextBoxColumn";
             // 
-            // toolStripButton1
+            // maxQtyDataGridViewTextBoxColumn
             // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(89, 36);
-            this.toolStripButton1.Text = "Условие";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            this.maxQtyDataGridViewTextBoxColumn.DataPropertyName = "MaxQty";
+            this.maxQtyDataGridViewTextBoxColumn.HeaderText = "Макс.Кол-во";
+            this.maxQtyDataGridViewTextBoxColumn.Name = "maxQtyDataGridViewTextBoxColumn";
             // 
-            // fExpenditureCostHistory
+            // fSpecialOffer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(677, 487);
+            this.ClientSize = new System.Drawing.Size(844, 299);
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.bn);
             this.Controls.Add(this.ss);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "fExpenditureCostHistory";
-            this.Text = "Затраты . История";
+            this.Name = "fSpecialOffer";
+            this.Text = "Скидки";
             this.Load += new System.EventHandler(this.fList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bn)).EndInit();
@@ -306,10 +323,13 @@ namespace Wallnut.UI.Production.ExpenditureCostHistory
         private System.Windows.Forms.ToolStripButton tsbEdit;
         private System.Windows.Forms.ToolStripButton tsbDelete;
         private System.Windows.Forms.DataGridView dgv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Expenditure;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn discountPctDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn categoryDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn startDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn endDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn standardCostDataGridViewTextBoxColumn;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn minQtyDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maxQtyDataGridViewTextBoxColumn;
     }
 }

@@ -14,6 +14,7 @@ namespace Wallnut.UI.Sales.SalesOrderDetail
     public partial class fAddSalesOrderDetail : Wallnut.UI.Implementations.AddForm
     {
         public List<Wallnut.Domain.Models.Product> ProductList;
+        public List<Wallnut.Domain.Models.SpecialOffer> SpecialOfferList;
         public fAddSalesOrderDetail()
         {
             InitializeComponent();
@@ -46,7 +47,33 @@ namespace Wallnut.UI.Sales.SalesOrderDetail
                     (int)cbProductID.SelectedValue;
             };           
             #endregion
-                
+
+            #region Fill SpecialOfferList
+            using (var unitOfWork = new UnitOfWork(new WallnutProductionContext()))
+            {
+                this.SpecialOfferList = unitOfWork.SpecialOfferRepository
+                    .GetAll().ToList<SpecialOffer>();
+                cbSpecialOfferID.DataSource = SpecialOfferList;
+                foreach (var item in SpecialOfferList)
+                {
+                    cbSpecialOfferID.AutoCompleteCustomSource.Add(item.Description);
+                }
+            }
+            #endregion
+
+            #region Binding SpecialOffer
+            var SpecialOfferID = (this.entity as Wallnut.Domain.Models.SalesOrderDetail).SpecialOfferID;
+            cbSpecialOfferID.ValueMember = "SpecialOfferID";
+            cbSpecialOfferID.DisplayMember = "Description";
+            cbSpecialOfferID.SelectedValue = SpecialOfferID;
+            (this.entity as Wallnut.Domain.Models.SalesOrderDetail).SpecialOfferID = SpecialOfferID;
+            cbSpecialOfferID.SelectedIndexChanged += (x, y) =>
+            {
+                (this.entity as Wallnut.Domain.Models.SalesOrderDetail).SpecialOfferID =
+                    (int)cbSpecialOfferID.SelectedValue;
+            };
+            #endregion
+
             #region OrderQty
             this.tbOrderQty.NumericPrecision = 16;
             this.tbOrderQty.NumericScaleOnFocus = 3;

@@ -1,7 +1,6 @@
-﻿using Wallnut.UI.fTemplates;
-namespace Wallnut.UI.Production.ExpenditureCostHistory
+﻿namespace Wallnut.UI.Sales.SpecialOfferFrm
 {
-    partial class fExpenditureCostHistory
+    partial class fSpecialOfferProduct
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +29,7 @@ namespace Wallnut.UI.Production.ExpenditureCostHistory
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fExpenditureCostHistory));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fSpecialOfferProduct));
             this.ss = new System.Windows.Forms.StatusStrip();
             this.bn = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -46,11 +45,8 @@ namespace Wallnut.UI.Production.ExpenditureCostHistory
             this.tsbEdit = new System.Windows.Forms.ToolStripButton();
             this.tsbDelete = new System.Windows.Forms.ToolStripButton();
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.Expenditure = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.startDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.standardCostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.specialOfferIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bn)).BeginInit();
             this.bn.SuspendLayout();
@@ -59,14 +55,14 @@ namespace Wallnut.UI.Production.ExpenditureCostHistory
             // 
             // bs
             // 
-            this.bs.DataSource = typeof(Wallnut.Domain.Models.ExpenditureCostHistory);
+            this.bs.DataSource = typeof(Wallnut.Domain.Models.SpecialOfferProduct);
             // 
             // ss
             // 
-            this.ss.Location = new System.Drawing.Point(0, 465);
+            this.ss.Location = new System.Drawing.Point(0, 341);
             this.ss.Name = "ss";
             this.ss.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
-            this.ss.Size = new System.Drawing.Size(677, 22);
+            this.ss.Size = new System.Drawing.Size(656, 22);
             this.ss.TabIndex = 0;
             this.ss.Text = "statusStrip1";
             // 
@@ -89,8 +85,7 @@ namespace Wallnut.UI.Production.ExpenditureCostHistory
             this.bindingNavigatorSeparator2,
             this.tsbAdd,
             this.tsbEdit,
-            this.tsbDelete,
-            this.toolStripButton1});
+            this.tsbDelete});
             this.bn.Location = new System.Drawing.Point(0, 0);
             this.bn.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bn.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -99,7 +94,7 @@ namespace Wallnut.UI.Production.ExpenditureCostHistory
             this.bn.Name = "bn";
             this.bn.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.bn.PositionItem = this.bindingNavigatorPositionItem;
-            this.bn.Size = new System.Drawing.Size(677, 39);
+            this.bn.Size = new System.Drawing.Size(656, 39);
             this.bn.TabIndex = 1;
             this.bn.Text = "bindingNavigator1";
             // 
@@ -135,7 +130,6 @@ namespace Wallnut.UI.Production.ExpenditureCostHistory
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
             this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 39);
-            this.bindingNavigatorSeparator.Visible = false;
             // 
             // bindingNavigatorPositionItem
             // 
@@ -195,6 +189,7 @@ namespace Wallnut.UI.Production.ExpenditureCostHistory
             this.tsbEdit.Name = "tsbEdit";
             this.tsbEdit.Size = new System.Drawing.Size(97, 36);
             this.tsbEdit.Text = "Изменить";
+            this.tsbEdit.Visible = false;
             this.tsbEdit.Click += new System.EventHandler(this.tsbEdit_Click);
             // 
             // tsbDelete
@@ -213,70 +208,47 @@ namespace Wallnut.UI.Production.ExpenditureCostHistory
             this.dgv.AutoGenerateColumns = false;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Expenditure,
-            this.startDateDataGridViewTextBoxColumn,
-            this.endDateDataGridViewTextBoxColumn,
-            this.standardCostDataGridViewTextBoxColumn});
+            this.specialOfferIDDataGridViewTextBoxColumn,
+            this.colProductName});
             this.dgv.DataSource = this.bs;
             this.dgv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv.Location = new System.Drawing.Point(0, 39);
             this.dgv.Margin = new System.Windows.Forms.Padding(4);
             this.dgv.Name = "dgv";
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(677, 426);
+            this.dgv.Size = new System.Drawing.Size(656, 302);
             this.dgv.TabIndex = 2;
             // 
-            // Expenditure
+            // specialOfferIDDataGridViewTextBoxColumn
             // 
-            this.Expenditure.DataPropertyName = "ExpenditureName";
-            this.Expenditure.FillWeight = 300F;
-            this.Expenditure.HeaderText = "Наименование затраты";
-            this.Expenditure.Name = "Expenditure";
-            this.Expenditure.ReadOnly = true;
-            this.Expenditure.Width = 300;
+            this.specialOfferIDDataGridViewTextBoxColumn.DataPropertyName = "SpecialOfferDescription";
+            this.specialOfferIDDataGridViewTextBoxColumn.FillWeight = 300F;
+            this.specialOfferIDDataGridViewTextBoxColumn.HeaderText = "Скидка";
+            this.specialOfferIDDataGridViewTextBoxColumn.Name = "specialOfferIDDataGridViewTextBoxColumn";
+            this.specialOfferIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.specialOfferIDDataGridViewTextBoxColumn.Width = 300;
             // 
-            // startDateDataGridViewTextBoxColumn
+            // colProductName
             // 
-            this.startDateDataGridViewTextBoxColumn.DataPropertyName = "StartDate";
-            this.startDateDataGridViewTextBoxColumn.HeaderText = "Начало";
-            this.startDateDataGridViewTextBoxColumn.Name = "startDateDataGridViewTextBoxColumn";
-            this.startDateDataGridViewTextBoxColumn.ToolTipText = "Начало периода";
+            this.colProductName.DataPropertyName = "ProductName";
+            this.colProductName.FillWeight = 300F;
+            this.colProductName.HeaderText = "Продукт";
+            this.colProductName.Name = "colProductName";
+            this.colProductName.ReadOnly = true;
+            this.colProductName.Width = 300;
             // 
-            // endDateDataGridViewTextBoxColumn
-            // 
-            this.endDateDataGridViewTextBoxColumn.DataPropertyName = "EndDate";
-            this.endDateDataGridViewTextBoxColumn.HeaderText = "Конец";
-            this.endDateDataGridViewTextBoxColumn.Name = "endDateDataGridViewTextBoxColumn";
-            this.endDateDataGridViewTextBoxColumn.ToolTipText = "Конечная дата периода";
-            // 
-            // standardCostDataGridViewTextBoxColumn
-            // 
-            this.standardCostDataGridViewTextBoxColumn.DataPropertyName = "StandardCost";
-            this.standardCostDataGridViewTextBoxColumn.HeaderText = "Сумма";
-            this.standardCostDataGridViewTextBoxColumn.Name = "standardCostDataGridViewTextBoxColumn";
-            this.standardCostDataGridViewTextBoxColumn.ToolTipText = "Сумма затраты";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(89, 36);
-            this.toolStripButton1.Text = "Условие";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // fExpenditureCostHistory
+            // fSpecialOfferProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(677, 487);
+            this.ClientSize = new System.Drawing.Size(656, 363);
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.bn);
             this.Controls.Add(this.ss);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "fExpenditureCostHistory";
-            this.Text = "Затраты . История";
+            this.Name = "fSpecialOfferProduct";
+            this.Text = "Скидка продуктов";
             this.Load += new System.EventHandler(this.fList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bn)).EndInit();
@@ -306,10 +278,8 @@ namespace Wallnut.UI.Production.ExpenditureCostHistory
         private System.Windows.Forms.ToolStripButton tsbEdit;
         private System.Windows.Forms.ToolStripButton tsbDelete;
         private System.Windows.Forms.DataGridView dgv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Expenditure;
-        private System.Windows.Forms.DataGridViewTextBoxColumn startDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn endDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn standardCostDataGridViewTextBoxColumn;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn specialOfferIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProductName;
     }
 }

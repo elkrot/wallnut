@@ -10,17 +10,17 @@ using System.Linq.Expressions;
 
 namespace Wallnut.BusinessLogic.Implementations
 {
-    public class SpecialOfferRepository : Repository<SpecialOffer>, ISpecialOfferRepository
+    public class WorkOrderRepository : Repository<WorkOrder>, IWorkOrderRepository
     {
-        public SpecialOfferRepository(IDbContext context)
+        public WorkOrderRepository(IDbContext context)
             : base(context as DbContext)
         {
 
         }
 
-        new public IEnumerable<SpecialOffer> Find(Expression<Func<SpecialOffer, bool>> predicate)
+        new public IEnumerable<WorkOrder> Find(Expression<Func<WorkOrder, bool>> predicate)
         {
-            return Context.Set<SpecialOffer>().Where(predicate);
+            return Context.Set<WorkOrder>().Include("Product").Where(predicate);
         }
     }
 }

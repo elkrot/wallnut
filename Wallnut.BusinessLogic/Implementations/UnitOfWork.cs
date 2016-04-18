@@ -68,6 +68,10 @@ namespace Wallnut.BusinessLogic.Implementations
             //  _ = new _(_context);
             BusinessEntityAddressRepository = new BusinessEntityAddressRepository(_context);
             AddressTypeRepository = new AddressTypeRepository(_context);
+
+            SpecialOfferRepository = new SpecialOfferRepository(_context);
+            SpecialOfferProductRepository = new SpecialOfferProductRepository(_context);
+
             
         }
         #endregion
@@ -116,7 +120,10 @@ namespace Wallnut.BusinessLogic.Implementations
         public IBusinessEntityAddressRepository BusinessEntityAddressRepository { get; private set; }
 
         public IAddressTypesRepository AddressTypeRepository { get; private set; }
+        
         //public I  { get; private set; }
+        public ISpecialOfferProductRepository SpecialOfferProductRepository { get; private set; }
+        public ISpecialOfferRepository SpecialOfferRepository { get; private set; }
         #endregion
 
         #region Complete
@@ -262,10 +269,13 @@ namespace Wallnut.BusinessLogic.Implementations
                      break;
         case "BusinessEntityAddress": ret = (IRepository<T>)BusinessEntityAddressRepository;
                      break;
-        case "AddressTypeRepository": ret = (IRepository<T>)AddressTypeRepository;
+        case "AddressType": ret = (IRepository<T>)AddressTypeRepository;
                      break;
-        case "StateProvinceRepository": ret = (IRepository<T>)StateProvinceRepository;
+        case "SpecialOffer": ret = (IRepository<T>)SpecialOfferRepository;
                      break;
+        case "SpecialOfferProduct": ret = (IRepository<T>)SpecialOfferProductRepository;
+                     break;
+
                  default:
                      ret = null;
                      break;
