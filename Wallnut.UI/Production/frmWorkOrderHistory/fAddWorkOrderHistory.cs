@@ -156,7 +156,7 @@ namespace Wallnut.UI.Production.frmWorkOrderHistory
         {
             if (this.AddParams != null)
             {
-                if (this.AddParams.Count() == 2)
+                if (this.AddParams.Count() == 3)
                 {
 
                     (this.entity as Wallnut.Domain.Models.WorkOrderHistory).WorkOrderID = 

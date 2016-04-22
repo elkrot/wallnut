@@ -11,11 +11,9 @@ namespace Wallnut.Domain.Models.Mapping
             this.HasKey(t => new { t.WorkOrderID, t.WorkOrderDetailID });
 
             // Properties
-            this.Property(t => t.WorkOrderID)
-                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
-
             this.Property(t => t.WorkOrderDetailID)
-                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+               .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+
 
 
             // Relationships
