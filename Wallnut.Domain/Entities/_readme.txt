@@ -8,7 +8,6 @@ SalesOrderDetail
 
 LineTotal
 
-
 PurshaseOrderHeader
 TotalDue
 [DatabaseGenerated(DatabaseGeneratedOption.Computed)]

@@ -10,6 +10,9 @@ namespace Wallnut.Domain.Models
         [Column("WorkOrderID")] 
 	        public int WorkOrderID { get; set; }
  
+        [Column("WorkOrderDetailID")] 
+	        public int WorkOrderDetailID { get; set; }
+ 
         [Column("ProductID")] 
 	        public int ProductID { get; set; }
  

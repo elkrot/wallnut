@@ -39,6 +39,9 @@ namespace Wallnut.Domain.Models
         public DbSet<Person> People { get; set; }
         public DbSet<PersonPhone> PersonPhones { get; set; }
         public DbSet<PhoneNumberType> PhoneNumberTypes { get; set; }
+        public DbSet<Property> Proprerties { get; set; }
+        public DbSet<PropertyToEntity> ProprertyToEntities { get; set; }
+        public DbSet<Role> Roles { get; set; }
         public DbSet<StateProvince> StateProvinces { get; set; }
         public DbSet<Expenditure> Expenditures { get; set; }
         public DbSet<ExpenditureCostHistory> ExpenditureCostHistories { get; set; }
@@ -71,6 +74,7 @@ namespace Wallnut.Domain.Models
         public DbSet<Store> Stores { get; set; }
         public DbSet<vEmployeeCurrentJub> vEmployeeCurrentJubs { get; set; }
 
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new DatabaseLogMap());
@@ -95,6 +99,9 @@ namespace Wallnut.Domain.Models
             modelBuilder.Configurations.Add(new PersonMap());
             modelBuilder.Configurations.Add(new PersonPhoneMap());
             modelBuilder.Configurations.Add(new PhoneNumberTypeMap());
+            modelBuilder.Configurations.Add(new PropertyMap());
+            modelBuilder.Configurations.Add(new PropertyToEntityMap());
+            modelBuilder.Configurations.Add(new RoleMap());
             modelBuilder.Configurations.Add(new StateProvinceMap());
             modelBuilder.Configurations.Add(new ExpenditureMap());
             modelBuilder.Configurations.Add(new ExpenditureCostHistoryMap());

@@ -91,6 +91,9 @@
     <Compile Include="Implementations\WorkOrderRepository.cs" />
     <Compile Include="Implementations\SpecialOfferRepository.cs" />
     <Compile Include="Implementations\SpecialOfferProductRepository.cs" />
+    <Compile Include="Implementations\PropertyRepository.cs" />
+    <Compile Include="Implementations\ProprtyToEntityRepository.cs" />
+    <Compile Include="Implementations\RoleRepository.cs" />
     <Compile Include="Interfaces\IAddressRepository.cs" />
     <Compile Include="Interfaces\IAddressTypeRepository.cs" />
     <Compile Include="Interfaces\IBusinessEntityAddressRepository.cs" />
@@ -134,6 +137,9 @@
     <Compile Include="Interfaces\IWorkOrderRepository.cs" />
     <Compile Include="Interfaces\ISpecialOfferRepository.cs" />
     <Compile Include="Interfaces\ISpecialOfferProductRepository.cs" />
+    <Compile Include="Interfaces\IPropertyRepository.cs" />
+    <Compile Include="Interfaces\IPropertyToEntityRepository.cs" />
+    <Compile Include="Interfaces\IRoleRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

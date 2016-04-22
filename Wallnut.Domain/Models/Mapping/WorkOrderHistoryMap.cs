@@ -8,20 +8,14 @@ namespace Wallnut.Domain.Models.Mapping
         public WorkOrderHistoryMap()
         {
             // Primary Key
-            this.HasKey(t => new { t.WorkOrderID, t.ProductID, t.BusinessEntityID, t.OperationSequence, t.ActualStartDate });
+            this.HasKey(t => new { t.WorkOrderID, t.WorkOrderDetailID });
 
             // Properties
             this.Property(t => t.WorkOrderID)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
 
-            this.Property(t => t.ProductID)
-                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
-
-            this.Property(t => t.BusinessEntityID)
-                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
-
-            this.Property(t => t.OperationSequence)
-                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
+            this.Property(t => t.WorkOrderDetailID)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
 
             // Relationships

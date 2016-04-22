@@ -55,6 +55,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\PropertyFrm\fAddProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\PropertyFrm\fAddProperty.Designer.cs">
+      <DependentUpon>fAddProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PropertyFrm\fProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\PropertyFrm\fProperty.Designer.cs">
+      <DependentUpon>fProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PropertyToEntityFrm\fAddPropertyToEntity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\PropertyToEntityFrm\fAddPropertyToEntity.Designer.cs">
+      <DependentUpon>fAddPropertyToEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PropertyToEntityFrm\fPropertyToEntity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\PropertyToEntityFrm\fPropertyToEntity.Designer.cs">
+      <DependentUpon>fPropertyToEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\RoleFrm\fAddRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\RoleFrm\fAddRole.Designer.cs">
+      <DependentUpon>fAddRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\RoleFrm\fRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\RoleFrm\fRole.Designer.cs">
+      <DependentUpon>fRole.cs</DependentUpon>
+    </Compile>
     <Compile Include="fTemplates\fListTpl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -577,6 +613,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WallnutProductionDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Admin\PropertyFrm\fAddProperty.resx">
+      <DependentUpon>fAddProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\PropertyFrm\fProperty.resx">
+      <DependentUpon>fProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\PropertyToEntityFrm\fAddPropertyToEntity.resx">
+      <DependentUpon>fAddPropertyToEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\PropertyToEntityFrm\fPropertyToEntity.resx">
+      <DependentUpon>fPropertyToEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\RoleFrm\fAddRole.resx">
+      <DependentUpon>fAddRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\RoleFrm\fRole.resx">
+      <DependentUpon>fRole.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fTemplates\fListTpl.resx">
       <DependentUpon>fListTpl.cs</DependentUpon>
     </EmbeddedResource>

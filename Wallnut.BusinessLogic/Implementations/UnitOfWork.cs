@@ -16,7 +16,7 @@ namespace Wallnut.BusinessLogic.Implementations
         private readonly IDbContext _context;
 
         #region Constructor
-               /// <summary>
+        /// <summary>
         /// Конструктор
         /// </summary>
         /// <param name="context">Контекст</param>
@@ -65,35 +65,38 @@ namespace Wallnut.BusinessLogic.Implementations
 
             StoreRepository = new StoreRepository(_context);
             SalesTerritoryRepository = new SalesTerritoryRepository(_context);
-            //  _ = new _(_context);
+            //  _Repository = new _(_context);
             BusinessEntityAddressRepository = new BusinessEntityAddressRepository(_context);
             AddressTypeRepository = new AddressTypeRepository(_context);
 
             SpecialOfferRepository = new SpecialOfferRepository(_context);
             SpecialOfferProductRepository = new SpecialOfferProductRepository(_context);
 
-            
+            PropertyRepository = new PropertyRepository(_context);
+            PropertyToEntityRepository = new PropertyToEntityRepository(_context);
+            RoleRepository = new RoleRepository(_context);
+
         }
         #endregion
 
         #region Repositories
-         public IAddressRepository AddressRepository { get; private set; }
-        public IAddressTypesRepository  AddressTypesRepository{ get; private set; }
-        public ICountryRegionRepository  CountryRegionRepository{ get; private set; }
+        public IAddressRepository AddressRepository { get; private set; }
+        public IAddressTypesRepository AddressTypesRepository { get; private set; }
+        public ICountryRegionRepository CountryRegionRepository { get; private set; }
         public ICurrencyRateRepository CurrencyRateRepository { get; private set; }
         public ICustomerRepository CustomerRepository { get; private set; }
         public IEmailAddressRepository EmailAddressRepository { get; private set; }
-        public IEmployeeDepartmentHistoryRepository EmployeeDepartmentHistoryRepository  { get; private set; }
-        public IPersonPhoneRepository  PersonPhoneRepository{ get; private set; }
-        public ILocationRepository  LocationRepository{ get; private set; }
+        public IEmployeeDepartmentHistoryRepository EmployeeDepartmentHistoryRepository { get; private set; }
+        public IPersonPhoneRepository PersonPhoneRepository { get; private set; }
+        public ILocationRepository LocationRepository { get; private set; }
         public IPhoneNumberTypeRepository PhoneNumberTypeRepository { get; private set; }
         public IProductListPriceHistoryRepository ProductListPriceHistoryRepository { get; private set; }
-        public IProductVendorRepository  ProductVendorRepository{ get; private set; }
-        public IPurchaseOrderDetailRepository  PurchaseOrderDetailRepository{ get; private set; }
-        public IPurchaseOrderHeaderRepository  PurchaseOrderHeaderRepository{ get; private set; }
-        public ISalesOrderDetailRepository SalesOrderDetailRepository{ get; private set; }
-        public IStateProvinceRepository StateProvinceRepository{ get; private set; }
-        public IVendorRepository VendorRepository{ get; private set; }
+        public IProductVendorRepository ProductVendorRepository { get; private set; }
+        public IPurchaseOrderDetailRepository PurchaseOrderDetailRepository { get; private set; }
+        public IPurchaseOrderHeaderRepository PurchaseOrderHeaderRepository { get; private set; }
+        public ISalesOrderDetailRepository SalesOrderDetailRepository { get; private set; }
+        public IStateProvinceRepository StateProvinceRepository { get; private set; }
+        public IVendorRepository VendorRepository { get; private set; }
         public IEmployeeRepository EmployeeRepository { get; private set; }
         public IDepartmentRepository DepartmentRepository { get; private set; }
         public IProductsRepository ProductsRepository { get; private set; }
@@ -120,10 +123,15 @@ namespace Wallnut.BusinessLogic.Implementations
         public IBusinessEntityAddressRepository BusinessEntityAddressRepository { get; private set; }
 
         public IAddressTypesRepository AddressTypeRepository { get; private set; }
-        
+
         //public I  { get; private set; }
         public ISpecialOfferProductRepository SpecialOfferProductRepository { get; private set; }
         public ISpecialOfferRepository SpecialOfferRepository { get; private set; }
+
+        public IPropertyRepository PropertyRepository { get; private set; }
+        public IPropertyToEntityRepository PropertyToEntityRepository { get; private set; }
+        public IRoleRepository RoleRepository { get; private set; }
+
         #endregion
 
         #region Complete
@@ -153,7 +161,7 @@ namespace Wallnut.BusinessLogic.Implementations
                 throw new DbEntityValidationException(exceptionMessage, ex.EntityValidationErrors);
                 //return 0;
                 // Throw a new DbEntityValidationException with the improved exception message.
-                
+
             }
             catch (DbUpdateException ex)
             {
@@ -163,8 +171,8 @@ namespace Wallnut.BusinessLogic.Implementations
                 System.Windows.Forms.MessageBox.Show(exceptionMessage, "Ошибка приложения"
                     , System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
                 // Throw a new DbEntityValidationException with the improved exception message.
-                 throw new DbUpdateException(exceptionMessage);
-               // return 0;
+                throw new DbUpdateException(exceptionMessage);
+                // return 0;
             }
             catch (Exception ex)
             {
@@ -177,113 +185,125 @@ namespace Wallnut.BusinessLogic.Implementations
         /// <summary>
         /// Удаление
         /// </summary>
-         public void Dispose()
+        public void Dispose()
         {
             (_context as DbContext).Dispose();
-        }       
+        }
         #endregion
 
         #region GetRepository
-          public IRepository<T> GetRepository<T>() where T : class
-         {
-             IRepository<T> ret;
-             Type typeoft = typeof(T);
-             switch (typeoft.Name)
-             {
-        case "Address": ret = (IRepository<T>)AddressRepository;
-                     break;
+        public IRepository<T> GetRepository<T>() where T : class
+        {
+            IRepository<T> ret;
+            Type typeoft = typeof(T);
+            switch (typeoft.Name)
+            {
+                case "Address": ret = (IRepository<T>)AddressRepository;
+                    break;
 
-        case "AddressTypes" :ret = (IRepository<T>)AddressTypesRepository ;
-                     break;
+                case "AddressTypes": ret = (IRepository<T>)AddressTypesRepository;
+                    break;
 
-        case "CountryRegion" :ret = (IRepository<T>)CountryRegionRepository;
-                     break;
-        case "CurrencyRate" :ret = (IRepository<T>)CurrencyRateRepository ;
-                     break;
-        case "Customer" :ret = (IRepository<T>)CustomerRepository ;
-                     break;
-        case "EmailAddress" :ret = (IRepository<T>)EmailAddressRepository ;
-                     break;
-        case "EmployeeDepartmentHistory" :ret = (IRepository<T>)EmployeeDepartmentHistoryRepository ;
-                     break; 
-        case "PersonPhone" :ret = (IRepository<T>)PersonPhoneRepository;
-                     break;
-        case "Location" :ret = (IRepository<T>) LocationRepository;
-                     break;
-        case "PhoneNumberType" :ret = (IRepository<T>)PhoneNumberTypeRepository ;
-                     break;
-        case "ProductListPriceHistory" :ret = (IRepository<T>)ProductListPriceHistoryRepository;
-                     break; 
-        case "ProductVendor" :ret = (IRepository<T>) ProductVendorRepository;
-                     break;
-        case "PurchaseOrderDetail" :ret = (IRepository<T>) PurchaseOrderDetailRepository;
-                     break;
-        case "PurchaseOrderHeader" :ret = (IRepository<T>)  PurchaseOrderHeaderRepository;
-                     break;
-        case "SalesOrderDetail" :ret = (IRepository<T>) SalesOrderDetailRepository;
-                     break;
-        case "StateProvince" :ret = (IRepository<T>) StateProvinceRepository;
-                     break;
-        case "Vendor" :ret = (IRepository<T>) VendorRepository;
-                     break;
-        case "Employee" :ret = (IRepository<T>) EmployeeRepository ;
-                     break;
-        case "Department" :ret = (IRepository<T>) DepartmentRepository ;
-                     break;
-        case "Products" :ret = (IRepository<T>) ProductsRepository ;
-                     break;
-        case "UnitMeasure" :ret = (IRepository<T>) UnitMeasureRepository ;
-                     break;
-        case "Password" :ret = (IRepository<T>) PasswordRepository;
-                     break; 
-        case "Shift" :ret = (IRepository<T>) ShiftRepository ;
-                     break;
-        case "Currency": ret = (IRepository<T>)CurrencyRepository;
-                     break;
-        case "ContactType": ret = (IRepository<T>)ContactTypeRepository;
-                     break;
-        case "BusinessEntity": ret = (IRepository<T>)BusinessEntityRepository;
-                     break;
-        case "ShipMethod": ret = (IRepository<T>)ShipMethodRepository;
-                     break;
-        case "ProductCostHistory": ret = (IRepository<T>)ProductCostHistoryRepository;
-                     break;
-        case "Expenditure": ret = (IRepository<T>)ExpenditureRepository;
-                     break;
-        case "ExpenditureCostHistory": ret = (IRepository<T>)ExpenditureCostHistoryRepository;
-                     break;
+                case "CountryRegion": ret = (IRepository<T>)CountryRegionRepository;
+                    break;
+                case "CurrencyRate": ret = (IRepository<T>)CurrencyRateRepository;
+                    break;
+                case "Customer": ret = (IRepository<T>)CustomerRepository;
+                    break;
+                case "EmailAddress": ret = (IRepository<T>)EmailAddressRepository;
+                    break;
+                case "EmployeeDepartmentHistory": ret = (IRepository<T>)EmployeeDepartmentHistoryRepository;
+                    break;
+                case "PersonPhone": ret = (IRepository<T>)PersonPhoneRepository;
+                    break;
+                case "Location": ret = (IRepository<T>)LocationRepository;
+                    break;
+                case "PhoneNumberType": ret = (IRepository<T>)PhoneNumberTypeRepository;
+                    break;
+                case "ProductListPriceHistory": ret = (IRepository<T>)ProductListPriceHistoryRepository;
+                    break;
+                case "ProductVendor": ret = (IRepository<T>)ProductVendorRepository;
+                    break;
+                case "PurchaseOrderDetail": ret = (IRepository<T>)PurchaseOrderDetailRepository;
+                    break;
+                case "PurchaseOrderHeader": ret = (IRepository<T>)PurchaseOrderHeaderRepository;
+                    break;
+                case "SalesOrderDetail": ret = (IRepository<T>)SalesOrderDetailRepository;
+                    break;
+                case "StateProvince": ret = (IRepository<T>)StateProvinceRepository;
+                    break;
+                case "Vendor": ret = (IRepository<T>)VendorRepository;
+                    break;
+                case "Employee": ret = (IRepository<T>)EmployeeRepository;
+                    break;
+                case "Department": ret = (IRepository<T>)DepartmentRepository;
+                    break;
+                case "Products": ret = (IRepository<T>)ProductsRepository;
+                    break;
+                case "UnitMeasure": ret = (IRepository<T>)UnitMeasureRepository;
+                    break;
+                case "Password": ret = (IRepository<T>)PasswordRepository;
+                    break;
+                case "Shift": ret = (IRepository<T>)ShiftRepository;
+                    break;
+                case "Currency": ret = (IRepository<T>)CurrencyRepository;
+                    break;
+                case "ContactType": ret = (IRepository<T>)ContactTypeRepository;
+                    break;
+                case "BusinessEntity": ret = (IRepository<T>)BusinessEntityRepository;
+                    break;
+                case "ShipMethod": ret = (IRepository<T>)ShipMethodRepository;
+                    break;
+                case "ProductCostHistory": ret = (IRepository<T>)ProductCostHistoryRepository;
+                    break;
+                case "Expenditure": ret = (IRepository<T>)ExpenditureRepository;
+                    break;
+                case "ExpenditureCostHistory": ret = (IRepository<T>)ExpenditureCostHistoryRepository;
+                    break;
 
-        case "WorkOrder": ret = (IRepository<T>)WorkOrderRepository;
-                     break;
-        case "WorkOrderHistory": ret = (IRepository<T>)WorkOrderHistoryRepository;
-                     break;
-        case "EmployeeAttendanceHistory": ret = (IRepository<T>)EmployeeAttendanceHistoryRepository;
-                     break;
-        case "ProductInventory": ret = (IRepository<T>)ProductInventoryRepository;
-                     break;
-        case "SalesOrderHeader": ret = (IRepository<T>)SalesOrderHeaderRepository;
-                     break;
-        case "SalesTerritory": ret = (IRepository<T>)SalesTerritoryRepository;
-                     break;
-        case "Store": ret = (IRepository<T>)StoreRepository;
-                     break;
-        case "BusinessEntityAddress": ret = (IRepository<T>)BusinessEntityAddressRepository;
-                     break;
-        case "AddressType": ret = (IRepository<T>)AddressTypeRepository;
-                     break;
-        case "SpecialOffer": ret = (IRepository<T>)SpecialOfferRepository;
-                     break;
-        case "SpecialOfferProduct": ret = (IRepository<T>)SpecialOfferProductRepository;
-                     break;
+                case "WorkOrder": ret = (IRepository<T>)WorkOrderRepository;
+                    break;
+                case "WorkOrderHistory": ret = (IRepository<T>)WorkOrderHistoryRepository;
+                    break;
+                case "EmployeeAttendanceHistory": ret = (IRepository<T>)EmployeeAttendanceHistoryRepository;
+                    break;
+                case "ProductInventory": ret = (IRepository<T>)ProductInventoryRepository;
+                    break;
+                case "SalesOrderHeader": ret = (IRepository<T>)SalesOrderHeaderRepository;
+                    break;
+                case "SalesTerritory": ret = (IRepository<T>)SalesTerritoryRepository;
+                    break;
+                case "Store": ret = (IRepository<T>)StoreRepository;
+                    break;
+                case "BusinessEntityAddress": ret = (IRepository<T>)BusinessEntityAddressRepository;
+                    break;
+                case "AddressType": ret = (IRepository<T>)AddressTypeRepository;
+                    break;
+                case "SpecialOffer": ret = (IRepository<T>)SpecialOfferRepository;
+                    break;
+                case "SpecialOfferProduct": ret = (IRepository<T>)SpecialOfferProductRepository;
+                    break;
+                case "Property": ret = (IRepository<T>)PropertyRepository;
+                    break;
+                case "PropertyToEntity": ret = (IRepository<T>)PropertyToEntityRepository;
+                    break;
 
-                 default:
-                     ret = null;
-                     break;
-             }
-             return ret;
-         
-         }
- 
-         #endregion
-           }
+                case "Role": ret = (IRepository<T>)RoleRepository;
+                    break;
+
+
+                default:
+                    ret = null;
+                    break;
+            }
+            return ret;
+
+        }
+
+        #endregion
+    }
 }
+
+
+
+
