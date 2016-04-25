@@ -21,11 +21,18 @@ namespace Wallnut.UI.Admin.PropertyFrm
         private void BindingData()
         {
 
-            this.tbName.DataBindings.Add("Text",
-            this.entity as Wallnut.Domain.Models.UnitMeasure,
-            "Name",
+            this.tbPropertyCode.DataBindings.Add("Text",
+            this.entity as Wallnut.Domain.Models.Property,
+            "PropertyCode",
             false,
             DataSourceUpdateMode.OnPropertyChanged);
+
+            this.tbPropertyTitle.DataBindings.Add("Text",
+            this.entity as Wallnut.Domain.Models.Property,
+            "PropertyTitle",
+            false,
+            DataSourceUpdateMode.OnPropertyChanged);
+
 
         }
 
@@ -36,13 +43,13 @@ namespace Wallnut.UI.Admin.PropertyFrm
 
         private void tbName_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrEmpty(tbName.Text))
+            if (string.IsNullOrEmpty(tbPropertyCode.Text))
             {
-                e.Cancel = true; tbName.Focus(); ep.SetError(tbName, "Поле наименование не может быть пустым");
+                e.Cancel = true; tbPropertyCode.Focus(); ep.SetError(tbPropertyCode, "Поле наименование не может быть пустым");
             }
             else
             {
-                e.Cancel = false; ep.SetError(tbName, "");
+                e.Cancel = false; ep.SetError(tbPropertyCode, "");
             }
         }
 

@@ -21,11 +21,11 @@ namespace Wallnut.UI.Admin.PropertyToEntityFrm
         private void BindingData()
         {
 
-            this.tbName.DataBindings.Add("Text",
+           /* this.tbName.DataBindings.Add("Text",
             this.entity as Wallnut.Domain.Models.UnitMeasure,
             "Name",
             false,
-            DataSourceUpdateMode.OnPropertyChanged);
+            DataSourceUpdateMode.OnPropertyChanged);*/
 
         }
 
@@ -36,14 +36,14 @@ namespace Wallnut.UI.Admin.PropertyToEntityFrm
 
         private void tbName_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrEmpty(tbName.Text))
+           /* if (string.IsNullOrEmpty(tbName.Text))
             {
                 e.Cancel = true; tbName.Focus(); ep.SetError(tbName, "Поле наименование не может быть пустым");
             }
             else
             {
                 e.Cancel = false; ep.SetError(tbName, "");
-            }
+            }*/
         }
 
         private void btnOK_Click(object sender, EventArgs e)

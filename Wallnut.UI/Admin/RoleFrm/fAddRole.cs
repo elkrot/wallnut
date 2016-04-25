@@ -21,9 +21,9 @@ namespace Wallnut.UI.Admin.RoleFrm
         private void BindingData()
         {
 
-            this.tbName.DataBindings.Add("Text",
-            this.entity as Wallnut.Domain.Models.UnitMeasure,
-            "Name",
+            this.tbRoleTitle.DataBindings.Add("Text",
+            this.entity as Wallnut.Domain.Models.Role,
+            "RoleTitle",
             false,
             DataSourceUpdateMode.OnPropertyChanged);
 
@@ -36,13 +36,13 @@ namespace Wallnut.UI.Admin.RoleFrm
 
         private void tbName_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrEmpty(tbName.Text))
+            if (string.IsNullOrEmpty(tbRoleTitle.Text))
             {
-                e.Cancel = true; tbName.Focus(); ep.SetError(tbName, "Поле наименование не может быть пустым");
+                e.Cancel = true; tbRoleTitle.Focus(); ep.SetError(tbRoleTitle, "Поле наименование не может быть пустым");
             }
             else
             {
-                e.Cancel = false; ep.SetError(tbName, "");
+                e.Cancel = false; ep.SetError(tbRoleTitle, "");
             }
         }
 

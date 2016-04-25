@@ -920,8 +920,11 @@
     <None Include="Properties\DataSources\Wallnut.Domain.Models.ProductInventory.datasource" />
     <None Include="Properties\DataSources\Wallnut.Domain.Models.ProductListPriceHistory.datasource" />
     <None Include="Properties\DataSources\Wallnut.Domain.Models.ProductVendor.datasource" />
+    <None Include="Properties\DataSources\Wallnut.Domain.Models.Property.datasource" />
+    <None Include="Properties\DataSources\Wallnut.Domain.Models.PropertyToEntity.datasource" />
     <None Include="Properties\DataSources\Wallnut.Domain.Models.PurchaseOrderDetail.datasource" />
     <None Include="Properties\DataSources\Wallnut.Domain.Models.PurchaseOrderHeader.datasource" />
+    <None Include="Properties\DataSources\Wallnut.Domain.Models.Role.datasource" />
     <None Include="Properties\DataSources\Wallnut.Domain.Models.SalesOrderDetail.datasource" />
     <None Include="Properties\DataSources\Wallnut.Domain.Models.SalesOrderHeader.datasource" />
     <None Include="Properties\DataSources\Wallnut.Domain.Models.SalesTerritory.datasource" />
@@ -999,7 +1002,9 @@
   <ItemGroup>
     <None Include="ico\door_out.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="ico\filter.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

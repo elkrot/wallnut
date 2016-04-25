@@ -429,7 +429,7 @@
             // 
             // toolStripButton1
             // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.Image = global::Wallnut.UI.Properties.Resources.filter;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(89, 36);
@@ -505,31 +505,28 @@
             // 
             // tsbAdd
             // 
-            this.tsbAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsbAdd.Image = global::Wallnut.UI.Properties.Resources.edit_add;
             this.tsbAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbAdd.Name = "tsbAdd";
-            this.tsbAdd.Size = new System.Drawing.Size(36, 36);
+            this.tsbAdd.Size = new System.Drawing.Size(95, 36);
             this.tsbAdd.Text = "Добавить";
             this.tsbAdd.Click += new System.EventHandler(this.tsbAdd_Click);
             // 
             // tsbEdit
             // 
-            this.tsbEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsbEdit.Image = global::Wallnut.UI.Properties.Resources.pencil;
             this.tsbEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEdit.Name = "tsbEdit";
-            this.tsbEdit.Size = new System.Drawing.Size(36, 36);
+            this.tsbEdit.Size = new System.Drawing.Size(97, 36);
             this.tsbEdit.Text = "Изменить";
             this.tsbEdit.Click += new System.EventHandler(this.tsbEdit_Click);
             // 
             // tsbDelete
             // 
-            this.tsbDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsbDelete.Image = global::Wallnut.UI.Properties.Resources.edit_delete;
             this.tsbDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbDelete.Name = "tsbDelete";
-            this.tsbDelete.Size = new System.Drawing.Size(36, 36);
+            this.tsbDelete.Size = new System.Drawing.Size(87, 36);
             this.tsbDelete.Text = "Удалить";
             this.tsbDelete.Click += new System.EventHandler(this.tsbDelete_Click);
             // 
@@ -676,6 +673,7 @@
             this.bindingNavigatorCountItem1.Size = new System.Drawing.Size(43, 36);
             this.bindingNavigatorCountItem1.Text = "для {0}";
             this.bindingNavigatorCountItem1.ToolTipText = "Общее число элементов";
+            this.bindingNavigatorCountItem1.Visible = false;
             // 
             // bindingNavigatorMoveFirstItem1
             // 
@@ -685,6 +683,7 @@
             this.bindingNavigatorMoveFirstItem1.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveFirstItem1.Size = new System.Drawing.Size(36, 36);
             this.bindingNavigatorMoveFirstItem1.Text = "Переместить в начало";
+            this.bindingNavigatorMoveFirstItem1.Visible = false;
             // 
             // bindingNavigatorMovePreviousItem1
             // 
@@ -694,11 +693,13 @@
             this.bindingNavigatorMovePreviousItem1.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMovePreviousItem1.Size = new System.Drawing.Size(36, 36);
             this.bindingNavigatorMovePreviousItem1.Text = "Переместить назад";
+            this.bindingNavigatorMovePreviousItem1.Visible = false;
             // 
             // bindingNavigatorSeparator3
             // 
             this.bindingNavigatorSeparator3.Name = "bindingNavigatorSeparator3";
             this.bindingNavigatorSeparator3.Size = new System.Drawing.Size(6, 39);
+            this.bindingNavigatorSeparator3.Visible = false;
             // 
             // bindingNavigatorPositionItem1
             // 
@@ -708,11 +709,13 @@
             this.bindingNavigatorPositionItem1.Size = new System.Drawing.Size(73, 23);
             this.bindingNavigatorPositionItem1.Text = "0";
             this.bindingNavigatorPositionItem1.ToolTipText = "Текущее положение";
+            this.bindingNavigatorPositionItem1.Visible = false;
             // 
             // bindingNavigatorSeparator4
             // 
             this.bindingNavigatorSeparator4.Name = "bindingNavigatorSeparator4";
             this.bindingNavigatorSeparator4.Size = new System.Drawing.Size(6, 39);
+            this.bindingNavigatorSeparator4.Visible = false;
             // 
             // bindingNavigatorMoveNextItem1
             // 
@@ -722,6 +725,7 @@
             this.bindingNavigatorMoveNextItem1.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveNextItem1.Size = new System.Drawing.Size(36, 36);
             this.bindingNavigatorMoveNextItem1.Text = "Переместить вперед";
+            this.bindingNavigatorMoveNextItem1.Visible = false;
             // 
             // bindingNavigatorMoveLastItem1
             // 
@@ -731,40 +735,39 @@
             this.bindingNavigatorMoveLastItem1.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveLastItem1.Size = new System.Drawing.Size(36, 36);
             this.bindingNavigatorMoveLastItem1.Text = "Переместить в конец";
+            this.bindingNavigatorMoveLastItem1.Visible = false;
             // 
             // bindingNavigatorSeparator5
             // 
             this.bindingNavigatorSeparator5.Name = "bindingNavigatorSeparator5";
             this.bindingNavigatorSeparator5.Size = new System.Drawing.Size(6, 39);
+            this.bindingNavigatorSeparator5.Visible = false;
             // 
             // tsbAddDetail
             // 
-            this.tsbAddDetail.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsbAddDetail.Image = global::Wallnut.UI.Properties.Resources.edit_add;
             this.tsbAddDetail.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbAddDetail.Name = "tsbAddDetail";
-            this.tsbAddDetail.Size = new System.Drawing.Size(36, 36);
-            this.tsbAddDetail.Text = "tsbAddDetail";
+            this.tsbAddDetail.Size = new System.Drawing.Size(95, 36);
+            this.tsbAddDetail.Text = "Добавить";
             this.tsbAddDetail.Click += new System.EventHandler(this.tsbAddDetail_Click);
             // 
             // tsbEditDetail
             // 
-            this.tsbEditDetail.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsbEditDetail.Image = global::Wallnut.UI.Properties.Resources.pencil;
             this.tsbEditDetail.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEditDetail.Name = "tsbEditDetail";
-            this.tsbEditDetail.Size = new System.Drawing.Size(36, 36);
-            this.tsbEditDetail.Text = "toolStripButton2";
+            this.tsbEditDetail.Size = new System.Drawing.Size(97, 36);
+            this.tsbEditDetail.Text = "Изменить";
             this.tsbEditDetail.Click += new System.EventHandler(this.tsbEditDetail_Click);
             // 
             // tsbDeleteDetail
             // 
-            this.tsbDeleteDetail.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsbDeleteDetail.Image = global::Wallnut.UI.Properties.Resources.edit_delete;
             this.tsbDeleteDetail.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbDeleteDetail.Name = "tsbDeleteDetail";
-            this.tsbDeleteDetail.Size = new System.Drawing.Size(36, 36);
-            this.tsbDeleteDetail.Text = "toolStripButton3";
+            this.tsbDeleteDetail.Size = new System.Drawing.Size(87, 36);
+            this.tsbDeleteDetail.Text = "Удалить";
             this.tsbDeleteDetail.Click += new System.EventHandler(this.tsbDeleteDetail_Click);
             // 
             // ss

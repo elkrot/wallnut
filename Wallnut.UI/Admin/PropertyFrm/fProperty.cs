@@ -21,26 +21,26 @@ namespace Wallnut.UI.Admin.PropertyFrm
 
         private void fList_Load(object sender, EventArgs e)
         {
-            RefreshData<object>();
+            RefreshData<Property>();
         }
 
         private void tsbAdd_Click(object sender, EventArgs e)
         {
-            AddEntity<AddForm, object>();
+            AddEntity<fAddProperty, Property>();
         }
 
         private void tsbEdit_Click(object sender, EventArgs e)
         {
-            //var entity = dgv.SelectedRows[0].DataBoundItem as Entity;
-            //int id=entity.%%%Id
-            UpdateEntity<AddForm, object>(0);
+            var entity = dgv.SelectedRows[0].DataBoundItem as Property;
+            string id = entity.PropertyCode;
+            UpdateEntity<fAddProperty, Property>(id);
         }
 
         private void tsbDelete_Click(object sender, EventArgs e)
         {
-            //var entity = dgv.SelectedRows[0].DataBoundItem as Entity;
-            //int id=entity.%%%Id
-            RemoveEntity<object>(0);
+            var entity = dgv.SelectedRows[0].DataBoundItem as Property;
+            string id = entity.PropertyCode;
+            RemoveEntity<Property>(id);
         }
 
 

@@ -45,11 +45,16 @@
             this.tsbEdit = new System.Windows.Forms.ToolStripButton();
             this.tsbDelete = new System.Windows.Forms.ToolStripButton();
             this.dgv = new System.Windows.Forms.DataGridView();
+            this.roleTitleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bn)).BeginInit();
             this.bn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
+            // 
+            // bs
+            // 
+            this.bs.DataSource = typeof(Wallnut.Domain.Models.Role);
             // 
             // ss
             // 
@@ -204,6 +209,8 @@
             this.dgv.AllowUserToDeleteRows = false;
             this.dgv.AutoGenerateColumns = false;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.roleTitleDataGridViewTextBoxColumn});
             this.dgv.DataSource = this.bs;
             this.dgv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv.Location = new System.Drawing.Point(0, 39);
@@ -212,6 +219,14 @@
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv.Size = new System.Drawing.Size(852, 295);
             this.dgv.TabIndex = 2;
+            // 
+            // roleTitleDataGridViewTextBoxColumn
+            // 
+            this.roleTitleDataGridViewTextBoxColumn.DataPropertyName = "RoleTitle";
+            this.roleTitleDataGridViewTextBoxColumn.FillWeight = 500F;
+            this.roleTitleDataGridViewTextBoxColumn.HeaderText = "Наименование роли";
+            this.roleTitleDataGridViewTextBoxColumn.Name = "roleTitleDataGridViewTextBoxColumn";
+            this.roleTitleDataGridViewTextBoxColumn.Width = 500;
             // 
             // fRole
             // 
@@ -254,5 +269,6 @@
         private System.Windows.Forms.ToolStripButton tsbEdit;
         private System.Windows.Forms.ToolStripButton tsbDelete;
         private System.Windows.Forms.DataGridView dgv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn roleTitleDataGridViewTextBoxColumn;
     }
 }

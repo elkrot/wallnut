@@ -30,9 +30,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fWorkOrder));
             this.dgv = new System.Windows.Forms.DataGridView();
             this.productIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -91,7 +91,7 @@
             this.dgv.Name = "dgv";
             this.dgv.ReadOnly = true;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(762, 201);
+            this.dgv.Size = new System.Drawing.Size(878, 201);
             this.dgv.TabIndex = 2;
             // 
             // productIDDataGridViewTextBoxColumn
@@ -129,8 +129,8 @@
             // startDateDataGridViewTextBoxColumn
             // 
             this.startDateDataGridViewTextBoxColumn.DataPropertyName = "StartDate";
-            dataGridViewCellStyle4.Format = "dd.MM.yyyy";
-            this.startDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Format = "dd.MM.yyyy";
+            this.startDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.startDateDataGridViewTextBoxColumn.HeaderText = "Дата начала";
             this.startDateDataGridViewTextBoxColumn.Name = "startDateDataGridViewTextBoxColumn";
             this.startDateDataGridViewTextBoxColumn.ReadOnly = true;
@@ -139,8 +139,8 @@
             // endDateDataGridViewTextBoxColumn
             // 
             this.endDateDataGridViewTextBoxColumn.DataPropertyName = "EndDate";
-            dataGridViewCellStyle5.Format = "dd.MM.yyyy";
-            this.endDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Format = "dd.MM.yyyy";
+            this.endDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.endDateDataGridViewTextBoxColumn.HeaderText = "Дата окончания";
             this.endDateDataGridViewTextBoxColumn.Name = "endDateDataGridViewTextBoxColumn";
             this.endDateDataGridViewTextBoxColumn.ReadOnly = true;
@@ -149,8 +149,8 @@
             // dueDateDataGridViewTextBoxColumn
             // 
             this.dueDateDataGridViewTextBoxColumn.DataPropertyName = "DueDate";
-            dataGridViewCellStyle6.Format = "dd.MM.yyyy";
-            this.dueDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Format = "dd.MM.yyyy";
+            this.dueDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.dueDateDataGridViewTextBoxColumn.HeaderText = "Срок выполнения";
             this.dueDateDataGridViewTextBoxColumn.Name = "dueDateDataGridViewTextBoxColumn";
             this.dueDateDataGridViewTextBoxColumn.ReadOnly = true;
@@ -188,7 +188,7 @@
             this.bn.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bn.Name = "bn";
             this.bn.PositionItem = this.bindingNavigatorPositionItem;
-            this.bn.Size = new System.Drawing.Size(762, 39);
+            this.bn.Size = new System.Drawing.Size(878, 39);
             this.bn.TabIndex = 1;
             this.bn.Text = "bindingNavigator1";
             // 
@@ -202,7 +202,7 @@
             // 
             // toolStripButton4
             // 
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+            this.toolStripButton4.Image = global::Wallnut.UI.Properties.Resources.filter;
             this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton4.Name = "toolStripButton4";
             this.toolStripButton4.Size = new System.Drawing.Size(89, 36);
@@ -278,31 +278,28 @@
             // 
             // tsbAdd
             // 
-            this.tsbAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsbAdd.Image = global::Wallnut.UI.Properties.Resources.edit_add;
             this.tsbAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbAdd.Name = "tsbAdd";
-            this.tsbAdd.Size = new System.Drawing.Size(36, 36);
+            this.tsbAdd.Size = new System.Drawing.Size(95, 36);
             this.tsbAdd.Text = "Добавить";
             this.tsbAdd.Click += new System.EventHandler(this.tsbAdd_Click);
             // 
             // tsbEdit
             // 
-            this.tsbEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsbEdit.Image = global::Wallnut.UI.Properties.Resources.pencil;
             this.tsbEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEdit.Name = "tsbEdit";
-            this.tsbEdit.Size = new System.Drawing.Size(36, 36);
+            this.tsbEdit.Size = new System.Drawing.Size(97, 36);
             this.tsbEdit.Text = "Изменить";
             this.tsbEdit.Click += new System.EventHandler(this.tsbEdit_Click);
             // 
             // tsbDelete
             // 
-            this.tsbDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsbDelete.Image = global::Wallnut.UI.Properties.Resources.edit_delete;
             this.tsbDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbDelete.Name = "tsbDelete";
-            this.tsbDelete.Size = new System.Drawing.Size(36, 36);
+            this.tsbDelete.Size = new System.Drawing.Size(87, 36);
             this.tsbDelete.Text = "Удалить";
             this.tsbDelete.Click += new System.EventHandler(this.tsbDelete_Click);
             // 
@@ -313,21 +310,19 @@
             // 
             // toolStripButton2
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton2.Image = global::Wallnut.UI.Properties.Resources.prinyat;
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton2.Size = new System.Drawing.Size(84, 36);
             this.toolStripButton2.Text = "Выдача";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripButton1
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton1.Image = global::Wallnut.UI.Properties.Resources.vydat;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton1.Size = new System.Drawing.Size(93, 36);
             this.toolStripButton1.Text = "Приемка";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
@@ -344,7 +339,7 @@
             // 
             this.ss.Location = new System.Drawing.Point(0, 240);
             this.ss.Name = "ss";
-            this.ss.Size = new System.Drawing.Size(762, 22);
+            this.ss.Size = new System.Drawing.Size(878, 22);
             this.ss.TabIndex = 0;
             this.ss.Text = "statusStrip1";
             // 
@@ -352,7 +347,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(762, 262);
+            this.ClientSize = new System.Drawing.Size(878, 262);
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.bn);
             this.Controls.Add(this.ss);
