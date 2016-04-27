@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using Wallnut.UI.Implementations;
 using Wallnut.Domain.Models;
 using Wallnut.BusinessLogic.Implementations;
+using Wallnut.UI.Admin.PropertyToEntityFrm;
 
 namespace Wallnut.UI.Admin.RoleFrm
 {
@@ -26,7 +27,7 @@ namespace Wallnut.UI.Admin.RoleFrm
 
         private void tsbAdd_Click(object sender, EventArgs e)
         {
-            AddEntity<AddForm, object>();
+            AddEntity<fAddRole, Role>();
         }
 
         private void tsbEdit_Click(object sender, EventArgs e)
@@ -41,6 +42,18 @@ namespace Wallnut.UI.Admin.RoleFrm
             var entity = dgv.SelectedRows[0].DataBoundItem as Role;
             var id = entity.BusinessEntityID;
             RemoveEntity<Role>(id);
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+             if (bs.Count > 0)
+            {
+                   var entity = dgv.SelectedRows[0].DataBoundItem as Role;
+            
+            fPropertyToEntity frm = new fPropertyToEntity();
+            frm.BusinesEntityId = entity.BusinessEntityID;
+            frm.ShowDialog();
+             }
         }
 
 

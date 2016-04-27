@@ -24,5 +24,18 @@ namespace Wallnut.BusinessLogic.Implementations
         {
 
         }
+
+       /* #region GetNewBusinessEntityID
+        private int GetNewBusinessEntityID()
+        {
+            var be = new BusinessEntity();
+            be.BusinessEntityID = 0;
+            be.ModifiedDate = DateTime.Now;
+            Context.Set<Wallnut.Domain.Models.BusinessEntity>().Add(be);
+            (Context as DbContext).SaveChanges();
+            return be.BusinessEntityID;
+
+        }
+        #endregion*/
     }
 }

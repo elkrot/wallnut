@@ -33,6 +33,8 @@ using Wallnut.UI.Sales.StoreFrm;
 using Wallnut.UI.Sales.SalesOrderHeader;
 using Wallnut.UI.Persons.StateProvince;
 using Wallnut.UI.Sales.SpecialOfferFrm;
+using Wallnut.UI.Admin.RoleFrm;
+using Wallnut.UI.Admin.PropertyFrm;
 
 namespace Wallnut.UI
 {
@@ -265,6 +267,18 @@ namespace Wallnut.UI
         {
             fSpecialOfferProduct f = new fSpecialOfferProduct();
             f.ShowDialog();
+        }
+
+        private void tToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fRole frm = new fRole();
+            frm.ShowDialog();
+        }
+
+        private void свойстваToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fProperty frm = new fProperty();
+            frm.ShowDialog();
         }
         
         /*

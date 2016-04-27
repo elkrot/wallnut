@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Wallnut.Domain.Models;
+using Wallnut.BusinessLogic.Implementations;
 
 namespace Wallnut.UI.Admin.RoleFrm
 {
@@ -53,6 +54,28 @@ namespace Wallnut.UI.Admin.RoleFrm
 
                 this.DialogResult = System.Windows.Forms.DialogResult.None;
             }
+            else {
+                if ((this.entity as Role).BusinessEntityID == 0)
+                    (this.entity as Role).BusinessEntityID = GetBEId();
+            }
         }
+
+
+        #region GetBEId
+        private int GetBEId()
+        {
+            var id = 0;
+            using (var unitOfWork = new UnitOfWork(new WallnutProductionContext()))
+            {
+
+                BusinessLogic.Interfaces.IRepository<BusinessEntity> repo = unitOfWork.GetRepository<BusinessEntity>();
+                id = (repo as BusinessEntityRepository).GetNewBusinessEntityID();
+
+
+            }
+            return id;
+
+        }
+        #endregion
     }
 }
