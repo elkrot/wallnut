@@ -10,7 +10,7 @@ namespace Wallnut.Domain.Models
         {
             this.BusinessEntityAddresses = new List<BusinessEntityAddress>();
             this.BusinessEntityContacts = new List<BusinessEntityContact>();
-            this.ProprertyToEntities = new List<PropertyToEntity>();
+            this.PropertyToEntities = new List<PropertyToEntity>();
         }
 
  
@@ -23,7 +23,7 @@ namespace Wallnut.Domain.Models
         public virtual ICollection<BusinessEntityAddress> BusinessEntityAddresses { get; set; }
         public virtual ICollection<BusinessEntityContact> BusinessEntityContacts { get; set; }
         public virtual Person Person { get; set; }
-        public virtual ICollection<PropertyToEntity> ProprertyToEntities { get; set; }
+        public virtual ICollection<PropertyToEntity> PropertyToEntities { get; set; }
         public virtual Role Role { get; set; }
         public virtual Store Store { get; set; }
         public virtual Vendor Vendor { get; set; }

@@ -33,7 +33,7 @@ namespace Wallnut.UI.Admin.PropertyToEntityFrm
 
         private void tsbAdd_Click(object sender, EventArgs e)
         {
-            behavior.AddEntity();
+            behavior.AddEntity(BusinesEntityId);
         }
 
         private void tsbEdit_Click(object sender, EventArgs e)

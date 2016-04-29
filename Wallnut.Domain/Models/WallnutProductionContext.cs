@@ -40,7 +40,7 @@ namespace Wallnut.Domain.Models
         public DbSet<PersonPhone> PersonPhones { get; set; }
         public DbSet<PhoneNumberType> PhoneNumberTypes { get; set; }
         public DbSet<Property> Proprerties { get; set; }
-        public DbSet<PropertyToEntity> ProprertyToEntities { get; set; }
+        public DbSet<PropertyToEntity> PropertyToEntities { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<StateProvince> StateProvinces { get; set; }
         public DbSet<Expenditure> Expenditures { get; set; }

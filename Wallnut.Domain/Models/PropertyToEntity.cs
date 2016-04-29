@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 namespace Wallnut.Domain.Models
 {
-    [Table("ProprertyToEntity", Schema="Person")]
+    [Table("PropertyToEntity", Schema="Person")]
     public partial class PropertyToEntity
     {
  

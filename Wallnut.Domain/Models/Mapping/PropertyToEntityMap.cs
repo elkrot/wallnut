@@ -25,7 +25,7 @@ namespace Wallnut.Domain.Models.Mapping
 
             // Relationships
             this.HasRequired(t => t.BusinessEntity)
-                .WithMany(t => t.ProprertyToEntities)
+                .WithMany(t => t.PropertyToEntities)
                 .HasForeignKey(d => d.BusinesEntityID);
             this.HasRequired(t => t.Property)
                 .WithMany(t => t.PropertyToEntities)
