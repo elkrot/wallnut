@@ -13,11 +13,11 @@ namespace Wallnut.Domain.Models
             this.ProductListPriceHistories = new List<ProductListPriceHistory>();
             this.ProductVendors = new List<ProductVendor>();
             this.PurchaseOrderDetails = new List<PurchaseOrderDetail>();
+            this.SalesOrderDetails = new List<SalesOrderDetail>();
             this.SpecialOfferProducts = new List<SpecialOfferProduct>();
             this.TransactionHistories = new List<TransactionHistory>();
             this.WorkOrders = new List<WorkOrder>();
             this.WorkOrderHistories = new List<WorkOrderHistory>();
-            this.SalesOrderDetails = new List<SalesOrderDetail>();
         }
 
  
@@ -56,10 +56,10 @@ namespace Wallnut.Domain.Models
         public virtual ICollection<ProductListPriceHistory> ProductListPriceHistories { get; set; }
         public virtual ICollection<ProductVendor> ProductVendors { get; set; }
         public virtual ICollection<PurchaseOrderDetail> PurchaseOrderDetails { get; set; }
+        public virtual ICollection<SalesOrderDetail> SalesOrderDetails { get; set; }
         public virtual ICollection<SpecialOfferProduct> SpecialOfferProducts { get; set; }
         public virtual ICollection<TransactionHistory> TransactionHistories { get; set; }
         public virtual ICollection<WorkOrder> WorkOrders { get; set; }
         public virtual ICollection<WorkOrderHistory> WorkOrderHistories { get; set; }
-        public virtual ICollection<SalesOrderDetail> SalesOrderDetails { get; set; }
     }
 }

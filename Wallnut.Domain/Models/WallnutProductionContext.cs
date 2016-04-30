@@ -35,11 +35,12 @@ namespace Wallnut.Domain.Models
         public DbSet<ContactType> ContactTypes { get; set; }
         public DbSet<CountryRegion> CountryRegions { get; set; }
         public DbSet<EmailAddress> EmailAddresses { get; set; }
+        public DbSet<EmployeeRole> EmployeeRoles { get; set; }
         public DbSet<Password> Passwords { get; set; }
         public DbSet<Person> People { get; set; }
         public DbSet<PersonPhone> PersonPhones { get; set; }
         public DbSet<PhoneNumberType> PhoneNumberTypes { get; set; }
-        public DbSet<Property> Proprerties { get; set; }
+        public DbSet<Property> Properties { get; set; }
         public DbSet<PropertyToEntity> PropertyToEntities { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<StateProvince> StateProvinces { get; set; }
@@ -74,7 +75,6 @@ namespace Wallnut.Domain.Models
         public DbSet<Store> Stores { get; set; }
         public DbSet<vEmployeeCurrentJub> vEmployeeCurrentJubs { get; set; }
 
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new DatabaseLogMap());
@@ -95,6 +95,7 @@ namespace Wallnut.Domain.Models
             modelBuilder.Configurations.Add(new ContactTypeMap());
             modelBuilder.Configurations.Add(new CountryRegionMap());
             modelBuilder.Configurations.Add(new EmailAddressMap());
+            modelBuilder.Configurations.Add(new EmployeeRoleMap());
             modelBuilder.Configurations.Add(new PasswordMap());
             modelBuilder.Configurations.Add(new PersonMap());
             modelBuilder.Configurations.Add(new PersonPhoneMap());

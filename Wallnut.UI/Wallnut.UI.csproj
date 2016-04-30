@@ -148,6 +148,18 @@
     <Compile Include="HumanResources\frmEmployeeAttendanceHistory\fEmployeeAttendanceHistory.Designer.cs">
       <DependentUpon>fEmployeeAttendanceHistory.cs</DependentUpon>
     </Compile>
+    <Compile Include="HumanResources\frmEmployeeRole\fAddEmployeeRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HumanResources\frmEmployeeRole\fAddEmployeeRole.Designer.cs">
+      <DependentUpon>fAddEmployeeRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HumanResources\frmEmployeeRole\fEmployeeRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HumanResources\frmEmployeeRole\fEmployeeRole.Designer.cs">
+      <DependentUpon>fEmployeeRole.cs</DependentUpon>
+    </Compile>
     <Compile Include="Implementations\AddForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -658,6 +670,12 @@
     <EmbeddedResource Include="HumanResources\frmEmployeeAttendanceHistory\fEmployeeAttendanceHistory.resx">
       <DependentUpon>fEmployeeAttendanceHistory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HumanResources\frmEmployeeRole\fAddEmployeeRole.resx">
+      <DependentUpon>fAddEmployeeRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HumanResources\frmEmployeeRole\fEmployeeRole.resx">
+      <DependentUpon>fEmployeeRole.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Implementations\AddForm.resx">
       <DependentUpon>AddForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -911,6 +929,7 @@
     <None Include="Properties\DataSources\Wallnut.Domain.Models.Employee.datasource" />
     <None Include="Properties\DataSources\Wallnut.Domain.Models.EmployeeAttendanceHistory.datasource" />
     <None Include="Properties\DataSources\Wallnut.Domain.Models.EmployeeDepartmentHistory.datasource" />
+    <None Include="Properties\DataSources\Wallnut.Domain.Models.EmployeeRole.datasource" />
     <None Include="Properties\DataSources\Wallnut.Domain.Models.EmployeeWithAttr.datasource" />
     <None Include="Properties\DataSources\Wallnut.Domain.Models.Expenditure.datasource" />
     <None Include="Properties\DataSources\Wallnut.Domain.Models.ExpenditureCostHistory.datasource" />

@@ -49,6 +49,7 @@ namespace Wallnut.UI
             this.tsbAdd = new System.Windows.Forms.ToolStripButton();
             this.tsbRemove = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
@@ -101,6 +102,7 @@ namespace Wallnut.UI
             this.tsbAdd,
             this.tsbRemove,
             this.toolStripButton4,
+            this.toolStripButton1,
             this.toolStripButton6,
             this.toolStripSeparator1,
             this.toolStripButton9,
@@ -245,6 +247,16 @@ namespace Wallnut.UI
             this.toolStripButton4.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton4.Text = "История перемещения";
             this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click_1);
             // 
             // toolStripButton6
             // 
@@ -502,6 +514,7 @@ namespace Wallnut.UI
         private System.Windows.Forms.DataGridViewTextBoxColumn shiftNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn departmentNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn groupNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }
 

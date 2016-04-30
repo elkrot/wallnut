@@ -62,6 +62,7 @@
     <Compile Include="Entities\EmployeeAttendanceHistory.cs" />
     <Compile Include="Entities\EmployeeDepartmentHistory.cs" />
     <Compile Include="Entities\EmployeePayHistory.cs" />
+    <Compile Include="Entities\EmployeeRole.cs" />
     <Compile Include="Entities\Expenditure.cs" />
     <Compile Include="Entities\ExpenditureCostHistory.cs" />
     <Compile Include="Entities\Location.cs" />
@@ -110,6 +111,7 @@
     <Compile Include="Models\EmployeeAttendanceHistory.cs" />
     <Compile Include="Models\EmployeeDepartmentHistory.cs" />
     <Compile Include="Models\EmployeePayHistory.cs" />
+    <Compile Include="Models\EmployeeRole.cs" />
     <Compile Include="Models\ErrorLog.cs" />
     <Compile Include="Models\Expenditure.cs" />
     <Compile Include="Models\ExpenditureCostHistory.cs" />
@@ -132,6 +134,7 @@
     <Compile Include="Models\Mapping\EmployeeDepartmentHistoryMap.cs" />
     <Compile Include="Models\Mapping\EmployeeMap.cs" />
     <Compile Include="Models\Mapping\EmployeePayHistoryMap.cs" />
+    <Compile Include="Models\Mapping\EmployeeRoleMap.cs" />
     <Compile Include="Models\Mapping\ErrorLogMap.cs" />
     <Compile Include="Models\Mapping\ExpenditureCostHistoryMap.cs" />
     <Compile Include="Models\Mapping\ExpenditureMap.cs" />

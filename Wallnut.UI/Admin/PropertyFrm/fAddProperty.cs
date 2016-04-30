@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Wallnut.Domain.Models;
+using System.ComponentModel.DataAnnotations;
+
 
 namespace Wallnut.UI.Admin.PropertyFrm
 {
@@ -55,9 +57,31 @@ namespace Wallnut.UI.Admin.PropertyFrm
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            
+            
+
             if (!this.ValidateChildren())
             {
 
+                this.DialogResult = System.Windows.Forms.DialogResult.None;
+            }
+            ValidateByModel();
+
+        }
+
+        private void ValidateByModel()
+        {
+            var prop = this.entity as Wallnut.Domain.Models.Property;
+            var results = new List<ValidationResult>();
+            var context = new ValidationContext(prop, null, null);
+            var errors = "";
+            if (!Validator.TryValidateObject(prop, context, results, true))
+            {
+                foreach (var error in results)
+                {
+                    errors += error.ErrorMessage;
+                }
+                MessageBox.Show(errors);
                 this.DialogResult = System.Windows.Forms.DialogResult.None;
             }
         }

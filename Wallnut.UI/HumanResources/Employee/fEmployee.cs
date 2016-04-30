@@ -11,6 +11,7 @@ using Wallnut.Domain;
 using Wallnut.BusinessLogic;
 using Wallnut.Domain.Models;
 using Wallnut.UI.HumanResources.EmployeeDepartmentHistory;
+using Wallnut.UI.HumanResources.frmEmployeeRole;
 
 namespace Wallnut.UI
 {
@@ -172,6 +173,19 @@ namespace Wallnut.UI
         private void dgvEmployee_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void toolStripButton1_Click_1(object sender, EventArgs e)
+        {
+            var frm = new fEmployeeRole();
+            var emp = dgvEmployee.SelectedRows[0].DataBoundItem as EmployeeWithAttr;
+            var employeeId = emp.BusinessEntityID;
+            frm.employeeID = employeeId;
+            frm.ShowDialog();
+            using (var unitOfWork = new UnitOfWork(new WallnutProductionContext()))
+            {
+                RereadData(unitOfWork);
+            }
         }
         
 

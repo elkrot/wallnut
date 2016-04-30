@@ -75,6 +75,7 @@ namespace Wallnut.BusinessLogic.Implementations
             PropertyRepository = new PropertyRepository(_context);
             PropertyToEntityRepository = new PropertyToEntityRepository(_context);
             RoleRepository = new RoleRepository(_context);
+            EmployeeRoleRepository = new EmployeeRoleRepository(_context);
 
         }
         #endregion
@@ -131,6 +132,8 @@ namespace Wallnut.BusinessLogic.Implementations
         public IPropertyRepository PropertyRepository { get; private set; }
         public IPropertyToEntityRepository PropertyToEntityRepository { get; private set; }
         public IRoleRepository RoleRepository { get; private set; }
+
+        public IEmployeeRoleRepository EmployeeRoleRepository { get; private set; }
 
         #endregion
 
@@ -290,8 +293,9 @@ namespace Wallnut.BusinessLogic.Implementations
 
                 case "Role": ret = (IRepository<T>)RoleRepository;
                     break;
-
-
+                case "EmployeeRole": ret = (IRepository<T>)EmployeeRoleRepository;
+                    break;
+                    
                 default:
                     ret = null;
                     break;

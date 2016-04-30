@@ -6,6 +6,11 @@ namespace Wallnut.Domain.Models
     [Table("Role", Schema="Person")]
     public partial class Role
     {
+        public Role()
+        {
+            this.EmployeeRoles = new List<EmployeeRole>();
+        }
+
  
         [Column("BusinessEntityID")] 
 	        public int BusinessEntityID { get; set; }
@@ -16,5 +21,6 @@ namespace Wallnut.Domain.Models
         [Column("ModifiedDate")] 
 	        public System.DateTime ModifiedDate { get; set; }
         public virtual BusinessEntity BusinessEntity { get; set; }
+        public virtual ICollection<EmployeeRole> EmployeeRoles { get; set; }
     }
 }

@@ -9,13 +9,13 @@ namespace Wallnut.Domain.Models.Mapping
         {
             // Primary Key
             this.HasKey(t => t.PropertyCode);
-            
+
             // Properties
             this.Property(t => t.PropertyCode)
                 .IsRequired()
                 .HasMaxLength(15);
 
-            this.Property(t => t.PropertyCode)
+            this.Property(t => t.PropertyTitle)
                 .IsRequired()
                 .HasMaxLength(50);
 

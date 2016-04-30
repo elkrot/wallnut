@@ -15,8 +15,7 @@ namespace Wallnut.Domain.Models
         [Column("SalesOrderID")] 
 	        public int SalesOrderID { get; set; }
  
-        [Column("RevisionNumber")]
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        [Column("RevisionNumber")] 
 	        public byte RevisionNumber { get; set; }
  
         [Column("OrderDate")] 
@@ -31,7 +30,8 @@ namespace Wallnut.Domain.Models
         [Column("Status")] 
 	        public byte Status { get; set; }
  
-        [Column("SalesOrderNumber")] 
+        [Column("SalesOrderNumber")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
 	        public string SalesOrderNumber { get; set; }
  
         [Column("PurchaseOrderNumber")] 
