@@ -63,6 +63,16 @@ namespace Wallnut.UI.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _157_GetPermission_48x48_72 {
+            get {
+                object obj = ResourceManager.GetObject("157_GetPermission_48x48_72", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add_on {
             get {
                 object obj = ResourceManager.GetObject("add_on", resourceCulture);

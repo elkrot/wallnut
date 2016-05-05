@@ -1024,6 +1024,14 @@
   <ItemGroup>
     <None Include="ico\filter.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\157_GetPermission_48x48_72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Admin\DatabaseLogFrm\" />
+    <Folder Include="Admin\ErrorLogFrm\" />
+    <Folder Include="Admin\TransactionTypeFrm\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -95,6 +95,9 @@
     <Compile Include="Implementations\ProprtyToEntityRepository.cs" />
     <Compile Include="Implementations\RoleRepository.cs" />
     <Compile Include="Implementations\EmployeeRoleRepository.cs" />
+    <Compile Include="Implementations\TransactionTypeRepository.cs" />
+    <Compile Include="Implementations\DatabaseLogRepository.cs" />
+    <Compile Include="Implementations\ErrorLogRepository.cs" />
     <Compile Include="Interfaces\IAddressRepository.cs" />
     <Compile Include="Interfaces\IAddressTypeRepository.cs" />
     <Compile Include="Interfaces\IBusinessEntityAddressRepository.cs" />
@@ -142,6 +145,9 @@
     <Compile Include="Interfaces\IPropertyToEntityRepository.cs" />
     <Compile Include="Interfaces\IRoleRepository.cs" />
     <Compile Include="Interfaces\IEmployeeRoleRepository.cs" />
+    <Compile Include="Interfaces\ITransactionTypeRepository.cs" />
+    <Compile Include="Interfaces\IDatabaseLogRepository.cs" />
+    <Compile Include="Interfaces\IErrorLogRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

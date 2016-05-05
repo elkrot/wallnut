@@ -77,6 +77,12 @@ namespace Wallnut.BusinessLogic.Implementations
             RoleRepository = new RoleRepository(_context);
             EmployeeRoleRepository = new EmployeeRoleRepository(_context);
 
+            DatabaseLogRepository = new DatabaseLogRepository(_context);
+            ErrorLogRepository = new ErrorLogRepository(_context);
+            TransactionTypeRepository = new TransactionTypeRepository(_context);
+              
+  
+  
         }
         #endregion
 
@@ -125,7 +131,7 @@ namespace Wallnut.BusinessLogic.Implementations
 
         public IAddressTypesRepository AddressTypeRepository { get; private set; }
 
-        //public I  { get; private set; }
+        //public I_Repository  { get; private set; }
         public ISpecialOfferProductRepository SpecialOfferProductRepository { get; private set; }
         public ISpecialOfferRepository SpecialOfferRepository { get; private set; }
 
@@ -134,6 +140,11 @@ namespace Wallnut.BusinessLogic.Implementations
         public IRoleRepository RoleRepository { get; private set; }
 
         public IEmployeeRoleRepository EmployeeRoleRepository { get; private set; }
+
+        public IDatabaseLogRepository  DatabaseLogRepository{ get; private set; }
+    public IErrorLogRepository  ErrorLogRepository{ get; private set; }
+public ITransactionTypeRepository  TransactionTypeRepository{ get; private set; }
+
 
         #endregion
 
@@ -296,6 +307,17 @@ namespace Wallnut.BusinessLogic.Implementations
                 case "EmployeeRole": ret = (IRepository<T>)EmployeeRoleRepository;
                     break;
                     
+                case "DatabaseLog": ret = (IRepository<T>)DatabaseLogRepository;
+                    break;
+
+                case "ErrorLog": ret = (IRepository<T>)ErrorLogRepository;
+                    break;
+                case "TransactionType": ret = (IRepository<T>)TransactionTypeRepository;
+                    break;
+
+                              
+  
+  
                 default:
                     ret = null;
                     break;
