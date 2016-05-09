@@ -35,6 +35,9 @@ using Wallnut.UI.Persons.StateProvince;
 using Wallnut.UI.Sales.SpecialOfferFrm;
 using Wallnut.UI.Admin.RoleFrm;
 using Wallnut.UI.Admin.PropertyFrm;
+using Wallnut.UI.Admin.ErrorLogFrm;
+using Wallnut.UI.Admin.DatabaseLogFrm;
+using Wallnut.UI.Admin.TransactionTypeFrm;
 
 namespace Wallnut.UI
 {
@@ -278,6 +281,24 @@ namespace Wallnut.UI
         private void свойстваToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fProperty frm = new fProperty();
+            frm.ShowDialog();
+        }
+
+        private void tsmiErrorLog_Click(object sender, EventArgs e)
+        {
+            fErrorLog frm = new fErrorLog();
+            frm.ShowDialog();
+        }
+
+        private void tsmiDatabaseLog_Click(object sender, EventArgs e)
+        {
+            fDatabaseLog frm = new fDatabaseLog();
+            frm.ShowDialog();
+        }
+
+        private void tsmiTransactionType_Click(object sender, EventArgs e)
+        {
+            fTransactionType frm = new fTransactionType();
             frm.ShowDialog();
         }
         

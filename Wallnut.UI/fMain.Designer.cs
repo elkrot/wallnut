@@ -78,6 +78,8 @@
             this.tsmiReporting = new System.Windows.Forms.ToolStripMenuItem();
             this.tmplToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiProperties = new System.Windows.Forms.ToolStripMenuItem();
+            this.tToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.свойстваToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
@@ -85,8 +87,9 @@
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.tToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.свойстваToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiErrorLog = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiDatabaseLog = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTransactionType = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.SuspendLayout();
@@ -481,10 +484,27 @@
             // 
             this.tsmiProperties.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tToolStripMenuItem,
-            this.свойстваToolStripMenuItem});
+            this.свойстваToolStripMenuItem,
+            this.tsmiErrorLog,
+            this.tsmiDatabaseLog,
+            this.tsmiTransactionType});
             this.tsmiProperties.Name = "tsmiProperties";
             this.tsmiProperties.Size = new System.Drawing.Size(134, 20);
             this.tsmiProperties.Text = "Администрирование";
+            // 
+            // tToolStripMenuItem
+            // 
+            this.tToolStripMenuItem.Name = "tToolStripMenuItem";
+            this.tToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.tToolStripMenuItem.Text = "Роли";
+            this.tToolStripMenuItem.Click += new System.EventHandler(this.tToolStripMenuItem_Click);
+            // 
+            // свойстваToolStripMenuItem
+            // 
+            this.свойстваToolStripMenuItem.Name = "свойстваToolStripMenuItem";
+            this.свойстваToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.свойстваToolStripMenuItem.Text = "Свойства";
+            this.свойстваToolStripMenuItem.Click += new System.EventHandler(this.свойстваToolStripMenuItem_Click);
             // 
             // statusStrip
             // 
@@ -560,19 +580,26 @@
             this.toolStripButton5.Size = new System.Drawing.Size(34, 36);
             this.toolStripButton5.Text = "toolStripButton5";
             // 
-            // tToolStripMenuItem
+            // tsmiErrorLog
             // 
-            this.tToolStripMenuItem.Name = "tToolStripMenuItem";
-            this.tToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.tToolStripMenuItem.Text = "Роли";
-            this.tToolStripMenuItem.Click += new System.EventHandler(this.tToolStripMenuItem_Click);
+            this.tsmiErrorLog.Name = "tsmiErrorLog";
+            this.tsmiErrorLog.Size = new System.Drawing.Size(168, 22);
+            this.tsmiErrorLog.Text = "Журнал Ошибок";
+            this.tsmiErrorLog.Click += new System.EventHandler(this.tsmiErrorLog_Click);
             // 
-            // свойстваToolStripMenuItem
+            // tsmiDatabaseLog
             // 
-            this.свойстваToolStripMenuItem.Name = "свойстваToolStripMenuItem";
-            this.свойстваToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.свойстваToolStripMenuItem.Text = "Свойства";
-            this.свойстваToolStripMenuItem.Click += new System.EventHandler(this.свойстваToolStripMenuItem_Click);
+            this.tsmiDatabaseLog.Name = "tsmiDatabaseLog";
+            this.tsmiDatabaseLog.Size = new System.Drawing.Size(168, 22);
+            this.tsmiDatabaseLog.Text = "Журнал БД";
+            this.tsmiDatabaseLog.Click += new System.EventHandler(this.tsmiDatabaseLog_Click);
+            // 
+            // tsmiTransactionType
+            // 
+            this.tsmiTransactionType.Name = "tsmiTransactionType";
+            this.tsmiTransactionType.Size = new System.Drawing.Size(168, 22);
+            this.tsmiTransactionType.Text = "Тип транзакции";
+            this.tsmiTransactionType.Click += new System.EventHandler(this.tsmiTransactionType_Click);
             // 
             // fMain
             // 
@@ -657,5 +684,8 @@
         private System.Windows.Forms.ToolStripMenuItem tsmSpecialOfferProduct;
         private System.Windows.Forms.ToolStripMenuItem tToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem свойстваToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiErrorLog;
+        private System.Windows.Forms.ToolStripMenuItem tsmiDatabaseLog;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTransactionType;
     }
 }

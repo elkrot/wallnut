@@ -12,6 +12,7 @@ namespace Wallnut.UI.fTemplates
 {
     public partial class fEdit : Wallnut.UI.Implementations.AddForm
     {
+        //public List<Wallnut.Domain.Models.Location> LocationListFrom;
         public fEdit()
         {
             
@@ -26,6 +27,34 @@ namespace Wallnut.UI.fTemplates
             "Name",
             false,
             DataSourceUpdateMode.OnPropertyChanged);
+
+            #region Fill Lists
+           /* using (var unitOfWork = new UnitOfWork(new WallnutProductionContext()))
+            {
+
+
+                this.LocationListFrom = unitOfWork.LocationRepository.GetAll().ToList<Wallnut.Domain.Models.Location>();
+                cbLocationIDFrom.DataSource = LocationListFrom;
+
+                this.LocationListTo = unitOfWork.LocationRepository.GetAll().ToList<Wallnut.Domain.Models.Location>();
+                cbLocationIDTo.DataSource = LocationListTo;
+
+            }*/
+            #endregion
+
+            #region Binding Combo
+           /* var locationIDTo = (this.entity as Wallnut.Domain.Models.TransactionType).LocationIDTo;
+            cbLocationIDTo.ValueMember = "LocationID";
+            cbLocationIDTo.DisplayMember = "Name";
+            cbLocationIDTo.SelectedValue = locationIDTo;
+            (this.entity as Wallnut.Domain.Models.TransactionType).LocationIDTo = locationIDTo;
+            cbLocationIDTo.SelectedIndexChanged += (x, y) =>
+            {
+                (this.entity as Wallnut.Domain.Models.TransactionType).LocationIDTo =
+                    (short)cbLocationIDTo.SelectedValue;
+            };*/
+            #endregion
+
 
         }
 

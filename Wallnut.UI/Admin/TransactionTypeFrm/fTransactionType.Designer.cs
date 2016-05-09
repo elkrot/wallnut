@@ -1,6 +1,6 @@
-﻿namespace Wallnut.UI.fTemplates
+﻿namespace Wallnut.UI.Admin.TransactionTypeFrm
 {
-    partial class fListTpl
+    partial class fTransactionType
     {
         /// <summary>
         /// Required designer variable.
@@ -35,18 +35,28 @@
             this.tsbEdit = new System.Windows.Forms.ToolStripButton();
             this.tsbDelete = new System.Windows.Forms.ToolStripButton();
             this.dgv = new System.Windows.Forms.DataGridView();
+            this.transactionTypeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.operationSequenceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.locationIDFromDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.locationIDToDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isSysRowDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bn)).BeginInit();
             this.bn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
+            // bs
+            // 
+            this.bs.DataSource = typeof(Wallnut.Domain.Models.TransactionType);
+            // 
             // ss
             // 
             this.ss.Location = new System.Drawing.Point(0, 341);
             this.ss.Name = "ss";
             this.ss.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
-            this.ss.Size = new System.Drawing.Size(473, 22);
+            this.ss.Size = new System.Drawing.Size(656, 22);
             this.ss.TabIndex = 0;
             this.ss.Text = "statusStrip1";
             // 
@@ -69,7 +79,7 @@
             this.bn.Name = "bn";
             this.bn.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.bn.PositionItem = null;
-            this.bn.Size = new System.Drawing.Size(473, 39);
+            this.bn.Size = new System.Drawing.Size(656, 39);
             this.bn.TabIndex = 1;
             this.bn.Text = "bindingNavigator1";
             // 
@@ -106,27 +116,72 @@
             this.dgv.AllowUserToDeleteRows = false;
             this.dgv.AutoGenerateColumns = false;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.transactionTypeIDDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.operationSequenceDataGridViewTextBoxColumn,
+            this.locationIDFromDataGridViewTextBoxColumn,
+            this.locationIDToDataGridViewTextBoxColumn,
+            this.isSysRowDataGridViewCheckBoxColumn});
             this.dgv.DataSource = this.bs;
             this.dgv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv.Location = new System.Drawing.Point(0, 39);
-            this.dgv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgv.Margin = new System.Windows.Forms.Padding(4);
             this.dgv.Name = "dgv";
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(473, 302);
+            this.dgv.Size = new System.Drawing.Size(656, 302);
             this.dgv.TabIndex = 2;
             // 
-            // fListTpl
+            // transactionTypeIDDataGridViewTextBoxColumn
+            // 
+            this.transactionTypeIDDataGridViewTextBoxColumn.DataPropertyName = "TransactionTypeID";
+            this.transactionTypeIDDataGridViewTextBoxColumn.HeaderText = "Код";
+            this.transactionTypeIDDataGridViewTextBoxColumn.Name = "transactionTypeIDDataGridViewTextBoxColumn";
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.FillWeight = 200F;
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Наименование";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // operationSequenceDataGridViewTextBoxColumn
+            // 
+            this.operationSequenceDataGridViewTextBoxColumn.DataPropertyName = "OperationSequence";
+            this.operationSequenceDataGridViewTextBoxColumn.HeaderText = "Порядок";
+            this.operationSequenceDataGridViewTextBoxColumn.Name = "operationSequenceDataGridViewTextBoxColumn";
+            // 
+            // locationIDFromDataGridViewTextBoxColumn
+            // 
+            this.locationIDFromDataGridViewTextBoxColumn.DataPropertyName = "LocationIDFrom";
+            this.locationIDFromDataGridViewTextBoxColumn.HeaderText = "Откуда";
+            this.locationIDFromDataGridViewTextBoxColumn.Name = "locationIDFromDataGridViewTextBoxColumn";
+            // 
+            // locationIDToDataGridViewTextBoxColumn
+            // 
+            this.locationIDToDataGridViewTextBoxColumn.DataPropertyName = "LocationIDTo";
+            this.locationIDToDataGridViewTextBoxColumn.HeaderText = "Куда";
+            this.locationIDToDataGridViewTextBoxColumn.Name = "locationIDToDataGridViewTextBoxColumn";
+            // 
+            // isSysRowDataGridViewCheckBoxColumn
+            // 
+            this.isSysRowDataGridViewCheckBoxColumn.DataPropertyName = "IsSysRow";
+            this.isSysRowDataGridViewCheckBoxColumn.HeaderText = "Системная строка";
+            this.isSysRowDataGridViewCheckBoxColumn.Name = "isSysRowDataGridViewCheckBoxColumn";
+            // 
+            // fTransactionType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(473, 363);
+            this.ClientSize = new System.Drawing.Size(656, 363);
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.bn);
             this.Controls.Add(this.ss);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "fListTpl";
-            this.Text = "fList";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "fTransactionType";
+            this.Text = "Тип транзакции";
             this.Load += new System.EventHandler(this.fList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bn)).EndInit();
@@ -146,5 +201,11 @@
         private System.Windows.Forms.ToolStripButton tsbEdit;
         private System.Windows.Forms.ToolStripButton tsbDelete;
         private System.Windows.Forms.DataGridView dgv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn transactionTypeIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn operationSequenceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn locationIDFromDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn locationIDToDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isSysRowDataGridViewCheckBoxColumn;
     }
 }

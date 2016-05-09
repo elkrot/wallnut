@@ -55,6 +55,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\DatabaseLogFrm\fDatabaseLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\DatabaseLogFrm\fDatabaseLog.Designer.cs">
+      <DependentUpon>fDatabaseLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ErrorLogFrm\fErrorLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\ErrorLogFrm\fErrorLog.Designer.cs">
+      <DependentUpon>fErrorLog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin\PropertyFrm\fAddProperty.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +102,18 @@
     </Compile>
     <Compile Include="Admin\RoleFrm\fRole.Designer.cs">
       <DependentUpon>fRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\TransactionTypeFrm\fAddTransactionType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\TransactionTypeFrm\fAddTransactionType.Designer.cs">
+      <DependentUpon>fAddTransactionType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\TransactionTypeFrm\fTransactionType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\TransactionTypeFrm\fTransactionType.Designer.cs">
+      <DependentUpon>fTransactionType.cs</DependentUpon>
     </Compile>
     <Compile Include="fTemplates\fListTpl.cs">
       <SubType>Form</SubType>
@@ -326,10 +350,10 @@
     <Compile Include="Production\ProductListPriceHistory\fProductListPriceHistory.Designer.cs">
       <DependentUpon>fProductListPriceHistory.cs</DependentUpon>
     </Compile>
-    <Compile Include="Production\Product\fAddProduct.cs">
+    <Compile Include="Production\ProductCostHistory\Product\fAddProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Production\Product\fAddProduct.Designer.cs">
+    <Compile Include="Production\ProductCostHistory\Product\fAddProduct.Designer.cs">
       <DependentUpon>fAddProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="HumanResources\Shift\fAddShift.cs">
@@ -362,10 +386,10 @@
     <Compile Include="HumanResources\Employee\fEmployee.Designer.cs">
       <DependentUpon>fEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="Production\Product\fProducts.cs">
+    <Compile Include="Production\ProductCostHistory\Product\fProducts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Production\Product\fProducts.Designer.cs">
+    <Compile Include="Production\ProductCostHistory\Product\fProducts.Designer.cs">
       <DependentUpon>fProducts.cs</DependentUpon>
     </Compile>
     <Compile Include="HumanResources\Shift\fShifts.cs">
@@ -625,6 +649,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WallnutProductionDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Admin\DatabaseLogFrm\fDatabaseLog.resx">
+      <DependentUpon>fDatabaseLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\ErrorLogFrm\fErrorLog.resx">
+      <DependentUpon>fErrorLog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin\PropertyFrm\fAddProperty.resx">
       <DependentUpon>fAddProperty.cs</DependentUpon>
     </EmbeddedResource>
@@ -642,6 +672,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\RoleFrm\fRole.resx">
       <DependentUpon>fRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\TransactionTypeFrm\fAddTransactionType.resx">
+      <DependentUpon>fAddTransactionType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\TransactionTypeFrm\fTransactionType.resx">
+      <DependentUpon>fTransactionType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fTemplates\fListTpl.resx">
       <DependentUpon>fListTpl.cs</DependentUpon>
@@ -760,7 +796,7 @@
     <EmbeddedResource Include="Production\ProductListPriceHistory\fProductListPriceHistory.resx">
       <DependentUpon>fProductListPriceHistory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Production\Product\fAddProduct.resx">
+    <EmbeddedResource Include="Production\ProductCostHistory\Product\fAddProduct.resx">
       <DependentUpon>fAddProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HumanResources\Shift\fAddShift.resx">
@@ -778,7 +814,7 @@
     <EmbeddedResource Include="HumanResources\Employee\fEmployee.resx">
       <DependentUpon>fEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Production\Product\fProducts.resx">
+    <EmbeddedResource Include="Production\ProductCostHistory\Product\fProducts.resx">
       <DependentUpon>fProducts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HumanResources\Shift\fShifts.resx">
@@ -925,12 +961,14 @@
     <None Include="Properties\DataSources\Wallnut.Domain.Models.CountryRegion.datasource" />
     <None Include="Properties\DataSources\Wallnut.Domain.Models.Currency.datasource" />
     <None Include="Properties\DataSources\Wallnut.Domain.Models.Customer.datasource" />
+    <None Include="Properties\DataSources\Wallnut.Domain.Models.DatabaseLog.datasource" />
     <None Include="Properties\DataSources\Wallnut.Domain.Models.EmailAddress.datasource" />
     <None Include="Properties\DataSources\Wallnut.Domain.Models.Employee.datasource" />
     <None Include="Properties\DataSources\Wallnut.Domain.Models.EmployeeAttendanceHistory.datasource" />
     <None Include="Properties\DataSources\Wallnut.Domain.Models.EmployeeDepartmentHistory.datasource" />
     <None Include="Properties\DataSources\Wallnut.Domain.Models.EmployeeRole.datasource" />
     <None Include="Properties\DataSources\Wallnut.Domain.Models.EmployeeWithAttr.datasource" />
+    <None Include="Properties\DataSources\Wallnut.Domain.Models.ErrorLog.datasource" />
     <None Include="Properties\DataSources\Wallnut.Domain.Models.Expenditure.datasource" />
     <None Include="Properties\DataSources\Wallnut.Domain.Models.ExpenditureCostHistory.datasource" />
     <None Include="Properties\DataSources\Wallnut.Domain.Models.PersonPhone.datasource" />
@@ -952,6 +990,7 @@
     <None Include="Properties\DataSources\Wallnut.Domain.Models.SpecialOffer.datasource" />
     <None Include="Properties\DataSources\Wallnut.Domain.Models.SpecialOfferProduct.datasource" />
     <None Include="Properties\DataSources\Wallnut.Domain.Models.Store.datasource" />
+    <None Include="Properties\DataSources\Wallnut.Domain.Models.TransactionType.datasource" />
     <None Include="Properties\DataSources\Wallnut.Domain.Models.UnitMeasure.datasource" />
     <None Include="Properties\DataSources\Wallnut.Domain.Models.Vendor.datasource" />
     <None Include="Properties\DataSources\Wallnut.Domain.Models.WorkOrder.datasource" />
@@ -1027,11 +1066,7 @@
   <ItemGroup>
     <None Include="ico\157_GetPermission_48x48_72.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Admin\DatabaseLogFrm\" />
-    <Folder Include="Admin\ErrorLogFrm\" />
-    <Folder Include="Admin\TransactionTypeFrm\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

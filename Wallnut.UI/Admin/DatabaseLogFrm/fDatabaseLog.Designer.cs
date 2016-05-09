@@ -1,6 +1,6 @@
-﻿namespace Wallnut.UI.fTemplates
+﻿namespace Wallnut.UI.Admin.DatabaseLogFrm
 {
-    partial class fListTpl
+    partial class fDatabaseLog
     {
         /// <summary>
         /// Required designer variable.
@@ -35,18 +35,30 @@
             this.tsbEdit = new System.Windows.Forms.ToolStripButton();
             this.tsbDelete = new System.Windows.Forms.ToolStripButton();
             this.dgv = new System.Windows.Forms.DataGridView();
+            this.databaseLogIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.postTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.databaseUserDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eventDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.schemaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.objectDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tSQLDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.xmlEventDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bn)).BeginInit();
             this.bn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
+            // bs
+            // 
+            this.bs.DataSource = typeof(Wallnut.Domain.Models.DatabaseLog);
+            // 
             // ss
             // 
             this.ss.Location = new System.Drawing.Point(0, 341);
             this.ss.Name = "ss";
             this.ss.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
-            this.ss.Size = new System.Drawing.Size(473, 22);
+            this.ss.Size = new System.Drawing.Size(795, 22);
             this.ss.TabIndex = 0;
             this.ss.Text = "statusStrip1";
             // 
@@ -69,7 +81,7 @@
             this.bn.Name = "bn";
             this.bn.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.bn.PositionItem = null;
-            this.bn.Size = new System.Drawing.Size(473, 39);
+            this.bn.Size = new System.Drawing.Size(795, 39);
             this.bn.TabIndex = 1;
             this.bn.Text = "bindingNavigator1";
             // 
@@ -80,6 +92,7 @@
             this.tsbAdd.Name = "tsbAdd";
             this.tsbAdd.Size = new System.Drawing.Size(95, 36);
             this.tsbAdd.Text = "Добавить";
+            this.tsbAdd.Visible = false;
             this.tsbAdd.Click += new System.EventHandler(this.tsbAdd_Click);
             // 
             // tsbEdit
@@ -89,6 +102,7 @@
             this.tsbEdit.Name = "tsbEdit";
             this.tsbEdit.Size = new System.Drawing.Size(97, 36);
             this.tsbEdit.Text = "Изменить";
+            this.tsbEdit.Visible = false;
             this.tsbEdit.Click += new System.EventHandler(this.tsbEdit_Click);
             // 
             // tsbDelete
@@ -98,6 +112,7 @@
             this.tsbDelete.Name = "tsbDelete";
             this.tsbDelete.Size = new System.Drawing.Size(87, 36);
             this.tsbDelete.Text = "Удалить";
+            this.tsbDelete.Visible = false;
             this.tsbDelete.Click += new System.EventHandler(this.tsbDelete_Click);
             // 
             // dgv
@@ -106,27 +121,89 @@
             this.dgv.AllowUserToDeleteRows = false;
             this.dgv.AutoGenerateColumns = false;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.databaseLogIDDataGridViewTextBoxColumn,
+            this.postTimeDataGridViewTextBoxColumn,
+            this.databaseUserDataGridViewTextBoxColumn,
+            this.eventDataGridViewTextBoxColumn,
+            this.schemaDataGridViewTextBoxColumn,
+            this.objectDataGridViewTextBoxColumn,
+            this.tSQLDataGridViewTextBoxColumn,
+            this.xmlEventDataGridViewTextBoxColumn});
             this.dgv.DataSource = this.bs;
             this.dgv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv.Location = new System.Drawing.Point(0, 39);
-            this.dgv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgv.Margin = new System.Windows.Forms.Padding(4);
             this.dgv.Name = "dgv";
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(473, 302);
+            this.dgv.Size = new System.Drawing.Size(795, 302);
             this.dgv.TabIndex = 2;
             // 
-            // fListTpl
+            // databaseLogIDDataGridViewTextBoxColumn
+            // 
+            this.databaseLogIDDataGridViewTextBoxColumn.DataPropertyName = "DatabaseLogID";
+            this.databaseLogIDDataGridViewTextBoxColumn.HeaderText = "DatabaseLogID";
+            this.databaseLogIDDataGridViewTextBoxColumn.Name = "databaseLogIDDataGridViewTextBoxColumn";
+            this.databaseLogIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // postTimeDataGridViewTextBoxColumn
+            // 
+            this.postTimeDataGridViewTextBoxColumn.DataPropertyName = "PostTime";
+            this.postTimeDataGridViewTextBoxColumn.HeaderText = "Время";
+            this.postTimeDataGridViewTextBoxColumn.Name = "postTimeDataGridViewTextBoxColumn";
+            // 
+            // databaseUserDataGridViewTextBoxColumn
+            // 
+            this.databaseUserDataGridViewTextBoxColumn.DataPropertyName = "DatabaseUser";
+            this.databaseUserDataGridViewTextBoxColumn.FillWeight = 150F;
+            this.databaseUserDataGridViewTextBoxColumn.HeaderText = "Поьзователь";
+            this.databaseUserDataGridViewTextBoxColumn.Name = "databaseUserDataGridViewTextBoxColumn";
+            this.databaseUserDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // eventDataGridViewTextBoxColumn
+            // 
+            this.eventDataGridViewTextBoxColumn.DataPropertyName = "Event";
+            this.eventDataGridViewTextBoxColumn.FillWeight = 150F;
+            this.eventDataGridViewTextBoxColumn.HeaderText = "Событие";
+            this.eventDataGridViewTextBoxColumn.Name = "eventDataGridViewTextBoxColumn";
+            this.eventDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // schemaDataGridViewTextBoxColumn
+            // 
+            this.schemaDataGridViewTextBoxColumn.DataPropertyName = "Schema";
+            this.schemaDataGridViewTextBoxColumn.HeaderText = "Схема";
+            this.schemaDataGridViewTextBoxColumn.Name = "schemaDataGridViewTextBoxColumn";
+            // 
+            // objectDataGridViewTextBoxColumn
+            // 
+            this.objectDataGridViewTextBoxColumn.DataPropertyName = "Object";
+            this.objectDataGridViewTextBoxColumn.HeaderText = "Объект";
+            this.objectDataGridViewTextBoxColumn.Name = "objectDataGridViewTextBoxColumn";
+            // 
+            // tSQLDataGridViewTextBoxColumn
+            // 
+            this.tSQLDataGridViewTextBoxColumn.DataPropertyName = "TSQL";
+            this.tSQLDataGridViewTextBoxColumn.HeaderText = "TSQL";
+            this.tSQLDataGridViewTextBoxColumn.Name = "tSQLDataGridViewTextBoxColumn";
+            // 
+            // xmlEventDataGridViewTextBoxColumn
+            // 
+            this.xmlEventDataGridViewTextBoxColumn.DataPropertyName = "XmlEvent";
+            this.xmlEventDataGridViewTextBoxColumn.HeaderText = "Xml Событие";
+            this.xmlEventDataGridViewTextBoxColumn.Name = "xmlEventDataGridViewTextBoxColumn";
+            // 
+            // fDatabaseLog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(473, 363);
+            this.ClientSize = new System.Drawing.Size(795, 363);
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.bn);
             this.Controls.Add(this.ss);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "fListTpl";
-            this.Text = "fList";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "fDatabaseLog";
+            this.Text = "Журнал БД";
             this.Load += new System.EventHandler(this.fList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bn)).EndInit();
@@ -146,5 +223,13 @@
         private System.Windows.Forms.ToolStripButton tsbEdit;
         private System.Windows.Forms.ToolStripButton tsbDelete;
         private System.Windows.Forms.DataGridView dgv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn databaseLogIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn postTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn databaseUserDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn eventDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn schemaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn objectDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tSQLDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn xmlEventDataGridViewTextBoxColumn;
     }
 }
