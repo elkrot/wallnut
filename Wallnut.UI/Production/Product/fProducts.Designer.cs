@@ -30,21 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fProducts));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ssProducts = new System.Windows.Forms.StatusStrip();
             this.bsProducts = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.bnProducts = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbAdd = new System.Windows.Forms.ToolStripButton();
             this.tsbEdit = new System.Windows.Forms.ToolStripButton();
@@ -69,9 +58,10 @@
             // 
             // ssProducts
             // 
-            this.ssProducts.Location = new System.Drawing.Point(0, 273);
+            this.ssProducts.Location = new System.Drawing.Point(0, 386);
             this.ssProducts.Name = "ssProducts";
-            this.ssProducts.Size = new System.Drawing.Size(547, 22);
+            this.ssProducts.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
+            this.ssProducts.Size = new System.Drawing.Size(820, 22);
             this.ssProducts.TabIndex = 0;
             this.ssProducts.Text = "statusStrip1";
             // 
@@ -79,26 +69,20 @@
             // 
             this.panel1.Controls.Add(this.bnProducts);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 24);
+            this.panel1.Location = new System.Drawing.Point(0, 25);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(547, 27);
+            this.panel1.Size = new System.Drawing.Size(820, 37);
             this.panel1.TabIndex = 2;
             // 
             // bnProducts
             // 
             this.bnProducts.AddNewItem = null;
             this.bnProducts.BindingSource = this.bsProducts;
-            this.bnProducts.CountItem = this.bindingNavigatorCountItem;
+            this.bnProducts.CountItem = null;
             this.bnProducts.DeleteItem = null;
+            this.bnProducts.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.bnProducts.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
             this.tsbAdd,
             this.tsbEdit,
@@ -106,132 +90,66 @@
             this.tsbProductListPriceHistory,
             this.tsbProductCostHistory});
             this.bnProducts.Location = new System.Drawing.Point(0, 0);
-            this.bnProducts.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.bnProducts.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.bnProducts.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.bnProducts.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.bnProducts.MoveFirstItem = null;
+            this.bnProducts.MoveLastItem = null;
+            this.bnProducts.MoveNextItem = null;
+            this.bnProducts.MovePreviousItem = null;
             this.bnProducts.Name = "bnProducts";
-            this.bnProducts.PositionItem = this.bindingNavigatorPositionItem;
-            this.bnProducts.Size = new System.Drawing.Size(547, 25);
+            this.bnProducts.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.bnProducts.PositionItem = null;
+            this.bnProducts.Size = new System.Drawing.Size(820, 39);
             this.bnProducts.TabIndex = 5;
             this.bnProducts.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(43, 22);
-            this.bindingNavigatorCountItem.Text = "для {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Переместить в начало";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Переместить назад";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Положение";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 21);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Текущее положение";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Переместить вперед";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Переместить в конец";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 39);
             // 
             // tsbAdd
             // 
-            this.tsbAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsbAdd.Image = ((System.Drawing.Image)(resources.GetObject("tsbAdd.Image")));
             this.tsbAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbAdd.Name = "tsbAdd";
-            this.tsbAdd.Size = new System.Drawing.Size(23, 22);
+            this.tsbAdd.Size = new System.Drawing.Size(81, 36);
             this.tsbAdd.Text = "tsbAdd";
             this.tsbAdd.ToolTipText = "Добавить";
             this.tsbAdd.Click += new System.EventHandler(this.tsbAdd_Click_1);
             // 
             // tsbEdit
             // 
-            this.tsbEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsbEdit.Image = ((System.Drawing.Image)(resources.GetObject("tsbEdit.Image")));
             this.tsbEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEdit.Name = "tsbEdit";
-            this.tsbEdit.Size = new System.Drawing.Size(23, 22);
+            this.tsbEdit.Size = new System.Drawing.Size(79, 36);
             this.tsbEdit.Text = "tsbEdit";
             this.tsbEdit.ToolTipText = "Изменить";
             this.tsbEdit.Click += new System.EventHandler(this.tsbEdit_Click);
             // 
             // tsbDelete
             // 
-            this.tsbDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsbDelete.Image = ((System.Drawing.Image)(resources.GetObject("tsbDelete.Image")));
             this.tsbDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbDelete.Name = "tsbDelete";
-            this.tsbDelete.Size = new System.Drawing.Size(23, 22);
+            this.tsbDelete.Size = new System.Drawing.Size(87, 36);
             this.tsbDelete.Text = "Удалить";
             this.tsbDelete.Click += new System.EventHandler(this.tsbDelete_Click);
             // 
             // tsbProductListPriceHistory
             // 
-            this.tsbProductListPriceHistory.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsbProductListPriceHistory.Image = ((System.Drawing.Image)(resources.GetObject("tsbProductListPriceHistory.Image")));
             this.tsbProductListPriceHistory.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbProductListPriceHistory.Name = "tsbProductListPriceHistory";
-            this.tsbProductListPriceHistory.Size = new System.Drawing.Size(23, 22);
+            this.tsbProductListPriceHistory.Size = new System.Drawing.Size(188, 36);
             this.tsbProductListPriceHistory.Text = "История продажной цены";
             this.tsbProductListPriceHistory.Click += new System.EventHandler(this.toolStripButton1_Click_1);
             // 
             // tsbProductCostHistory
             // 
-            this.tsbProductCostHistory.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsbProductCostHistory.Image = ((System.Drawing.Image)(resources.GetObject("tsbProductCostHistory.Image")));
             this.tsbProductCostHistory.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbProductCostHistory.Name = "tsbProductCostHistory";
-            this.tsbProductCostHistory.Size = new System.Drawing.Size(23, 22);
+            this.tsbProductCostHistory.Size = new System.Drawing.Size(168, 36);
             this.tsbProductCostHistory.Text = "История цены закупки";
             this.tsbProductCostHistory.Click += new System.EventHandler(this.tsbProductCostHistory_Click);
             // 
@@ -241,7 +159,8 @@
             this.редактироватьToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(547, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
+            this.menuStrip1.Size = new System.Drawing.Size(820, 25);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -250,14 +169,14 @@
             this.редактироватьToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.изменитьToolStripMenuItem});
             this.редактироватьToolStripMenuItem.Name = "редактироватьToolStripMenuItem";
-            this.редактироватьToolStripMenuItem.Size = new System.Drawing.Size(99, 20);
+            this.редактироватьToolStripMenuItem.Size = new System.Drawing.Size(99, 19);
             this.редактироватьToolStripMenuItem.Text = "Редактировать";
             // 
             // изменитьToolStripMenuItem
             // 
             this.изменитьToolStripMenuItem.Name = "изменитьToolStripMenuItem";
             this.изменитьToolStripMenuItem.ShortcutKeyDisplayString = "F7";
-            this.изменитьToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.изменитьToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.изменитьToolStripMenuItem.Text = "Изменить";
             this.изменитьToolStripMenuItem.Click += new System.EventHandler(this.изменитьToolStripMenuItem_Click);
             // 
@@ -265,9 +184,10 @@
             // 
             this.panel2.Controls.Add(this.dgvProducts);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 51);
+            this.panel2.Location = new System.Drawing.Point(0, 62);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(547, 222);
+            this.panel2.Size = new System.Drawing.Size(820, 324);
             this.panel2.TabIndex = 4;
             // 
             // dgvProducts
@@ -275,49 +195,28 @@
             this.dgvProducts.AllowUserToAddRows = false;
             this.dgvProducts.AllowUserToDeleteRows = false;
             this.dgvProducts.AutoGenerateColumns = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NameProduct,
             this.WeightUnitMeasureCode});
             this.dgvProducts.DataSource = this.bsProducts;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProducts.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvProducts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProducts.Location = new System.Drawing.Point(0, 0);
+            this.dgvProducts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvProducts.Name = "dgvProducts";
             this.dgvProducts.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProducts.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProducts.Size = new System.Drawing.Size(547, 222);
+            this.dgvProducts.Size = new System.Drawing.Size(820, 324);
             this.dgvProducts.TabIndex = 1;
             // 
             // NameProduct
             // 
             this.NameProduct.DataPropertyName = "Name";
+            this.NameProduct.FillWeight = 300F;
             this.NameProduct.HeaderText = "Наименование";
             this.NameProduct.Name = "NameProduct";
             this.NameProduct.ReadOnly = true;
+            this.NameProduct.Width = 300;
             // 
             // WeightUnitMeasureCode
             // 
@@ -328,15 +227,17 @@
             // 
             // fProducts
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(547, 295);
+            this.ClientSize = new System.Drawing.Size(820, 408);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ssProducts);
             this.Controls.Add(this.menuStrip1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "fProducts";
             this.Text = "Продукция";
             this.Load += new System.EventHandler(this.fProducts_Load);
@@ -365,23 +266,15 @@
         private System.Windows.Forms.ToolStripMenuItem редактироватьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem изменитьToolStripMenuItem;
         private System.Windows.Forms.BindingNavigator bnProducts;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton tsbAdd;
         private System.Windows.Forms.ToolStripButton tsbEdit;
         private System.Windows.Forms.ToolStripButton tsbDelete;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dgvProducts;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NameProduct;
-        private System.Windows.Forms.DataGridViewTextBoxColumn WeightUnitMeasureCode;
         private System.Windows.Forms.ToolStripButton tsbProductListPriceHistory;
         private System.Windows.Forms.ToolStripButton tsbProductCostHistory;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameProduct;
+        private System.Windows.Forms.DataGridViewTextBoxColumn WeightUnitMeasureCode;
     }
 }

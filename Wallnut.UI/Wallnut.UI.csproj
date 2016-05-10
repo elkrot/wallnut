@@ -350,10 +350,10 @@
     <Compile Include="Production\ProductListPriceHistory\fProductListPriceHistory.Designer.cs">
       <DependentUpon>fProductListPriceHistory.cs</DependentUpon>
     </Compile>
-    <Compile Include="Production\ProductCostHistory\Product\fAddProduct.cs">
+    <Compile Include="Production\Product\fAddProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Production\ProductCostHistory\Product\fAddProduct.Designer.cs">
+    <Compile Include="Production\Product\fAddProduct.Designer.cs">
       <DependentUpon>fAddProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="HumanResources\Shift\fAddShift.cs">
@@ -386,10 +386,10 @@
     <Compile Include="HumanResources\Employee\fEmployee.Designer.cs">
       <DependentUpon>fEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="Production\ProductCostHistory\Product\fProducts.cs">
+    <Compile Include="Production\Product\fProducts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Production\ProductCostHistory\Product\fProducts.Designer.cs">
+    <Compile Include="Production\Product\fProducts.Designer.cs">
       <DependentUpon>fProducts.cs</DependentUpon>
     </Compile>
     <Compile Include="HumanResources\Shift\fShifts.cs">
@@ -796,7 +796,7 @@
     <EmbeddedResource Include="Production\ProductListPriceHistory\fProductListPriceHistory.resx">
       <DependentUpon>fProductListPriceHistory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Production\ProductCostHistory\Product\fAddProduct.resx">
+    <EmbeddedResource Include="Production\Product\fAddProduct.resx">
       <DependentUpon>fAddProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HumanResources\Shift\fAddShift.resx">
@@ -814,7 +814,7 @@
     <EmbeddedResource Include="HumanResources\Employee\fEmployee.resx">
       <DependentUpon>fEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Production\ProductCostHistory\Product\fProducts.resx">
+    <EmbeddedResource Include="Production\Product\fProducts.resx">
       <DependentUpon>fProducts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HumanResources\Shift\fShifts.resx">
