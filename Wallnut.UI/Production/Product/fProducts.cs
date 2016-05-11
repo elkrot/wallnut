@@ -84,10 +84,6 @@ namespace Wallnut.UI
             }
         }
 
-        private void изменитьToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("o");
-        }
 
 
 
