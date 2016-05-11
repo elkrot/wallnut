@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fEmployeePayHistory));
             this.ss = new System.Windows.Forms.StatusStrip();
             this.bn = new System.Windows.Forms.BindingNavigator(this.components);
+            this.tsbCondition = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.tsbAdd = new System.Windows.Forms.ToolStripButton();
             this.tsbEdit = new System.Windows.Forms.ToolStripButton();
             this.tsbDelete = new System.Windows.Forms.ToolStripButton();
@@ -40,8 +42,6 @@
             this.rateChangeDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.payFrequencyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tsbCondition = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.bs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bn)).BeginInit();
             this.bn.SuspendLayout();
@@ -87,6 +87,23 @@
             this.bn.TabIndex = 1;
             this.bn.Text = "bindingNavigator1";
             // 
+            // tsbCondition
+            // 
+            this.tsbCondition.Image = global::Wallnut.UI.Properties.Resources.filter;
+            this.tsbCondition.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbCondition.Name = "tsbCondition";
+            this.tsbCondition.Size = new System.Drawing.Size(103, 36);
+            this.tsbCondition.Text = "Условие";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.None;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 36);
+            this.toolStripButton1.Text = "toolStripButton1";
+            // 
             // tsbAdd
             // 
             this.tsbAdd.Image = global::Wallnut.UI.Properties.Resources.edit_add;
@@ -128,7 +145,7 @@
             this.dgv.DataSource = this.bs;
             this.dgv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv.Location = new System.Drawing.Point(0, 39);
-            this.dgv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgv.Margin = new System.Windows.Forms.Padding(4);
             this.dgv.Name = "dgv";
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv.Size = new System.Drawing.Size(832, 217);
@@ -144,37 +161,20 @@
             // rateChangeDateDataGridViewTextBoxColumn
             // 
             this.rateChangeDateDataGridViewTextBoxColumn.DataPropertyName = "RateChangeDate";
-            this.rateChangeDateDataGridViewTextBoxColumn.HeaderText = "RateChangeDate";
+            this.rateChangeDateDataGridViewTextBoxColumn.HeaderText = "Дата изменения тарифа";
             this.rateChangeDateDataGridViewTextBoxColumn.Name = "rateChangeDateDataGridViewTextBoxColumn";
             // 
             // rateDataGridViewTextBoxColumn
             // 
             this.rateDataGridViewTextBoxColumn.DataPropertyName = "Rate";
-            this.rateDataGridViewTextBoxColumn.HeaderText = "Rate";
+            this.rateDataGridViewTextBoxColumn.HeaderText = "Тариф";
             this.rateDataGridViewTextBoxColumn.Name = "rateDataGridViewTextBoxColumn";
             // 
             // payFrequencyDataGridViewTextBoxColumn
             // 
             this.payFrequencyDataGridViewTextBoxColumn.DataPropertyName = "PayFrequency";
-            this.payFrequencyDataGridViewTextBoxColumn.HeaderText = "PayFrequency";
+            this.payFrequencyDataGridViewTextBoxColumn.HeaderText = "Периодичность выплат";
             this.payFrequencyDataGridViewTextBoxColumn.Name = "payFrequencyDataGridViewTextBoxColumn";
-            // 
-            // tsbCondition
-            // 
-            this.tsbCondition.Image = global::Wallnut.UI.Properties.Resources.filter;
-            this.tsbCondition.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbCondition.Name = "tsbCondition";
-            this.tsbCondition.Size = new System.Drawing.Size(103, 36);
-            this.tsbCondition.Text = "Условие";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.None;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 36);
-            this.toolStripButton1.Text = "toolStripButton1";
             // 
             // fEmployeePayHistory
             // 
@@ -185,9 +185,9 @@
             this.Controls.Add(this.bn);
             this.Controls.Add(this.ss);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fEmployeePayHistory";
-            this.Text = "История оплат";
+            this.Text = "История Изменения тарифа";
             this.Load += new System.EventHandler(this.fList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bn)).EndInit();
@@ -207,11 +207,11 @@
         private System.Windows.Forms.ToolStripButton tsbEdit;
         private System.Windows.Forms.ToolStripButton tsbDelete;
         private System.Windows.Forms.DataGridView dgv;
+        private System.Windows.Forms.ToolStripButton tsbCondition;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.DataGridViewTextBoxColumn businessEntityIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn rateChangeDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn rateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn payFrequencyDataGridViewTextBoxColumn;
-        private System.Windows.Forms.ToolStripButton tsbCondition;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }
