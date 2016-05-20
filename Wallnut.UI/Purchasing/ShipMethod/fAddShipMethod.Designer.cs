@@ -47,34 +47,39 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 177F));
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 266F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.tbNamelbl, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tbName, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tbShipBase, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.tbShipRate, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 2);
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.tbNamelbl, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tbName, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tbShipBase, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.tbShipRate, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 1, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel1.RowCount = 6;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 84F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 116F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(342, 179);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(513, 248);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tbNamelbl
             // 
             this.tbNamelbl.AutoSize = true;
             this.tbNamelbl.Dock = System.Windows.Forms.DockStyle.Left;
-            this.tbNamelbl.Location = new System.Drawing.Point(3, 0);
+            this.tbNamelbl.Location = new System.Drawing.Point(24, 20);
+            this.tbNamelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.tbNamelbl.Name = "tbNamelbl";
-            this.tbNamelbl.Size = new System.Drawing.Size(83, 26);
+            this.tbNamelbl.Size = new System.Drawing.Size(111, 36);
             this.tbNamelbl.TabIndex = 0;
             this.tbNamelbl.Text = "Наименование";
             this.tbNamelbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -82,43 +87,48 @@
             // tbName
             // 
             this.tbName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbName.Location = new System.Drawing.Point(180, 3);
+            this.tbName.Location = new System.Drawing.Point(290, 24);
+            this.tbName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(159, 20);
+            this.tbName.Size = new System.Drawing.Size(199, 24);
             this.tbName.TabIndex = 1;
             this.tbName.Validating += new System.ComponentModel.CancelEventHandler(this.tbName_Validating);
             // 
             // tbShipBase
             // 
             this.tbShipBase.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbShipBase.Location = new System.Drawing.Point(180, 29);
+            this.tbShipBase.Location = new System.Drawing.Point(290, 60);
+            this.tbShipBase.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbShipBase.Name = "tbShipBase";
-            this.tbShipBase.Size = new System.Drawing.Size(159, 20);
+            this.tbShipBase.Size = new System.Drawing.Size(199, 24);
             this.tbShipBase.TabIndex = 2;
             // 
             // tbShipRate
             // 
             this.tbShipRate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbShipRate.Location = new System.Drawing.Point(180, 49);
+            this.tbShipRate.Location = new System.Drawing.Point(290, 88);
+            this.tbShipRate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbShipRate.Name = "tbShipRate";
-            this.tbShipRate.Size = new System.Drawing.Size(159, 20);
+            this.tbShipRate.Size = new System.Drawing.Size(199, 24);
             this.tbShipRate.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 26);
+            this.label1.Location = new System.Drawing.Point(24, 56);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 13);
+            this.label1.Size = new System.Drawing.Size(161, 18);
             this.label1.TabIndex = 4;
             this.label1.Text = "База. Мин.Стоимость";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 46);
+            this.label2.Location = new System.Drawing.Point(24, 84);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(163, 13);
+            this.label2.Size = new System.Drawing.Size(220, 18);
             this.label2.TabIndex = 4;
             this.label2.Text = "Ставка за доставку за кг веса";
             // 
@@ -129,17 +139,19 @@
             this.flowLayoutPanel1.Controls.Add(this.btnOK);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 150);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 208);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(342, 29);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(513, 40);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(264, 3);
+            this.btnCancel.Location = new System.Drawing.Point(397, 4);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.Size = new System.Drawing.Size(112, 32);
             this.btnCancel.TabIndex = 0;
             this.btnCancel.Text = "Отмена";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -147,9 +159,10 @@
             // btnOK
             // 
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOK.Location = new System.Drawing.Point(183, 3);
+            this.btnOK.Location = new System.Drawing.Point(277, 4);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(75, 23);
+            this.btnOK.Size = new System.Drawing.Size(112, 32);
             this.btnOK.TabIndex = 1;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
@@ -161,11 +174,13 @@
             // 
             // fAddShipMethod
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(342, 179);
+            this.ClientSize = new System.Drawing.Size(513, 248);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "fAddShipMethod";
             this.Text = "Доставка";
             this.Load += new System.EventHandler(this.fEdit_Load);

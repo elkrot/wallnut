@@ -33,7 +33,16 @@ namespace Wallnut.UI
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fEmployee));
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.eFEmployeesRBS = new System.Windows.Forms.BindingSource(this.components);
+            this.tsbEdit = new System.Windows.Forms.ToolStripButton();
+            this.tsbAdd = new System.Windows.Forms.ToolStripButton();
+            this.tsbRemove = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.tsbUserRoles = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
+            this.tsbExit = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.dgvEmployee = new System.Windows.Forms.DataGridView();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,20 +60,11 @@ namespace Wallnut.UI
             this.shiftNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departmentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eFEmployeesRBS = new System.Windows.Forms.BindingSource(this.components);
-            this.tsbEdit = new System.Windows.Forms.ToolStripButton();
-            this.tsbAdd = new System.Windows.Forms.ToolStripButton();
-            this.tsbRemove = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.tsbUserRoles = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
-            this.tsbExit = new System.Windows.Forms.ToolStripButton();
             this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eFEmployeesRBS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,8 +76,8 @@ namespace Wallnut.UI
             this.bindingNavigator1.DeleteItem = null;
             this.bindingNavigator1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsbEdit,
             this.tsbAdd,
+            this.tsbEdit,
             this.tsbRemove,
             this.toolStripButton4,
             this.tsbUserRoles,
@@ -97,10 +97,86 @@ namespace Wallnut.UI
             this.bindingNavigator1.TabIndex = 1;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
+            // eFEmployeesRBS
+            // 
+            this.eFEmployeesRBS.DataSource = typeof(Wallnut.Domain.Models.EmployeeWithAttr);
+            // 
+            // tsbEdit
+            // 
+            this.tsbEdit.Image = global::Wallnut.UI.Properties.Resources.pencil;
+            this.tsbEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbEdit.Name = "tsbEdit";
+            this.tsbEdit.Size = new System.Drawing.Size(97, 36);
+            this.tsbEdit.Text = "Изменить";
+            this.tsbEdit.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // tsbAdd
+            // 
+            this.tsbAdd.Image = global::Wallnut.UI.Properties.Resources.edit_add;
+            this.tsbAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbAdd.Name = "tsbAdd";
+            this.tsbAdd.Size = new System.Drawing.Size(95, 36);
+            this.tsbAdd.Text = "Добавить";
+            this.tsbAdd.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // tsbRemove
+            // 
+            this.tsbRemove.Image = global::Wallnut.UI.Properties.Resources.edit_delete;
+            this.tsbRemove.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbRemove.Name = "tsbRemove";
+            this.tsbRemove.Size = new System.Drawing.Size(87, 36);
+            this.tsbRemove.Text = "Удалить";
+            this.tsbRemove.Click += new System.EventHandler(this.toolStripButton3_Click);
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.Image = global::Wallnut.UI.Properties.Resources.base_business_contacts;
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(171, 36);
+            this.toolStripButton4.Text = "История перемещения";
+            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
+            // 
+            // tsbUserRoles
+            // 
+            this.tsbUserRoles.Image = global::Wallnut.UI.Properties.Resources._157_GetPermission_48x48_72;
+            this.tsbUserRoles.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbUserRoles.Name = "tsbUserRoles";
+            this.tsbUserRoles.Size = new System.Drawing.Size(149, 36);
+            this.tsbUserRoles.Text = "Роли пользователя";
+            this.tsbUserRoles.Click += new System.EventHandler(this.toolStripButton1_Click_1);
+            // 
+            // toolStripButton6
+            // 
+            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.None;
+            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
+            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton6.Name = "toolStripButton6";
+            this.toolStripButton6.Size = new System.Drawing.Size(23, 36);
+            this.toolStripButton6.Text = "toolStripButton6";
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
+            // 
+            // toolStripButton9
+            // 
+            this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.None;
+            this.toolStripButton9.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton9.Image")));
+            this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton9.Name = "toolStripButton9";
+            this.toolStripButton9.Size = new System.Drawing.Size(23, 36);
+            this.toolStripButton9.Text = "toolStripButton9";
+            // 
+            // tsbExit
+            // 
+            this.tsbExit.Image = global::Wallnut.UI.Properties.Resources.door_out;
+            this.tsbExit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbExit.Name = "tsbExit";
+            this.tsbExit.Size = new System.Drawing.Size(77, 36);
+            this.tsbExit.Text = "Выход";
+            this.tsbExit.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
             // statusStrip1
             // 
@@ -255,82 +331,6 @@ namespace Wallnut.UI
             this.groupNameDataGridViewTextBoxColumn.Name = "groupNameDataGridViewTextBoxColumn";
             this.groupNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // eFEmployeesRBS
-            // 
-            this.eFEmployeesRBS.DataSource = typeof(Wallnut.Domain.Models.EmployeeWithAttr);
-            // 
-            // tsbEdit
-            // 
-            this.tsbEdit.Image = global::Wallnut.UI.Properties.Resources.pencil;
-            this.tsbEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbEdit.Name = "tsbEdit";
-            this.tsbEdit.Size = new System.Drawing.Size(97, 36);
-            this.tsbEdit.Text = "Изменить";
-            this.tsbEdit.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // tsbAdd
-            // 
-            this.tsbAdd.Image = global::Wallnut.UI.Properties.Resources.edit_add;
-            this.tsbAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbAdd.Name = "tsbAdd";
-            this.tsbAdd.Size = new System.Drawing.Size(95, 36);
-            this.tsbAdd.Text = "Добавить";
-            this.tsbAdd.Click += new System.EventHandler(this.toolStripButton2_Click);
-            // 
-            // tsbRemove
-            // 
-            this.tsbRemove.Image = global::Wallnut.UI.Properties.Resources.edit_delete;
-            this.tsbRemove.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbRemove.Name = "tsbRemove";
-            this.tsbRemove.Size = new System.Drawing.Size(87, 36);
-            this.tsbRemove.Text = "Удалить";
-            this.tsbRemove.Click += new System.EventHandler(this.toolStripButton3_Click);
-            // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.Image = global::Wallnut.UI.Properties.Resources.base_business_contacts;
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(171, 36);
-            this.toolStripButton4.Text = "История перемещения";
-            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
-            // 
-            // tsbUserRoles
-            // 
-            this.tsbUserRoles.Image = global::Wallnut.UI.Properties.Resources._157_GetPermission_48x48_72;
-            this.tsbUserRoles.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbUserRoles.Name = "tsbUserRoles";
-            this.tsbUserRoles.Size = new System.Drawing.Size(149, 36);
-            this.tsbUserRoles.Text = "Роли пользователя";
-            this.tsbUserRoles.Click += new System.EventHandler(this.toolStripButton1_Click_1);
-            // 
-            // toolStripButton6
-            // 
-            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.None;
-            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
-            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(23, 36);
-            this.toolStripButton6.Text = "toolStripButton6";
-            // 
-            // toolStripButton9
-            // 
-            this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.None;
-            this.toolStripButton9.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton9.Image")));
-            this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton9.Name = "toolStripButton9";
-            this.toolStripButton9.Size = new System.Drawing.Size(23, 36);
-            this.toolStripButton9.Text = "toolStripButton9";
-            // 
-            // tsbExit
-            // 
-            this.tsbExit.Image = global::Wallnut.UI.Properties.Resources.door_out;
-            this.tsbExit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbExit.Name = "tsbExit";
-            this.tsbExit.Size = new System.Drawing.Size(77, 36);
-            this.tsbExit.Text = "Выход";
-            this.tsbExit.Click += new System.EventHandler(this.toolStripButton5_Click);
-            // 
             // employeeBindingSource
             // 
             this.employeeBindingSource.DataSource = typeof(Wallnut.Domain.Models.EmployeeWithAttr);
@@ -352,8 +352,8 @@ namespace Wallnut.UI
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eFEmployeesRBS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

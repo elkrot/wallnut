@@ -45,31 +45,36 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.tbNamelbl, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tbName, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lblCode, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.tbCurrencyCode, 1, 1);
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.tbNamelbl, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tbName, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lblCode, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.tbCurrencyCode, 2, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 77F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 107F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(334, 147);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(501, 204);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tbNamelbl
             // 
             this.tbNamelbl.AutoSize = true;
             this.tbNamelbl.Dock = System.Windows.Forms.DockStyle.Left;
-            this.tbNamelbl.Location = new System.Drawing.Point(3, 0);
+            this.tbNamelbl.Location = new System.Drawing.Point(24, 20);
+            this.tbNamelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.tbNamelbl.Name = "tbNamelbl";
-            this.tbNamelbl.Size = new System.Drawing.Size(83, 20);
+            this.tbNamelbl.Size = new System.Drawing.Size(111, 28);
             this.tbNamelbl.TabIndex = 0;
             this.tbNamelbl.Text = "Наименование";
             this.tbNamelbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -77,27 +82,30 @@
             // tbName
             // 
             this.tbName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbName.Location = new System.Drawing.Point(103, 3);
+            this.tbName.Location = new System.Drawing.Point(174, 24);
+            this.tbName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(228, 20);
+            this.tbName.Size = new System.Drawing.Size(303, 24);
             this.tbName.TabIndex = 1;
             this.tbName.Validating += new System.ComponentModel.CancelEventHandler(this.tbName_Validating);
             // 
             // lblCode
             // 
             this.lblCode.AutoSize = true;
-            this.lblCode.Location = new System.Drawing.Point(3, 20);
+            this.lblCode.Location = new System.Drawing.Point(24, 48);
+            this.lblCode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCode.Name = "lblCode";
-            this.lblCode.Size = new System.Drawing.Size(26, 13);
+            this.lblCode.Size = new System.Drawing.Size(36, 18);
             this.lblCode.TabIndex = 2;
             this.lblCode.Text = "Код";
             // 
             // tbCurrencyCode
             // 
             this.tbCurrencyCode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbCurrencyCode.Location = new System.Drawing.Point(103, 23);
+            this.tbCurrencyCode.Location = new System.Drawing.Point(174, 52);
+            this.tbCurrencyCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbCurrencyCode.Name = "tbCurrencyCode";
-            this.tbCurrencyCode.Size = new System.Drawing.Size(228, 20);
+            this.tbCurrencyCode.Size = new System.Drawing.Size(303, 24);
             this.tbCurrencyCode.TabIndex = 3;
             this.tbCurrencyCode.Validating += new System.ComponentModel.CancelEventHandler(this.tbCurrencyCode_Validating);
             // 
@@ -108,17 +116,19 @@
             this.flowLayoutPanel1.Controls.Add(this.btnOK);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 118);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 164);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(334, 29);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(501, 40);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(256, 3);
+            this.btnCancel.Location = new System.Drawing.Point(385, 4);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.Size = new System.Drawing.Size(112, 32);
             this.btnCancel.TabIndex = 0;
             this.btnCancel.Text = "Отмена";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -126,9 +136,10 @@
             // btnOK
             // 
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOK.Location = new System.Drawing.Point(175, 3);
+            this.btnOK.Location = new System.Drawing.Point(265, 4);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(75, 23);
+            this.btnOK.Size = new System.Drawing.Size(112, 32);
             this.btnOK.TabIndex = 1;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
@@ -140,13 +151,15 @@
             // 
             // fAddCurrency
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(334, 147);
+            this.ClientSize = new System.Drawing.Size(501, 204);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "fAddCurrency";
-            this.Text = "fAddCurrency";
+            this.Text = "Валюта.";
             this.Load += new System.EventHandler(this.fEdit_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

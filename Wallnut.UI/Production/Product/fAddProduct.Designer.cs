@@ -129,7 +129,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 373);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(801, 40);
             this.flowLayoutPanel1.TabIndex = 0;
@@ -138,7 +138,7 @@
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Location = new System.Drawing.Point(685, 4);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(112, 32);
             this.btnCancel.TabIndex = 1;
@@ -149,7 +149,7 @@
             // 
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnOK.Location = new System.Drawing.Point(565, 4);
-            this.btnOK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(4);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(112, 32);
             this.btnOK.TabIndex = 0;
@@ -179,7 +179,7 @@
             this.tableLayoutPanel1.Controls.Add(this.panel1, 2, 5);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 9;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
@@ -199,7 +199,7 @@
             this.listPriceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "ListPrice", true));
             this.listPriceTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listPriceTextBox.Location = new System.Drawing.Point(190, 258);
-            this.listPriceTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listPriceTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.listPriceTextBox.Name = "listPriceTextBox";
             this.listPriceTextBox.Size = new System.Drawing.Size(575, 24);
             this.listPriceTextBox.TabIndex = 6;
@@ -213,7 +213,7 @@
             this.standardCostTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "StandardCost", true));
             this.standardCostTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.standardCostTextBox.Location = new System.Drawing.Point(190, 226);
-            this.standardCostTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.standardCostTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.standardCostTextBox.Name = "standardCostTextBox";
             this.standardCostTextBox.Size = new System.Drawing.Size(575, 24);
             this.standardCostTextBox.TabIndex = 5;
@@ -223,7 +223,7 @@
             this.nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "Name", true));
             this.nameTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.nameTextBox.Location = new System.Drawing.Point(190, 33);
-            this.nameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(575, 24);
             this.nameTextBox.TabIndex = 0;
@@ -234,7 +234,7 @@
             this.productNumberTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "ProductNumber", true));
             this.productNumberTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.productNumberTextBox.Location = new System.Drawing.Point(190, 65);
-            this.productNumberTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.productNumberTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.productNumberTextBox.Name = "productNumberTextBox";
             this.productNumberTextBox.Size = new System.Drawing.Size(575, 24);
             this.productNumberTextBox.TabIndex = 1;
@@ -243,7 +243,7 @@
             // 
             this.finishedGoodsFlagCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.productBindingSource, "FinishedGoodsFlag", true));
             this.finishedGoodsFlagCheckBox.Location = new System.Drawing.Point(190, 97);
-            this.finishedGoodsFlagCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.finishedGoodsFlagCheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.finishedGoodsFlagCheckBox.Name = "finishedGoodsFlagCheckBox";
             this.finishedGoodsFlagCheckBox.Size = new System.Drawing.Size(258, 33);
             this.finishedGoodsFlagCheckBox.TabIndex = 2;
@@ -254,7 +254,7 @@
             // 
             this.makeFlagCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.productBindingSource, "MakeFlag", true));
             this.makeFlagCheckBox.Location = new System.Drawing.Point(190, 138);
-            this.makeFlagCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.makeFlagCheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.makeFlagCheckBox.Name = "makeFlagCheckBox";
             this.makeFlagCheckBox.Size = new System.Drawing.Size(233, 33);
             this.makeFlagCheckBox.TabIndex = 3;
@@ -267,7 +267,7 @@
             this.panel1.Controls.Add(this.cbUnitMesure);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(190, 179);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(575, 39);
             this.panel1.TabIndex = 11;
@@ -275,7 +275,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(410, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(45, 32);
             this.button1.TabIndex = 5;
@@ -289,7 +289,7 @@
             this.cbUnitMesure.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbUnitMesure.FormattingEnabled = true;
             this.cbUnitMesure.Location = new System.Drawing.Point(0, 0);
-            this.cbUnitMesure.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbUnitMesure.Margin = new System.Windows.Forms.Padding(4);
             this.cbUnitMesure.Name = "cbUnitMesure";
             this.cbUnitMesure.Size = new System.Drawing.Size(397, 26);
             this.cbUnitMesure.TabIndex = 4;
@@ -308,7 +308,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(817, 553);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(34, 48);

@@ -55,7 +55,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 210);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(562, 40);
             this.flowLayoutPanel1.TabIndex = 1;
@@ -64,7 +64,7 @@
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Location = new System.Drawing.Point(446, 4);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(112, 32);
             this.btnCancel.TabIndex = 0;
@@ -75,7 +75,7 @@
             // 
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnOK.Location = new System.Drawing.Point(326, 4);
-            this.btnOK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(4);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(112, 32);
             this.btnOK.TabIndex = 1;
@@ -105,7 +105,7 @@
             this.tableLayoutPanel1.Controls.Add(this.dtEndDate, 3, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 7;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
@@ -134,7 +134,7 @@
             // 
             this.tbListPrice.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbListPrice.Location = new System.Drawing.Point(214, 134);
-            this.tbListPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbListPrice.Margin = new System.Windows.Forms.Padding(4);
             this.tbListPrice.Name = "tbListPrice";
             this.tbListPrice.Size = new System.Drawing.Size(314, 24);
             this.tbListPrice.TabIndex = 1;
@@ -176,7 +176,7 @@
             this.cbProduct.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbProduct.FormattingEnabled = true;
             this.cbProduct.Location = new System.Drawing.Point(214, 32);
-            this.cbProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbProduct.Margin = new System.Windows.Forms.Padding(4);
             this.cbProduct.Name = "cbProduct";
             this.cbProduct.Size = new System.Drawing.Size(314, 26);
             this.cbProduct.TabIndex = 3;
@@ -184,7 +184,7 @@
             // dtStartDate
             // 
             this.dtStartDate.Location = new System.Drawing.Point(214, 65);
-            this.dtStartDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtStartDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtStartDate.Name = "dtStartDate";
             this.dtStartDate.Size = new System.Drawing.Size(298, 24);
             this.dtStartDate.TabIndex = 4;
@@ -193,7 +193,7 @@
             // 
             this.dtEndDate.Checked = false;
             this.dtEndDate.Location = new System.Drawing.Point(214, 98);
-            this.dtEndDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtEndDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtEndDate.Name = "dtEndDate";
             this.dtEndDate.ShowCheckBox = true;
             this.dtEndDate.Size = new System.Drawing.Size(298, 24);
@@ -207,7 +207,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fAddProductCostHistory";
             this.Text = "Цена закупки.";
             this.Load += new System.EventHandler(this.fEdit_Load);

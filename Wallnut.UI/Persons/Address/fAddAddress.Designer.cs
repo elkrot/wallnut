@@ -43,8 +43,8 @@
             this.tbPostalCode = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.ep = new System.Windows.Forms.ErrorProvider(this.components);
             this.button1 = new System.Windows.Forms.Button();
+            this.ep = new System.Windows.Forms.ErrorProvider(this.components);
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ep)).BeginInit();
@@ -58,7 +58,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 326);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(652, 40);
             this.flowLayoutPanel1.TabIndex = 1;
@@ -67,7 +67,7 @@
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Location = new System.Drawing.Point(536, 4);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(112, 32);
             this.btnCancel.TabIndex = 0;
@@ -78,7 +78,7 @@
             // 
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnOK.Location = new System.Drawing.Point(416, 4);
-            this.btnOK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(4);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(112, 32);
             this.btnOK.TabIndex = 1;
@@ -106,7 +106,7 @@
             this.tableLayoutPanel1.Controls.Add(this.button1, 3, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 7;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
@@ -136,7 +136,7 @@
             // 
             this.tbAddressLine1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbAddressLine1.Location = new System.Drawing.Point(184, 32);
-            this.tbAddressLine1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbAddressLine1.Margin = new System.Windows.Forms.Padding(4);
             this.tbAddressLine1.Name = "tbAddressLine1";
             this.tbAddressLine1.Size = new System.Drawing.Size(374, 24);
             this.tbAddressLine1.TabIndex = 1;
@@ -170,7 +170,7 @@
             // 
             this.tbAddressLine2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbAddressLine2.Location = new System.Drawing.Point(184, 60);
-            this.tbAddressLine2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbAddressLine2.Margin = new System.Windows.Forms.Padding(4);
             this.tbAddressLine2.Name = "tbAddressLine2";
             this.tbAddressLine2.Size = new System.Drawing.Size(374, 24);
             this.tbAddressLine2.TabIndex = 4;
@@ -179,7 +179,7 @@
             // 
             this.tbCity.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbCity.Location = new System.Drawing.Point(184, 88);
-            this.tbCity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbCity.Margin = new System.Windows.Forms.Padding(4);
             this.tbCity.Name = "tbCity";
             this.tbCity.Size = new System.Drawing.Size(374, 24);
             this.tbCity.TabIndex = 5;
@@ -189,7 +189,7 @@
             this.cbStateProvince.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbStateProvince.FormattingEnabled = true;
             this.cbStateProvince.Location = new System.Drawing.Point(184, 120);
-            this.cbStateProvince.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbStateProvince.Margin = new System.Windows.Forms.Padding(4);
             this.cbStateProvince.Name = "cbStateProvince";
             this.cbStateProvince.Size = new System.Drawing.Size(374, 26);
             this.cbStateProvince.TabIndex = 6;
@@ -198,7 +198,7 @@
             // 
             this.tbPostalCode.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbPostalCode.Location = new System.Drawing.Point(184, 153);
-            this.tbPostalCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbPostalCode.Margin = new System.Windows.Forms.Padding(4);
             this.tbPostalCode.Name = "tbPostalCode";
             this.tbPostalCode.Size = new System.Drawing.Size(374, 24);
             this.tbPostalCode.TabIndex = 7;
@@ -227,10 +227,6 @@
             this.label4.Text = "Код области";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // ep
-            // 
-            this.ep.ContainerControl = this;
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(565, 119);
@@ -241,6 +237,10 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // ep
+            // 
+            this.ep.ContainerControl = this;
+            // 
             // fAddAddress
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -249,7 +249,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fAddAddress";
             this.Text = "Адрес.";
             this.Load += new System.EventHandler(this.fEdit_Load);

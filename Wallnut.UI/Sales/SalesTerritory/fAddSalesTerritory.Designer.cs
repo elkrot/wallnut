@@ -56,10 +56,10 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 186F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 279F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.Controls.Add(this.tbNamelbl, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.tbName, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.cbCountryRegionCode, 2, 2);
@@ -76,27 +76,29 @@
             this.tableLayoutPanel1.Controls.Add(this.lbCostLastYear, 1, 7);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 9;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(530, 257);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(795, 356);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tbNamelbl
             // 
             this.tbNamelbl.AutoSize = true;
             this.tbNamelbl.Dock = System.Windows.Forms.DockStyle.Left;
-            this.tbNamelbl.Location = new System.Drawing.Point(23, 25);
+            this.tbNamelbl.Location = new System.Drawing.Point(34, 35);
+            this.tbNamelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.tbNamelbl.Name = "tbNamelbl";
-            this.tbNamelbl.Size = new System.Drawing.Size(83, 25);
+            this.tbNamelbl.Size = new System.Drawing.Size(111, 35);
             this.tbNamelbl.TabIndex = 0;
             this.tbNamelbl.Text = "Наименование";
             this.tbNamelbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -104,9 +106,10 @@
             // tbName
             // 
             this.tbName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbName.Location = new System.Drawing.Point(209, 28);
+            this.tbName.Location = new System.Drawing.Point(313, 39);
+            this.tbName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(298, 20);
+            this.tbName.Size = new System.Drawing.Size(448, 24);
             this.tbName.TabIndex = 1;
             this.tbName.Validating += new System.ComponentModel.CancelEventHandler(this.tbName_Validating);
             // 
@@ -114,102 +117,114 @@
             // 
             this.cbCountryRegionCode.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbCountryRegionCode.FormattingEnabled = true;
-            this.cbCountryRegionCode.Location = new System.Drawing.Point(209, 53);
+            this.cbCountryRegionCode.Location = new System.Drawing.Point(313, 74);
+            this.cbCountryRegionCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbCountryRegionCode.Name = "cbCountryRegionCode";
-            this.cbCountryRegionCode.Size = new System.Drawing.Size(298, 21);
+            this.cbCountryRegionCode.Size = new System.Drawing.Size(448, 26);
             this.cbCountryRegionCode.TabIndex = 2;
             // 
             // tbGroup
             // 
             this.tbGroup.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbGroup.Location = new System.Drawing.Point(209, 78);
+            this.tbGroup.Location = new System.Drawing.Point(313, 109);
+            this.tbGroup.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbGroup.Name = "tbGroup";
-            this.tbGroup.Size = new System.Drawing.Size(298, 20);
+            this.tbGroup.Size = new System.Drawing.Size(448, 24);
             this.tbGroup.TabIndex = 3;
             // 
             // tbSalesYTD
             // 
             this.tbSalesYTD.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbSalesYTD.Location = new System.Drawing.Point(209, 103);
+            this.tbSalesYTD.Location = new System.Drawing.Point(313, 144);
+            this.tbSalesYTD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbSalesYTD.Name = "tbSalesYTD";
-            this.tbSalesYTD.Size = new System.Drawing.Size(298, 20);
+            this.tbSalesYTD.Size = new System.Drawing.Size(448, 24);
             this.tbSalesYTD.TabIndex = 3;
             // 
             // tbCostYTD
             // 
             this.tbCostYTD.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbCostYTD.Location = new System.Drawing.Point(209, 153);
+            this.tbCostYTD.Location = new System.Drawing.Point(313, 214);
+            this.tbCostYTD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbCostYTD.Name = "tbCostYTD";
-            this.tbCostYTD.Size = new System.Drawing.Size(298, 20);
+            this.tbCostYTD.Size = new System.Drawing.Size(448, 24);
             this.tbCostYTD.TabIndex = 3;
             // 
             // tbSalesLastYear
             // 
             this.tbSalesLastYear.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbSalesLastYear.Location = new System.Drawing.Point(209, 128);
+            this.tbSalesLastYear.Location = new System.Drawing.Point(313, 179);
+            this.tbSalesLastYear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbSalesLastYear.Name = "tbSalesLastYear";
-            this.tbSalesLastYear.Size = new System.Drawing.Size(298, 20);
+            this.tbSalesLastYear.Size = new System.Drawing.Size(448, 24);
             this.tbSalesLastYear.TabIndex = 3;
             // 
             // lbCountryRegionCode
             // 
             this.lbCountryRegionCode.AutoSize = true;
-            this.lbCountryRegionCode.Location = new System.Drawing.Point(23, 50);
+            this.lbCountryRegionCode.Location = new System.Drawing.Point(34, 70);
+            this.lbCountryRegionCode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbCountryRegionCode.Name = "lbCountryRegionCode";
-            this.lbCountryRegionCode.Size = new System.Drawing.Size(43, 13);
+            this.lbCountryRegionCode.Size = new System.Drawing.Size(58, 18);
             this.lbCountryRegionCode.TabIndex = 4;
             this.lbCountryRegionCode.Text = "Страна";
             // 
             // lbGroup
             // 
             this.lbGroup.AutoSize = true;
-            this.lbGroup.Location = new System.Drawing.Point(23, 75);
+            this.lbGroup.Location = new System.Drawing.Point(34, 105);
+            this.lbGroup.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbGroup.Name = "lbGroup";
-            this.lbGroup.Size = new System.Drawing.Size(42, 13);
+            this.lbGroup.Size = new System.Drawing.Size(56, 18);
             this.lbGroup.TabIndex = 4;
             this.lbGroup.Text = "Группа";
             // 
             // lbSalesYTD
             // 
             this.lbSalesYTD.AutoSize = true;
-            this.lbSalesYTD.Location = new System.Drawing.Point(23, 100);
+            this.lbSalesYTD.Location = new System.Drawing.Point(34, 140);
+            this.lbSalesYTD.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbSalesYTD.Name = "lbSalesYTD";
-            this.lbSalesYTD.Size = new System.Drawing.Size(126, 13);
+            this.lbSalesYTD.Size = new System.Drawing.Size(176, 18);
             this.lbSalesYTD.TabIndex = 4;
             this.lbSalesYTD.Text = "Годовой объем продаж";
             // 
             // lbSalesLastYear
             // 
             this.lbSalesLastYear.AutoSize = true;
-            this.lbSalesLastYear.Location = new System.Drawing.Point(23, 125);
+            this.lbSalesLastYear.Location = new System.Drawing.Point(34, 175);
+            this.lbSalesLastYear.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbSalesLastYear.Name = "lbSalesLastYear";
-            this.lbSalesLastYear.Size = new System.Drawing.Size(175, 13);
+            this.lbSalesLastYear.Size = new System.Drawing.Size(241, 18);
             this.lbSalesLastYear.TabIndex = 4;
             this.lbSalesLastYear.Text = "Объем продаж за последний год";
             // 
             // lbCostYTD
             // 
             this.lbCostYTD.AutoSize = true;
-            this.lbCostYTD.Location = new System.Drawing.Point(23, 150);
+            this.lbCostYTD.Location = new System.Drawing.Point(34, 210);
+            this.lbCostYTD.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbCostYTD.Name = "lbCostYTD";
-            this.lbCostYTD.Size = new System.Drawing.Size(96, 13);
+            this.lbCostYTD.Size = new System.Drawing.Size(132, 18);
             this.lbCostYTD.TabIndex = 4;
             this.lbCostYTD.Text = "Годовые затраты";
             // 
             // tbCostLastYear
             // 
             this.tbCostLastYear.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbCostLastYear.Location = new System.Drawing.Point(209, 178);
+            this.tbCostLastYear.Location = new System.Drawing.Point(313, 249);
+            this.tbCostLastYear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbCostLastYear.Name = "tbCostLastYear";
-            this.tbCostLastYear.Size = new System.Drawing.Size(298, 20);
+            this.tbCostLastYear.Size = new System.Drawing.Size(448, 24);
             this.tbCostLastYear.TabIndex = 5;
             // 
             // lbCostLastYear
             // 
             this.lbCostLastYear.AutoSize = true;
-            this.lbCostLastYear.Location = new System.Drawing.Point(23, 175);
+            this.lbCostLastYear.Location = new System.Drawing.Point(34, 245);
+            this.lbCostLastYear.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbCostLastYear.Name = "lbCostLastYear";
-            this.lbCostLastYear.Size = new System.Drawing.Size(138, 13);
+            this.lbCostLastYear.Size = new System.Drawing.Size(189, 18);
             this.lbCostLastYear.TabIndex = 6;
             this.lbCostLastYear.Text = "Затраты последнего года";
             // 
@@ -220,17 +235,19 @@
             this.flowLayoutPanel1.Controls.Add(this.btnOK);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 228);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 316);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(530, 29);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(795, 40);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(452, 3);
+            this.btnCancel.Location = new System.Drawing.Point(679, 4);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.Size = new System.Drawing.Size(112, 32);
             this.btnCancel.TabIndex = 0;
             this.btnCancel.Text = "Отмена";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -238,9 +255,10 @@
             // btnOK
             // 
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOK.Location = new System.Drawing.Point(371, 3);
+            this.btnOK.Location = new System.Drawing.Point(559, 4);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(75, 23);
+            this.btnOK.Size = new System.Drawing.Size(112, 32);
             this.btnOK.TabIndex = 1;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
@@ -252,11 +270,13 @@
             // 
             // fAddSalesTerritory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(530, 257);
+            this.ClientSize = new System.Drawing.Size(795, 356);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "fAddSalesTerritory";
             this.Text = "Территория продаж";
             this.Load += new System.EventHandler(this.fEdit_Load);

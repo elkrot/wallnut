@@ -56,10 +56,10 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 307F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 460F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.Controls.Add(this.tbOrderQty, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.cbProductID, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.label1, 1, 1);
@@ -76,26 +76,28 @@
             this.tableLayoutPanel1.Controls.Add(this.label2, 1, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 10;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(671, 270);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(796, 374);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tbOrderQty
             // 
-            this.tbOrderQty.Location = new System.Drawing.Point(330, 48);
+            this.tbOrderQty.Location = new System.Drawing.Point(494, 67);
+            this.tbOrderQty.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbOrderQty.Name = "tbOrderQty";
-            this.tbOrderQty.Size = new System.Drawing.Size(318, 20);
+            this.tbOrderQty.Size = new System.Drawing.Size(268, 24);
             this.tbOrderQty.TabIndex = 1;
             this.tbOrderQty.Validating += new System.ComponentModel.CancelEventHandler(this.tbName_Validating);
             // 
@@ -103,17 +105,19 @@
             // 
             this.cbProductID.Dock = System.Windows.Forms.DockStyle.Top;
             this.cbProductID.FormattingEnabled = true;
-            this.cbProductID.Location = new System.Drawing.Point(330, 23);
+            this.cbProductID.Location = new System.Drawing.Point(494, 32);
+            this.cbProductID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbProductID.Name = "cbProductID";
-            this.cbProductID.Size = new System.Drawing.Size(318, 21);
+            this.cbProductID.Size = new System.Drawing.Size(268, 26);
             this.cbProductID.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 20);
+            this.label1.Location = new System.Drawing.Point(34, 28);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 13);
+            this.label1.Size = new System.Drawing.Size(179, 18);
             this.label1.TabIndex = 3;
             this.label1.Text = "Наименование продукта";
             // 
@@ -121,9 +125,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label4.Location = new System.Drawing.Point(23, 120);
+            this.label4.Location = new System.Drawing.Point(34, 168);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(264, 25);
+            this.label4.Size = new System.Drawing.Size(360, 35);
             this.label4.TabIndex = 4;
             this.label4.Text = "Дата начала выполнения заказа на производство";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -132,9 +137,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label5.Location = new System.Drawing.Point(23, 145);
+            this.label5.Location = new System.Drawing.Point(34, 203);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(282, 25);
+            this.label5.Size = new System.Drawing.Size(385, 35);
             this.label5.TabIndex = 4;
             this.label5.Text = "Дата окончания выполнения заказа на производство";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -143,9 +149,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label6.Location = new System.Drawing.Point(23, 170);
+            this.label6.Location = new System.Drawing.Point(34, 238);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(225, 25);
+            this.label6.Size = new System.Drawing.Size(308, 35);
             this.label6.TabIndex = 4;
             this.label6.Text = "Срок выполнения заказа на производство";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -155,9 +162,10 @@
             this.dtStartDate.CustomFormat = "dd.MM.yy HH:mm";
             this.dtStartDate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtStartDate.Location = new System.Drawing.Point(330, 123);
+            this.dtStartDate.Location = new System.Drawing.Point(494, 172);
+            this.dtStartDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtStartDate.Name = "dtStartDate";
-            this.dtStartDate.Size = new System.Drawing.Size(318, 20);
+            this.dtStartDate.Size = new System.Drawing.Size(268, 24);
             this.dtStartDate.TabIndex = 6;
             // 
             // dtEndDate
@@ -166,10 +174,11 @@
             this.dtEndDate.CustomFormat = "dd.MM.yy HH:mm";
             this.dtEndDate.Dock = System.Windows.Forms.DockStyle.Top;
             this.dtEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtEndDate.Location = new System.Drawing.Point(330, 148);
+            this.dtEndDate.Location = new System.Drawing.Point(494, 207);
+            this.dtEndDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtEndDate.Name = "dtEndDate";
             this.dtEndDate.ShowCheckBox = true;
-            this.dtEndDate.Size = new System.Drawing.Size(318, 20);
+            this.dtEndDate.Size = new System.Drawing.Size(268, 24);
             this.dtEndDate.TabIndex = 6;
             this.dtEndDate.ValueChanged += new System.EventHandler(this.dtEndDate_ValueChanged);
             // 
@@ -179,18 +188,20 @@
             this.dtDueDate.CustomFormat = "dd.MM.yy HH:mm";
             this.dtDueDate.Dock = System.Windows.Forms.DockStyle.Top;
             this.dtDueDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtDueDate.Location = new System.Drawing.Point(330, 173);
+            this.dtDueDate.Location = new System.Drawing.Point(494, 242);
+            this.dtDueDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtDueDate.Name = "dtDueDate";
             this.dtDueDate.ShowCheckBox = true;
-            this.dtDueDate.Size = new System.Drawing.Size(318, 20);
+            this.dtDueDate.Size = new System.Drawing.Size(268, 24);
             this.dtDueDate.TabIndex = 6;
             // 
             // tbNamelbl
             // 
             this.tbNamelbl.AutoSize = true;
-            this.tbNamelbl.Location = new System.Drawing.Point(23, 45);
+            this.tbNamelbl.Location = new System.Drawing.Point(34, 63);
+            this.tbNamelbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.tbNamelbl.Name = "tbNamelbl";
-            this.tbNamelbl.Size = new System.Drawing.Size(197, 13);
+            this.tbNamelbl.Size = new System.Drawing.Size(274, 18);
             this.tbNamelbl.TabIndex = 0;
             this.tbNamelbl.Text = "Количество производимого продукта";
             this.tbNamelbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -198,33 +209,37 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(23, 70);
+            this.label3.Location = new System.Drawing.Point(34, 98);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(147, 13);
+            this.label3.Size = new System.Drawing.Size(204, 18);
             this.label3.TabIndex = 4;
             this.label3.Text = "Отбракованное количество";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tbStockedQty
             // 
-            this.tbStockedQty.Location = new System.Drawing.Point(330, 98);
+            this.tbStockedQty.Location = new System.Drawing.Point(494, 137);
+            this.tbStockedQty.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbStockedQty.Name = "tbStockedQty";
-            this.tbStockedQty.Size = new System.Drawing.Size(318, 20);
+            this.tbStockedQty.Size = new System.Drawing.Size(268, 24);
             this.tbStockedQty.TabIndex = 5;
             // 
             // tbScrappedQty
             // 
-            this.tbScrappedQty.Location = new System.Drawing.Point(330, 73);
+            this.tbScrappedQty.Location = new System.Drawing.Point(494, 102);
+            this.tbScrappedQty.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbScrappedQty.Name = "tbScrappedQty";
-            this.tbScrappedQty.Size = new System.Drawing.Size(318, 20);
+            this.tbScrappedQty.Size = new System.Drawing.Size(268, 24);
             this.tbScrappedQty.TabIndex = 5;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 95);
+            this.label2.Location = new System.Drawing.Point(34, 133);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(270, 13);
+            this.label2.Size = new System.Drawing.Size(372, 18);
             this.label2.TabIndex = 4;
             this.label2.Text = "Произведенное количество для складских запасов";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -236,17 +251,19 @@
             this.flowLayoutPanel1.Controls.Add(this.btnOK);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 241);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 334);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(671, 29);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(796, 40);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(593, 3);
+            this.btnCancel.Location = new System.Drawing.Point(680, 4);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.Size = new System.Drawing.Size(112, 32);
             this.btnCancel.TabIndex = 0;
             this.btnCancel.Text = "Отмена";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -254,9 +271,10 @@
             // btnOK
             // 
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOK.Location = new System.Drawing.Point(512, 3);
+            this.btnOK.Location = new System.Drawing.Point(560, 4);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(75, 23);
+            this.btnOK.Size = new System.Drawing.Size(112, 32);
             this.btnOK.TabIndex = 1;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
@@ -268,11 +286,13 @@
             // 
             // fAddWorkOrder
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(671, 270);
+            this.ClientSize = new System.Drawing.Size(796, 374);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "fAddWorkOrder";
             this.Text = "Заказ на производство";
             this.Load += new System.EventHandler(this.fEdit_Load);

@@ -161,20 +161,26 @@
             // rateChangeDateDataGridViewTextBoxColumn
             // 
             this.rateChangeDateDataGridViewTextBoxColumn.DataPropertyName = "RateChangeDate";
+            this.rateChangeDateDataGridViewTextBoxColumn.FillWeight = 200F;
             this.rateChangeDateDataGridViewTextBoxColumn.HeaderText = "Дата изменения тарифа";
             this.rateChangeDateDataGridViewTextBoxColumn.Name = "rateChangeDateDataGridViewTextBoxColumn";
+            this.rateChangeDateDataGridViewTextBoxColumn.Width = 200;
             // 
             // rateDataGridViewTextBoxColumn
             // 
             this.rateDataGridViewTextBoxColumn.DataPropertyName = "Rate";
+            this.rateDataGridViewTextBoxColumn.FillWeight = 200F;
             this.rateDataGridViewTextBoxColumn.HeaderText = "Тариф";
             this.rateDataGridViewTextBoxColumn.Name = "rateDataGridViewTextBoxColumn";
+            this.rateDataGridViewTextBoxColumn.Width = 200;
             // 
             // payFrequencyDataGridViewTextBoxColumn
             // 
             this.payFrequencyDataGridViewTextBoxColumn.DataPropertyName = "PayFrequency";
+            this.payFrequencyDataGridViewTextBoxColumn.FillWeight = 200F;
             this.payFrequencyDataGridViewTextBoxColumn.HeaderText = "Периодичность выплат";
             this.payFrequencyDataGridViewTextBoxColumn.Name = "payFrequencyDataGridViewTextBoxColumn";
+            this.payFrequencyDataGridViewTextBoxColumn.Width = 200;
             // 
             // fEmployeePayHistory
             // 
