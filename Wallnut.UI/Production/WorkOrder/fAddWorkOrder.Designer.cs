@@ -76,7 +76,7 @@
             this.tableLayoutPanel1.Controls.Add(this.label2, 1, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 10;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
@@ -95,7 +95,7 @@
             // tbOrderQty
             // 
             this.tbOrderQty.Location = new System.Drawing.Point(494, 67);
-            this.tbOrderQty.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbOrderQty.Margin = new System.Windows.Forms.Padding(4);
             this.tbOrderQty.Name = "tbOrderQty";
             this.tbOrderQty.Size = new System.Drawing.Size(268, 24);
             this.tbOrderQty.TabIndex = 1;
@@ -106,7 +106,7 @@
             this.cbProductID.Dock = System.Windows.Forms.DockStyle.Top;
             this.cbProductID.FormattingEnabled = true;
             this.cbProductID.Location = new System.Drawing.Point(494, 32);
-            this.cbProductID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbProductID.Margin = new System.Windows.Forms.Padding(4);
             this.cbProductID.Name = "cbProductID";
             this.cbProductID.Size = new System.Drawing.Size(268, 26);
             this.cbProductID.TabIndex = 2;
@@ -163,7 +163,7 @@
             this.dtStartDate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtStartDate.Location = new System.Drawing.Point(494, 172);
-            this.dtStartDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtStartDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtStartDate.Name = "dtStartDate";
             this.dtStartDate.Size = new System.Drawing.Size(268, 24);
             this.dtStartDate.TabIndex = 6;
@@ -175,7 +175,7 @@
             this.dtEndDate.Dock = System.Windows.Forms.DockStyle.Top;
             this.dtEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtEndDate.Location = new System.Drawing.Point(494, 207);
-            this.dtEndDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtEndDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtEndDate.Name = "dtEndDate";
             this.dtEndDate.ShowCheckBox = true;
             this.dtEndDate.Size = new System.Drawing.Size(268, 24);
@@ -189,7 +189,7 @@
             this.dtDueDate.Dock = System.Windows.Forms.DockStyle.Top;
             this.dtDueDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtDueDate.Location = new System.Drawing.Point(494, 242);
-            this.dtDueDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtDueDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtDueDate.Name = "dtDueDate";
             this.dtDueDate.ShowCheckBox = true;
             this.dtDueDate.Size = new System.Drawing.Size(268, 24);
@@ -220,7 +220,7 @@
             // tbStockedQty
             // 
             this.tbStockedQty.Location = new System.Drawing.Point(494, 137);
-            this.tbStockedQty.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbStockedQty.Margin = new System.Windows.Forms.Padding(4);
             this.tbStockedQty.Name = "tbStockedQty";
             this.tbStockedQty.Size = new System.Drawing.Size(268, 24);
             this.tbStockedQty.TabIndex = 5;
@@ -228,7 +228,7 @@
             // tbScrappedQty
             // 
             this.tbScrappedQty.Location = new System.Drawing.Point(494, 102);
-            this.tbScrappedQty.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbScrappedQty.Margin = new System.Windows.Forms.Padding(4);
             this.tbScrappedQty.Name = "tbScrappedQty";
             this.tbScrappedQty.Size = new System.Drawing.Size(268, 24);
             this.tbScrappedQty.TabIndex = 5;
@@ -252,7 +252,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 334);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(796, 40);
             this.flowLayoutPanel1.TabIndex = 1;
@@ -261,7 +261,7 @@
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Location = new System.Drawing.Point(680, 4);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(112, 32);
             this.btnCancel.TabIndex = 0;
@@ -272,7 +272,7 @@
             // 
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnOK.Location = new System.Drawing.Point(560, 4);
-            this.btnOK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(4);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(112, 32);
             this.btnOK.TabIndex = 1;
@@ -292,7 +292,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fAddWorkOrder";
             this.Text = "Заказ на производство";
             this.Load += new System.EventHandler(this.fEdit_Load);

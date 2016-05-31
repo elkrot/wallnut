@@ -56,7 +56,7 @@
             this.ss.Location = new System.Drawing.Point(0, 341);
             this.ss.Name = "ss";
             this.ss.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
-            this.ss.Size = new System.Drawing.Size(656, 22);
+            this.ss.Size = new System.Drawing.Size(748, 22);
             this.ss.TabIndex = 0;
             this.ss.Text = "statusStrip1";
             // 
@@ -79,7 +79,7 @@
             this.bn.Name = "bn";
             this.bn.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.bn.PositionItem = null;
-            this.bn.Size = new System.Drawing.Size(656, 39);
+            this.bn.Size = new System.Drawing.Size(748, 39);
             this.bn.TabIndex = 1;
             this.bn.Text = "bindingNavigator1";
             // 
@@ -128,8 +128,9 @@
             this.dgv.Location = new System.Drawing.Point(0, 39);
             this.dgv.Margin = new System.Windows.Forms.Padding(4);
             this.dgv.Name = "dgv";
+            this.dgv.ReadOnly = true;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(656, 302);
+            this.dgv.Size = new System.Drawing.Size(748, 302);
             this.dgv.TabIndex = 2;
             // 
             // transactionTypeIDDataGridViewTextBoxColumn
@@ -137,6 +138,7 @@
             this.transactionTypeIDDataGridViewTextBoxColumn.DataPropertyName = "TransactionTypeID";
             this.transactionTypeIDDataGridViewTextBoxColumn.HeaderText = "Код";
             this.transactionTypeIDDataGridViewTextBoxColumn.Name = "transactionTypeIDDataGridViewTextBoxColumn";
+            this.transactionTypeIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -144,6 +146,7 @@
             this.nameDataGridViewTextBoxColumn.FillWeight = 200F;
             this.nameDataGridViewTextBoxColumn.HeaderText = "Наименование";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             this.nameDataGridViewTextBoxColumn.Width = 200;
             // 
             // operationSequenceDataGridViewTextBoxColumn
@@ -151,30 +154,34 @@
             this.operationSequenceDataGridViewTextBoxColumn.DataPropertyName = "OperationSequence";
             this.operationSequenceDataGridViewTextBoxColumn.HeaderText = "Порядок";
             this.operationSequenceDataGridViewTextBoxColumn.Name = "operationSequenceDataGridViewTextBoxColumn";
+            this.operationSequenceDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // locationIDFromDataGridViewTextBoxColumn
             // 
             this.locationIDFromDataGridViewTextBoxColumn.DataPropertyName = "LocationIDFrom";
             this.locationIDFromDataGridViewTextBoxColumn.HeaderText = "Откуда";
             this.locationIDFromDataGridViewTextBoxColumn.Name = "locationIDFromDataGridViewTextBoxColumn";
+            this.locationIDFromDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // locationIDToDataGridViewTextBoxColumn
             // 
             this.locationIDToDataGridViewTextBoxColumn.DataPropertyName = "LocationIDTo";
             this.locationIDToDataGridViewTextBoxColumn.HeaderText = "Куда";
             this.locationIDToDataGridViewTextBoxColumn.Name = "locationIDToDataGridViewTextBoxColumn";
+            this.locationIDToDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // isSysRowDataGridViewCheckBoxColumn
             // 
             this.isSysRowDataGridViewCheckBoxColumn.DataPropertyName = "IsSysRow";
             this.isSysRowDataGridViewCheckBoxColumn.HeaderText = "Системная строка";
             this.isSysRowDataGridViewCheckBoxColumn.Name = "isSysRowDataGridViewCheckBoxColumn";
+            this.isSysRowDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
             // fTransactionType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(656, 363);
+            this.ClientSize = new System.Drawing.Size(748, 363);
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.bn);
             this.Controls.Add(this.ss);

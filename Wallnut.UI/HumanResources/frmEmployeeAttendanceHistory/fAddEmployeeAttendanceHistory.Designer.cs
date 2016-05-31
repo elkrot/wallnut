@@ -58,7 +58,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 174F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.32394F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.67606F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 39F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 43F));
             this.tableLayoutPanel1.Controls.Add(this.tbRate, 2, 4);
             this.tableLayoutPanel1.Controls.Add(this.cbEmployeeID, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.label1, 1, 1);
@@ -92,7 +92,7 @@
             this.tbRate.Location = new System.Drawing.Point(216, 137);
             this.tbRate.Margin = new System.Windows.Forms.Padding(4);
             this.tbRate.Name = "tbRate";
-            this.tbRate.Size = new System.Drawing.Size(202, 24);
+            this.tbRate.Size = new System.Drawing.Size(199, 24);
             this.tbRate.TabIndex = 1;
             this.tbRate.Validating += new System.ComponentModel.CancelEventHandler(this.tbName_Validating);
             // 
@@ -103,7 +103,7 @@
             this.cbEmployeeID.Location = new System.Drawing.Point(216, 32);
             this.cbEmployeeID.Margin = new System.Windows.Forms.Padding(4);
             this.cbEmployeeID.Name = "cbEmployeeID";
-            this.cbEmployeeID.Size = new System.Drawing.Size(202, 26);
+            this.cbEmployeeID.Size = new System.Drawing.Size(199, 26);
             this.cbEmployeeID.TabIndex = 2;
             // 
             // label1
@@ -122,7 +122,7 @@
             this.dtStartDate.Location = new System.Drawing.Point(216, 67);
             this.dtStartDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtStartDate.Name = "dtStartDate";
-            this.dtStartDate.Size = new System.Drawing.Size(202, 24);
+            this.dtStartDate.Size = new System.Drawing.Size(199, 24);
             this.dtStartDate.TabIndex = 4;
             // 
             // dtEndDate
@@ -133,7 +133,7 @@
             this.dtEndDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtEndDate.Name = "dtEndDate";
             this.dtEndDate.ShowCheckBox = true;
-            this.dtEndDate.Size = new System.Drawing.Size(202, 24);
+            this.dtEndDate.Size = new System.Drawing.Size(199, 24);
             this.dtEndDate.TabIndex = 5;
             this.dtEndDate.ValueChanged += new System.EventHandler(this.dtEndDate_ValueChanged);
             // 
@@ -183,7 +183,7 @@
             this.tbWorkedOutHrs.Location = new System.Drawing.Point(216, 168);
             this.tbWorkedOutHrs.Margin = new System.Windows.Forms.Padding(4);
             this.tbWorkedOutHrs.Name = "tbWorkedOutHrs";
-            this.tbWorkedOutHrs.Size = new System.Drawing.Size(202, 24);
+            this.tbWorkedOutHrs.Size = new System.Drawing.Size(199, 24);
             this.tbWorkedOutHrs.TabIndex = 8;
             // 
             // dtStartTime
@@ -192,11 +192,11 @@
             this.dtStartTime.CustomFormat = "HH:mm";
             this.dtStartTime.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtStartTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtStartTime.Location = new System.Drawing.Point(426, 67);
+            this.dtStartTime.Location = new System.Drawing.Point(423, 67);
             this.dtStartTime.Margin = new System.Windows.Forms.Padding(4);
             this.dtStartTime.Name = "dtStartTime";
             this.dtStartTime.ShowUpDown = true;
-            this.dtStartTime.Size = new System.Drawing.Size(93, 24);
+            this.dtStartTime.Size = new System.Drawing.Size(92, 24);
             this.dtStartTime.TabIndex = 9;
             // 
             // dtEndTime
@@ -204,11 +204,11 @@
             this.dtEndTime.CustomFormat = "HH:mm";
             this.dtEndTime.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtEndTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtEndTime.Location = new System.Drawing.Point(426, 102);
+            this.dtEndTime.Location = new System.Drawing.Point(423, 102);
             this.dtEndTime.Margin = new System.Windows.Forms.Padding(4);
             this.dtEndTime.Name = "dtEndTime";
             this.dtEndTime.ShowUpDown = true;
-            this.dtEndTime.Size = new System.Drawing.Size(93, 24);
+            this.dtEndTime.Size = new System.Drawing.Size(92, 24);
             this.dtEndTime.TabIndex = 10;
             // 
             // flowLayoutPanel1

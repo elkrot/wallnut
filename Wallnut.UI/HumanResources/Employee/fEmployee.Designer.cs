@@ -34,8 +34,8 @@ namespace Wallnut.UI
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fEmployee));
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.eFEmployeesRBS = new System.Windows.Forms.BindingSource(this.components);
-            this.tsbEdit = new System.Windows.Forms.ToolStripButton();
             this.tsbAdd = new System.Windows.Forms.ToolStripButton();
+            this.tsbEdit = new System.Windows.Forms.ToolStripButton();
             this.tsbRemove = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.tsbUserRoles = new System.Windows.Forms.ToolStripButton();
@@ -61,6 +61,7 @@ namespace Wallnut.UI
             this.departmentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.eFEmployeesRBS)).BeginInit();
@@ -82,6 +83,7 @@ namespace Wallnut.UI
             this.toolStripButton4,
             this.tsbUserRoles,
             this.toolStripButton6,
+            this.toolStripButton1,
             this.toolStripSeparator1,
             this.toolStripButton9,
             this.tsbExit});
@@ -101,15 +103,6 @@ namespace Wallnut.UI
             // 
             this.eFEmployeesRBS.DataSource = typeof(Wallnut.Domain.Models.EmployeeWithAttr);
             // 
-            // tsbEdit
-            // 
-            this.tsbEdit.Image = global::Wallnut.UI.Properties.Resources.pencil;
-            this.tsbEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbEdit.Name = "tsbEdit";
-            this.tsbEdit.Size = new System.Drawing.Size(97, 36);
-            this.tsbEdit.Text = "Изменить";
-            this.tsbEdit.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
             // tsbAdd
             // 
             this.tsbAdd.Image = global::Wallnut.UI.Properties.Resources.edit_add;
@@ -118,6 +111,15 @@ namespace Wallnut.UI
             this.tsbAdd.Size = new System.Drawing.Size(95, 36);
             this.tsbAdd.Text = "Добавить";
             this.tsbAdd.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // tsbEdit
+            // 
+            this.tsbEdit.Image = global::Wallnut.UI.Properties.Resources.pencil;
+            this.tsbEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbEdit.Name = "tsbEdit";
+            this.tsbEdit.Size = new System.Drawing.Size(97, 36);
+            this.tsbEdit.Text = "Изменить";
+            this.tsbEdit.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // tsbRemove
             // 
@@ -335,6 +337,16 @@ namespace Wallnut.UI
             // 
             this.employeeBindingSource.DataSource = typeof(Wallnut.Domain.Models.EmployeeWithAttr);
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = global::Wallnut.UI.Properties.Resources.account_balances;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click_2);
+            // 
             // fEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -391,6 +403,7 @@ namespace Wallnut.UI
         private System.Windows.Forms.DataGridViewTextBoxColumn departmentNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn groupNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolStripButton tsbUserRoles;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }
 

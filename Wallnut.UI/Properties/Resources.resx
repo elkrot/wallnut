@@ -160,10 +160,13 @@
   <data name="edit_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\edit_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="role" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\role.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="prinyat" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\ico\prinyat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="role" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\role.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="account_balances" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ico\account_balances.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

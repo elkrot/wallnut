@@ -80,8 +80,8 @@ namespace Wallnut.BusinessLogic.Implementations
             DatabaseLogRepository = new DatabaseLogRepository(_context);
             ErrorLogRepository = new ErrorLogRepository(_context);
             TransactionTypeRepository = new TransactionTypeRepository(_context);
-              
-  
+
+            EmployeePayHistoryRepository = new EmployeePayHistoryRepository(_context);
   
         }
         #endregion
@@ -145,6 +145,7 @@ namespace Wallnut.BusinessLogic.Implementations
     public IErrorLogRepository  ErrorLogRepository{ get; private set; }
 public ITransactionTypeRepository  TransactionTypeRepository{ get; private set; }
 
+public IEmployeePayHistoryRepository EmployeePayHistoryRepository { get; private set; }
 
         #endregion
 
@@ -314,7 +315,8 @@ public ITransactionTypeRepository  TransactionTypeRepository{ get; private set; 
                     break;
                 case "TransactionType": ret = (IRepository<T>)TransactionTypeRepository;
                     break;
-
+                case "EmployeePayHistory": ret = (IRepository<T>)EmployeePayHistoryRepository;
+                    break;
                               
   
   

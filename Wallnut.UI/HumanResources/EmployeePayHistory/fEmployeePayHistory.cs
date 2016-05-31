@@ -14,19 +14,27 @@ namespace Wallnut.UI.HumanResources.EmployeePayHistory
 {
     public partial class fEmployeePayHistory : Wallnut.UI.Implementations.ListForm
     {
+        public int employeeID { get; set; }
+        public ListFormBehavior<Wallnut.Domain.Models.EmployeePayHistory, fAddEmployeePayHistory> behavior;
         public fEmployeePayHistory()
         {
+            behavior = new ListFormBehavior<Wallnut.Domain.Models.EmployeePayHistory,
+               fAddEmployeePayHistory>(x => x.BusinessEntityID == employeeID, Reread);
             InitializeComponent();
+            behavior.RefreshData();
         }
-
+        public void Reread()
+        {
+            bs.DataSource = behavior.EntityList;
+        }
         private void fList_Load(object sender, EventArgs e)
         {
-            RefreshData<Wallnut.Domain.Models.EmployeePayHistory>();
+            behavior.RefreshData();
         }
 
         private void tsbAdd_Click(object sender, EventArgs e)
         {
-            AddEntity<fAddEmployeePayHistory, Wallnut.Domain.Models.EmployeePayHistory>();
+            behavior.AddEntity(employeeID);
         }
 
         private void tsbEdit_Click(object sender, EventArgs e)
@@ -34,7 +42,7 @@ namespace Wallnut.UI.HumanResources.EmployeePayHistory
             var entity = dgv.SelectedRows[0].DataBoundItem as Wallnut.Domain.Models.EmployeePayHistory;
             int BusinessEntityID = entity.BusinessEntityID;
             DateTime RateChangeDate = entity.RateChangeDate;
-            UpdateEntity<fAddEmployeePayHistory, Wallnut.Domain.Models.EmployeePayHistory>(BusinessEntityID, RateChangeDate);
+            behavior.UpdateEntity(BusinessEntityID, RateChangeDate);
         }
 
         private void tsbDelete_Click(object sender, EventArgs e)
@@ -42,7 +50,7 @@ namespace Wallnut.UI.HumanResources.EmployeePayHistory
             var entity = dgv.SelectedRows[0].DataBoundItem as Wallnut.Domain.Models.EmployeePayHistory;
             int BusinessEntityID = entity.BusinessEntityID;
             DateTime RateChangeDate = entity.RateChangeDate;
-            RemoveEntity<Wallnut.Domain.Models.EmployeePayHistory>(BusinessEntityID, RateChangeDate);
+            behavior.RemoveEntity(BusinessEntityID, RateChangeDate);
         }
 
 

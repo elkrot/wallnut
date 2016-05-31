@@ -137,9 +137,9 @@
             this.label2.Location = new System.Drawing.Point(34, 70);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 35);
+            this.label2.Size = new System.Drawing.Size(75, 35);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Раотник";
+            this.label2.Text = "Работник";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label3

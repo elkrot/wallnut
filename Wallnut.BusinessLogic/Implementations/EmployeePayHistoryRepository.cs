@@ -13,16 +13,14 @@ namespace Wallnut.BusinessLogic.Implementations
     using Wallnut.BusinessLogic.Interfaces;
     using Wallnut.Domain.Interfaces;
     using System.Data.Entity;
+    using System.Linq.Expressions;
     /// <summary>
     /// Super class
     /// </summary>
     public class EmployeePayHistoryRepository: Repository<EmployeePayHistory>,IEmployeePayHistoryRepository
     {
 
-        #region Member Variables
-        #endregion
 
-        #region Constructors
 
         /// <summary>
         /// Initializes a new instance of the <see cref="EmployeePayHistoryRepository" /> class.
@@ -33,15 +31,11 @@ namespace Wallnut.BusinessLogic.Implementations
 
         }
 
-        #endregion
+        new public IEnumerable<EmployeePayHistory> Find(Expression<Func<EmployeePayHistory, bool>> predicate)
+        {
+            return Context.Set<EmployeePayHistory>().Include("Employee").Where(predicate);
+        }
 
-        #region Properties
-        #endregion
 
-        #region Functions
-        #endregion
-
-        #region Enums
-        #endregion
     }
 }

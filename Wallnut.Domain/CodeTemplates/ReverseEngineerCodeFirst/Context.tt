@@ -8,6 +8,7 @@
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using <#= code.EscapeNamespace(efHost.MappingNamespace) #>;
+using Wallnut.Domain.Interfaces;
 
 namespace <#= code.EscapeNamespace(efHost.Namespace) #>
 {

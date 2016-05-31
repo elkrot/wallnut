@@ -12,6 +12,7 @@ using Wallnut.BusinessLogic;
 using Wallnut.Domain.Models;
 using Wallnut.UI.HumanResources.EmployeeDepartmentHistory;
 using Wallnut.UI.HumanResources.frmEmployeeRole;
+using Wallnut.UI.HumanResources.EmployeePayHistory;
 
 namespace Wallnut.UI
 {
@@ -186,6 +187,15 @@ namespace Wallnut.UI
             {
                 RereadData(unitOfWork);
             }
+        }
+
+        private void toolStripButton1_Click_2(object sender, EventArgs e)
+        {
+            var frm = new fEmployeePayHistory();
+            var emp = dgvEmployee.SelectedRows[0].DataBoundItem as EmployeeWithAttr;
+            var employeeId = emp.BusinessEntityID;
+            frm.employeeID = employeeId;
+            frm.ShowDialog();
         }
         
 
