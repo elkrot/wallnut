@@ -15,6 +15,7 @@ namespace Wallnut.Domain.Models.Mapping
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
 
             this.Property(t => t.PhoneNumber)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.None)
                 .IsRequired()
                 .HasMaxLength(25);
 

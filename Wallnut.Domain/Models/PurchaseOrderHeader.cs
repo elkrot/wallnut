@@ -45,8 +45,7 @@ namespace Wallnut.Domain.Models
         [Column("Freight")] 
 	        public decimal Freight { get; set; }
  
-        [Column("TotalDue")]
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        [Column("TotalDue")] 
 	        public decimal TotalDue { get; set; }
  
         [Column("ModifiedDate")] 

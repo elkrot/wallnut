@@ -1,4 +1,5 @@
-﻿namespace Wallnut.UI.Purchasing.PurchaseOrder
+﻿using Wallnut.UI.fTemplates;
+namespace Wallnut.UI.Purchasing.PurchaseOrder
 {
     partial class fAddPurchaseOrderDetail
     {
@@ -34,7 +35,7 @@
             this.btnOK = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tbNamelbl = new System.Windows.Forms.Label();
-            this.tbOrderQty = new System.Windows.Forms.TextBox();
+            this.tbOrderQty = new Wallnut.UI.fTemplates.NumericTextBox();
             this.dtDueDate = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,9 +45,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.tbUnitPrice = new System.Windows.Forms.TextBox();
-            this.tbReceivedQty = new System.Windows.Forms.TextBox();
-            this.tbRejectedQty = new System.Windows.Forms.TextBox();
+            this.tbUnitPrice = new Wallnut.UI.fTemplates.NumericTextBox();
+            this.tbReceivedQty = new Wallnut.UI.fTemplates.NumericTextBox();
+            this.tbRejectedQty = new Wallnut.UI.fTemplates.NumericTextBox();
             this.lblLineTotal = new System.Windows.Forms.Label();
             this.lblSklad = new System.Windows.Forms.Label();
             this.ep = new System.Windows.Forms.ErrorProvider(this.components);
@@ -146,14 +147,26 @@
             // 
             // tbOrderQty
             // 
+            this.tbOrderQty.AllowNegative = true;
             this.tbOrderQty.Cursor = System.Windows.Forms.Cursors.Default;
             this.tbOrderQty.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbOrderQty.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.tbOrderQty.Location = new System.Drawing.Point(443, 72);
             this.tbOrderQty.Margin = new System.Windows.Forms.Padding(4);
             this.tbOrderQty.Name = "tbOrderQty";
+            this.tbOrderQty.NumericPrecision = 16;
+            this.tbOrderQty.NumericScaleOnFocus = 2;
+            this.tbOrderQty.NumericScaleOnLostFocus = 2;
+            this.tbOrderQty.NumericValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
             this.tbOrderQty.Size = new System.Drawing.Size(196, 24);
             this.tbOrderQty.TabIndex = 1;
+            this.tbOrderQty.Text = "0";
+            this.tbOrderQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbOrderQty.ZeroIsValid = false;
             this.tbOrderQty.TextChanged += new System.EventHandler(this.tbOrderQty_TextChanged);
             this.tbOrderQty.Validating += new System.ComponentModel.CancelEventHandler(this.tbName_Validating);
             // 
@@ -262,34 +275,70 @@
             // 
             // tbUnitPrice
             // 
+            this.tbUnitPrice.AllowNegative = true;
             this.tbUnitPrice.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbUnitPrice.Location = new System.Drawing.Point(443, 138);
             this.tbUnitPrice.Margin = new System.Windows.Forms.Padding(4);
             this.tbUnitPrice.Name = "tbUnitPrice";
+            this.tbUnitPrice.NumericPrecision = 16;
+            this.tbUnitPrice.NumericScaleOnFocus = 2;
+            this.tbUnitPrice.NumericScaleOnLostFocus = 2;
+            this.tbUnitPrice.NumericValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
             this.tbUnitPrice.Size = new System.Drawing.Size(196, 24);
             this.tbUnitPrice.TabIndex = 3;
+            this.tbUnitPrice.Text = "0";
+            this.tbUnitPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbUnitPrice.ZeroIsValid = false;
             this.tbUnitPrice.TextChanged += new System.EventHandler(this.tbOrderQty_TextChanged);
             this.tbUnitPrice.Validating += new System.ComponentModel.CancelEventHandler(this.tbUnitPrice_Validating);
             // 
             // tbReceivedQty
             // 
+            this.tbReceivedQty.AllowNegative = true;
             this.tbReceivedQty.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbReceivedQty.Location = new System.Drawing.Point(443, 199);
             this.tbReceivedQty.Margin = new System.Windows.Forms.Padding(4);
             this.tbReceivedQty.Name = "tbReceivedQty";
+            this.tbReceivedQty.NumericPrecision = 16;
+            this.tbReceivedQty.NumericScaleOnFocus = 2;
+            this.tbReceivedQty.NumericScaleOnLostFocus = 2;
+            this.tbReceivedQty.NumericValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
             this.tbReceivedQty.Size = new System.Drawing.Size(196, 24);
             this.tbReceivedQty.TabIndex = 4;
+            this.tbReceivedQty.Text = "0";
+            this.tbReceivedQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbReceivedQty.ZeroIsValid = false;
             this.tbReceivedQty.TextChanged += new System.EventHandler(this.tbReceivedQty_TextChanged);
             this.tbReceivedQty.Validating += new System.ComponentModel.CancelEventHandler(this.tbReceivedQty_Validating);
             // 
             // tbRejectedQty
             // 
+            this.tbRejectedQty.AllowNegative = true;
             this.tbRejectedQty.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbRejectedQty.Location = new System.Drawing.Point(443, 230);
             this.tbRejectedQty.Margin = new System.Windows.Forms.Padding(4);
             this.tbRejectedQty.Name = "tbRejectedQty";
+            this.tbRejectedQty.NumericPrecision = 16;
+            this.tbRejectedQty.NumericScaleOnFocus = 2;
+            this.tbRejectedQty.NumericScaleOnLostFocus = 2;
+            this.tbRejectedQty.NumericValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
             this.tbRejectedQty.Size = new System.Drawing.Size(196, 24);
             this.tbRejectedQty.TabIndex = 5;
+            this.tbRejectedQty.Text = "0";
+            this.tbRejectedQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbRejectedQty.ZeroIsValid = false;
             this.tbRejectedQty.TextChanged += new System.EventHandler(this.tbReceivedQty_TextChanged);
             this.tbRejectedQty.Validating += new System.ComponentModel.CancelEventHandler(this.tbRejectedQty_Validating);
             // 
@@ -355,7 +404,7 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Label tbNamelbl;
-        private System.Windows.Forms.TextBox tbOrderQty;
+        private NumericTextBox tbOrderQty;
         private System.Windows.Forms.ErrorProvider ep;
         private System.Windows.Forms.DateTimePicker dtDueDate;
         private System.Windows.Forms.Label label1;
@@ -366,9 +415,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox tbUnitPrice;
-        private System.Windows.Forms.TextBox tbReceivedQty;
-        private System.Windows.Forms.TextBox tbRejectedQty;
+        private NumericTextBox tbUnitPrice;
+        private NumericTextBox tbReceivedQty;
+        private NumericTextBox tbRejectedQty;
         private System.Windows.Forms.Label lblLineTotal;
         private System.Windows.Forms.Label lblSklad;
     }

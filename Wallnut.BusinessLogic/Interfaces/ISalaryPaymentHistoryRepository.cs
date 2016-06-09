@@ -6,7 +6,7 @@ using Wallnut.Domain.Models;
 
 namespace Wallnut.BusinessLogic.Interfaces
 {
-    public interface ISalaryPaymentOrderRepository : IRepository<SalaryPaymentOrder>
+    public interface ISalaryPaymentHistoryRepository : IRepository<SalaryPaymentHistory>
     {
     }
 }

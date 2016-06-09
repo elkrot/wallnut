@@ -82,7 +82,9 @@ namespace Wallnut.BusinessLogic.Implementations
             TransactionTypeRepository = new TransactionTypeRepository(_context);
 
             EmployeePayHistoryRepository = new EmployeePayHistoryRepository(_context);
-  
+            SalaryPaymentOrderRepository = new SalaryPaymentOrderRepository(_context);
+            SalaryPaymentHistoryRepository = new SalaryPaymentHistoryRepository(_context);
+
         }
         #endregion
 
@@ -131,7 +133,7 @@ namespace Wallnut.BusinessLogic.Implementations
 
         public IAddressTypesRepository AddressTypeRepository { get; private set; }
 
-        //public I_Repository  { get; private set; }
+        
         public ISpecialOfferProductRepository SpecialOfferProductRepository { get; private set; }
         public ISpecialOfferRepository SpecialOfferRepository { get; private set; }
 
@@ -146,6 +148,9 @@ namespace Wallnut.BusinessLogic.Implementations
 public ITransactionTypeRepository  TransactionTypeRepository{ get; private set; }
 
 public IEmployeePayHistoryRepository EmployeePayHistoryRepository { get; private set; }
+        //public I_Repository  _Repository{ get; private set; }
+        public ISalaryPaymentOrderRepository SalaryPaymentOrderRepository { get; private set; }
+    public ISalaryPaymentHistoryRepository  SalaryPaymentHistoryRepository{ get; private set; }
 
         #endregion
 
@@ -317,9 +322,10 @@ public IEmployeePayHistoryRepository EmployeePayHistoryRepository { get; private
                     break;
                 case "EmployeePayHistory": ret = (IRepository<T>)EmployeePayHistoryRepository;
                     break;
-                              
-  
-  
+                     case "SalaryPaymentOrder": ret = (IRepository<T>)SalaryPaymentOrderRepository;
+                    break;
+                     case "SalaryPaymentHistory": ret = (IRepository<T>)SalaryPaymentHistoryRepository;
+                    break;
                 default:
                     ret = null;
                     break;

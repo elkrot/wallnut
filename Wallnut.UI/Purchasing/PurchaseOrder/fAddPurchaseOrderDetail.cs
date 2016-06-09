@@ -158,7 +158,7 @@ namespace Wallnut.UI.Purchasing.PurchaseOrder
             if (double.TryParse(tbOrderQty.Text,out OrderQty) && (double.TryParse(tbUnitPrice.Text,out UnitPrice)))
             {
                 double val = OrderQty * UnitPrice;
-            lblLineTotal.Text = string.Format("{0}", val);
+            lblLineTotal.Text = string.Format("{0:C2}", val);
             }
         }
 

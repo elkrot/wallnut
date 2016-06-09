@@ -12,6 +12,7 @@ namespace Wallnut.Domain.Models.Mapping
 
             // Properties
             this.Property(t => t.TransactionTypeID)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.None)
                 .IsRequired()
                 .IsFixedLength()
                 .HasMaxLength(1);

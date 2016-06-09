@@ -93,6 +93,8 @@
     <Compile Include="Entities\WorkOrderHistory.cs" />
     <Compile Include="Entities\WorkOrderCondition.cs" />
     <Compile Include="Entities\ExpenditureCostHistoryCondition.cs" />
+    <Compile Include="Entities\SalaryPaymentCondition.cs" />
+    <Compile Include="Entities\SalaryPaymentHistory.cs" />
     <Compile Include="Interfaces\IDbContext.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\AddressType.cs" />
@@ -154,6 +156,8 @@
     <Compile Include="Models\Mapping\PurchaseOrderDetailMap.cs" />
     <Compile Include="Models\Mapping\PurchaseOrderHeaderMap.cs" />
     <Compile Include="Models\Mapping\RoleMap.cs" />
+    <Compile Include="Models\Mapping\SalaryPaymentHistoryMap.cs" />
+    <Compile Include="Models\Mapping\SalaryPaymentOrderMap.cs" />
     <Compile Include="Models\Mapping\SalesOrderDetailMap.cs" />
     <Compile Include="Models\Mapping\SalesOrderHeaderMap.cs" />
     <Compile Include="Models\Mapping\SalesPersonMap.cs" />
@@ -188,6 +192,8 @@
     <Compile Include="Models\PurchaseOrderDetail.cs" />
     <Compile Include="Models\PurchaseOrderHeader.cs" />
     <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\SalaryPaymentHistory.cs" />
+    <Compile Include="Models\SalaryPaymentOrder.cs" />
     <Compile Include="Models\SalesOrderDetail.cs" />
     <Compile Include="Models\SalesOrderHeader.cs" />
     <Compile Include="Models\SalesPerson.cs" />

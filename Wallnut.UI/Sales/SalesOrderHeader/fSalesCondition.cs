@@ -62,7 +62,7 @@ namespace Wallnut.UI.Sales.SalesOrderHeader
                 #endregion
 
                 #region IsSalesOrderNumber
-                this.chIsSalesOrderNumber.DataBindings.Add("Checked",
+                this.chIsOrderNo.DataBindings.Add("Checked",
                  (this.DataSource as SalesCondition),
                  "IsSalesOrderNumber",
                  false,
@@ -108,7 +108,7 @@ namespace Wallnut.UI.Sales.SalesOrderHeader
                 #endregion
 
                 #region SalesOrderNumber
-                this.tbSalesOrderNumber.DataBindings.Add("Text",
+                this.tbOrderNo.DataBindings.Add("Text",
                 (this.DataSource as SalesCondition),
                 "SalesOrderNumber",
                 false,

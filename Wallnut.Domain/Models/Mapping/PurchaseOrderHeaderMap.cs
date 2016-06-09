@@ -15,6 +15,9 @@ namespace Wallnut.Domain.Models.Mapping
                 .IsRequired()
                 .HasMaxLength(20);
 
+            this.Property(t => t.TotalDue)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed);
+
 
             // Relationships
             this.HasRequired(t => t.Employee)

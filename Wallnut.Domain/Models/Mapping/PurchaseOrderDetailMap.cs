@@ -17,6 +17,12 @@ namespace Wallnut.Domain.Models.Mapping
             this.Property(t => t.PurchaseOrderDetailID)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
+            this.Property(t => t.LineTotal)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed);
+
+            this.Property(t => t.StockedQty)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed);
+
 
             // Relationships
             this.HasRequired(t => t.Product)

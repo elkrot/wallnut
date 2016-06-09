@@ -1,4 +1,5 @@
-﻿SalesOrderHeader
+﻿не надо
+SalesOrderHeader
 
 SalesOrderNumber
 TotalDue

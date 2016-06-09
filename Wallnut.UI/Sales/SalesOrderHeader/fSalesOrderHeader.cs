@@ -22,7 +22,7 @@ namespace Wallnut.UI.Sales.SalesOrderHeader
         private static fSalesOrderHeader aForm = null;
         private fSalesOrderHeader()
         {
-            fSalesCondition frm= new fSalesCondition();
+            fSalesCondition frm = new fSalesCondition();
             frm.DataSource = new SalesCondition();
             (frm.DataSource as SalesCondition).DateFirst = DateTime.Now.AddDays(-DateTime.Now.Day);
             (frm.DataSource as SalesCondition).DateLast = DateTime.Now.AddDays(1);

@@ -1,6 +1,6 @@
 ﻿namespace Wallnut.UI.Sales.SalesOrderHeader
 {
-    partial class fSalesCondition
+    partial class fSalaryPaymentCondition
     {
         /// <summary>
         /// Required designer variable.
@@ -34,10 +34,6 @@
             this.dtTo = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.chIsCustomer = new System.Windows.Forms.CheckBox();
-            this.cbCustomerID = new System.Windows.Forms.ComboBox();
-            this.chIsSalesTerritory = new System.Windows.Forms.CheckBox();
-            this.cbTerritoryID = new System.Windows.Forms.ComboBox();
             this.chIsOrderNo = new System.Windows.Forms.CheckBox();
             this.tbOrderNo = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
@@ -45,7 +41,7 @@
             // btnOK
             // 
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOK.Location = new System.Drawing.Point(353, 219);
+            this.btnOK.Location = new System.Drawing.Point(361, 104);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(98, 40);
             this.btnOK.TabIndex = 0;
@@ -55,7 +51,7 @@
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(467, 219);
+            this.btnCancel.Location = new System.Drawing.Point(470, 104);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(96, 40);
             this.btnCancel.TabIndex = 1;
@@ -96,70 +92,30 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "по";
             // 
-            // chIsCustomer
-            // 
-            this.chIsCustomer.AutoSize = true;
-            this.chIsCustomer.Location = new System.Drawing.Point(16, 42);
-            this.chIsCustomer.Name = "chIsCustomer";
-            this.chIsCustomer.Size = new System.Drawing.Size(93, 22);
-            this.chIsCustomer.TabIndex = 4;
-            this.chIsCustomer.Text = "Заказчик";
-            this.chIsCustomer.UseVisualStyleBackColor = true;
-            // 
-            // cbCustomerID
-            // 
-            this.cbCustomerID.FormattingEnabled = true;
-            this.cbCustomerID.Location = new System.Drawing.Point(194, 42);
-            this.cbCustomerID.Name = "cbCustomerID";
-            this.cbCustomerID.Size = new System.Drawing.Size(360, 26);
-            this.cbCustomerID.TabIndex = 5;
-            // 
-            // chIsSalesTerritory
-            // 
-            this.chIsSalesTerritory.AutoSize = true;
-            this.chIsSalesTerritory.Location = new System.Drawing.Point(16, 76);
-            this.chIsSalesTerritory.Name = "chIsSalesTerritory";
-            this.chIsSalesTerritory.Size = new System.Drawing.Size(165, 22);
-            this.chIsSalesTerritory.TabIndex = 4;
-            this.chIsSalesTerritory.Text = "Территория продаж";
-            this.chIsSalesTerritory.UseVisualStyleBackColor = true;
-            // 
-            // cbTerritoryID
-            // 
-            this.cbTerritoryID.FormattingEnabled = true;
-            this.cbTerritoryID.Location = new System.Drawing.Point(194, 74);
-            this.cbTerritoryID.Name = "cbTerritoryID";
-            this.cbTerritoryID.Size = new System.Drawing.Size(360, 26);
-            this.cbTerritoryID.TabIndex = 5;
-            // 
             // chIsOrderNo
             // 
             this.chIsOrderNo.AutoSize = true;
-            this.chIsOrderNo.Location = new System.Drawing.Point(16, 116);
+            this.chIsOrderNo.Location = new System.Drawing.Point(16, 42);
             this.chIsOrderNo.Name = "chIsOrderNo";
-            this.chIsOrderNo.Size = new System.Drawing.Size(126, 22);
+            this.chIsOrderNo.Size = new System.Drawing.Size(157, 22);
             this.chIsOrderNo.TabIndex = 6;
-            this.chIsOrderNo.Text = "Номер заказа";
+            this.chIsOrderNo.Text = "Номер Ведомости";
             this.chIsOrderNo.UseVisualStyleBackColor = true;
             // 
             // tbOrderNo
             // 
-            this.tbOrderNo.Location = new System.Drawing.Point(194, 115);
+            this.tbOrderNo.Location = new System.Drawing.Point(194, 42);
             this.tbOrderNo.Name = "tbOrderNo";
             this.tbOrderNo.Size = new System.Drawing.Size(360, 24);
             this.tbOrderNo.TabIndex = 7;
             // 
-            // fSalesCondition
+            // fSalaryPaymentCondition
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(578, 261);
+            this.ClientSize = new System.Drawing.Size(578, 152);
             this.Controls.Add(this.tbOrderNo);
             this.Controls.Add(this.chIsOrderNo);
-            this.Controls.Add(this.cbTerritoryID);
-            this.Controls.Add(this.cbCustomerID);
-            this.Controls.Add(this.chIsSalesTerritory);
-            this.Controls.Add(this.chIsCustomer);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtTo);
@@ -169,11 +125,11 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(594, 299);
+            this.MaximumSize = new System.Drawing.Size(594, 190);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(594, 299);
-            this.Name = "fSalesCondition";
-            this.Text = "Условие отбора заказов на продажу";
+            this.MinimumSize = new System.Drawing.Size(594, 190);
+            this.Name = "fSalaryPaymentCondition";
+            this.Text = "Условие отбора ведомостей по ЗП";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,12 +143,6 @@
         private System.Windows.Forms.DateTimePicker dtTo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox chIsCustomer;
-        private System.Windows.Forms.ComboBox cbCustomerID;
-        private System.Windows.Forms.CheckBox chIsSalesTerritory;
-        private System.Windows.Forms.ComboBox cbTerritoryID;
-        private System.Windows.Forms.CheckBox chIsSalesOrderNumber;
-        private System.Windows.Forms.TextBox tbSalesOrderNumber;
         private System.Windows.Forms.CheckBox chIsOrderNo;
         private System.Windows.Forms.TextBox tbOrderNo;
     }

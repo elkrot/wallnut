@@ -20,6 +20,9 @@ namespace Wallnut.Domain.Models.Mapping
             this.Property(t => t.CarrierTrackingNumber)
                 .HasMaxLength(25);
 
+            this.Property(t => t.LineTotal)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed);
+
 
             // Relationships
             this.HasRequired(t => t.Product)

@@ -56,5 +56,23 @@ namespace Wallnut.BusinessLogic.Implementations
     {
         (Context as DbContext).Entry(entity).State = System.Data.EntityState.Modified;
     }
+
+
+        public IEnumerable<TEntity> Find(
+              Expression<Func<TEntity, bool>> predicate
+            , Expression<Func<TEntity, object>>[] includeExpressions
+            , Expression<Func<TEntity, object>> orderBy)
+        {
+            IQueryable<TEntity> set = Context.Set<TEntity>();
+            foreach (var includeExpression in includeExpressions)
+            {
+                set = set.Include(includeExpression);
+            }
+            if (orderBy != null)
+            {
+                set = set.Where(predicate).OrderBy(orderBy);
+            }
+            return set;
+        }
     }
 }

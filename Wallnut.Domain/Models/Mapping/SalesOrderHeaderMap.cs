@@ -12,6 +12,7 @@ namespace Wallnut.Domain.Models.Mapping
 
             // Properties
             this.Property(t => t.SalesOrderNumber)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed)
                 .IsRequired()
                 .HasMaxLength(25);
 
@@ -20,6 +21,9 @@ namespace Wallnut.Domain.Models.Mapping
 
             this.Property(t => t.AccountNumber)
                 .HasMaxLength(15);
+
+            this.Property(t => t.TotalDue)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed);
 
             this.Property(t => t.Comment)
                 .HasMaxLength(128);

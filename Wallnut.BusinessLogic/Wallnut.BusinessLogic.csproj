@@ -98,6 +98,8 @@
     <Compile Include="Implementations\TransactionTypeRepository.cs" />
     <Compile Include="Implementations\DatabaseLogRepository.cs" />
     <Compile Include="Implementations\ErrorLogRepository.cs" />
+    <Compile Include="Implementations\SalaryPaymentOrderRepository.cs" />
+    <Compile Include="Implementations\SalaryPaymentHistoryRepository.cs" />
     <Compile Include="Interfaces\IAddressRepository.cs" />
     <Compile Include="Interfaces\IAddressTypeRepository.cs" />
     <Compile Include="Interfaces\IBusinessEntityAddressRepository.cs" />
@@ -148,11 +150,11 @@
     <Compile Include="Interfaces\ITransactionTypeRepository.cs" />
     <Compile Include="Interfaces\IDatabaseLogRepository.cs" />
     <Compile Include="Interfaces\IErrorLogRepository.cs" />
+    <Compile Include="Interfaces\ISalaryPaymentOrderRepository.cs" />
+    <Compile Include="Interfaces\ISalaryPaymentHistoryRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="CodeTemplates\DbHelper.ttinclude" />
-    <None Include="CodeTemplates\Manager.ttinclude" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

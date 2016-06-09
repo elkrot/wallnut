@@ -67,7 +67,8 @@ namespace <#= code.EscapeNamespace(efHost.Namespace) #>
         if (type.ClrEquivalentType == typeof(int)
             || type.ClrEquivalentType == typeof(decimal)
             || type.ClrEquivalentType == typeof(short)
-            || type.ClrEquivalentType == typeof(long))
+            || type.ClrEquivalentType == typeof(long)
+			|| type.ClrEquivalentType == typeof(string))
         {
             if (isKey && storeGeneratedPattern != StoreGeneratedPattern.Identity)
             {
@@ -76,6 +77,10 @@ namespace <#= code.EscapeNamespace(efHost.Namespace) #>
             else if ((!isKey || efHost.EntityType.KeyMembers.Count > 1) && storeGeneratedPattern == StoreGeneratedPattern.Identity)
             {
                 configLines.Add(".HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity)");
+            } else if ((!isKey ) && storeGeneratedPattern == StoreGeneratedPattern.Computed)
+            {
+			
+			configLines.Add(".HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed)");
             }
         }
                     

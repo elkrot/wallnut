@@ -10,7 +10,7 @@ namespace Wallnut.BusinessLogic.Interfaces
     {
         TEntity Get(params object[] KeyValues);
         IEnumerable<TEntity> GetAll();
-        IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicste);
+        IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate);
 
         void Add(TEntity entity);
         void AddRange(IEnumerable<TEntity> entities);

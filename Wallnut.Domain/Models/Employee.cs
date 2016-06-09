@@ -14,6 +14,7 @@ namespace Wallnut.Domain.Models
             this.EmployeeRoles = new List<EmployeeRole>();
             this.JobCandidates = new List<JobCandidate>();
             this.PurchaseOrderHeaders = new List<PurchaseOrderHeader>();
+            this.SalaryPaymentHistories = new List<SalaryPaymentHistory>();
             this.WorkOrderHistories = new List<WorkOrderHistory>();
         }
 
@@ -64,6 +65,7 @@ namespace Wallnut.Domain.Models
         public virtual ICollection<EmployeeRole> EmployeeRoles { get; set; }
         public virtual ICollection<JobCandidate> JobCandidates { get; set; }
         public virtual ICollection<PurchaseOrderHeader> PurchaseOrderHeaders { get; set; }
+        public virtual ICollection<SalaryPaymentHistory> SalaryPaymentHistories { get; set; }
         public virtual SalesPerson SalesPerson { get; set; }
         public virtual ICollection<WorkOrderHistory> WorkOrderHistories { get; set; }
     }

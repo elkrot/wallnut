@@ -11,6 +11,9 @@ namespace Wallnut.Domain.Models.Mapping
             this.HasKey(t => t.WorkOrderID);
 
             // Properties
+            this.Property(t => t.StockedQty)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed);
+
 
             // Relationships
             this.HasRequired(t => t.Product)

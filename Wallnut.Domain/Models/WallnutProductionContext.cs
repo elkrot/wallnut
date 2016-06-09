@@ -26,6 +26,8 @@ namespace Wallnut.Domain.Models
         public DbSet<EmployeeDepartmentHistory> EmployeeDepartmentHistories { get; set; }
         public DbSet<EmployeePayHistory> EmployeePayHistories { get; set; }
         public DbSet<JobCandidate> JobCandidates { get; set; }
+        public DbSet<SalaryPaymentHistory> SalaryPaymentHistories { get; set; }
+        public DbSet<SalaryPaymentOrder> SalaryPaymentOrders { get; set; }
         public DbSet<Shift> Shifts { get; set; }
         public DbSet<Address> Addresses { get; set; }
         public DbSet<AddressType> AddressTypes { get; set; }
@@ -86,6 +88,8 @@ namespace Wallnut.Domain.Models
             modelBuilder.Configurations.Add(new EmployeeDepartmentHistoryMap());
             modelBuilder.Configurations.Add(new EmployeePayHistoryMap());
             modelBuilder.Configurations.Add(new JobCandidateMap());
+            modelBuilder.Configurations.Add(new SalaryPaymentHistoryMap());
+            modelBuilder.Configurations.Add(new SalaryPaymentOrderMap());
             modelBuilder.Configurations.Add(new ShiftMap());
             modelBuilder.Configurations.Add(new AddressMap());
             modelBuilder.Configurations.Add(new AddressTypeMap());

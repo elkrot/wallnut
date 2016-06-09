@@ -22,8 +22,7 @@ namespace Wallnut.Domain.Models
         [Column("OrderQty")] 
 	        public int OrderQty { get; set; }
  
-        [Column("StockedQty")]
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        [Column("StockedQty")] 
 	        public int StockedQty { get; set; }
  
         [Column("ScrappedQty")] 

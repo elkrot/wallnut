@@ -12,6 +12,7 @@ namespace Wallnut.Domain.Models.Mapping
 
             // Properties
             this.Property(t => t.PropertyCode)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.None)
                 .IsRequired()
                 .HasMaxLength(15);
 

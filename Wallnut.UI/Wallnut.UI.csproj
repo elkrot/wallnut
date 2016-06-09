@@ -184,6 +184,30 @@
     <Compile Include="HumanResources\frmEmployeeRole\fEmployeeRole.Designer.cs">
       <DependentUpon>fEmployeeRole.cs</DependentUpon>
     </Compile>
+    <Compile Include="HumanResources\frmSalaryPaymentOrder\fAddSalaryPaymentHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HumanResources\frmSalaryPaymentOrder\fAddSalaryPaymentHistory.Designer.cs">
+      <DependentUpon>fAddSalaryPaymentHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HumanResources\frmSalaryPaymentOrder\fAddSalaryPaymentOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HumanResources\frmSalaryPaymentOrder\fAddSalaryPaymentOrder.Designer.cs">
+      <DependentUpon>fAddSalaryPaymentOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HumanResources\frmSalaryPaymentOrder\fSalaryPaymentOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HumanResources\frmSalaryPaymentOrder\fSalaryPaymentOrder.Designer.cs">
+      <DependentUpon>fSalaryPaymentOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HumanResources\frmSalaryPaymentOrder\fSalaryPaymentCondition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HumanResources\frmSalaryPaymentOrder\fSalaryPaymentCondition.Designer.cs">
+      <DependentUpon>fSalaryPaymentCondition.cs</DependentUpon>
+    </Compile>
     <Compile Include="Implementations\AddForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -712,6 +736,18 @@
     <EmbeddedResource Include="HumanResources\frmEmployeeRole\fEmployeeRole.resx">
       <DependentUpon>fEmployeeRole.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HumanResources\frmSalaryPaymentOrder\fAddSalaryPaymentHistory.resx">
+      <DependentUpon>fAddSalaryPaymentHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HumanResources\frmSalaryPaymentOrder\fAddSalaryPaymentOrder.resx">
+      <DependentUpon>fAddSalaryPaymentOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HumanResources\frmSalaryPaymentOrder\fSalaryPaymentOrder.resx">
+      <DependentUpon>fSalaryPaymentOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HumanResources\frmSalaryPaymentOrder\fSalaryPaymentCondition.resx">
+      <DependentUpon>fSalaryPaymentCondition.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Implementations\AddForm.resx">
       <DependentUpon>AddForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -983,6 +1019,8 @@
     <None Include="Properties\DataSources\Wallnut.Domain.Models.PurchaseOrderDetail.datasource" />
     <None Include="Properties\DataSources\Wallnut.Domain.Models.PurchaseOrderHeader.datasource" />
     <None Include="Properties\DataSources\Wallnut.Domain.Models.Role.datasource" />
+    <None Include="Properties\DataSources\Wallnut.Domain.Models.SalaryPaymentHistory.datasource" />
+    <None Include="Properties\DataSources\Wallnut.Domain.Models.SalaryPaymentOrder.datasource" />
     <None Include="Properties\DataSources\Wallnut.Domain.Models.SalesOrderDetail.datasource" />
     <None Include="Properties\DataSources\Wallnut.Domain.Models.SalesOrderHeader.datasource" />
     <None Include="Properties\DataSources\Wallnut.Domain.Models.SalesTerritory.datasource" />

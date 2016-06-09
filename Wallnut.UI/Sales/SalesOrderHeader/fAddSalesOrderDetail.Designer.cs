@@ -83,7 +83,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(675, 291);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(522, 314);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // lbOrderQty
@@ -113,7 +113,7 @@
             0,
             0,
             0});
-            this.tbOrderQty.Size = new System.Drawing.Size(353, 24);
+            this.tbOrderQty.Size = new System.Drawing.Size(200, 24);
             this.tbOrderQty.TabIndex = 1;
             this.tbOrderQty.Text = "0";
             this.tbOrderQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -138,7 +138,7 @@
             this.tbCarrierTrackingNumber.Location = new System.Drawing.Point(288, 42);
             this.tbCarrierTrackingNumber.Margin = new System.Windows.Forms.Padding(4);
             this.tbCarrierTrackingNumber.Name = "tbCarrierTrackingNumber";
-            this.tbCarrierTrackingNumber.Size = new System.Drawing.Size(353, 24);
+            this.tbCarrierTrackingNumber.Size = new System.Drawing.Size(200, 24);
             this.tbCarrierTrackingNumber.TabIndex = 0;
             // 
             // lbProductID
@@ -183,7 +183,7 @@
             this.cbProductID.Location = new System.Drawing.Point(288, 109);
             this.cbProductID.Margin = new System.Windows.Forms.Padding(4);
             this.cbProductID.Name = "cbProductID";
-            this.cbProductID.Size = new System.Drawing.Size(353, 26);
+            this.cbProductID.Size = new System.Drawing.Size(200, 26);
             this.cbProductID.TabIndex = 2;
             // 
             // tbUnitPrice
@@ -201,7 +201,7 @@
             0,
             0,
             0});
-            this.tbUnitPrice.Size = new System.Drawing.Size(353, 24);
+            this.tbUnitPrice.Size = new System.Drawing.Size(200, 24);
             this.tbUnitPrice.TabIndex = 3;
             this.tbUnitPrice.Text = "0";
             this.tbUnitPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -216,7 +216,7 @@
             this.lbLineTotalLoc.Location = new System.Drawing.Point(288, 204);
             this.lbLineTotalLoc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbLineTotalLoc.Name = "lbLineTotalLoc";
-            this.lbLineTotalLoc.Size = new System.Drawing.Size(353, 33);
+            this.lbLineTotalLoc.Size = new System.Drawing.Size(200, 33);
             this.lbLineTotalLoc.TabIndex = 5;
             this.lbLineTotalLoc.Text = "0";
             this.lbLineTotalLoc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -227,7 +227,7 @@
             this.cbSpecialOfferID.FormattingEnabled = true;
             this.cbSpecialOfferID.Location = new System.Drawing.Point(287, 143);
             this.cbSpecialOfferID.Name = "cbSpecialOfferID";
-            this.cbSpecialOfferID.Size = new System.Drawing.Size(355, 26);
+            this.cbSpecialOfferID.Size = new System.Drawing.Size(202, 26);
             this.cbSpecialOfferID.TabIndex = 6;
             // 
             // label1
@@ -248,16 +248,16 @@
             this.flowLayoutPanel1.Controls.Add(this.btnOK);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 251);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 274);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(675, 40);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(522, 40);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(559, 4);
+            this.btnCancel.Location = new System.Drawing.Point(406, 4);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(112, 32);
@@ -268,7 +268,7 @@
             // btnOK
             // 
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOK.Location = new System.Drawing.Point(439, 4);
+            this.btnOK.Location = new System.Drawing.Point(286, 4);
             this.btnOK.Margin = new System.Windows.Forms.Padding(4);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(112, 32);
@@ -285,7 +285,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(675, 291);
+            this.ClientSize = new System.Drawing.Size(522, 314);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));

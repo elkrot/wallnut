@@ -38,6 +38,7 @@ using Wallnut.UI.Admin.PropertyFrm;
 using Wallnut.UI.Admin.ErrorLogFrm;
 using Wallnut.UI.Admin.DatabaseLogFrm;
 using Wallnut.UI.Admin.TransactionTypeFrm;
+using Wallnut.UI.HumanResources.frmSalaryPaymentOrder;
 
 namespace Wallnut.UI
 {
@@ -299,6 +300,13 @@ namespace Wallnut.UI
         private void tsmiTransactionType_Click(object sender, EventArgs e)
         {
             fTransactionType frm = new fTransactionType();
+            frm.ShowDialog();
+        }
+
+        private void зарПлатаToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+            fSalaryPaymentOrder frm = new fSalaryPaymentOrder();
             frm.ShowDialog();
         }
         
